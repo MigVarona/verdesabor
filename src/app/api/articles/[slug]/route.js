@@ -27,7 +27,8 @@ const getArticleBySlug = async (slug) => {
 };
 
 // Manejar la solicitud GET
-export async function GET(req, { params }) {
+export async function GET(req, props) {
+  const params = await props.params;
   const { slug } = params;
 
   try {

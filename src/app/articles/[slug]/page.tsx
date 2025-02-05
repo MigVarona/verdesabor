@@ -4,7 +4,8 @@ interface Params {
   slug: string;
 }
 
-const RecipePage = async ({ params }: { params: Params }) => {
+const RecipePage = async (props: { params: Promise<Params> }) => {
+  const params = await props.params;
   const { slug } = params;
 
   // Realizamos la solicitud GET al API para obtener el artículo por el slug

@@ -1,4 +1,7 @@
 import { notFound } from 'next/navigation';
+import Header from '@/app/components/Header';
+import Newsletter from '@/app/components/Newsletter';
+import Footer from '@/app/components/Footer';
 
 interface Params {
   slug: string;
@@ -19,6 +22,8 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
   const articleData = await res.json();
 
   return (
+    <>
+    <Header />
     <div className="container mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold">{articleData.title}</h1>
       <img
@@ -28,6 +33,9 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
       />
       <p className="text-gray-600">{articleData.excerpt}</p>
     </div>
+    <Newsletter />
+    <Footer />
+    </>
   );
 };
 

@@ -1,18 +1,25 @@
-// app/api/articles/[slug]/route.js
 import { MongoClient } from 'mongodb';
 
-// Conexión con MongoDB
-const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+const client = new MongoClient(process.env.MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const getArticleBySlug = async (slug) => {
   try {
     await client.connect();
-    const db = client.db("verdesabor");  // Nombre de tu base de datos
-    const collection = db.collection("articles");  // Nombre de la colección que contiene los artículos
+    const db = client.db("verdesabor");
+    const collection = db.collection("articles");
     const article = await collection.findOne({ slug });
+
+    if (!article) {
+      console.log('Artículo no encontrado');
+      return null;
+    }
+    
     return article;
   } catch (error) {
-    console.error("Error obteniendo artículo:", error);
+    console.error("Error al obtener el artículo:", error);
     throw error;
   } finally {
     await client.close();
@@ -27,11 +34,20 @@ export async function GET(req, { params }) {
     const article = await getArticleBySlug(slug);
 
     if (!article) {
-      return new Response(JSON.stringify({ message: "Artículo no encontrado" }), { status: 404 });
+      console.log("No se encontró el artículo con el slug:", slug);
+      return new Response(
+        JSON.stringify({ message: "Artículo no encontrado" }),
+        { status: 404 }
+      );
     }
 
+    console.log("Artículo encontrado:", article);
     return new Response(JSON.stringify(article), { status: 200 });
   } catch (error) {
-    return new Response(JSON.stringify({ message: "Error al obtener el artículo", error: error.message }), { status: 500 });
+    console.error("Error en el servidor:", error);
+    return new Response(
+      JSON.stringify({ message: "Error al obtener el artículo", error: error.message }),
+      { status: 500 }
+    );
   }
 }

@@ -1,22 +1,35 @@
+"use client"
+
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 
+interface Article {
+  _id: string;
+  image: string;
+  title: string;
+  category: string;
+  excerpt: string;
+}
+
 const FeaturedArticles = () => {
-  const articles = [
-    {
-      id: 1,
-      title: "Los beneficios de una dieta basada en plantas",
-      excerpt: "Descubre cómo una alimentación basada en plantas puede mejorar tu salud y bienestar...",
-      image: "https://images.unsplash.com/photo-1618160702438-9b02ab6515c9",
-      category: "Nutrición",
-    },
-    {
-      id: 2,
-      title: "Guía completa de proteínas vegetales",
-      excerpt: "Todo lo que necesitas saber sobre las fuentes de proteína vegetal...",
-      image: "https://images.unsplash.com/photo-1486718448742-163732cd1544",
-      category: "Guías",
-    },
-  ];
+  const [articles, setArticles] = useState<Article[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchArticles = async () => {
+      try {
+        const response = await fetch('/api/articles');
+        const data = await response.json();
+        setArticles(data); 
+      } catch (error) {
+        console.error("Error fetching articles:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchArticles();
+  }, []); 
 
   const generateSlug = (title: string) => {
     return title
@@ -25,6 +38,10 @@ const FeaturedArticles = () => {
       .replace(/[^\w-]+/g, '');
   };
 
+  if (loading) {
+    return <div>Cargando artículos...</div>; 
+  }
+
   return (
     <section className="py-12 bg-secondary">
       <div className="container mx-auto px-4">
@@ -32,7 +49,7 @@ const FeaturedArticles = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {articles.map((article) => (
             <article
-              key={article.id}
+              key={article._id} // Utilizamos _id, ya que es único en MongoDB
               className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               <img
@@ -44,7 +61,7 @@ const FeaturedArticles = () => {
                 <span className="text-sm text-gray-500">{article.category}</span>
                 <h3 className="text-xl font-semibold mt-2 mb-3">
                   <Link href={`/articles/${generateSlug(article.title)}`}>
-                    {article.title} {/* Cambié el uso de Link correctamente */}
+                    {article.title}
                   </Link>
                 </h3>
                 <p className="text-gray-600">{article.excerpt}</p>

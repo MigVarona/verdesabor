@@ -1,7 +1,8 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 interface Article {
   _id: string;
@@ -18,9 +19,9 @@ const FeaturedArticles = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch('/api/articles');
+        const response = await fetch("/api/articles");
         const data = await response.json();
-        setArticles(data); 
+        setArticles(data);
       } catch (error) {
         console.error("Error fetching articles:", error);
       } finally {
@@ -29,42 +30,62 @@ const FeaturedArticles = () => {
     };
 
     fetchArticles();
-  }, []); 
+  }, []);
 
   const generateSlug = (title: string) => {
     return title
       .toLowerCase()
-      .replace(/\s+/g, '-')
-      .replace(/[^\w-]+/g, '');
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "");
   };
 
   if (loading) {
-    return <div>Cargando artículos...</div>; 
+    return (
+      <div className="text-center py-10 text-gray-500">
+        Cargando artículos...
+      </div>
+    );
   }
 
   return (
-    <section className="py-12 bg-secondary">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-8">Artículos Destacados</h2>
-        <div className="grid md:grid-cols-2 gap-8">
+    <section className="py-16 dark:bg-gray-900">
+      <div className="container mx-auto px-6 lg:px-16 max-w-2xl">
+        <div className="space-y-12">
           {articles.map((article) => (
-            <article
-              key={article._id} // Utilizamos _id, ya que es único en MongoDB
-              className="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-            >
-              <img
-                src={article.image}
-                alt={article.title}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-6">
-                <span className="text-sm text-gray-500">{article.category}</span>
-                <h3 className="text-xl font-semibold mt-2 mb-3">
-                  <Link href={`/articles/${generateSlug(article.title)}`}>
-                    {article.title}
-                  </Link>
+            <article key={article._id} className="bg-white overflow-hidden">
+              {/* Título con fondo amarillo */}
+              <div className="bg-custom-yellow mb-4 p-2 inline-block">
+                <h3 className="text-3xl text-gray-900 font-fira font-thin">
+                  <Link
+                    href={`/articles/${generateSlug(article.title)}`}
+                    className="hover:underline"
+                    dangerouslySetInnerHTML={{
+                      __html: article.title.replace(/\n/g, "<br />"),
+                    }}
+                  />
                 </h3>
-                <p className="text-gray-600">{article.excerpt}</p>
+              </div>
+              {/* Imagen y contenido */}
+              <div className="flex flex-col lg:flex-row">
+                {/* Imagen */}
+                <div className="relative w-full lg:w-1/3 h-56 lg:h-auto">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    layout="fill"
+                    objectFit="cover"
+                    className="rounded-bl-lg lg:rounded-none"
+                  />
+                </div>
+                {/* Contenido */}
+                <div className="p-6 flex-grow">
+                  <span className="text-sm text-gray-500 uppercase">
+                    {article.category}
+                  </span>
+                  <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
+                    {article.excerpt}
+                  </p>
+                </div>
               </div>
             </article>
           ))}

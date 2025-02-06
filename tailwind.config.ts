@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        'custom-yellow': '#ffdb00',
+      },
+      fontFamily: {
+        fira: ['"Fira Sans"', 'Arial', 'sans-serif'],
       },
     },
   },

@@ -90,15 +90,16 @@ const FeaturedArticles = () => {
 
                 {/* ImagenXL a pantalla completa */}
                 {article.imagexl && (
-                  <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[40vh] lg:h-[70vh]">
-                    <Image
-                      src={article.imagexl}
-                      alt={`${article.title} full width image`}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                )}
+  <div className="relative w-full h-[40vh] lg:h-[70vh]">
+    <Image
+      src={article.imagexl}
+      alt={`${article.title} full width image`}
+      layout="fill"
+      objectFit="contain"
+    />
+  </div>
+)}
+
               </div>
             </article>
           ))}

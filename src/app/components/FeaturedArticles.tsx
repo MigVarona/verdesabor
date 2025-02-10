@@ -48,52 +48,48 @@ const FeaturedArticles = () => {
   }
 
   return (
-<section className="py-16 dark:bg-gray-900">
-  <div className="container mx-auto px-6 lg:px-16 max-w-2xl">
-    <div className="space-y-12">
-      {articles.map((article) => (
-        <article key={article._id} className="bg-white overflow-hidden p-4">
-          {/* Título */}
-          <div className="bg-custom-yellow mb-4 p-2 inline-block">
-            <h3 className="text-3xl text-gray-900 font-fira font-thin">
-              <Link
-                href={`/articles/${generateSlug(article.title)}`}
-                className="hover:underline"
-              >
-                {article.title}
-              </Link>
-            </h3>
-          </div>
-          <div className="clearfix">
-            {/* Imagen: en pantallas pequeñas ocupa todo el ancho, en grandes es pequeña, se posiciona a la derecha y baja un poco */}
-            <div className="relative w-full lg:w-32 h-64 lg:h-32 float-none lg:float-right ml-0 lg:ml-4 mb-4 lg:mt-4">
-              <Image
-                src={article.image}
-                alt={article.title}
-                layout="fill"
-                objectFit="cover"
-              />
-            </div>
-            {/* Contenido */}
-            <span className="text-sm text-gray-500 uppercase block">
-              {article.category}
-            </span>
-            <p className="mt-4 text-gray-700 dark:text-gray-300 text-sm leading-relaxed">
-              {article.excerpt}
-            </p>
-            {/* Limpiar floats */}
-            <div className="w-full clear-both" />
-          </div>
-        </article>
-      ))}
-    </div>
-  </div>
-</section>
+    <section className="py-16 dark:bg-gray-900">
+      <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
+        <div className="space-y-12">
+          {articles.map((article) => (
+            <article key={article._id} className="bg-white overflow-hidden p-4">
+              {/* Título */}
+              <div className="bg-custom-yellow mb-4 p-2 inline-block">
+                <h3 className="text-3xl text-gray-900 font-fira font-thin">
+                  <Link
+                    href={`/articles/${generateSlug(article.title)}`}
+                    className="hover:underline"
+                  >
+                    {article.title}
+                  </Link>
+                </h3>
+              </div>
+              <div className="clearfix">
+                {/* Imagen: en pantallas pequeñas ocupa todo el ancho, en grandes es pequeña, se posiciona a la derecha y baja un poco */}
+                <div className="relative w-full lg:w-64 h-64 lg:h-64 float-none lg:float-right ml-0 lg:ml-4 mb-4 lg:mt-4">
+                  <Image
+                    src={article.image}
+                    alt={article.title}
+                    layout="fill"
+                    objectFit="cover"
+                  />
+                </div>
 
-
-
-
-
+                {/* Contenido */}
+                <span className="text-sm text-gray-500 uppercase block">
+                  {article.category}
+                </span>
+                <p className="font-tisa font-normal text-lg leading-[1.825em] mb-[1em] text-gray-700 dark:text-gray-300">
+                  {article.excerpt}
+                </p>
+                {/* Limpiar floats */}
+                <div className="w-full clear-both" />
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

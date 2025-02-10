@@ -15,6 +15,9 @@ export default {
       },
       fontFamily: {
         fira: ['"Fira Sans"', 'Arial', 'sans-serif'],
+        tisa: ['"ff-tisa-web-pro"', 'serif', 'Georgia'],
+
+
       },
     },
   },

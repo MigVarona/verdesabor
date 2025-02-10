@@ -49,7 +49,7 @@ const FeaturedArticles = () => {
   }
 
   return (
-<section className="py-16 dark:bg-gray-900">
+    <section className="py-16 dark:bg-gray-900">
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         <div className="space-y-12">
           {articles.map((article) => (
@@ -84,13 +84,13 @@ const FeaturedArticles = () => {
                 )}
 
                 {/* Contenido */}
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-0 lg:mb-[1em]">
+                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-0">
                   {article.excerpt}
                 </p>
-                
+
                 {/* ImagenXL a pantalla completa */}
                 {article.imagexl && (
-                  <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[70vh]">
+                  <div className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen h-[40vh] lg:h-[70vh]">
                     <Image
                       src={article.imagexl}
                       alt={`${article.title} full width image`}

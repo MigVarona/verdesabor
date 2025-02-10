@@ -8,17 +8,7 @@ const Header = () => {
           <Link href="/" className="text-2xl font-bold text-gray-800">
           Renew
           </Link>
-          <div className="flex items-center gap-6">
-            <Link href="/articulos" className="text-gray-600 hover:text-gray-800">
-              Articles
-            </Link>
-            <Link href="/sobre-nosotros" className="text-gray-600 hover:text-gray-800">
-              About Us
-            </Link>
-            <button className="bg-primary px-4 py-2 rounded-md text-primary-foreground hover:opacity-90 transition-opacity">
-            Suscribirse
-            </button>
-          </div>
+         
         </nav>
       </div>
     </header>

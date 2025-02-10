@@ -11,6 +11,7 @@ interface Article {
   category: string;
   excerpt: string;
   imagexl: string;
+  text: string;
 }
 
 const FeaturedArticles = () => {
@@ -83,23 +84,29 @@ const FeaturedArticles = () => {
                   </div>
                 )}
 
-                {/* Contenido */}
+                {/* Contenido - excerpt */}
                 <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-0">
                   {article.excerpt}
                 </p>
 
                 {/* ImagenXL a pantalla completa */}
                 {article.imagexl && (
-  <div className="relative w-full h-[40vh] lg:h-[70vh]">
-    <Image
-      src={article.imagexl}
-      alt={`${article.title} full width image`}
-      layout="fill"
-      objectFit="contain"
-    />
-  </div>
-)}
+                  <div className="relative w-full h-[40vh] lg:h-[70vh]">
+                    <Image
+                      src={article.imagexl}
+                      alt={`${article.title} full width image`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
 
+                {/* Texto adicional después de imagexl */}
+                {article.text && (
+                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300">
+                    {article.text}
+                  </p>
+                )}
               </div>
             </article>
           ))}

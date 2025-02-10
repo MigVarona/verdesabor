@@ -6,17 +6,17 @@ const Header = () => {
       <div className="container mx-auto px-4 py-6">
         <nav className="flex items-center justify-between">
           <Link href="/" className="text-2xl font-bold text-gray-800">
-            Verdesabor
+          Renew
           </Link>
           <div className="flex items-center gap-6">
             <Link href="/articulos" className="text-gray-600 hover:text-gray-800">
-              Artículos
+              Articles
             </Link>
             <Link href="/sobre-nosotros" className="text-gray-600 hover:text-gray-800">
-              Sobre Nosotros
+              About Us
             </Link>
             <button className="bg-primary px-4 py-2 rounded-md text-primary-foreground hover:opacity-90 transition-opacity">
-              Suscribirse
+            Suscribirse
             </button>
           </div>
         </nav>

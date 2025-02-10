@@ -2,14 +2,13 @@
 
 import { MongoClient } from 'mongodb';
 
-// Conexión con MongoDB
 const client = new MongoClient(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 const getArticles = async () => {
   try {
     await client.connect();
-    const db = client.db("verdesabor");  // Nombre de la base de datos
-    const collection = db.collection("articles");  // Nombre de la colección
+    const db = client.db("verdesabor");  
+    const collection = db.collection("articles");  
     const articles = await collection.find().toArray();
     return articles;
   } catch (error) {
@@ -20,7 +19,6 @@ const getArticles = async () => {
   }
 };
 
-// Manejar la solicitud GET
 export async function GET() {
   try {
     const articles = await getArticles();

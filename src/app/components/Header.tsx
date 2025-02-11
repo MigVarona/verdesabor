@@ -11,7 +11,7 @@ const Header = () => {
 >
   RENEW
 </Link>
-pr
+
         </nav>
       </div>
     </header>

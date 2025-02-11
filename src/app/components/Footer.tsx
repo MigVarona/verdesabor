@@ -1,6 +1,6 @@
 "use client"
 
-import { Facebook, Instagram, Twitter, Heart, Leaf, ArrowUpCircle } from "lucide-react"
+import { Facebook, Instagram, Twitter, Heart, ArrowUpCircle } from "lucide-react"
 import Link from "next/link";
 export default function Footer() {
   const scrollToTop = () => {
@@ -15,7 +15,7 @@ export default function Footer() {
           className="p-2 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 group"
           aria-label="Scroll to top"
         >
-          <ArrowUpCircle className="w-6 h-6 text-emerald-600 group-hover:text-emerald-500 transition-colors" />
+          <ArrowUpCircle className="w-6 h-6 text-gray-80 group-hover:text-emerald-500 transition-colors" />
         </button>
       </div>
 
@@ -23,12 +23,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8">
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <Leaf className="w-6 h-6 text-emerald-600" />
-              <h2 className="text-2xl font-bold text-gray-800">Verdesabor</h2>
+              <h2 className="text-2xl tracking-[0.25em] font-bold font-noto text-gray-800">RENEW</h2>
             </div>
             <p className="text-gray-600 leading-relaxed">
-              Inspirando vidas más saludables, un artículo a la vez. Juntos hacia un mejor bienestar.
-            </p>
+            Inspiring healthier lives, one article at a time. Together towards better well-being            </p>
           </div>
 
           <div className="space-y-4">
@@ -99,7 +97,7 @@ export default function Footer() {
         <div className="mt-16 pt-8 border-t border-emerald-100">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600">
             <p className="text-sm flex items-center gap-2">
-              &copy; {new Date().getFullYear()} Verdesabor. 
+              &copy; {new Date().getFullYear()} RENEW. 
               <span className="flex items-center gap-1">
                 Hecho con <Heart className="w-4 h-4 text-rose-500" /> para tu bienestar
               </span>

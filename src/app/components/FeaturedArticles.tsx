@@ -14,7 +14,7 @@ interface Article {
   text: string;
   image2xl: string;
   text2: string;
-  publishedAt: string; // Fecha de publicación
+  publishedAt: string; 
 }
 
 const FeaturedArticles = () => {
@@ -44,13 +44,7 @@ const FeaturedArticles = () => {
       .replace(/[^\w-]+/g, "");
   };
 
-  if (loading) {
-    return (
-      <div className="text-center py-10 text-gray-500">
-        Cargando artículos...
-      </div>
-    );
-  }
+
 
   return (
     <section className="py-16 dark:bg-gray-900">

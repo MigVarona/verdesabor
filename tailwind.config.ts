@@ -1,3 +1,4 @@
+import { noSSR } from "next/dynamic";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -16,6 +17,7 @@ export default {
       fontFamily: {
         fira: ['"Fira Sans"', 'Arial', 'sans-serif'],
         tisa: ['"ff-tisa-web-pro"', 'serif', 'Georgia'],
+        noto: ['"Noto Sans"', 'Arial', 'sans-serif'],
 
 
       },

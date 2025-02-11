@@ -1,14 +1,10 @@
 // app/api/articles/route.js
-
-import { MongoClient } from 'mongodb';
+import clientPromise from '../../../lib/mongodb';
 import { NextResponse } from 'next/server';
-
-const uri = process.env.MONGODB_URI;
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
 async function getArticles() {
   try {
-    await client.connect();
+    const client = await clientPromise;
     const db = client.db("verdesabor");
     const collection = db.collection("articles");
     const articles = await collection.find().toArray();
@@ -16,8 +12,6 @@ async function getArticles() {
   } catch (error) {
     console.error("Error al obtener los artículos:", error);
     throw error;
-  } finally {
-    await client.close();
   }
 }
 
@@ -47,6 +41,7 @@ export async function POST(request) {
       title,
       category,
       excerpt,
+      imagel,
       imagexl,
       text,
       image2xl,
@@ -61,26 +56,26 @@ export async function POST(request) {
       );
     }
 
-    // Generar el slug a partir del título
+    // Genera el slug a partir del título (opcional)
     const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 
     const article = {
-      slug, // Se añade el slug generado
+      slug,
       image: image || '',
       title,
       category,
       excerpt,
+      imagel: imagel || '',
       imagexl: imagexl || '',
       text: text || '',
       image2xl: image2xl || '',
       text2: text2 || '',
-      publishedAt: new Date(publishedAt), // Convertir el string a Date
+      publishedAt: new Date(publishedAt),
     };
 
-    await client.connect();
+    const client = await clientPromise;
     const db = client.db('verdesabor');
     const result = await db.collection('articles').insertOne(article);
-    await client.close();
 
     return NextResponse.json({ success: true, insertedId: result.insertedId });
   } catch (error) {

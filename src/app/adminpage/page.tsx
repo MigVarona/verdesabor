@@ -1,11 +1,14 @@
-"use client";
+"use client"
 
-import { useState } from "react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
+import { useState } from "react"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
+import { FileImage, Loader2, PenTool } from "lucide-react"
 
 const AdminPage = () => {
   const [formData, setFormData] = useState({
@@ -18,29 +21,31 @@ const AdminPage = () => {
     text: "",
     image2xl: "",
     text2: "",
-  });
+  })
 
-  const [status, setStatus] = useState("");
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    e.preventDefault()
+    setIsSubmitting(true)
 
     try {
       const res = await fetch("/api/articles", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-      });
-      const data = await res.json();
+      })
+      const data = await res.json()
       if (res.ok) {
-        setStatus(`Article created successfully with ID: ${data.insertedId}`);
+        setStatus({ type: "success", message: `Article created successfully with ID: ${data.insertedId}` })
         setFormData({
           title: "",
           category: "",
@@ -51,48 +56,55 @@ const AdminPage = () => {
           text: "",
           image2xl: "",
           text2: "",
-        });
+        })
       } else {
-        setStatus(`Error: ${data.error}`);
+        setStatus({ type: "error", message: `Error: ${data.error}` })
       }
     } catch (error) {
-      setStatus(`Error: ${(error as any).message}`);
+      setStatus({ type: "error", message: `Error: ${(error as any).message}` })
+    } finally {
+      setIsSubmitting(false)
     }
-  };
+  }
 
   return (
     <div className="container mx-auto p-6">
-      <Card className="max-w-3xl mx-auto shadow-lg">
-        <CardHeader>
-          <CardTitle className="text-2xl font-bold">
-            Admin - Create New Article
+      <Card className="max-w-4xl mx-auto shadow-lg">
+        <CardHeader className="bg-primary text-primary-foreground">
+          <CardTitle className="text-3xl font-bold flex items-center gap-2">
+            <PenTool className="h-6 w-6" />
+            Create New Article
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <div>
-              <Label htmlFor="title" className="block mb-1">
-                Title
-              </Label>
-              <Input
-                id="title"
-                name="title"
-                value={formData.title}
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <Label htmlFor="category" className="block mb-1">
-                Category
-              </Label>
-              <Input
-                id="category"
-                name="category"
-                value={formData.category}
-                onChange={handleChange}
-                required
-              />
+        <CardContent className="pt-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <Label htmlFor="title" className="block mb-1">
+                  Title
+                </Label>
+                <Input
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleChange}
+                  required
+                  className="w-full"
+                />
+              </div>
+              <div>
+                <Label htmlFor="category" className="block mb-1">
+                  Category
+                </Label>
+                <Input
+                  id="category"
+                  name="category"
+                  value={formData.category}
+                  onChange={handleChange}
+                  required
+                  className="w-full"
+                />
+              </div>
             </div>
             <div>
               <Label htmlFor="excerpt" className="block mb-1">
@@ -104,6 +116,8 @@ const AdminPage = () => {
                 value={formData.excerpt}
                 onChange={handleChange}
                 required
+                className="w-full"
+                rows={3}
               />
             </div>
             <div>
@@ -117,81 +131,117 @@ const AdminPage = () => {
                 value={formData.publishedAt}
                 onChange={handleChange}
                 required
+                className="w-full"
               />
             </div>
-            <div>
-              <Label htmlFor="image" className="block mb-1">
-                Image URL
-              </Label>
-              <Input
-                type="url"
-                id="image"
-                name="image"
-                value={formData.image}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label htmlFor="imagel" className="block mb-1">
-                Imagel URL
-              </Label>
-             
-            </div>
-            <div>
-              <Label htmlFor="imagexl" className="block mb-1">
-                ImageXL URL
-              </Label>
-              <Input
-                type="url"
-                id="imagexl"
-                name="imagexl"
-                value={formData.imagexl}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label htmlFor="text" className="block mb-1">
-                Text
-              </Label>
-              <Textarea
-                id="text"
-                name="text"
-                value={formData.text}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label htmlFor="image2xl" className="block mb-1">
-                Image2XL URL
-              </Label>
-              <Input
-                type="url"
-                id="image2xl"
-                name="image2xl"
-                value={formData.image2xl}
-                onChange={handleChange}
-              />
-            </div>
-            <div>
-              <Label htmlFor="text2" className="block mb-1">
-                Text2
-              </Label>
-              <Textarea
-                id="text2"
-                name="text2"
-                value={formData.text2}
-                onChange={handleChange}
-              />
-            </div>
-            <Button type="submit" className="mt-4">
-              Create Article
+            <Tabs defaultValue="content" className="w-full">
+              <TabsList className="grid w-full grid-cols-2">
+                <TabsTrigger value="content">Content</TabsTrigger>
+                <TabsTrigger value="images">Images</TabsTrigger>
+              </TabsList>
+              <TabsContent value="content" className="space-y-4 mt-4">
+                <div>
+                  <Label htmlFor="text" className="block mb-1">
+                    Text
+                  </Label>
+                  <Textarea
+                    id="text"
+                    name="text"
+                    value={formData.text}
+                    onChange={handleChange}
+                    className="w-full"
+                    rows={6}
+                  />
+                </div>
+                <div>
+                  <Label htmlFor="text2" className="block mb-1">
+                    Text 2
+                  </Label>
+                  <Textarea
+                    id="text2"
+                    name="text2"
+                    value={formData.text2}
+                    onChange={handleChange}
+                    className="w-full"
+                    rows={6}
+                  />
+                </div>
+              </TabsContent>
+              <TabsContent value="images" className="space-y-4 mt-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div>
+                    <Label htmlFor="image" className="block mb-1">
+                      Image URL
+                    </Label>
+                    <div className="flex items-center space-x-2">
+                      <Input
+                        type="url"
+                        id="image"
+                        name="image"
+                        value={formData.image}
+                        onChange={handleChange}
+                        className="flex-grow"
+                      />
+                      <FileImage className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                  </div>
+                  <div>
+                    <Label htmlFor="imagexl" className="block mb-1">
+                      ImageXL URL
+                    </Label>
+                    <div className="flex items-center space-x-2">
+                      <Input
+                        type="url"
+                        id="imagexl"
+                        name="imagexl"
+                        value={formData.imagexl}
+                        onChange={handleChange}
+                        className="flex-grow"
+                      />
+                      <FileImage className="h-5 w-5 text-muted-foreground" />
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <Label htmlFor="image2xl" className="block mb-1">
+                    Image2XL URL
+                  </Label>
+                  <div className="flex items-center space-x-2">
+                    <Input
+                      type="url"
+                      id="image2xl"
+                      name="image2xl"
+                      value={formData.image2xl}
+                      onChange={handleChange}
+                      className="flex-grow"
+                    />
+                    <FileImage className="h-5 w-5 text-muted-foreground" />
+                  </div>
+                </div>
+              </TabsContent>
+            </Tabs>
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? (
+                <>
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Creating Article...
+                </>
+              ) : (
+                "Create Article"
+              )}
             </Button>
           </form>
-          {status && <p className="mt-4 text-center">{status}</p>}
+          {status && (
+            <Alert className={`mt-6 ${status.type === "success" ? "bg-green-50" : "bg-red-50"}`}>
+              <AlertTitle>{status.type === "success" ? "Success" : "Error"}</AlertTitle>
+              <AlertDescription>{status.message}</AlertDescription>
+            </Alert>
+          )}
         </CardContent>
       </Card>
     </div>
-  );
-};
+  )
+}
 
-export default AdminPage;
+export default AdminPage
+

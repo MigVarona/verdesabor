@@ -10,8 +10,12 @@ interface Article {
   title: string;
   category: string;
   excerpt: string;
+  imagel: string;
   imagexl: string;
   text: string;
+  image2xl: string;
+  text2: string;
+  publishedAt: string; // Fecha de publicación
 }
 
 const FeaturedArticles = () => {
@@ -70,6 +74,20 @@ const FeaturedArticles = () => {
               <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
                 {article.category}
               </span>
+              {/* Fecha de publicación */}
+              <p className="text-sm text-gray-500">
+                {new Date(article.publishedAt).toLocaleDateString()}
+              </p>
+              {article.imagel && (
+                  <div className="relative w-full h-[40vh] lg:h-[70vh]">
+                    <Image
+                      src={article.imagel}
+                      alt={`${article.title} full width image`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
 
               <div className="clearfix mt-4">
                 {/* Imagen secundaria */}
@@ -105,6 +123,22 @@ const FeaturedArticles = () => {
                 {article.text && (
                   <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300">
                     {article.text}
+                  </p>
+                )}
+                {article.image2xl && (
+                  <div className="relative w-full h-[40vh] lg:h-[70vh]">
+                    <Image
+                      src={article.image2xl}
+                      alt={`${article.title} full width image`}
+                      layout="fill"
+                      objectFit="contain"
+                    />
+                  </div>
+                )}
+                {/* Texto adicional después de image2xl */}
+                {article.text2 && (
+                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300">
+                    {article.text2}
                   </p>
                 )}
               </div>

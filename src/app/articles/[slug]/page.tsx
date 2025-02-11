@@ -45,12 +45,6 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               {articleData.imagel && (
                 <div className="block lg:hidden mb-4">
                   <div className="relative w-full h-[40vh]">
-                    <Image
-                      src={articleData.imagel}
-                      alt={`${articleData.title} full width image`}
-                      layout="fill"
-                      objectFit="contain"
-                    />
                   </div>
                 </div>
               )}

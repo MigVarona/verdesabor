@@ -10,7 +10,6 @@ interface Article {
   title: string;
   category: string;
   excerpt: string;
-  imagel: string;
   imagexl: string;
   text: string;
   image2xl: string;
@@ -71,17 +70,7 @@ const FeaturedArticles = () => {
                 </div>
               )}
 
-              {/* Bloque exclusivo para desktop: Mostrar 'imagel' */}
-              {article.imagel && (
-                <div className="hidden lg:block relative w-full h-[70vh] mb-4">
-                  <Image
-                    src={article.imagel}
-                    alt={`${article.title} full width image`}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              )}
+            
 
               {/* Contenido común */}
               <div>

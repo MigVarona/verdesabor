@@ -50,7 +50,7 @@ const FeaturedArticles = () => {
   const olderArticles = articles.slice(0, articles.length - 1);
 
   return (
-    <section className="py-16 dark:bg-gray-900">
+    <section className="py-16">
       {/* Adjust the container width if needed for a smaller main article */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         {/* Main Article (displayed in full) */}
@@ -101,7 +101,7 @@ const FeaturedArticles = () => {
                   </div>
                 )}
                 {/* Excerpt */}
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-4">
+                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700  mb-4">
                   {mainArticle.excerpt}
                 </p>
                 {/* Full-width image (below the excerpt) */}
@@ -117,7 +117,7 @@ const FeaturedArticles = () => {
                 )}
                 {/* Additional text blocks */}
                 {mainArticle.text && (
-                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-4">
+                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700  mb-4">
                     {mainArticle.text}
                   </p>
                 )}
@@ -132,7 +132,7 @@ const FeaturedArticles = () => {
                   </div>
                 )}
                 {mainArticle.text2 && (
-                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300">
+                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 ">
                     {mainArticle.text2}
                   </p>
                 )}
@@ -177,7 +177,7 @@ const FeaturedArticles = () => {
                 </div>
 
                 {/* Excerpt */}
-                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700 dark:text-gray-300 line-clamp-2">
+                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700  line-clamp-2">
                   {article.excerpt}
                 </p>
               </div>

@@ -146,10 +146,13 @@ const FeaturedArticles = () => {
                     </p>
                   )}
                 </div>
+                <hr className="h-px bg-gray-300 border-0 mt-6 mb-6 block lg:hidden" />
+
               </div>
             </article>
           ))}
         </div>
+
       </div>
     </section>
   );

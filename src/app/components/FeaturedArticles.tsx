@@ -143,11 +143,12 @@ const FeaturedArticles = () => {
           </article>
         )}
         {/* Older Articles as Thumbnails */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="space-y-6">
           {olderArticles.map((article) => (
-            <article key={article._id} className="bg-white overflow-hidden shadow-lg">
+            <article key={article._id} className="flex bg-white overflow-hidden border-b border-gray-200 pb-6">
+              {/* Thumbnail image */}
               {article.image && (
-                <div className="relative w-full h-48">
+                <div className="relative w-24 h-24 flex-shrink-0 mr-4">
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
@@ -156,26 +157,27 @@ const FeaturedArticles = () => {
                   />
                 </div>
               )}
-              <div className="p-4">
+
+              <div className="flex-grow">
+                {/* Title */}
                 <div className="bg-custom-yellow mb-2 p-1 inline-block">
-                  <h3 className="text-xl text-gray-900 font-fira font-thin">
-                    <Link
-                      href={`/articles/${generateSlug(article.title)}`}
-                      className="hover:underline"
-                    >
+                  <h3 className="text-lg text-gray-900 font-fira font-thin">
+                    <Link href={`/articles/${generateSlug(article.title)}`} className="hover:underline">
                       {article.title}
                     </Link>
                   </h3>
                 </div>
+
+                {/* Category and date */}
                 <div className="mb-2">
                   <span className="text-[0.65em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase mr-2">
                     {article.category}
                   </span>
-                  <span className="text-xs text-gray-500">
-                    {new Date(article.publishedAt).toLocaleDateString()}
-                  </span>
+                  <span className="text-xs text-gray-500">{new Date(article.publishedAt).toLocaleDateString()}</span>
                 </div>
-                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700 dark:text-gray-300 line-clamp-3">
+
+                {/* Excerpt */}
+                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700 dark:text-gray-300 line-clamp-2">
                   {article.excerpt}
                 </p>
               </div>

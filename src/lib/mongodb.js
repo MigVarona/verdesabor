@@ -12,14 +12,12 @@ if (!process.env.MONGODB_URI) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  // En desarrollo, usar una variable global para conservar la conexión
   if (!global._mongoClientPromise) {
     client = new MongoClient(uri, options);
     global._mongoClientPromise = client.connect();
   }
   clientPromise = global._mongoClientPromise;
 } else {
-  // En producción, crear una nueva conexión
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }

@@ -43,8 +43,8 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
 
             <div className="clearfix mt-4">
               {articleData.imagel && (
-                <div className="block lg:hidden mb-4">
-                  <div className="relative w-full h-[40vh]">
+                <div className="">
+                  <div className="relative w-full lg:h-[70vh]">
                   </div>
                 </div>
               )}

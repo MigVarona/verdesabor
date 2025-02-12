@@ -49,24 +49,25 @@ const FeaturedArticles = () => {
     );
   }
 
-  // Use the last article as the main article and the rest as older articles.
-  const mainArticle = articles[articles.length - 1];
-  const olderArticles = articles.slice(0, articles.length - 1);
+  const total = articles.length;
+  const mainArticle = total > 0 ? articles[total - 1] : null;
+  const penultimateArticle = total > 1 ? articles[total - 2] : null;
+  const thumbnailArticles = total > 2 ? articles.slice(0, total - 2) : [];
 
   return (
     <section className="py-16">
       {/* Container for the main article */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         {mainArticle && (
-          <article className="bg-white overflow-hidden p-4 mb-16">
-            {/* Mobile image (visible only on mobile) */}
-            {mainArticle.image && (
-              <div className="block lg:hidden relative w-full h-[40vh] mb-4">
+          <article className="bg-white overflow-hidden p-4">
+
+            {mainArticle.imagexl && (
+              <div className="relative w-full h-[35vh] lg:h-[60vh]">
                 <Image
-                  src={mainArticle.image || "/placeholder.svg"}
-                  alt={`${mainArticle.title} mobile primary image`}
+                  src={mainArticle.imagexl || "/placeholder.svg"}
+                  alt={`${mainArticle.title} full width image`}
                   layout="fill"
-                  objectFit="cover"
+                  objectFit="contain"
                 />
               </div>
             )}
@@ -84,7 +85,7 @@ const FeaturedArticles = () => {
                 </h3>
               </div>
               {/* Category and Publication Date (below the title) */}
-              <div>
+              <div className="mb-4">
                 <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
                   {mainArticle.category}
                 </span>
@@ -92,17 +93,6 @@ const FeaturedArticles = () => {
                   {new Date(mainArticle.publishedAt).toLocaleDateString()}
                 </p>
               </div>
-              {/* Desktop full-width image directly below category & date */}
-              {mainArticle.imagexl && (
-                <div className="hidden lg:block relative w-full h-[59vh] mb-2">
-                  <Image
-                    src={mainArticle.imagexl || "/placeholder.svg"}
-                    alt={`${mainArticle.title} full width image`}
-                    layout="fill"
-                    objectFit="contain"
-                  />
-                </div>
-              )}
               <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
             </div>
           </article>
@@ -112,7 +102,7 @@ const FeaturedArticles = () => {
       {/* Container for older articles */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         <div className="space-y-6">
-          {olderArticles.map((article) => (
+          {thumbnailArticles.map((article) => (
             <article
               key={article._id}
               className="flex bg-white overflow-hidden border-b border-gray-200 pb-6"
@@ -158,6 +148,49 @@ const FeaturedArticles = () => {
           ))}
         </div>
       </div>
+
+      {/* Container for the penultimate article (displayed in full) */}
+      {penultimateArticle && (
+        <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl mt-4">
+          <article className="bg-white overflow-hidden p-4">
+            {/* Show the same image for mobile and desktop */}
+            {penultimateArticle.imagexl && (
+              <div className="relative w-full h-[35vh] lg:h-[60vh]">
+                <Image
+                  src={penultimateArticle.imagexl || "/placeholder.svg"}
+                  alt={`${penultimateArticle.title} full width image`}
+                  layout="fill"
+                  objectFit="contain"
+                />
+              </div>
+            )}
+            {/* Main content for penultimate article */}
+            <div>
+              {/* Title */}
+              <div className="bg-custom-yellow mb-2 p-2 inline-block">
+                <h3 className="text-3xl text-gray-900 font-fira font-thin">
+                  <Link
+                    href={`/articles/${generateSlug(penultimateArticle.title)}`}
+                    className="hover:underline"
+                  >
+                    {penultimateArticle.title}
+                  </Link>
+                </h3>
+              </div>
+              {/* Category and Publication Date */}
+              <div className="mb-4">
+                <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
+                  {penultimateArticle.category}
+                </span>
+                <p className="text-sm text-gray-500">
+                  {new Date(penultimateArticle.publishedAt).toLocaleDateString()}
+                </p>
+              </div>
+              <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
+            </div>
+          </article>
+        </div>
+      )}
     </section>
   );
 };

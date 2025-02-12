@@ -65,7 +65,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               </p>
 
               {articleData.imagexl && (
-                <div className="relative w-full h-[40vh] lg:h-[70vh]">
+                <div className="relative w-full h-[35vh] lg:h-[60vh]">
                   <Image
                     src={articleData.imagexl}
                     alt={`${articleData.title} full width image`}
@@ -82,7 +82,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.image2xl && (
-                <div className="relative w-full h-[40vh] lg:h-[70vh]">
+                <div className="relative w-full h-[35vh] lg:h-[60vh]">
                   <Image
                     src={articleData.image2xl}
                     alt={`${articleData.title} full width image`}

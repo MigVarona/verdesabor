@@ -38,19 +38,18 @@ const FeaturedArticles = () => {
   }, []);
 
   const generateSlug = (title: string) => {
-    return title
-      .toLowerCase()
-      .replace(/\s+/g, "-")
-      .replace(/[^\w-]+/g, "");
+    return title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
   };
 
   if (loading) {
     return (
-      <div className="text-center py-10 text-gray-500">Loading articles...</div>
+      <div className="text-center py-10 text-gray-500">
+        Loading articles...
+      </div>
     );
   }
 
-  // Use the last article as the main (full) article and the rest as older articles.
+  // Use the last article as the main article and the rest as older articles.
   const mainArticle = articles[articles.length - 1];
   const olderArticles = articles.slice(0, articles.length - 1);
 
@@ -60,7 +59,7 @@ const FeaturedArticles = () => {
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         {mainArticle && (
           <article className="bg-white overflow-hidden p-4 mb-16">
-            {/* Mobile image (visible on mobile only) */}
+            {/* Mobile image (visible only on mobile) */}
             {mainArticle.image && (
               <div className="block lg:hidden relative w-full h-[40vh] mb-4">
                 <Image
@@ -71,7 +70,6 @@ const FeaturedArticles = () => {
                 />
               </div>
             )}
-
             {/* Main content */}
             <div>
               {/* Title */}
@@ -85,9 +83,18 @@ const FeaturedArticles = () => {
                   </Link>
                 </h3>
               </div>
-              {/* Desktop full-width image directly below the title with reduced margin */}
+              {/* Category and Publication Date (below the title) */}
+              <div>
+                <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
+                  {mainArticle.category}
+                </span>
+                <p className="text-sm text-gray-500">
+                  {new Date(mainArticle.publishedAt).toLocaleDateString()}
+                </p>
+              </div>
+              {/* Desktop full-width image directly below category & date */}
               {mainArticle.imagexl && (
-                <div className="hidden lg:block relative w-full h-[60vh] mb-0">
+                <div className="hidden lg:block relative w-full h-[59vh] mb-2">
                   <Image
                     src={mainArticle.imagexl || "/placeholder.svg"}
                     alt={`${mainArticle.title} full width image`}
@@ -96,43 +103,6 @@ const FeaturedArticles = () => {
                   />
                 </div>
               )}
-              <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
-                {mainArticle.category}
-              </span>
-              {/* Publication date */}
-              <p className="text-sm text-gray-500">
-                {new Date(mainArticle.publishedAt).toLocaleDateString()}
-              </p>
-
-              <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
-
-              <div className="mt-4">
-                {/* Excerpt */}
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 mb-4">
-                  {mainArticle.excerpt}
-                </p>
-                {/* Additional text blocks */}
-                {mainArticle.text && (
-                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 mb-4">
-                    {mainArticle.text}
-                  </p>
-                )}
-                {mainArticle.image2xl && (
-                  <div className="relative w-full h-[70vh] mb-4">
-                    <Image
-                      src={mainArticle.image2xl || "/placeholder.svg"}
-                      alt={`${mainArticle.title} additional image`}
-                      layout="fill"
-                      objectFit="contain"
-                    />
-                  </div>
-                )}
-                {mainArticle.text2 && (
-                  <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700">
-                    {mainArticle.text2}
-                  </p>
-                )}
-              </div>
               <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
             </div>
           </article>
@@ -170,7 +140,7 @@ const FeaturedArticles = () => {
                     </Link>
                   </h3>
                 </div>
-                {/* Category and date */}
+                {/* Category and Date */}
                 <div className="mb-2">
                   <span className="text-[0.65em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase mr-2">
                     {article.category}

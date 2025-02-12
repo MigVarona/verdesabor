@@ -3,7 +3,7 @@ import Link from "next/link";
 const Header = () => {
   return (
     <>
-      <header className="border-b border-gray-100">
+      <header>
         <div className="container mx-auto px-4 py-6">
           <nav className="flex items-center justify-center">
             <Link
@@ -15,8 +15,10 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      <hr className="w-full border-[1px] border-gray-300" />
-      </>
+      {/* Contenedor para limitar el ancho del HR */}
+      <div className="container mx-auto px-4">
+      </div>
+    </>
   );
 };
 

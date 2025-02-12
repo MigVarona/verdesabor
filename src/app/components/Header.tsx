@@ -15,7 +15,6 @@ const Header = () => {
           </nav>
         </div>
       </header>
-      {/* Línea gris de ancho completo */}
       <hr className="w-full border-[1px] border-gray-300" />
       </>
   );

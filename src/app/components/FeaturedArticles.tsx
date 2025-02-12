@@ -45,7 +45,6 @@ const FeaturedArticles = () => {
     return <div className="text-center py-10 text-gray-500">Loading articles...</div>;
   }
 
-  // Use the last article as the main (full) article and the rest as older articles.
   const mainArticle = articles[articles.length - 1];
   const olderArticles = articles.slice(0, articles.length - 1);
 

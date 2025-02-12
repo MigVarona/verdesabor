@@ -32,7 +32,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}
       >
-        {/* Definir el componente por defecto para las rutas paralelas */}
         <div className="root-layout">
           {children || <div className="not-found">Ruta no encontrada</div>}
         </div>

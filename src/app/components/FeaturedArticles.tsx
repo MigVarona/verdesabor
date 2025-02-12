@@ -147,7 +147,7 @@ const FeaturedArticles = () => {
             <article key={article._id} className="flex bg-white overflow-hidden border-b border-gray-200 pb-6">
               {/* Thumbnail image */}
               {article.image && (
-                <div className="relative w-24 h-24 flex-shrink-0 mr-4">
+                <div className="relative w-40 h-40 flex-shrink-0 mr-4">
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}

@@ -62,12 +62,13 @@ const FeaturedArticles = () => {
           <article className="bg-white overflow-hidden p-4">
 
             {mainArticle.imagexl && (
-              <div className="relative w-full h-[35vh] lg:h-[70vh] mb-4">
+              <div className="relative w-full  mb-4">
                 <Image
                   src={mainArticle.imagexl || "/placeholder.svg"}
                   alt={`${mainArticle.title} full width image`}
-                  layout="fill"
                   objectFit="contain"
+                  width={900}
+                  height={600}
                 />
               </div>
             )}
@@ -155,11 +156,12 @@ const FeaturedArticles = () => {
           <article className="bg-white overflow-hidden p-4">
             {/* Show the same image for mobile and desktop */}
             {penultimateArticle.imagexl && (
-              <div className="relative w-full h-[35vh] lg:h-[75vh] mb-4">
+              <div className="relative w-full mb-4">
                 <Image
                   src={penultimateArticle.imagexl || "/placeholder.svg"}
                   alt={`${penultimateArticle.title} full width image`}
-                  layout="fill"
+                  width={900}
+                  height={600}
                   objectFit="contain"
                 />
               </div>

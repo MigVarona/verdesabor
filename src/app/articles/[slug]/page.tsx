@@ -12,16 +12,14 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
   const params = await props.params;
   const { slug } = params;
 
-  // Obtenemos el artículo por el slug
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/articles/${slug}`);
 
   if (!res.ok) {
-    notFound(); // Muestra 404 si no se encuentra el artículo
+    notFound();
   }
 
   const articleData = await res.json();
 
-  // Formateamos la fecha de publicación
   const publishedDate = new Date(articleData.publishedAt).toLocaleDateString();
 
   return (
@@ -50,7 +48,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.image && (
-                <div className="relative w-full  float-none lg:float-right ml-0 lg:ml-4 mb-4 lg:mt-4">
+                <div className="relative w-full float-none lg:float-right ml-0 lg:ml-4 mb-4">
                   <Image
                     src={articleData.image}
                     alt={articleData.title}
@@ -61,7 +59,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
                 </div>
               )}
 
-              <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-0">
+              <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-6 mt-2">
                 {articleData.excerpt}
               </p>
 
@@ -78,7 +76,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.text && (
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300">
+                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300  mb-6 mt-2">
                   {articleData.text}
                 </p>
               )}

@@ -110,12 +110,13 @@ const FeaturedArticles = () => {
             >
               {/* Thumbnail image */}
               {article.image && (
-                <div className="relative w-40 h-40 flex-shrink-0 mr-4 ">
+                <div className="relative flex-shrink-0 mr-4 ">
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
-                    layout="fill"
                     objectFit="cover"
+                    width={150}
+                    height={100}
                   />
                 </div>
               )}

@@ -44,17 +44,18 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
             <div className="clearfix mt-4">
               {articleData.imagel && (
                 <div className="">
-                  <div className="relative w-full lg:h-[70vh]">
+                  <div className="relative w-full">
                   </div>
                 </div>
               )}
 
               {articleData.image && (
-                <div className="relative w-full lg:w-64 h-64 lg:h-64 float-none lg:float-right ml-0 lg:ml-4 mb-4 lg:mt-4">
+                <div className="relative w-full  float-none lg:float-right ml-0 lg:ml-4 mb-4 lg:mt-4">
                   <Image
                     src={articleData.image}
                     alt={articleData.title}
-                    layout="fill"
+                    width={900}
+                    height={600}
                     objectFit="cover"
                   />
                 </div>
@@ -65,11 +66,12 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               </p>
 
               {articleData.imagexl && (
-                <div className="relative w-full h-[35vh] lg:h-[60vh]">
+                <div className="relative w-full">
                   <Image
                     src={articleData.imagexl}
                     alt={`${articleData.title} full width image`}
-                    layout="fill"
+                    width={900}
+                    height={600}
                     objectFit="contain"
                   />
                 </div>
@@ -82,11 +84,12 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.image2xl && (
-                <div className="relative w-full h-[35vh] lg:h-[60vh]">
+                <div className="relative w-full">
                   <Image
                     src={articleData.image2xl}
                     alt={`${articleData.title} full width image`}
-                    layout="fill"
+                    width={900}
+                  height={600}
                     objectFit="contain"
                   />
                 </div>

@@ -25,7 +25,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
   return (
     <>
       <Header />
-      <section className="py-16 dark:bg-gray-900">
+      <section className="py-16">
         <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
           <article className="bg-white overflow-hidden p-4">
             <div className="bg-custom-yellow mb-4 p-2 inline-block">
@@ -59,7 +59,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
                 </div>
               )}
 
-              <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mb-6 mt-6">
+              <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700  mb-6 mt-6">
                 {articleData.excerpt}
               </p>
 
@@ -76,7 +76,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.text && (
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300  mb-6 mt-4">
+                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700   mb-6 mt-4">
                   {articleData.text}
                 </p>
               )}
@@ -94,7 +94,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
               )}
 
               {articleData.text2 && (
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 dark:text-gray-300 mt-4">
+                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700  mt-4">
                   {articleData.text2}
                 </p>
               )}

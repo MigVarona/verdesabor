@@ -17,7 +17,7 @@ interface Article {
   publishedAt: string;
 }
 
-const NutritioCategory = () => {
+const NutritionCategory = () => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
 
@@ -105,4 +105,4 @@ const NutritioCategory = () => {
   );
 };
 
-export default NutritioCategory;
+export default NutritionCategory;

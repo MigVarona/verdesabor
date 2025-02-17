@@ -7,8 +7,11 @@ import { Menu, X } from "lucide-react"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
+  const [isClient, setIsClient] = useState(false) 
 
   useEffect(() => {
+    setIsClient(true) 
+
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -38,9 +41,8 @@ const Header = () => {
     <header className="py-6 md:py-10 relative z-50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center">
-          {/* Header principal */}
           <div className="w-full flex items-center justify-between mb-6 md:mb-8">
-            {isMobile && (
+            {isClient && isMobile && (
               <button
                 onClick={toggleMenu}
                 className="text-gray-700 hover:text-black transition-colors"
@@ -59,11 +61,10 @@ const Header = () => {
               </Link>
             </div>
 
-            {isMobile && <div className="w-6" />}
+            {isClient && isMobile && <div className="w-6" />}
           </div>
 
-          {/* Navbar en escritorio */}
-          {!isMobile && (
+          {isClient && !isMobile && (
             <nav className="w-full">
               <ul className="flex justify-center space-x-6 lg:space-x-12 text-base font-duplet text-gray-700">
                 {menuItems.map((item) => (
@@ -79,8 +80,7 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Menú móvil */}
-      {isMobile && (
+      {isClient && isMobile && (
         <div
           className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "-translate-x-full"
@@ -88,7 +88,7 @@ const Header = () => {
         >
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
-              <div className="w-6" /> 
+              <div className="w-6" />
               <Link
                 href="/"
                 className="text-3xl text-gray-900 font-bold font-noto tracking-[0.15em]"
@@ -131,4 +131,3 @@ const Header = () => {
 }
 
 export default Header
-

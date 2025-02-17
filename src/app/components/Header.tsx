@@ -7,10 +7,10 @@ import { Menu, X } from "lucide-react"
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isMobile, setIsMobile] = useState(false)
-  const [isClient, setIsClient] = useState(false) 
+  const [isClient, setIsClient] = useState(false)
 
   useEffect(() => {
-    setIsClient(true) 
+    setIsClient(true)
 
     const checkIsMobile = () => {
       setIsMobile(window.innerWidth < 768)
@@ -82,9 +82,8 @@ const Header = () => {
 
       {isClient && isMobile && (
         <div
-          className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${
-            isMenuOpen ? "translate-x-0" : "-translate-x-full"
-          }`}
+          className={`fixed inset-0 bg-white z-40 transform transition-transform duration-300 ease-in-out ${isMenuOpen ? "translate-x-0" : "-translate-x-full"
+            }`}
         >
           <div className="container mx-auto px-4 py-6">
             <div className="flex justify-between items-center mb-8">
@@ -122,10 +121,10 @@ const Header = () => {
           </div>
         </div>
       )}
-
       <div className="container mx-auto px-4 mt-6 md:mt-8">
-        <hr className="border-t border-gray-300" />
+        <hr className="border-t border-gray-300 mx-auto" style={{ width: "90%" }} />
       </div>
+
     </header>
   )
 }

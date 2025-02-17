@@ -56,7 +56,6 @@ export async function POST(request) {
       );
     }
 
-    // Genera el slug a partir del título (opcional)
     const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 
     const article = {

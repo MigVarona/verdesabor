@@ -24,32 +24,31 @@ const NutritionCategory = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch("/api/articles");
+        const response = await fetch("/api/articles/category/Nutrition"); 
         const data = await response.json();
-        const filteredArticles = data
-          .filter((article: Article) => article.category.toLowerCase() === "nutrition")
-          .sort((a: Article, b: Article) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime());
-  
-        setArticles(filteredArticles);
+
+        setArticles(
+          data.sort(
+            (a: Article, b: Article) =>
+              new Date(b.publishedAt).getTime() -
+              new Date(a.publishedAt).getTime()
+          )
+        );
       } catch (error) {
         console.error("Error fetching articles:", error);
       } finally {
         setLoading(false);
       }
     };
-  
+
     fetchArticles();
   }, []);
-  
 
-  const generateSlug = (title: string) => {
-    return title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
-  };
+  const generateSlug = (title: string) =>
+    title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
 
   if (loading) {
-    return (
-      <div className="text-center py-10 text-gray-500">Loading articles...</div>
-    );
+    return <div className="text-center py-10 text-gray-500">Loading articles...</div>;
   }
 
   if (articles.length === 0) {
@@ -87,7 +86,7 @@ const NutritionCategory = () => {
                   </Link>
                 </h3>
               </div>
-              
+
               <div className="mb-4">
                 <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
                   {article.category}

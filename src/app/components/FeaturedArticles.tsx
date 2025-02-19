@@ -119,14 +119,11 @@ const FeaturedArticles = () => {
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
+                    objectFit="cover"
                     width={150}
                     height={100}
-                    style={{
-                      width: "auto", 
-                      height: "auto",
-                      objectFit: "cover"
-                    }}
                   />
+
 
                 </div>
               )}

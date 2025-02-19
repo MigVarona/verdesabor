@@ -55,7 +55,7 @@ const FeaturedArticles = () => {
   const thumbnailArticles = total > 2 ? articles.slice(0, total - 2) : [];
 
   return (
-    <section className="py-16">
+    (<section className="py-16">
       {/* Container for the main article */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         {mainArticle && (
@@ -66,10 +66,16 @@ const FeaturedArticles = () => {
                 <Image
                   src={mainArticle.imagexl || "/placeholder.svg"}
                   alt={`${mainArticle.title} full width image`}
-                  objectFit="contain"
                   width={900}
                   height={600}
+                  priority 
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto", 
+                    objectFit: "contain"
+                  }}
                 />
+
               </div>
             )}
             {/* Main content */}
@@ -99,7 +105,6 @@ const FeaturedArticles = () => {
           </article>
         )}
       </div>
-
       {/* Container for older articles */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         <div className="space-y-6">
@@ -114,10 +119,15 @@ const FeaturedArticles = () => {
                   <Image
                     src={article.image || "/placeholder.svg"}
                     alt={article.title}
-                    objectFit="cover"
                     width={150}
                     height={100}
+                    style={{
+                      width: "auto", 
+                      height: "auto",
+                      objectFit: "cover"
+                    }}
                   />
+
                 </div>
               )}
               <div className="flex-grow">
@@ -150,7 +160,6 @@ const FeaturedArticles = () => {
           ))}
         </div>
       </div>
-
       {/* Container for the penultimate article (displayed in full) */}
       {penultimateArticle && (
         <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl mt-4">
@@ -163,8 +172,11 @@ const FeaturedArticles = () => {
                   alt={`${penultimateArticle.title} full width image`}
                   width={900}
                   height={600}
-                  objectFit="contain"
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
               </div>
             )}
             {/* Main content for penultimate article */}
@@ -194,7 +206,7 @@ const FeaturedArticles = () => {
           </article>
         </div>
       )}
-    </section>
+    </section>)
   );
 };
 

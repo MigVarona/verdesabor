@@ -60,7 +60,7 @@ const NutritionCategory = () => {
   }
 
   return (
-    <section className="py-16">
+    (<section className="py-16">
       {articles.map((article) => (
         <div key={article._id} className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
           <article className="bg-white overflow-hidden p-4">
@@ -69,10 +69,13 @@ const NutritionCategory = () => {
                 <Image
                   src={article.imagexl || "/placeholder.svg"}
                   alt={article.title}
-                  objectFit="contain"
                   width={900}
                   height={600}
-                />
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto",
+                    objectFit: "contain"
+                  }} />
               </div>
             )}
             <div>
@@ -100,7 +103,7 @@ const NutritionCategory = () => {
           </article>
         </div>
       ))}
-    </section>
+    </section>)
   );
 };
 

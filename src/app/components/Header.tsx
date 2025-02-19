@@ -31,10 +31,10 @@ const Header = () => {
   const menuItems = [
     { href: "/nutrition", label: "Nutrition" },
     { href: "/biohacking", label: "Biohacking" },
-    { href: "/fitness", label: "Fitness" },
+    { href: "/neuroscience", label: "Neuroscience" },
     { href: "/wellness", label: "Wellness" },
     { href: "/lifestyle", label: "Lifestyle" },
-    { href: "/supplements", label: "Supplements" },
+    { href: "/longevity", label: "Longevity" },
   ]
 
   return (

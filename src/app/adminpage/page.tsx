@@ -10,10 +10,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
 import { FileImage, Loader2, PenTool } from "lucide-react"
 
+const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Lifestyle", "Longevity"]
+
 const AdminPage = () => {
   const [formData, setFormData] = useState({
     title: "",
-    category: "",
+    category: categories[0], // Establecer la primera categoría como predeterminada
     excerpt: "",
     publishedAt: "",
     image: "",
@@ -26,7 +28,7 @@ const AdminPage = () => {
   const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -48,7 +50,7 @@ const AdminPage = () => {
         setStatus({ type: "success", message: `Article created successfully with ID: ${data.insertedId}` })
         setFormData({
           title: "",
-          category: "",
+          category: categories[0],
           excerpt: "",
           publishedAt: "",
           image: "",
@@ -96,14 +98,20 @@ const AdminPage = () => {
                 <Label htmlFor="category" className="block mb-1">
                   Category
                 </Label>
-                <Input
+                <select
                   id="category"
                   name="category"
                   value={formData.category}
                   onChange={handleChange}
                   required
-                  className="w-full"
-                />
+                  className="w-full p-2 border border-gray-300 rounded-md"
+                >
+                  {categories.map((category) => (
+                    <option key={category} value={category}>
+                      {category}
+                    </option>
+                  ))}
+                </select>
               </div>
             </div>
             <div>
@@ -244,4 +252,3 @@ const AdminPage = () => {
 }
 
 export default AdminPage
-

@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import Header from '@/app/components/Header';
 import Newsletter from '@/app/components/Newsletter';
 import Footer from '@/app/components/Footer';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 interface Params {
   slug: string;

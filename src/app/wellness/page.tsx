@@ -3,12 +3,12 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 
-function LifestylePage() {
+function WellnessPage() {
   return (
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <CategoryArticles category="lifestyle" />
+        <CategoryArticles category="wellness" />
         <Newsletter />
       </main>
       <Footer />
@@ -16,4 +16,4 @@ function LifestylePage() {
   );
 }
 
-export default LifestylePage;
+export default WellnessPage

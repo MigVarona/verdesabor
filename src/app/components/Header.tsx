@@ -52,14 +52,11 @@ const Header = () => {
               </button>
             )}
 
-            <div className="flex-1 flex justify-center">
-              <Link
-                href="/"
-                className="text-3xl md:text-4xl lg:text-5xl text-gray-900 font-bold font-noto tracking-[0.15em]"
-              >
-                RENEW
+            <h1 className="flex-1 flex justify-center">
+              <Link href="/" className="text-3xl md:text-4xl lg:text-5xl text-gray-900 font-bold tracking-[0.15em] font-noto">
+                <span>RENEW</span>
               </Link>
-            </div>
+            </h1>
 
             {isClient && isMobile && <div className="w-6" />}
           </div>

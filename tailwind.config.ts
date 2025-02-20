@@ -17,7 +17,7 @@ export default {
       fontFamily: {
         fira: ['"Fira Sans"', 'Arial', 'sans-serif'],
         tisa: ['"ff-tisa-web-pro"', 'serif', 'Georgia'],
-        noto: ['"Noto Sans"', 'Arial', 'sans-serif'],
+        noto: ['"Noto Sans"', '"Helvetica Neue"', 'Arial', 'sans-serif'],
         duplet: ['Duplet', 'sans-serif'], 
 
 

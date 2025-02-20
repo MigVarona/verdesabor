@@ -9,7 +9,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-gradient-to-b from-white to-green-50">
+    <footer className="relative">
       <div className="absolute right-6 -top-6">
         <button
           onClick={scrollToTop}
@@ -39,19 +39,24 @@ export default function Footer() {
               Categories
             </h3>
             <ul className="space-y-3">
-              {["Nutrition", "Exercise", "Mental Wellness", "Healthy Recipes"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 flex items-center gap-2 group"
-                    >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-gray-800 transition-all duration-200"></span>
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+                { name: "Nutrition", path: "/nutrition" },
+                { name: "Biohacking", path: "/biohacking" },
+                { name: "Neuroscience", path: "/neuroscience" },
+                { name: "Wellness", path: "/wellness" },
+                { name: "Lifestyle", path: "/lifestyle" },
+                { name: "Longevity", path: "/longevity" }
+              ].map(({ name, path }) => (
+                <li key={name}>
+                  <Link
+                    href={path}
+                    className="text-gray-600  transition-colors duration-200 flex items-center gap-2 group"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-gray-800 transition-all duration-200"></span>
+                    {name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -66,7 +71,7 @@ export default function Footer() {
                   <li key={item}>
                     <Link
                       href="#"
-                      className="text-gray-600 hover:text-emerald-600 transition-colors duration-200 flex items-center gap-2 group"
+                      className="text-gray-600  transition-colors duration-200 flex items-center gap-2 group"
                     >
                       <span className="w-0 group-hover:w-2 h-0.5 bg-gray-800 transition-all duration-200"></span>
                       {item}
@@ -102,7 +107,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-emerald-100">
+        <div className="mt-16 pt-8 border-t border-gray-200">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-600">
             <p className="text-sm flex items-center gap-2">
               &copy; {new Date().getFullYear()} RENEW.

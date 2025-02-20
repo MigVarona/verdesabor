@@ -1,4 +1,3 @@
-// app/api/articles/route.js
 import clientPromise from '../../../lib/mongodb';
 import { NextResponse } from 'next/server';
 
@@ -7,7 +6,10 @@ async function getArticles() {
     const client = await clientPromise;
     const db = client.db("verdesabor");
     const collection = db.collection("articles");
-    const articles = await collection.find().toArray();
+    
+    // Obtener artículos ordenados por fecha de publicación (más recientes primero)
+    const articles = await collection.find().sort({ publishedAt: -1 }).toArray();
+    
     return articles;
   } catch (error) {
     console.error("Error al obtener los artículos:", error);
@@ -19,14 +21,10 @@ export async function GET() {
   try {
     const articles = await getArticles();
 
-    if (!articles || articles.length === 0) {
-      return new Response(JSON.stringify({ message: "No hay artículos disponibles" }), { status: 404 });
-    }
-
-    return new Response(JSON.stringify(articles), { status: 200 });
+    return NextResponse.json(articles, { status: 200 });
   } catch (error) {
-    return new Response(
-      JSON.stringify({ message: "Error al obtener los artículos", error: error.message }),
+    return NextResponse.json(
+      { message: "Error al obtener los artículos", error: error.message },
       { status: 500 }
     );
   }

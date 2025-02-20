@@ -55,14 +55,13 @@ const FeaturedArticles = () => {
   const thumbnailArticles = total > 2 ? articles.slice(0, total - 2) : [];
 
   return (
-    (<section className="py-16">
+    <section className="py-16">
       {/* Container for the main article */}
       <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
         {mainArticle && (
           <article className="bg-white overflow-hidden p-4">
-
             {mainArticle.imagexl && (
-              <div className="relative w-full  mb-4">
+              <div className="relative w-full mb-4">
                 <Image
                   src={mainArticle.imagexl || "/placeholder.svg"}
                   alt={`${mainArticle.title} full width image`}
@@ -75,7 +74,6 @@ const FeaturedArticles = () => {
                     objectFit: "contain"
                   }}
                 />
-
               </div>
             )}
             {/* Main content */}
@@ -123,8 +121,6 @@ const FeaturedArticles = () => {
                     width={150}
                     height={100}
                   />
-
-
                 </div>
               )}
               <div className="flex-grow">
@@ -148,8 +144,8 @@ const FeaturedArticles = () => {
                     {new Date(article.publishedAt).toLocaleDateString()}
                   </span>
                 </div>
-                {/* Excerpt */}
-                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700 line-clamp-2">
+                {/* Excerpt - Oculto en móviles, truncado a 2 líneas en sm y mayores */}
+                <p className="font-tisa font-normal text-sm leading-[1.5em] text-gray-700 hidden sm:line-clamp-2">
                   {article.excerpt}
                 </p>
               </div>
@@ -173,7 +169,8 @@ const FeaturedArticles = () => {
                     maxWidth: "100%",
                     height: "auto",
                     objectFit: "contain"
-                  }} />
+                  }}
+                />
               </div>
             )}
             {/* Main content for penultimate article */}
@@ -203,7 +200,7 @@ const FeaturedArticles = () => {
           </article>
         </div>
       )}
-    </section>)
+    </section>
   );
 };
 

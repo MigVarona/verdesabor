@@ -88,20 +88,33 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex gap-4">
-              {[
-                { icon: Facebook, label: "Facebook" },
-                { icon: Instagram, label: "Instagram" },
-                { icon: Twitter, label: "Twitter" }
-              ].map(({ icon: Icon, label }) => (
-                <Link
-                  key={label}
-                  href="#"
-                  className="p-2 rounded-full transition-colors duration-200 group"
-                  aria-label={label}
-                >
-                  <Icon className="w-5 h-5 text-gray" />
-                </Link>
-              ))}
+              <Link
+                href="https://www.facebook.com/"
+                className="p-2 rounded-full transition-colors duration-200 group"
+                aria-label="Facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Facebook className="w-5 h-5 text-gray" />
+              </Link>
+              <Link
+                href="https://www.instagram.com/renew.habits/"
+                className="p-2 rounded-full transition-colors duration-200 group"
+                aria-label="Instagram"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Instagram className="w-5 h-5 text-gray" />
+              </Link>
+              <Link
+                href="https://twitter.com/"
+                className="p-2 rounded-full transition-colors duration-200 group"
+                aria-label="Twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Twitter className="w-5 h-5 text-gray" />
+              </Link>
             </div>
             <p className="text-sm text-gray-600">Join our healthy community</p>
           </div>

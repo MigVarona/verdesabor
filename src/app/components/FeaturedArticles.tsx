@@ -1,75 +1,96 @@
-"use client";
+"use client"
 
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
+import { useEffect, useState } from "react"
+import Image from "next/image"
+import Link from "next/link"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+import { Button } from "@/components/ui/button"
 
 interface Article {
-  _id: string;
-  image: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  imagexl: string;
-  text: string;
-  image2xl: string;
-  text2: string;
-  publishedAt: string;
+  _id: string
+  image: string
+  title: string
+  category: string
+  excerpt: string
+  imagexl: string
+  text: string
+  image2xl: string
+  text2: string
+  publishedAt: string
 }
 
 const FeaturedArticles = () => {
-  const [articles, setArticles] = useState<Article[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [articles, setArticles] = useState<Article[]>([])
+  const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const articlesPerPage = 10
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const response = await fetch("/api/articles");
-        const data = await response.json();
+        const response = await fetch("/api/articles")
+        const data = await response.json()
 
         if (Array.isArray(data)) {
-          setArticles(data);
+          setArticles(data)
         } else {
-          console.error("La respuesta no es un array:", data);
-          setArticles([]);
+          console.error("La respuesta no es un array:", data)
+          setArticles([])
         }
       } catch (error) {
-        console.error("Error fetching articles:", error);
-        setArticles([]);
+        console.error("Error fetching articles:", error)
+        setArticles([])
       } finally {
-        setLoading(false);
+        setLoading(false)
       }
-    };
+    }
 
-    fetchArticles();
-  }, []);
+    fetchArticles()
+  }, [])
 
   const generateSlug = (title: string) => {
-    return title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
-  };
+    return title
+      .toLowerCase()
+      .replace(/\s+/g, "-")
+      .replace(/[^\w-]+/g, "")
+  }
 
   if (loading) {
-    return <div className="text-center py-10 text-gray-500">Cargando artículos...</div>;
+    return <div className="text-center py-10 text-gray-500">Cargando artículos...</div>
   }
 
   if (articles.length === 0) {
-    return <div className="text-center py-10 text-gray-500">No hay artículos disponibles.</div>;
+    return <div className="text-center py-10 text-gray-500">No hay artículos disponibles.</div>
   }
 
-  const blocks = [];
-  let i = 0;
+  const indexOfLastArticle = currentPage * articlesPerPage
+  const indexOfFirstArticle = indexOfLastArticle - articlesPerPage
+  const currentArticles = articles.slice(indexOfFirstArticle, indexOfLastArticle)
 
-  while (i < articles.length) {
-    const mainArticle = i < articles.length ? articles[i] : null;
-    i++;
-    const thumbnailArticles = i + 2 < articles.length ? articles.slice(i, i + 3) : articles.slice(i);
-    i += thumbnailArticles.length;
-    const penultimateArticle = i < articles.length ? articles[i] : null;
-    i++;
+  const blocks = []
+  let i = 0
 
-    blocks.push({ mainArticle, thumbnailArticles, penultimateArticle });
+  while (i < currentArticles.length) {
+    const mainArticle = i < currentArticles.length ? currentArticles[i] : null
+    i++
+    const thumbnailArticles =
+      i + 2 < currentArticles.length ? currentArticles.slice(i, i + 3) : currentArticles.slice(i)
+    i += thumbnailArticles.length
+    const penultimateArticle = i < currentArticles.length ? currentArticles[i] : null
+    i++
+
+    blocks.push({ mainArticle, thumbnailArticles, penultimateArticle })
   }
 
+  const totalPages = Math.ceil(articles.length / articlesPerPage)
+
+  const handlePreviousPage = () => {
+    setCurrentPage((prevPage) => Math.max(prevPage - 1, 1))
+  }
+
+  const handleNextPage = () => {
+    setCurrentPage((prevPage) => Math.min(prevPage + 1, totalPages))
+  }
 
   return (
     <section className="py-16">
@@ -81,7 +102,7 @@ const FeaturedArticles = () => {
                 {block.mainArticle.imagexl && (
                   <div className="relative w-full mb-4">
                     <Image
-                      src={block.mainArticle.imagexl}
+                      src={block.mainArticle.imagexl || "/placeholder.svg"}
                       alt={block.mainArticle.title}
                       width={900}
                       height={600}
@@ -120,7 +141,7 @@ const FeaturedArticles = () => {
                     {article.image && (
                       <div className="relative flex-shrink-0 mr-4">
                         <Image
-                          src={article.image}
+                          src={article.image || "/placeholder.svg"}
                           alt={article.title}
                           width={150}
                           height={100}
@@ -144,9 +165,7 @@ const FeaturedArticles = () => {
                           {new Date(article.publishedAt).toLocaleDateString()}
                         </span>
                       </div>
-                      <p className="font-tisa text-sm text-gray-700 hidden sm:line-clamp-2">
-                        {article.excerpt}
-                      </p>
+                      <p className="font-tisa text-sm text-gray-700 hidden sm:line-clamp-2">{article.excerpt}</p>
                     </div>
                   </article>
                 ))}
@@ -160,7 +179,7 @@ const FeaturedArticles = () => {
                 {block.penultimateArticle.imagexl && (
                   <div className="relative w-full mb-4">
                     <Image
-                      src={block.penultimateArticle.imagexl}
+                      src={block.penultimateArticle.imagexl || "/placeholder.svg"}
                       alt={block.penultimateArticle.title}
                       width={900}
                       height={600}
@@ -171,7 +190,10 @@ const FeaturedArticles = () => {
                 <div>
                   <div className="bg-custom-yellow mb-2 p-2 inline-block">
                     <h3 className="text-3xl text-gray-900 font-fira font-thin">
-                      <Link href={`/articles/${generateSlug(block.penultimateArticle.title)}`} className="hover:underline">
+                      <Link
+                        href={`/articles/${generateSlug(block.penultimateArticle.title)}`}
+                        className="hover:underline"
+                      >
                         {block.penultimateArticle.title}
                       </Link>
                     </h3>
@@ -191,8 +213,26 @@ const FeaturedArticles = () => {
           )}
         </div>
       ))}
+      <div className="flex justify-center items-center space-x-4 mt-8">
+        <Button
+          variant="outline"
+          onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+        >
+          <ChevronLeft className="w-5 h-5 mr-2" /> Previous
+        </Button>
+        <span className="text-gray-700">Page {currentPage} of {totalPages}</span>
+        <Button
+          variant="outline"
+          onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
+          disabled={currentPage === totalPages}
+        >
+          Next <ChevronRight className="w-5 h-5 ml-2" />
+        </Button>
+      </div>
     </section>
-  );
-};
+  )
+}
 
-export default FeaturedArticles;
+export default FeaturedArticles
+

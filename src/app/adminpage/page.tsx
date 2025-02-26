@@ -15,7 +15,7 @@ const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Life
 const AdminPage = () => {
   const [formData, setFormData] = useState({
     title: "",
-    category: categories[0], 
+    category: categories[0],
     excerpt: "",
     publishedAt: "",
     image: "",
@@ -38,7 +38,7 @@ const AdminPage = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
-  
+
     try {
       const res = await fetch("/api/articles", {
         method: "POST",
@@ -47,10 +47,10 @@ const AdminPage = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       const data = await res.json();
       if (res.ok) {
-        setStatus({ type: "success", message: `Article created successfully with ID: ${data.insertedId}` });
+        setStatus({ type: "success", message: `Artículo creado con ID: ${data.insertedId}` });
         setFormData({
           title: "",
           category: categories[0],
@@ -71,8 +71,8 @@ const AdminPage = () => {
       setIsSubmitting(false);
     }
   };
-  
-  
+
+
 
   return (
     <div className="container mx-auto p-6">

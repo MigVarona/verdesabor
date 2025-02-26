@@ -6,21 +6,30 @@ async function getArticles() {
     const client = await clientPromise;
     const db = client.db("verdesabor");
     const collection = db.collection("articles");
-    
-    // Obtener artículos ordenados por fecha de publicación (más recientes primero)
-    const articles = await collection.find().sort({ publishedAt: -1 }).toArray();
-    
-    return articles;
+
+    return await collection.find().sort({ publishedAt: -1 }).toArray();
   } catch (error) {
-    console.error("Error al obtener los artículos:", error);
+    console.error("❌ Error al obtener los artículos:", error);
     throw error;
   }
 }
 
-export async function GET() {
+function authenticateRequest(request) {
+  const apiKey = request.headers.get('x-api-key');
+
+  console.log("🔍 API Key enviada:", apiKey);
+  console.log("🔍 API Key esperada:", process.env.NEXT_PUBLIC_API_KEY);
+
+  if (!apiKey || apiKey !== process.env.NEXT_PUBLIC_API_KEY) {
+    return { error: 'API Key inválida', status: 401 };
+  }
+
+  return { success: true };
+}
+
+export async function GET(request) {
   try {
     const articles = await getArticles();
-
     return NextResponse.json(articles, { status: 200 });
   } catch (error) {
     return NextResponse.json(
@@ -31,38 +40,26 @@ export async function GET() {
 }
 
 export async function POST(request) {
+  const auth = authenticateRequest(request);
+  if (auth.error) {
+    return NextResponse.json({ success: false, error: auth.error }, { status: auth.status });
+  }
+
   try {
     const data = await request.json();
-
-    const {
-      image,
-      title,
-      category,
-      excerpt,
-      imagel,
-      imagexl,
-      text,
-      image2xl,
-      text2,
-      publishedAt,
-    } = data;
+    const { image, title, category, excerpt, imagexl, text, image2xl, text2, publishedAt } = data;
 
     if (!title || !category || !excerpt || !publishedAt) {
-      return NextResponse.json(
-        { success: false, error: 'Missing required fields' },
-        { status: 400 }
-      );
+      return NextResponse.json({ success: false, error: 'Faltan campos obligatorios' }, { status: 400 });
     }
 
     const slug = title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
-
     const article = {
       slug,
       image: image || '',
       title,
       category,
       excerpt,
-      imagel: imagel || '',
       imagexl: imagexl || '',
       text: text || '',
       image2xl: image2xl || '',
@@ -76,10 +73,7 @@ export async function POST(request) {
 
     return NextResponse.json({ success: true, insertedId: result.insertedId });
   } catch (error) {
-    console.error('Error creating article:', error);
-    return NextResponse.json(
-      { success: false, error: 'Error creating article' },
-      { status: 500 }
-    );
+    console.error('❌ Error al crear el artículo:', error);
+    return NextResponse.json({ success: false, error: 'Error creando el artículo' }, { status: 500 });
   }
 }

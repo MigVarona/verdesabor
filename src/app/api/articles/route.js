@@ -58,7 +58,7 @@ export async function POST(request) {
       title,
       category,
       excerpt,
-      imagel: imagel || '', // ✅ También aquí
+      imagel: imagel || '', 
       imagexl: imagexl || '',
       text: text || '',
       image2xl: image2xl || '',

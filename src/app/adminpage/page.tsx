@@ -44,7 +44,6 @@ const AdminPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": process.env.NEXT_PUBLIC_API_KEY || "", 
         },
         body: JSON.stringify(formData),
       });
@@ -72,6 +71,7 @@ const AdminPage = () => {
       setIsSubmitting(false);
     }
   };
+  
   
 
   return (

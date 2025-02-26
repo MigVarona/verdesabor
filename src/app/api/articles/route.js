@@ -18,14 +18,15 @@ function authenticateRequest(request) {
   const apiKey = request.headers.get('x-api-key');
 
   console.log("🔍 API Key enviada:", apiKey);
-  console.log("🔍 API Key esperada:", process.env.NEXT_PUBLIC_API_KEY);
+  console.log("🔍 API Key esperada:", process.env.API_KEY); 
 
-  if (!apiKey || apiKey !== process.env.NEXT_PUBLIC_API_KEY) {
+  if (!apiKey || apiKey !== process.env.API_KEY) {  
     return { error: 'API Key inválida', status: 401 };
   }
 
   return { success: true };
 }
+
 
 export async function GET(request) {
   try {

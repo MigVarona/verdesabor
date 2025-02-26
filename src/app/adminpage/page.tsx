@@ -15,7 +15,7 @@ const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Life
 const AdminPage = () => {
   const [formData, setFormData] = useState({
     title: "",
-    category: categories[0], // Establecer la primera categoría como predeterminada
+    category: categories[0], 
     excerpt: "",
     publishedAt: "",
     image: "",
@@ -36,18 +36,22 @@ const AdminPage = () => {
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
+    e.preventDefault();
+    setIsSubmitting(true);
+  
     try {
       const res = await fetch("/api/articles", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          "x-api-key": process.env.NEXT_PUBLIC_API_KEY || "", 
+        },
         body: JSON.stringify(formData),
-      })
-      const data = await res.json()
+      });
+  
+      const data = await res.json();
       if (res.ok) {
-        setStatus({ type: "success", message: `Article created successfully with ID: ${data.insertedId}` })
+        setStatus({ type: "success", message: `Article created successfully with ID: ${data.insertedId}` });
         setFormData({
           title: "",
           category: categories[0],
@@ -58,16 +62,17 @@ const AdminPage = () => {
           text: "",
           image2xl: "",
           text2: "",
-        })
+        });
       } else {
-        setStatus({ type: "error", message: `Error: ${data.error}` })
+        setStatus({ type: "error", message: `Error: ${data.error}` });
       }
     } catch (error) {
-      setStatus({ type: "error", message: `Error: ${(error as any).message}` })
+      setStatus({ type: "error", message: `Error: ${(error as any).message}` });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
+  
 
   return (
     <div className="container mx-auto p-6">

@@ -1,18 +1,19 @@
-"use client"
+"use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { FileImage, Loader2, PenTool, LogOut } from "lucide-react";
 
-import { useState } from "react"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import { FileImage, Loader2, PenTool } from "lucide-react"
-
-const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Lifestyle", "Longevity"]
+const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Lifestyle", "Longevity"];
 
 const AdminPage = () => {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     title: "",
     category: categories[0],
@@ -23,17 +24,17 @@ const AdminPage = () => {
     text: "",
     image2xl: "",
     text2: "",
-  })
+  });
 
-  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null)
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [status, setStatus] = useState<{ type: "success" | "error"; message: string } | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    })
-  }
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,16 +73,22 @@ const AdminPage = () => {
     }
   };
 
-
+  const handleLogout = () => {
+    document.cookie = "admin_secret=; path=/; max-age=0; Secure"; // ❌ Borra la cookie
+    router.replace("/login"); // 🔄 Redirige a login
+  };
 
   return (
     <div className="container mx-auto p-6">
       <Card className="max-w-4xl mx-auto shadow-lg">
-        <CardHeader className="bg-primary text-primary-foreground">
+        <CardHeader className="bg-primary text-primary-foreground flex justify-between items-center">
           <CardTitle className="text-3xl font-bold flex items-center gap-2">
             <PenTool className="h-6 w-6" />
             Create New Article
           </CardTitle>
+          <Button onClick={handleLogout} variant="destructive">
+            <LogOut className="h-5 w-5 mr-2" /> Logout
+          </Button>
         </CardHeader>
         <CardContent className="pt-6">
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -253,7 +260,7 @@ const AdminPage = () => {
         </CardContent>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default AdminPage
+export default AdminPage;

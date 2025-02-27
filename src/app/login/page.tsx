@@ -1,42 +1,65 @@
 "use client";
+
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { login } from "./action";
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Loader2 } from "lucide-react";
 
 export default function LoginPage() {
-  const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
-    e.preventDefault();
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    setLoading(true);
+    setError("");
 
-    if (password === process.env.NEXT_PUBLIC_ADMIN_SECRET) {
-      document.cookie = `admin_secret=${password}; path=/; max-age=86400; Secure`;
-
-      setTimeout(() => {
-        router.replace("/adminpage"); // ✅ Redirige tras un pequeño retraso
-      }, 100);
-    } else {
-      setError("❌ Clave incorrecta");
+    const formData = new FormData(event.currentTarget);
+    try {
+      await login(
+        formData.get("username") as string,
+        formData.get("password") as string
+      );
+    } catch (err) {
+      setError("Usuario o contraseña incorrectos");
+    } finally {
+      setLoading(false);
     }
-  };
+  }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h1 className="text-xl mb-4">🔐 Acceso Admin</h1>
-      <form onSubmit={handleLogin} className="flex flex-col gap-2">
-        <input
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Clave de admin"
-          className="border p-2"
-        />
-        <button type="submit" className="bg-blue-500 text-white px-4 py-2">
-          Entrar
-        </button>
-      </form>
-      {error && <p className="text-red-500">{error}</p>}
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <Card className="w-full max-w-sm shadow-lg">
+        <CardHeader>
+          <CardTitle className="text-center text-xl">Iniciar Sesión</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div>
+              <Label htmlFor="username">Usuario</Label>
+              <Input name="username" id="username" type="text" required />
+            </div>
+            <div>
+              <Label htmlFor="password">Contraseña</Label>
+              <Input name="password" id="password" type="password" required />
+            </div>
+            <Button type="submit" className="w-full" disabled={loading}>
+              {loading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
+              {loading ? "Ingresando..." : "Iniciar sesión"}
+            </Button>
+          </form>
+          {error && (
+            <Alert variant="destructive" className="mt-4">
+              <AlertTitle>Error</AlertTitle>
+              <AlertDescription>{error}</AlertDescription>
+            </Alert>
+          )}
+        </CardContent>
+      </Card>
     </div>
   );
 }

@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { FileImage, Loader2, PenTool, LogOut } from "lucide-react";
+import { logout } from "@/app/logout/action";
 
 const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Lifestyle", "Longevity"];
 
@@ -73,9 +74,9 @@ const AdminPage = () => {
     }
   };
 
-  const handleLogout = () => {
-    document.cookie = "admin_secret=; path=/; max-age=0; Secure"; // ❌ Borra la cookie
-    router.replace("/login"); // 🔄 Redirige a login
+  const handleLogout = async () => {
+    await logout(); 
+    router.replace("/login");
   };
 
   return (

@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const adminSecret = request.cookies.get("admin_secret")?.value;
+  const isAdmin = request.cookies.get("admin-auth")?.value === "true";
 
-  if (request.nextUrl.pathname.startsWith("/adminpage") && adminSecret !== process.env.NEXT_PUBLIC_ADMIN_SECRET) {
+  if (request.nextUrl.pathname.startsWith("/adminpage") && !isAdmin) {
     return NextResponse.redirect(new URL("/login", request.url));
   }
 
@@ -12,5 +12,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/adminpage"],
+  matcher: ["/adminpage/:path*"],
 };

@@ -21,9 +21,10 @@ const getArticleBySlug = async (slug) => {
   }
 };
 
-export async function GET(req, { params }) {
+export async function GET(req, props) {
+  const params = await props.params;
   try {
-    const { slug } = params; // ✅ No necesitas await en params
+    const { slug } = params; 
 
     const article = await getArticleBySlug(slug);
 

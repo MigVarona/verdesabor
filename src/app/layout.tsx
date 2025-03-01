@@ -17,10 +17,10 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://renewhabits.com";
 
 export const metadata = {
   title: {
-    default: "Renew | Sustainable Solutions for a Better Future",
+    default: "Renew | Healthy Living for a Better Future",
     template: "%s | Renew",
   },
-  description: "Renew offers innovative and sustainable solutions to build a better future. Explore our eco-friendly products and services.",
+  description: "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity. Explore ways to improve your well-being.",
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
@@ -30,16 +30,16 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Renew | Sustainable Solutions for a Better Future",
-    description: "Discover innovative and eco-friendly solutions with Renew. We're committed to building a sustainable future.",
+    title: "Renew | Healthy Living for a Better Future",
+    description: "Discover valuable insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity. Renew is here to support your journey to a healthier and better future.",
     url: siteUrl,
     siteName: "Renew",
     images: [
       {
-        url: `${siteUrl}/og-image.jpg`,
+        url: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // URL de la imagen
         width: 1200,
         height: 630,
-        alt: "Renew - Sustainable Solutions for a Better Future",
+        alt: "Renew - Healthy Living for a Better Future",
       },
     ],
     locale: "en_US",
@@ -47,11 +47,12 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Renew | Sustainable Solutions",
-    description: "Innovative and eco-friendly solutions for a sustainable future. Explore Renew's products and services.",
-    images: [`${siteUrl}/twitter-image.jpg`],
+    title: "Renew | Healthy Living for a Better Future",
+    description: "Explore Renew's insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity to enhance your well-being and health.",
+    images: ["https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"], // URL de la imagen
   },
 };
+
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
@@ -74,17 +75,17 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ffffff" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SNWZK6K22"></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
 
                 gtag('config', 'G-0SNWZK6K22');
               `,
-            }}
-          />
+          }}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="googleb754e797cff875d0" />
 

@@ -22,10 +22,15 @@ export async function generateMetadata({ params }: { params: Params }) {
   return {
     title: article.title,
     description: article.excerpt || article.text?.slice(0, 150) + "...",
+    keywords: article.tags?.join(", ") || "healthy recipes, nutrition, wellness, organic food, plant-based diet, clean eating",
+    authors: article.author ? [{ name: article.author }] : undefined,
+    robots: "index, follow",
     openGraph: {
       title: article.title,
       description: article.excerpt || article.text?.slice(0, 150) + "...",
       url: `https://verdesabor.com/articles/${slug}`,
+      type: "article",
+      publishedTime: article.publishedAt,
       images: [
         {
           url: article.image || "https://verdesabor.com/default-image.jpg",
@@ -60,6 +65,7 @@ const RecipePage = async ({ params }: { params: Params }) => {
               <h3 className="text-3xl text-gray-900 font-fira font-thin">
                 {articleData.title}
               </h3>
+
             </div>
             <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
             <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
@@ -75,7 +81,7 @@ const RecipePage = async ({ params }: { params: Params }) => {
                     alt={articleData.title}
                     width={900}
                     height={600}
-                    loading="lazy"
+                    priority={true}
                     style={{ maxWidth: "100%", height: "auto", objectFit: "cover" }}
                   />
                 </div>

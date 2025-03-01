@@ -27,11 +27,11 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
     openGraph: {
       title: article.title,
       description: article.excerpt || article.text?.slice(0, 150) + "...",
-      url: `https://verdesabor.com/articles/${slug}`,
+      url: `https://renewhabits.com/articles/${slug}`,
       type: "article",
       images: [
         {
-          url: article.image || "https://verdesabor.com/default-image.jpg",
+          url: article.image || "https://renewhabits.com/default-image.jpg",
           width: 1200,
           height: 630,
           alt: article.title,

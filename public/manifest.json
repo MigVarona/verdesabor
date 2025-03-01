@@ -1,0 +1,71 @@
+{
+    "name": "Renew Habits - Healthy Living & Nutrition",
+    "short_name": "Renew",
+    "description": "Discover science-backed tips for healthy living, nutrition, and longevity. Improve your well-being with actionable insights.",
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#ffffff",
+    "theme_color": "#4CAF50",
+    "icons": [
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "72x72"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "96x96"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "384x384"
+      },
+      {
+        "src": "icon/Renew.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "screenshots": [
+      {
+        "src": "/screenshots/homepage.png",
+        "type": "image/png",
+        "sizes": "1280x720"
+      },
+      {
+        "src": "/screenshots/article-view.png",
+        "type": "image/png",
+        "sizes": "1280x720"
+      }
+    ],
+    "categories": ["health", "fitness", "lifestyle"],
+    "dir": "ltr",
+    "lang": "en"
+  }
+  

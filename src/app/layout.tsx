@@ -74,6 +74,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="googleb754e797cff875d0" />
+
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <div className="root-layout">{children || <div className="not-found">Ruta no encontrada</div>}</div>

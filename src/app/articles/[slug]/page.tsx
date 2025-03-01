@@ -56,7 +56,7 @@ const RecipePage = async (props: { params: Promise<Params> }) => {
   const params = await props.params;
   const { slug } = params;
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/articles/${slug}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${slug}`);
 
   if (!res.ok) {
     notFound();

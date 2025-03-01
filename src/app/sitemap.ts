@@ -1,7 +1,15 @@
-import { MetadataRoute } from "next";
+import { MetadataRoute } from "next"
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://verdesabor.vercel.app";
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://verdesabor.vercel.app"
+
+  // Suponiendo que tienes una API que devuelve tus artículos
+  const articles = await fetch(`${siteUrl}/api/articles`).then((res) => res.json())
+
+  const articleUrls = articles.map((article: { slug: string }) => ({
+    url: `${siteUrl}/articles/${article.slug}`,
+    lastModified: new Date().toISOString(),
+  }))
 
   return [
     {
@@ -12,5 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/articles`,
       lastModified: new Date().toISOString(),
     },
-  ];
+    ...articleUrls,
+  ]
 }

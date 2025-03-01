@@ -9,8 +9,8 @@ interface Params {
   slug: string;
 }
 
-// Generación de metadatos dinámicos para SEO
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata(props: { params: Promise<Params> }) {
+  const params = await props.params;
   const { slug } = params;
   const client = await clientPromise;
   const db = client.db("verdesabor");
@@ -19,18 +19,16 @@ export async function generateMetadata({ params }: { params: Params }) {
 
   if (!article) return {};
 
-  return {
+  const metadata: any = {
     title: article.title,
     description: article.excerpt || article.text?.slice(0, 150) + "...",
-    keywords: article.tags?.join(", ") || "healthy recipes, nutrition, wellness, organic food, plant-based diet, clean eating",
-    authors: article.author ? [{ name: article.author }] : undefined,
+    keywords: article.tags?.length ? article.tags.join(", ") : "healthy recipes, nutrition, wellness, organic food, plant-based diet, clean eating",
     robots: "index, follow",
     openGraph: {
       title: article.title,
       description: article.excerpt || article.text?.slice(0, 150) + "...",
       url: `https://verdesabor.com/articles/${slug}`,
       type: "article",
-      publishedTime: article.publishedAt,
       images: [
         {
           url: article.image || "https://verdesabor.com/default-image.jpg",
@@ -41,9 +39,21 @@ export async function generateMetadata({ params }: { params: Params }) {
       ],
     },
   };
+
+  if (article.author) {
+    metadata.authors = [{ name: article.author }];
+  }
+
+  if (article.publishedAt) {
+    metadata.openGraph.publishedTime = article.publishedAt;
+  }
+
+  return metadata;
 }
 
-const RecipePage = async ({ params }: { params: Params }) => {
+
+const RecipePage = async (props: { params: Promise<Params> }) => {
+  const params = await props.params;
   const { slug } = params;
 
   const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/articles/${slug}`);

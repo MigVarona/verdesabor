@@ -66,21 +66,23 @@ export default function Footer() {
               Useful Links
             </h3>
             <ul className="space-y-3">
-              {["About Us", "Contact", "Privacy Policy", "Terms of Use"].map(
-                (item) => (
-                  <li key={item}>
-                    <Link
-                      href="#"
-                      className="text-gray-600  transition-colors duration-200 flex items-center gap-2 group"
-                    >
-                      <span className="w-0 group-hover:w-2 h-0.5 bg-gray-800 transition-all duration-200"></span>
-                      {item}
-                    </Link>
-                  </li>
-                )
-              )}
+              {[
+              { name: "Contact", href: "#" },
+                { name: "Privacy Policy", href: "/privacy" },
+              ].map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-gray-600 transition-colors duration-200 flex items-center gap-2 group"
+                  >
+                    <span className="w-0 group-hover:w-2 h-0.5 bg-gray-800 transition-all duration-200"></span>
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
+
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
@@ -88,15 +90,7 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex gap-4">
-              <Link
-                href="https://www.facebook.com/"
-                className="p-2 rounded-full transition-colors duration-200 group"
-                aria-label="Facebook"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Facebook className="w-5 h-5 text-gray" />
-              </Link>
+          
               <Link
                 href="https://www.instagram.com/renew.habits/"
                 className="p-2 rounded-full transition-colors duration-200 group"
@@ -107,7 +101,7 @@ export default function Footer() {
                 <Instagram className="w-5 h-5 text-gray" />
               </Link>
               <Link
-                href="https://twitter.com/"
+                href="https://x.com/renew_habits"
                 className="p-2 rounded-full transition-colors duration-200 group"
                 aria-label="Twitter"
                 target="_blank"

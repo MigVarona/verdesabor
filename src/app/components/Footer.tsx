@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Twitter, Heart, ArrowUpCircle } from "lucide-react";
+import { Instagram, Twitter, Heart, ArrowUpCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function Footer() {
@@ -35,9 +35,12 @@ export default function Footer() {
 
           <div className="space-y-4">
             <h3 className="text-lg font-semibold text-gray-800 flex items-center gap-2">
-              <span className="w-8 h-0.5 bg-gray-800"></span>
-              Categories
+              <div className="flex items-center space-x-2"> 
+                <span className="w-8 h-0.5 bg-gray-800"></span>
+                <span className="text-gray-800">Categories</span> 
+              </div>
             </h3>
+
             <ul className="space-y-3">
               {[
                 { name: "Nutrition", path: "/nutrition" },
@@ -67,7 +70,7 @@ export default function Footer() {
             </h3>
             <ul className="space-y-3">
               {[
-              { name: "Contact", href: "#" },
+                { name: "Contact", href: "#" },
                 { name: "Privacy Policy", href: "/privacy" },
               ].map((item) => (
                 <li key={item.name}>
@@ -90,7 +93,7 @@ export default function Footer() {
               Follow Us
             </h3>
             <div className="flex gap-4">
-          
+
               <Link
                 href="https://www.instagram.com/renew.habits/"
                 className="p-2 rounded-full transition-colors duration-200 group"

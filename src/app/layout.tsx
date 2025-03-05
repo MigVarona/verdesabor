@@ -2,7 +2,6 @@ import type React from "react";
 import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -53,18 +52,24 @@ export const metadata = {
   },
 };
 
-
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
       <head>
-      <link rel="preconnect" href="https://www.renewhabits.com" />
+        <link rel="preconnect" href="https://www.renewhabits.com" />
 
+        {/* Preload de la fuente Fira Sans */}
+        <link
+          rel="preload"
+          href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap"
+          as="style"
+        />
+
+        {/* Fuentes adicionales */}
         <link
           href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap"
           rel="stylesheet"
         />
-
         <link
           href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
           rel="stylesheet"
@@ -92,7 +97,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="googleb754e797cff875d0" />
-
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
         <div className="root-layout">{children || <div className="not-found">Ruta no encontrada</div>}</div>

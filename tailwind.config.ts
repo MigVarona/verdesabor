@@ -1,4 +1,3 @@
-import { noSSR } from "next/dynamic";
 import type { Config } from "tailwindcss";
 
 export default {

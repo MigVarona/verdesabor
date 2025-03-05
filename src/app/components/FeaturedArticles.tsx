@@ -106,6 +106,8 @@ const FeaturedArticles = () => {
                       alt={block.mainArticle.title}
                       width={900}
                       height={600}
+                      fetchPriority="high"
+                      sizes="(max-width: 768px) 100vw, 900px"
                       priority
                       className="w-full h-auto object-cover"
                     />

@@ -9,6 +9,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${siteUrl}/articles/${article.slug}`,
     lastModified: new Date().toISOString(),
   }));
+  
 
   const categories = [
     "nutrition",

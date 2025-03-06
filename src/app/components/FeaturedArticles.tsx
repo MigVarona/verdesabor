@@ -101,6 +101,7 @@ const FeaturedArticles = () => {
               <article className="bg-white overflow-hidden p-4">
                 {block.mainArticle.imagexl && (
                   <div className="relative w-full mb-4">
+                    <picture>
                     <Image
                       src={block.mainArticle.imagexl || "/placeholder.svg"}
                       alt={block.mainArticle.title}
@@ -111,6 +112,7 @@ const FeaturedArticles = () => {
                       priority
                       className="w-full h-auto object-cover"
                     />
+                    </picture>
                   </div>
                 )}
                 <div>

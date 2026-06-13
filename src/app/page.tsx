@@ -1,7 +1,9 @@
 import Header from "./components/Header";
-import HeroSection from "./components/HeroSection";
-import CategoryGrid from "./components/CategoryGrid";
-import TrendingArticles from "./components/TrendingArticles";
+import HomeHero from "./components/HomeHero";
+import HomeTopics from "./components/HomeTopics";
+import HomeManifesto from "./components/HomeManifesto";
+import HomeEditorialGrid from "./components/HomeEditorialGrid";
+import HomeCategorySpotlight from "./components/HomeCategorySpotlight";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import AdSlot from "./components/AdSlot";
@@ -13,18 +15,21 @@ export const revalidate = 300;
 export default async function Home() {
   const articles = await fetchArticles();
   const featured = articles[0] ?? null;
-  const latest = articles.slice(1, 7);
+  const secondary = articles.slice(1, 5);
+  const gridArticles = articles.slice(1);
 
   return (
     <div className="min-h-screen">
       <Header />
       <main>
-        <div className="container mx-auto px-4 py-4">
+        <HomeHero featured={featured} secondary={secondary} />
+        <HomeTopics />
+        <HomeManifesto />
+        <HomeEditorialGrid articles={gridArticles} />
+        <div className="container mx-auto px-4 py-8">
           <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />
         </div>
-        <HeroSection featured={featured} />
-        <CategoryGrid />
-        <TrendingArticles articles={latest} />
+        <HomeCategorySpotlight articles={articles} />
         <Newsletter />
       </main>
       <Footer />

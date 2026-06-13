@@ -12,7 +12,7 @@ import ArticleContent from "@/app/components/ArticleContent";
 import KeyTakeaways, { ReadingTime } from "@/app/components/KeyTakeaways";
 import AdSlot from "@/app/components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
-import { formatDate, getArticleUrl, getReadingTime } from "@/lib/articles";
+import { formatDate, getArticleUrl, getArticleImage, getReadingTime } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
 
 interface Params {
@@ -31,6 +31,8 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
   const article = await fetchArticleBySlug(slug);
   if (!article) return {};
 
+  const heroImage = getArticleImage(article);
+
   return {
     title: article.title,
     description: article.excerpt || String(article.text || "").slice(0, 150) + "...",
@@ -39,9 +41,7 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
       description: article.excerpt,
       url: `https://renewhabits.com/articles/${slug}`,
       type: "article",
-      images: article.imagexl
-        ? [{ url: article.imagexl, width: 1200, height: 630, alt: article.title }]
-        : [],
+      images: [{ url: heroImage, width: 1200, height: 630, alt: article.title }],
       publishedTime: article.publishedAt,
     },
     ...(article.author ? { authors: [{ name: article.author }] } : {}),
@@ -64,6 +64,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   if (!article) notFound();
 
   const articleUrl = getArticleUrl(article);
+  const heroImage = getArticleImage(article);
   const allArticles = await fetchArticles();
   const related = allArticles.filter(
     (a) => a._id !== article._id && a.category.toLowerCase() === article.category.toLowerCase()
@@ -78,19 +79,17 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
         <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />
       </div>
 
-      {article.imagexl && (
-        <div className="relative h-[40vh] md:h-[50vh] min-h-[280px] max-h-[520px]">
-          <Image
-            src={article.imagexl}
-            alt={article.title}
-            fill
-            priority
-            className="object-cover"
-            sizes="100vw"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-renew-dark/70 via-renew-dark/20 to-transparent" />
-        </div>
-      )}
+      <div className="relative h-[40vh] md:h-[50vh] min-h-[280px] max-h-[520px]">
+        <Image
+          src={heroImage}
+          alt={article.title}
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-renew-dark/70 via-renew-dark/20 to-transparent" />
+      </div>
 
       <article className="py-8 md:py-12">
         <div className="container mx-auto px-4">
@@ -103,7 +102,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
                 ]}
               />
 
-              <header className={`mb-8 ${article.imagexl ? "-mt-2" : ""}`}>
+              <header className="mb-8 -mt-2">
                 <span className="category-badge">{article.category}</span>
                 <h1 className="mt-3 text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-renew-dark leading-[1.15] text-balance">
                   {article.title}
@@ -127,7 +126,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
               {takeaways.length > 0 && <KeyTakeaways items={takeaways} />}
 
               <ArticleContent
-                excerpt={article.imagexl ? undefined : article.excerpt}
+                excerpt={undefined}
                 text={article.text}
                 text2={article.text2}
                 image2xl={article.image2xl}

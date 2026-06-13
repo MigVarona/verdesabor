@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { type Article, formatDate, getArticleUrl, getReadingTime } from "@/lib/articles";
+import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 
 interface HomeEditorialGridProps {
@@ -34,17 +34,15 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
               href={getArticleUrl(lead)}
               className="group lg:col-span-7 block bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:shadow-card-hover transition-all"
             >
-              {(lead.imagexl || lead.image) && (
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <Image
-                    src={lead.imagexl || lead.image}
-                    alt={lead.title}
-                    fill
-                    className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                    sizes="(max-width: 1024px) 100vw, 58vw"
-                  />
-                </div>
-              )}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={getArticleImage(lead)}
+                  alt={lead.title}
+                  fill
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                />
+              </div>
               <div className="p-6 md:p-8">
                 <span className="category-badge">{lead.category}</span>
                 <h3 className="mt-3 text-2xl md:text-3xl font-bold text-renew-dark leading-tight group-hover:text-renew-sage transition-colors text-balance">
@@ -61,24 +59,22 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
 
           <div className="lg:col-span-5 flex flex-col gap-3">
             {rest.slice(0, 3).map((article) => {
-              const image = article.image || article.imagexl;
+              const thumb = getArticleThumbnail(article);
               return (
                 <Link
                   key={article._id}
                   href={getArticleUrl(article)}
                   className="group flex gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:border-gray-200 hover:shadow-sm transition-all"
                 >
-                  {image && (
-                    <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-100">
-                      <Image
-                        src={image}
-                        alt={article.title}
-                        fill
-                        className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="96px"
-                      />
-                    </div>
-                  )}
+                  <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-100">
+                    <Image
+                      src={thumb}
+                      alt={article.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      sizes="96px"
+                    />
+                  </div>
                   <div className="flex-1 min-w-0 py-0.5">
                     <span className="category-badge">{article.category}</span>
                     <h3 className="mt-1.5 font-semibold text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
@@ -114,20 +110,18 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
 }
 
 function EditorialCard({ article }: { article: Article }) {
-  const image = article.imagexl || article.image;
+  const image = getArticleImage(article);
   return (
     <Link href={getArticleUrl(article)} className="group block">
-      {image && (
-        <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4 ring-1 ring-gray-100">
-          <Image
-            src={image}
-            alt={article.title}
-            fill
-            className="object-cover group-hover:scale-105 transition-transform duration-300"
-            sizes="(max-width: 768px) 100vw, 33vw"
-          />
-        </div>
-      )}
+      <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4 ring-1 ring-gray-100">
+        <Image
+          src={image}
+          alt={article.title}
+          fill
+          className="object-cover group-hover:scale-105 transition-transform duration-300"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
       <span className="category-badge">{article.category}</span>
       <h3 className="mt-2 text-lg font-bold text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
         {article.title}

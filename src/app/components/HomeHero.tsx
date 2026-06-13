@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { type Article, formatDate, getArticleUrl, getReadingTime } from "@/lib/articles";
+import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 import { SITE_TAGLINE } from "@/lib/constants";
 
@@ -30,7 +30,7 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
   }
 
   const featuredUrl = getArticleUrl(featured);
-  const featuredImage = featured.imagexl || featured.image;
+  const featuredImage = getArticleImage(featured);
   const readTime = getReadingTime(`${featured.text || ""} ${featured.excerpt || ""}`);
 
   return (
@@ -45,18 +45,16 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           <div className="lg:col-span-8">
             <Link href={featuredUrl} className="group block">
-              {featuredImage && (
-                <div className="relative aspect-[16/10] md:aspect-[2/1] rounded-2xl overflow-hidden mb-7 ring-1 ring-gray-100">
-                  <Image
-                    src={featuredImage}
-                    alt={featured.title}
-                    fill
-                    priority
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
-                    sizes="(max-width: 1024px) 100vw, 66vw"
-                  />
-                </div>
-              )}
+              <div className="relative aspect-[16/10] md:aspect-[2/1] rounded-2xl overflow-hidden mb-7 ring-1 ring-gray-100">
+                <Image
+                  src={featuredImage}
+                  alt={featured.title}
+                  fill
+                  priority
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.02]"
+                  sizes="(max-width: 1024px) 100vw, 66vw"
+                />
+              </div>
               <div className="max-w-3xl">
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-1 mb-4">
                   <span className="inline-flex items-center text-xs font-bold uppercase tracking-widest text-renew-sage bg-emerald-50 px-2.5 py-1 rounded">
@@ -89,21 +87,19 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
               </div>
               <div className="flex flex-col divide-y divide-gray-200">
                 {secondary.slice(0, 4).map((article) => {
-                  const image = article.image || article.imagexl;
+                  const thumb = getArticleThumbnail(article);
                   const url = getArticleUrl(article);
                   return (
                     <Link key={article._id} href={url} className="group flex gap-4 py-4 first:pt-0 last:pb-0">
-                      {image && (
-                        <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-200">
-                          <Image
-                            src={image}
-                            alt={article.title}
-                            fill
-                            className="object-cover group-hover:scale-105 transition-transform duration-300"
-                            sizes="80px"
-                          />
-                        </div>
-                      )}
+                      <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-200">
+                        <Image
+                          src={thumb}
+                          alt={article.title}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          sizes="80px"
+                        />
+                      </div>
                       <div className="flex-1 min-w-0">
                         <span className="text-[0.65rem] font-bold uppercase tracking-widest text-renew-sage">
                           {article.category}

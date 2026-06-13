@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { type Article, formatDate, getArticleUrl } from "@/lib/articles";
+import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail } from "@/lib/articles";
 import { cn } from "@/lib/utils";
 
 interface ArticleCardProps {
@@ -15,7 +15,8 @@ export default function ArticleCard({
   className,
 }: ArticleCardProps) {
   const url = getArticleUrl(article);
-  const image = article.imagexl || article.image;
+  const image = getArticleImage(article);
+  const thumb = getArticleThumbnail(article);
 
   if (variant === "horizontal") {
     return (
@@ -23,7 +24,7 @@ export default function ArticleCard({
         {image && (
           <Link href={url} className="relative flex-shrink-0 w-28 h-20 md:w-36 md:h-24 rounded-lg overflow-hidden">
             <Image
-              src={image}
+              src={thumb}
               alt={article.title}
               fill
               className="object-cover group-hover:scale-105 transition-transform duration-300"

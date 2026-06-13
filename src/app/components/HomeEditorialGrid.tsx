@@ -13,7 +13,7 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
   const [lead, ...rest] = articles;
 
   return (
-    <section className="py-16 md:py-20">
+    <section className="py-16 md:py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="flex items-end justify-between mb-10 md:mb-12">
           <div>
@@ -22,18 +22,17 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
           </div>
           <Link
             href="/articles"
-            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-renew-dark hover:text-renew-sage transition-colors"
+            className="hidden sm:inline-flex items-center gap-1.5 text-sm font-semibold text-gray-500 hover:text-renew-sage transition-colors"
           >
             All articles <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8">
-          {/* Lead card */}
           {lead && (
             <Link
               href={getArticleUrl(lead)}
-              className="group lg:col-span-7 block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-card-hover transition-shadow"
+              className="group lg:col-span-7 block bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:shadow-card-hover transition-all"
             >
               {(lead.imagexl || lead.image) && (
                 <div className="relative aspect-[16/10] overflow-hidden">
@@ -60,24 +59,23 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
             </Link>
           )}
 
-          {/* Side stack */}
-          <div className="lg:col-span-5 flex flex-col gap-4">
+          <div className="lg:col-span-5 flex flex-col gap-3">
             {rest.slice(0, 3).map((article) => {
               const image = article.image || article.imagexl;
               return (
                 <Link
                   key={article._id}
                   href={getArticleUrl(article)}
-                  className="group flex gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:border-renew-sage/30 hover:shadow-card transition-all"
+                  className="group flex gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:border-gray-200 hover:shadow-sm transition-all"
                 >
                   {image && (
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden flex-shrink-0">
+                    <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-100">
                       <Image
                         src={image}
                         alt={article.title}
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-300"
-                        sizes="112px"
+                        sizes="96px"
                       />
                     </div>
                   )}
@@ -94,9 +92,8 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
           </div>
         </div>
 
-        {/* Remaining articles grid */}
         {rest.length > 3 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-10 pt-10 border-t border-gray-100">
             {rest.slice(3).map((article) => (
               <EditorialCard key={article._id} article={article} />
             ))}
@@ -106,7 +103,7 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
         <div className="mt-10 text-center sm:hidden">
           <Link
             href="/articles"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-renew-dark border border-gray-200 px-6 py-3 rounded-full hover:border-renew-sage transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-renew-dark border border-gray-200 px-6 py-3 rounded-full hover:border-renew-sage hover:text-renew-sage transition-colors"
           >
             View all articles <ArrowRight className="w-4 h-4" />
           </Link>
@@ -121,7 +118,7 @@ function EditorialCard({ article }: { article: Article }) {
   return (
     <Link href={getArticleUrl(article)} className="group block">
       {image && (
-        <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4">
+        <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4 ring-1 ring-gray-100">
           <Image
             src={image}
             alt={article.title}

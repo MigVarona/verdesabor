@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Mail, CheckCircle, Loader2 } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
@@ -25,7 +25,7 @@ const Newsletter = () => {
 
       if (res.ok) {
         setStatus("success");
-        setMessage("You're subscribed! Check your inbox for a welcome email soon.");
+        setMessage("You're subscribed. Check your inbox soon.");
         setEmail("");
       } else {
         setStatus("error");
@@ -38,46 +38,47 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-14 md:py-20 bg-renew-dark">
-      <div className="container mx-auto px-4 text-center">
-        <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-renew-accent/20 mb-5">
-          <Mail className="w-6 h-6 text-renew-accent" />
+    <section className="py-16 md:py-20 bg-gray-50 border-t border-gray-100">
+      <div className="container mx-auto px-4">
+        <div className="max-w-2xl mx-auto bg-white border border-gray-200 rounded-2xl p-8 md:p-12 text-center shadow-sm">
+          <div className="w-8 h-1 bg-renew-accent mx-auto mb-6" />
+          <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-3">Newsletter</p>
+          <h2 className="text-2xl sm:text-3xl font-bold text-renew-dark mb-3">
+            Stay ahead of the curve
+          </h2>
+          <p className="text-gray-500 mb-8 leading-relaxed">
+            Weekly insights on biohacking, nutrition, and longevity. No spam, ever.
+          </p>
+
+          {status === "success" ? (
+            <div className="flex items-center justify-center gap-2 text-renew-sage">
+              <CheckCircle className="w-5 h-5" />
+              <p className="text-sm font-medium">{message}</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder="your@email.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="flex-1 border-gray-200 focus-visible:ring-renew-sage"
+              />
+              <Button
+                type="submit"
+                disabled={status === "loading"}
+                className="bg-renew-sage text-white hover:bg-renew-sage/90 font-semibold"
+              >
+                {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Subscribe"}
+              </Button>
+            </form>
+          )}
+
+          {status === "error" && (
+            <p className="text-red-500 text-sm mt-3">{message}</p>
+          )}
         </div>
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-          Stay ahead of the curve
-        </h2>
-        <p className="text-gray-400 mb-8 max-w-lg mx-auto">
-          Get weekly insights on biohacking, nutrition, and longevity delivered straight to your inbox. No spam, ever.
-        </p>
-
-        {status === "success" ? (
-          <div className="flex items-center justify-center gap-2 text-renew-accent max-w-md mx-auto">
-            <CheckCircle className="w-5 h-5" />
-            <p className="text-sm">{message}</p>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit} className="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
-            <Input
-              type="email"
-              placeholder="your@email.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="flex-1 bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus-visible:ring-renew-accent"
-            />
-            <Button
-              type="submit"
-              disabled={status === "loading"}
-              className="bg-renew-accent text-renew-dark hover:bg-yellow-300 font-semibold"
-            >
-              {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Subscribe"}
-            </Button>
-          </form>
-        )}
-
-        {status === "error" && (
-          <p className="text-red-400 text-sm mt-3">{message}</p>
-        )}
       </div>
     </section>
   );

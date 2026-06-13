@@ -50,6 +50,46 @@ body {
   .ad-placeholder {
     @apply flex items-center justify-center bg-gray-50 border border-dashed border-gray-200 rounded-lg text-xs text-gray-400 uppercase tracking-wider;
   }
+
+  .legal-content {
+    @apply space-y-12;
+  }
+
+  .legal-section h2 {
+    @apply text-xl md:text-2xl font-bold text-renew-dark mb-5 pb-3 border-b border-gray-100;
+  }
+
+  .legal-section h3 {
+    @apply text-base font-semibold text-renew-dark mt-6 mb-2;
+  }
+
+  .legal-section p {
+    @apply text-gray-600 leading-relaxed mb-4;
+  }
+
+  .legal-section ul {
+    @apply space-y-2 mb-4 pl-5 list-disc text-gray-600 leading-relaxed;
+  }
+
+  .legal-section li {
+    @apply pl-1;
+  }
+
+  .legal-table {
+    @apply w-full text-sm border border-gray-200 rounded-xl overflow-hidden mb-6;
+  }
+
+  .legal-table th {
+    @apply bg-gray-50 text-left font-semibold text-renew-dark px-4 py-3 border-b border-gray-200;
+  }
+
+  .legal-table td {
+    @apply px-4 py-3 border-b border-gray-100 text-gray-600 align-top;
+  }
+
+  .legal-table tr:last-child td {
+    @apply border-b-0;
+  }
 }
 
 @layer utilities {

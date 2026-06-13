@@ -1,10 +1,11 @@
 "use client";
 
-import { Instagram, Twitter, Heart, ArrowUp } from "lucide-react";
+import { Instagram, Twitter, ArrowUp } from "lucide-react";
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/constants";
 import AdSlot from "./AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
+import { openCookieSettings } from "./CookieConsent";
 
 export default function Footer() {
   const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
@@ -79,6 +80,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {[
                 { name: "Privacy Policy", href: "/privacy" },
+                { name: "Cookie Policy", href: "/cookies" },
                 { name: "Medical Disclaimer", href: "/disclaimer" },
               ].map((item) => (
                 <li key={item.name}>
@@ -87,13 +89,21 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <button
+                  onClick={openCookieSettings}
+                  className="text-sm text-gray-400 hover:text-white transition-colors"
+                >
+                  Cookie Settings
+                </button>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-gray-500 flex items-center gap-1.5">
-            &copy; {new Date().getFullYear()} RENEW. Made with <Heart className="w-3.5 h-3.5 text-rose-400" /> for your well-being
+          <p className="text-sm text-gray-500">
+            &copy; {new Date().getFullYear()} RENEW. All rights reserved.
           </p>
           <button
             onClick={scrollToTop}

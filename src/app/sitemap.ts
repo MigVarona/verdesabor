@@ -20,7 +20,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date().toISOString(),
   }));
 
-  const staticPages = ["about", "disclaimer", "privacy", "articles"].map((page) => ({
+  const staticPages = ["about", "disclaimer", "privacy", "cookies", "articles"].map((page) => ({
     url: `${siteUrl}/${page}`,
     lastModified: new Date().toISOString(),
   }));

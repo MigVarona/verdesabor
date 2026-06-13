@@ -1,11 +1,16 @@
 # How to add articles to RENEW
 
-Articles are loaded from **two sources** (merged automatically):
+All articles live in **`content/articles/*.json`**. No database or admin panel needed.
 
-1. **MongoDB** — your existing posts (legacy content from the admin)
-2. **`content/articles/*.json`** — new posts added via code/commits (override same slug)
+To publish a new post, add a file like `my-article-slug.json` and deploy.
 
-To publish a new post, add a file like `my-article-slug.json`.
+## Export from production (one-time migration)
+
+```bash
+node scripts/export-articles-to-json.mjs
+```
+
+This pulls all articles from the live API into JSON files.
 
 ## Required fields
 
@@ -31,11 +36,17 @@ To publish a new post, add a file like `my-article-slug.json`.
 
 ## Images
 
-Use [Unsplash](https://unsplash.com) URLs with sizing params:
+Use [Unsplash](https://unsplash.com) URLs. Images are auto-sized as WebP for fast loading:
 
 ```
-https://images.unsplash.com/photo-XXXXX?auto=format&fit=crop&w=1600&h=900&q=80
+https://images.unsplash.com/photo-XXXXX?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp
 ```
+
+| Field | Recommended size |
+|-------|------------------|
+| `image` | 640×400 (cards) |
+| `imagexl` | 1200×675 (hero) |
+| `image2xl` | 960×600 (inline) |
 
 ## Example
 

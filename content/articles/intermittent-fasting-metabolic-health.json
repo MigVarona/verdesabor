@@ -5,10 +5,16 @@
   "author": "RENEW Editorial",
   "publishedAt": "2026-06-12T10:00:00.000Z",
   "excerpt": "Intermittent fasting is one of the most studied dietary patterns for metabolic health. Here is how it works, what the research supports, and how to find a schedule that fits your life.",
-  "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=600&h=400&q=80",
-  "imagexl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1600&h=900&q=80",
+  "image": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=640&h=400&q=75&fm=webp",
+  "imagexl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp",
   "text": "Intermittent fasting (IF) is not a diet in the traditional sense — it is an eating pattern that cycles between periods of eating and fasting. The most popular approaches include 16:8 (16 hours fasting, 8-hour eating window), 5:2 (five normal days, two low-calorie days), and time-restricted eating aligned with circadian rhythms.\n\nResearch suggests IF can improve insulin sensitivity, reduce fasting glucose, and support healthy weight management when combined with nutrient-dense meals. A 2022 review in Nature Reviews Endocrinology noted that time-restricted eating may improve metabolic markers even without caloric restriction, likely through aligning food intake with the body's natural circadian clock.\n\nThe mechanism involves several pathways: lower insulin levels during fasting periods allow the body to access stored fat more efficiently. Autophagy — the cellular cleanup process — may also be upregulated during extended fasts, though most benefits for beginners come from simpler metabolic improvements rather than deep fasting states.",
-  "image2xl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1600&h=900&q=80",
+  "image2xl": "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "IF is not suitable for everyone. Pregnant women, people with a history of eating disorders, those on certain medications (especially for diabetes), and underweight individuals should consult a healthcare provider before starting.\n\nFor most healthy adults, a 12–14 hour overnight fast is a gentle entry point — simply finishing dinner by 7pm and eating breakfast after 7–9am. Progress to 16:8 only if it feels sustainable and does not cause excessive hunger, irritability, or poor sleep.\n\nQuality still matters enormously. Breaking a fast with ultra-processed food undermines the metabolic benefits. Prioritize protein, fiber, healthy fats, and whole foods during your eating window. Intermittent fasting works best as one tool within a broader nutrition strategy — not as permission to under-eat or ignore nutrient density.",
-  "tags": ["intermittent fasting", "metabolic health", "nutrition", "time-restricted eating", "insulin"]
+  "tags": [
+    "intermittent fasting",
+    "metabolic health",
+    "nutrition",
+    "time-restricted eating",
+    "insulin"
+  ]
 }

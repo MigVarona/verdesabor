@@ -5,10 +5,16 @@
   "author": "RENEW Editorial",
   "publishedAt": "2026-06-08T10:00:00.000Z",
   "excerpt": "Your gut and brain are in constant communication through nerves, hormones, and immune signals. Emerging research reveals just how much intestinal health influences mental performance.",
-  "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=600&h=400&q=80",
-  "imagexl": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1600&h=900&q=80",
+  "image": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=640&h=400&q=75&fm=webp",
+  "imagexl": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp",
   "text": "The gut-brain axis is a bidirectional communication network linking the central nervous system with the enteric nervous system — sometimes called the \"second brain.\" The vagus nerve carries signals in both directions, while gut bacteria produce neuroactive compounds including serotonin precursors, GABA, and short-chain fatty acids (SCFAs) that influence brain function.\n\nApproximately 90% of the body's serotonin is produced in the gut, though it does not directly cross into the brain. Instead, microbial metabolites and immune signaling molecules affect blood-brain barrier integrity, neuroinflammation, and stress hormone regulation. Studies in both animal models and humans link diverse, fiber-rich diets with lower rates of anxiety and depression symptoms.\n\nDysbiosis — an imbalance in gut microbial communities — has been associated with increased intestinal permeability (\"leaky gut\"), chronic low-grade inflammation, and altered stress responses. While the field is still evolving, the consensus is clear: gut health is not separate from brain health.",
-  "image2xl": "https://images.unsplash.com/photo-1505751172876-ba52d7ac159b?auto=format&fit=crop&w=1600&h=900&q=80",
+  "image2xl": "https://images.unsplash.com/photo-1505751172876-ba52d7ac159b?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Practical strategies to support a healthy microbiome include eating 30+ different plant foods per week (the American Gut Project found this associated with greater microbial diversity), consuming fermented foods like yogurt, kefir, and sauerkraut, and prioritizing prebiotic fibers from onions, garlic, oats, and legumes.\n\nAvoid unnecessary antibiotic use, manage chronic stress (which directly alters gut motility and microbial composition), and limit ultra-processed foods that reduce microbial diversity. Probiotic supplements may help specific conditions but are not a substitute for dietary diversity.\n\nThe gut-brain connection reminds us that mental wellness is not purely psychological. Nutrition, sleep, and stress management all feed into the same system. Supporting your microbiome is one of the most accessible neuroscience interventions available — no prescription required.",
-  "tags": ["gut-brain axis", "microbiome", "neuroscience", "mental health", "probiotics"]
+  "tags": [
+    "gut-brain axis",
+    "microbiome",
+    "neuroscience",
+    "mental health",
+    "probiotics"
+  ]
 }

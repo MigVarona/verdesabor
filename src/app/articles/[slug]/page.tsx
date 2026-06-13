@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import ArticleImage from "@/app/components/ArticleImage";
 import Header from "@/app/components/Header";
 import Newsletter from "@/app/components/Newsletter";
 import Footer from "@/app/components/Footer";
@@ -80,7 +80,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
       </div>
 
       <div className="relative h-[40vh] md:h-[50vh] min-h-[280px] max-h-[520px]">
-        <Image
+        <ArticleImage
           src={heroImage}
           alt={article.title}
           fill

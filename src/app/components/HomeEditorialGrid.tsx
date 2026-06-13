@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ArticleImage from "./ArticleImage";
 import Link from "next/link";
 import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
@@ -35,7 +35,7 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
               className="group lg:col-span-7 block bg-gray-50 border border-gray-100 rounded-2xl overflow-hidden hover:shadow-card-hover transition-all"
             >
               <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
+                <ArticleImage
                   src={getArticleImage(lead)}
                   alt={lead.title}
                   fill
@@ -67,7 +67,7 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
                   className="group flex gap-4 p-4 bg-white border border-gray-100 rounded-xl hover:border-gray-200 hover:shadow-sm transition-all"
                 >
                   <div className="relative w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-100">
-                    <Image
+                    <ArticleImage
                       src={thumb}
                       alt={article.title}
                       fill
@@ -114,7 +114,7 @@ function EditorialCard({ article }: { article: Article }) {
   return (
     <Link href={getArticleUrl(article)} className="group block">
       <div className="relative aspect-[16/10] rounded-xl overflow-hidden mb-4 ring-1 ring-gray-100">
-        <Image
+        <ArticleImage
           src={image}
           alt={article.title}
           fill

@@ -1,5 +1,5 @@
-import Image from "next/image";
-import { splitParagraphs } from "@/lib/articles";
+import ArticleImage from "./ArticleImage";
+import { splitParagraphs, optimizeImageUrl } from "@/lib/articles";
 
 interface ArticleContentProps {
   excerpt?: string;
@@ -23,8 +23,8 @@ export default function ArticleContent({ excerpt, text, text2, image2xl, title }
       {image2xl && (
         <figure className="article-figure my-10">
           <div className="relative aspect-[16/10] rounded-xl overflow-hidden">
-            <Image
-              src={image2xl}
+            <ArticleImage
+              src={optimizeImageUrl(image2xl, "inline")}
               alt={`${title} — illustration`}
               fill
               loading="lazy"

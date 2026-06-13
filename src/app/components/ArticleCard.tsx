@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ArticleImage from "./ArticleImage";
 import Link from "next/link";
 import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail } from "@/lib/articles";
 import { cn } from "@/lib/utils";
@@ -23,7 +23,7 @@ export default function ArticleCard({
       <article className={cn("group flex gap-4 py-5 border-b border-gray-100 last:border-0", className)}>
         {image && (
           <Link href={url} className="relative flex-shrink-0 w-28 h-20 md:w-36 md:h-24 rounded-lg overflow-hidden">
-            <Image
+            <ArticleImage
               src={thumb}
               alt={article.title}
               fill
@@ -49,7 +49,7 @@ export default function ArticleCard({
         <Link href={url} className="block">
           {image && (
             <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-3">
-              <Image
+              <ArticleImage
                 src={image}
                 alt={article.title}
                 fill
@@ -74,7 +74,7 @@ export default function ArticleCard({
         <Link href={url} className="block">
           {image && (
             <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-5">
-              <Image
+              <ArticleImage
                 src={image}
                 alt={article.title}
                 fill
@@ -107,7 +107,7 @@ export default function ArticleCard({
       <Link href={url} className="block">
         {image && (
           <div className="relative aspect-[16/10] overflow-hidden">
-            <Image
+            <ArticleImage
               src={image}
               alt={article.title}
               fill

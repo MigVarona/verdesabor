@@ -1,4 +1,4 @@
-import Image from "next/image";
+import ArticleImage from "./ArticleImage";
 import Link from "next/link";
 import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
@@ -46,7 +46,7 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
           <div className="lg:col-span-8">
             <Link href={featuredUrl} className="group block">
               <div className="relative aspect-[16/10] md:aspect-[2/1] rounded-2xl overflow-hidden mb-7 ring-1 ring-gray-100">
-                <Image
+                <ArticleImage
                   src={featuredImage}
                   alt={featured.title}
                   fill
@@ -92,7 +92,7 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
                   return (
                     <Link key={article._id} href={url} className="group flex gap-4 py-4 first:pt-0 last:pb-0">
                       <div className="relative w-16 h-16 md:w-20 md:h-20 rounded-lg overflow-hidden flex-shrink-0 ring-1 ring-gray-200">
-                        <Image
+                        <ArticleImage
                           src={thumb}
                           alt={article.title}
                           fill

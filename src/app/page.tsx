@@ -1,6 +1,7 @@
 import Header from "./components/Header";
 import HomeHero from "./components/HomeHero";
 import HomeTopics from "./components/HomeTopics";
+import HomeLeadMagnet from "./components/HomeLeadMagnet";
 import HomeManifesto from "./components/HomeManifesto";
 import HomeEditorialGrid from "./components/HomeEditorialGrid";
 import HomeCategorySpotlight from "./components/HomeCategorySpotlight";
@@ -25,6 +26,7 @@ export default async function Home() {
         <HomeHero featured={featured} secondary={secondary} />
         <HomeTopics />
         <HomeManifesto />
+        <HomeLeadMagnet />
         <HomeEditorialGrid articles={gridArticles} />
         <div className="container mx-auto px-4 py-10">
           <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />

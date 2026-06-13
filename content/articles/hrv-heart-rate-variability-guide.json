@@ -1,0 +1,14 @@
+{
+  "slug": "hrv-heart-rate-variability-guide",
+  "title": "HRV Training: A Beginner's Guide to Heart Rate Variability",
+  "category": "Biohacking",
+  "author": "RENEW Editorial",
+  "publishedAt": "2026-06-12T14:00:00.000Z",
+  "excerpt": "Heart rate variability is one of the most accessible biofeedback metrics for recovery and stress. Here is what HRV means, how to measure it, and how to use the data without obsessing over daily scores.",
+  "image": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=640&h=400&q=75&fm=webp",
+  "imagexl": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp",
+  "text": "Heart rate variability (HRV) measures the variation in time between consecutive heartbeats. Counterintuitively, more variability often indicates a more adaptable nervous system — your body can shift between sympathetic (fight-or-flight) and parasympathetic (rest-and-digest) states with flexibility.\n\nLow HRV relative to your own baseline may signal accumulated stress, poor sleep, illness, overtraining, or dehydration. High HRV is not a guarantee of fitness, but trending upward over weeks often correlates with better recovery habits.\n\nConsumer wearables (Oura, Whoop, Apple Watch, Garmin) estimate HRV using optical sensors, usually during sleep or upon waking. Consistency of measurement matters more than the absolute number — compare today against your rolling average, not against other people.",
+  "image2xl": "https://images.unsplash.com/photo-1476480862128-209bfaa8edc4?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
+  "text2": "What improves HRV over time? Adequate sleep, regular aerobic exercise, breathwork, reduced alcohol, and stress management. A single bad night or hard workout can suppress HRV for 24–48 hours — that is normal, not a crisis.\n\nUse HRV as a recovery signal, not a daily grade. If your score is low, consider lighter training, earlier bedtime, or a rest day. If it is consistently low for weeks, examine lifestyle load holistically rather than chasing supplements.\n\nHRV biohacking works best when paired with fundamentals: sleep, movement, nutrition, and social connection. The metric makes invisible stress visible — how you respond to that information is what matters.",
+  "tags": ["HRV", "biohacking", "recovery", "wearables", "stress", "heart rate"]
+}

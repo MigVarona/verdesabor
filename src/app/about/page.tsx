@@ -65,7 +65,6 @@ export default function AboutPage() {
                   href={`/${cat.slug}`}
                   className="flex items-start gap-3 p-4 rounded-lg border border-gray-100 hover:border-renew-sage/30 hover:bg-emerald-50/30 transition-colors"
                 >
-                  <span className="text-xl">{cat.icon}</span>
                   <div>
                     <h3 className="font-semibold text-renew-dark">{cat.label}</h3>
                     <p className="text-sm text-gray-500 mt-0.5">{cat.description}</p>

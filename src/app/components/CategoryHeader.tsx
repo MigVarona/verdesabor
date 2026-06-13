@@ -10,8 +10,8 @@ export default function CategoryHeader({ category }: CategoryHeaderProps) {
   return (
     <div className="bg-white border-b border-gray-100">
       <div className="container mx-auto px-4 py-10 md:py-14">
-        <span className="text-3xl mb-3 block">{meta?.icon || "📄"}</span>
-        <h1 className="text-3xl md:text-4xl font-bold text-renew-dark capitalize">
+        <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-3">Category</p>
+        <h1 className="text-3xl md:text-4xl font-bold text-renew-dark">
           {meta?.label || category}
         </h1>
         {meta?.description && (

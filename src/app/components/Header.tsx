@@ -102,7 +102,7 @@ const Header = () => {
                       onClick={() => setIsMenuOpen(false)}
                       className="block px-3 py-3 text-base text-gray-700 rounded-lg hover:bg-gray-50"
                     >
-                      {item.icon} {item.label}
+                      {item.label}
                     </Link>
                   </li>
                 ))}

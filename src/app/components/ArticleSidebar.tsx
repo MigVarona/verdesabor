@@ -44,7 +44,7 @@ export default function ArticleSidebar({ trending = [], currentCategory }: Artic
                     : "text-gray-600"
                 }`}
               >
-                {cat.icon} {cat.label}
+                {cat.label}
               </Link>
             </li>
           ))}

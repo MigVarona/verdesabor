@@ -1,6 +1,11 @@
 # How to add articles to RENEW
 
-Articles live as JSON files in this folder. To publish a new post, add a file like `my-article-slug.json`.
+Articles are loaded from **two sources** (merged automatically):
+
+1. **MongoDB** — your existing posts (legacy content from the admin)
+2. **`content/articles/*.json`** — new posts added via code/commits (override same slug)
+
+To publish a new post, add a file like `my-article-slug.json`.
 
 ## Required fields
 

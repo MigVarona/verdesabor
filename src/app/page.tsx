@@ -8,6 +8,8 @@ import AdSlot from "./components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles";
 
+export const revalidate = 300;
+
 export default async function Home() {
   const articles = await fetchArticles();
   const featured = articles[0] ?? null;

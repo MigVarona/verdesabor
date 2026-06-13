@@ -11,6 +11,8 @@ export const metadata = {
   description: "Browse all articles on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
 };
 
+export const revalidate = 300;
+
 export default async function ArticlesPage() {
   const articles = await fetchArticles();
 

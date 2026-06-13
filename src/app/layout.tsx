@@ -2,6 +2,7 @@ import type React from "react";
 import { Noto_Sans, PT_Serif } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
+import ConsentScripts from "./components/ConsentScripts";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -65,22 +66,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name="theme-color" content="#111827" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="googleb754e797cff875d0" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SNWZK6K22" />
-        <script
-          defer
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-0SNWZK6K22');
-            `,
-          }}
-        />
       </head>
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
         {children}
         <CookieConsent />
+        <ConsentScripts />
       </body>
     </html>
   );

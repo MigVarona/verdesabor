@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import Link from "next/link";
 import { X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -11,6 +11,7 @@ import {
   type CookiePreferences,
   saveConsent,
   getStoredConsent,
+  getStoredPreferences,
 } from "@/lib/cookies";
 
 type View = "banner" | "preferences";
@@ -59,24 +60,19 @@ export default function CookieConsent() {
   const [view, setView] = useState<View>("banner");
   const [prefs, setPrefs] = useState<CookiePreferences>(DEFAULT_PREFERENCES);
 
+  useLayoutEffect(() => {
+    if (!getStoredConsent()) setVisible(true);
+  }, []);
+
   useEffect(() => {
-    const showIfNeeded = () => {
-      if (!getStoredConsent()) setVisible(true);
-    };
-
-    showIfNeeded();
-    const timer = setTimeout(showIfNeeded, 1200);
-
     const reopen = () => {
+      const stored = getStoredPreferences();
+      if (stored) setPrefs(stored);
       setView("preferences");
       setVisible(true);
     };
     window.addEventListener("open-cookie-settings", reopen);
-
-    return () => {
-      clearTimeout(timer);
-      window.removeEventListener("open-cookie-settings", reopen);
-    };
+    return () => window.removeEventListener("open-cookie-settings", reopen);
   }, []);
 
   const close = () => setVisible(false);
@@ -98,8 +94,11 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[100] flex items-end justify-center p-4 md:p-6">
-      <div className="absolute inset-0 bg-renew-dark/40 backdrop-blur-[2px]" onClick={essentialOnly} />
+    <div className="fixed inset-0 z-[9999] flex items-end justify-center p-4 md:p-6">
+      <div
+        className="absolute inset-0 bg-renew-dark/40 backdrop-blur-[2px]"
+        aria-hidden="true"
+      />
 
       <div className="relative w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
         <div className="h-1 bg-renew-accent" />

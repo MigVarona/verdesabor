@@ -5,6 +5,7 @@ import LegalPageLayout, {
   LegalExternalLink,
   LegalLink,
 } from "../components/LegalPageLayout";
+import ManageCookiePreferences from "../components/ManageCookiePreferences";
 
 export const metadata = {
   title: "Cookie Policy",
@@ -117,6 +118,7 @@ export default function CookiesPage() {
             For more on how we handle personal data, see our{" "}
             <LegalLink href="/privacy">Privacy Policy</LegalLink>.
           </p>
+          <ManageCookiePreferences />
         </LegalBlock>
 
         <LegalBlock id="third-party" title="5. Third-party cookies">

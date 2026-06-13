@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
-import { fetchArticles, getArticleUrl } from "@/lib/articles";
+import { getArticleUrl } from "@/lib/articles";
+import { fetchArticles } from "@/lib/articles.server";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://renewhabits.com";

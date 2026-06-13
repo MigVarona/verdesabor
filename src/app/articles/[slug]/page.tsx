@@ -10,62 +10,45 @@ import ArticleSidebar from "@/app/components/ArticleSidebar";
 import RelatedArticles from "@/app/components/RelatedArticles";
 import AdSlot from "@/app/components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
-import { formatDate, getArticleUrl, type Article } from "@/lib/articles";
-import clientPromise from "@/lib/mongodb";
+import { formatDate, getArticleUrl } from "@/lib/articles";
+import { fetchArticleBySlug, fetchArticles } from "@/lib/articles.server";
 
 interface Params {
   slug: string;
 }
 
-async function getArticle(slug: string) {
-  const client = await clientPromise;
-  const db = client.db("verdesabor");
-  return db.collection("articles").findOne({ slug });
-}
-
-async function getAllArticles(): Promise<Article[]> {
-  const client = await clientPromise;
-  const db = client.db("verdesabor");
-  const articles = await db
-    .collection("articles")
-    .find()
-    .sort({ publishedAt: -1 })
-    .limit(20)
-    .toArray();
-  return JSON.parse(JSON.stringify(articles));
-}
+export const revalidate = 300;
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const { slug } = await props.params;
-  const article = await getArticle(slug);
+  const article = await fetchArticleBySlug(slug);
   if (!article) return {};
 
   return {
-    title: article.title as string,
-    description: (article.excerpt as string) || String(article.text || "").slice(0, 150) + "...",
+    title: article.title,
+    description: article.excerpt || String(article.text || "").slice(0, 150) + "...",
     openGraph: {
-      title: article.title as string,
-      description: article.excerpt as string,
+      title: article.title,
+      description: article.excerpt,
       url: `https://renewhabits.com/articles/${slug}`,
       type: "article",
       images: article.image
-        ? [{ url: article.image as string, width: 1200, height: 630, alt: article.title as string }]
+        ? [{ url: article.image, width: 1200, height: 630, alt: article.title }]
         : [],
-      publishedTime: article.publishedAt as string,
+      publishedTime: article.publishedAt,
     },
-    ...(article.author ? { authors: [{ name: article.author as string }] } : {}),
+    ...(article.author ? { authors: [{ name: article.author }] } : {}),
   };
 }
 
 const ArticlePage = async (props: { params: Promise<Params> }) => {
   const { slug } = await props.params;
-  const raw = await getArticle(slug);
+  const article = await fetchArticleBySlug(slug);
 
-  if (!raw) notFound();
+  if (!article) notFound();
 
-  const article = JSON.parse(JSON.stringify(raw)) as Article;
   const articleUrl = getArticleUrl(article);
-  const allArticles = await getAllArticles();
+  const allArticles = await fetchArticles();
   const related = allArticles.filter(
     (a) => a._id !== article._id && a.category === article.category
   );

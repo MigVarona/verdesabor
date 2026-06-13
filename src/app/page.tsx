@@ -6,7 +6,7 @@ import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import AdSlot from "./components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
-import { fetchArticles } from "@/lib/articles";
+import { fetchArticles } from "@/lib/articles.server";
 
 export const revalidate = 300;
 

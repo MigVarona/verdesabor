@@ -1,15 +1,18 @@
 import type React from "react";
-import { Geist, Azeret_Mono as Geist_Mono } from "next/font/google";
+import { Noto_Sans, PT_Serif } from "next/font/google";
 import "./globals.css";
+import CookieConsent from "./components/CookieConsent";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const notoSans = Noto_Sans({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ptSerif = PT_Serif({
+  variable: "--font-pt-serif",
   subsets: ["latin"],
+  weight: ["400", "700"],
 });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://renewhabits.com";
@@ -19,23 +22,21 @@ export const metadata = {
     default: "Renew | Healthy Living for a Better Future",
     template: "%s | Renew",
   },
-  description: "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity. Explore ways to improve your well-being.",
+  description:
+    "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
   metadataBase: new URL(siteUrl),
   alternates: {
     canonical: "/",
-    languages: {
-      "en-US": "/en-US",
-      "es-ES": "/es-ES",
-    },
   },
   openGraph: {
     title: "Renew | Healthy Living for a Better Future",
-    description: "Discover valuable insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity. Renew is here to support your journey to a healthier and better future.",
+    description:
+      "Discover valuable insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
     url: siteUrl,
     siteName: "Renew",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", // URL de la imagen
+        url: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop",
         width: 1200,
         height: 630,
         alt: "Renew - Healthy Living for a Better Future",
@@ -47,8 +48,11 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Renew | Healthy Living for a Better Future",
-    description: "Explore Renew's insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity to enhance your well-being and health.",
-    images: ["https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"], // URL de la imagen
+    description:
+      "Explore Renew's insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+    images: [
+      "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop",
+    ],
   },
 };
 
@@ -56,50 +60,27 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://www.renewhabits.com" />
-
-        {/* Preload de la fuente Fira Sans */}
-        <link
-          rel="preload"
-          href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap"
-          as="style"
-        />
-
-        {/* Fuentes adicionales */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-          rel="stylesheet"
-        />
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-icon.jpg" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#ffffff" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SNWZK6K22"></script>
+        <meta name="theme-color" content="#111827" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="googleb754e797cff875d0" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-0SNWZK6K22" />
         <script
           defer
           dangerouslySetInnerHTML={{
             __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-
-                gtag('config', 'G-0SNWZK6K22');
-              `,
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-0SNWZK6K22');
+            `,
           }}
         />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="google-site-verification" content="googleb754e797cff875d0" />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
-        <div className="root-layout">{children || <div className="not-found">Ruta no encontrada</div>}</div>
+      <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
+        {children}
+        <CookieConsent />
       </body>
     </html>
   );

@@ -1,151 +1,176 @@
-import { notFound } from 'next/navigation';
-import Header from '@/app/components/Header';
-import Newsletter from '@/app/components/Newsletter';
-import Footer from '@/app/components/Footer';
+import { notFound } from "next/navigation";
 import Image from "next/image";
+import Header from "@/app/components/Header";
+import Newsletter from "@/app/components/Newsletter";
+import Footer from "@/app/components/Footer";
+import Breadcrumbs from "@/app/components/Breadcrumbs";
+import ShareButtons from "@/app/components/ShareButtons";
+import MedicalDisclaimer from "@/app/components/MedicalDisclaimer";
+import ArticleSidebar from "@/app/components/ArticleSidebar";
+import RelatedArticles from "@/app/components/RelatedArticles";
+import AdSlot from "@/app/components/AdSlot";
+import { AD_SLOTS } from "@/lib/constants";
+import { formatDate, getArticleUrl, type Article } from "@/lib/articles";
 import clientPromise from "@/lib/mongodb";
 
 interface Params {
   slug: string;
 }
 
-export async function generateMetadata(props: { params: Promise<Params> }) {
-  const params = await props.params;
-  const { slug } = params;
+async function getArticle(slug: string) {
   const client = await clientPromise;
   const db = client.db("verdesabor");
-  const collection = db.collection("articles");
-  const article = await collection.findOne({ slug });
-
-  if (!article) return {};
-
-  const metadata: any = {
-    title: article.title,
-    description: article.excerpt || article.text?.slice(0, 150) + "...",
-    keywords: article.tags?.length ? article.tags.join(", ") : "healthy recipes, nutrition, wellness, organic food, plant-based diet, clean eating",
-    robots: "index, follow",
-    openGraph: {
-      title: article.title,
-      description: article.excerpt || article.text?.slice(0, 150) + "...",
-      url: `https://renewhabits.com/articles/${slug}`,
-      type: "article",
-      images: [
-        {
-          url: article.image || "https://renewhabits.com/default-image.jpg",
-          width: 1200,
-          height: 630,
-          alt: article.title,
-        },
-      ],
-    },
-  };
-
-  if (article.author) {
-    metadata.authors = [{ name: article.author }];
-  }
-
-  if (article.publishedAt) {
-    metadata.openGraph.publishedTime = article.publishedAt;
-  }
-
-  return metadata;
+  return db.collection("articles").findOne({ slug });
 }
 
+async function getAllArticles(): Promise<Article[]> {
+  const client = await clientPromise;
+  const db = client.db("verdesabor");
+  const articles = await db
+    .collection("articles")
+    .find()
+    .sort({ publishedAt: -1 })
+    .limit(20)
+    .toArray();
+  return JSON.parse(JSON.stringify(articles));
+}
 
-const RecipePage = async (props: { params: Promise<Params> }) => {
-  const params = await props.params;
-  const { slug } = params;
+export async function generateMetadata(props: { params: Promise<Params> }) {
+  const { slug } = await props.params;
+  const article = await getArticle(slug);
+  if (!article) return {};
 
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SITE_URL}/api/articles/${slug}`);
+  return {
+    title: article.title as string,
+    description: (article.excerpt as string) || String(article.text || "").slice(0, 150) + "...",
+    openGraph: {
+      title: article.title as string,
+      description: article.excerpt as string,
+      url: `https://renewhabits.com/articles/${slug}`,
+      type: "article",
+      images: article.image
+        ? [{ url: article.image as string, width: 1200, height: 630, alt: article.title as string }]
+        : [],
+      publishedTime: article.publishedAt as string,
+    },
+    ...(article.author ? { authors: [{ name: article.author as string }] } : {}),
+  };
+}
 
-  if (!res.ok) {
-    notFound();
-  }
+const ArticlePage = async (props: { params: Promise<Params> }) => {
+  const { slug } = await props.params;
+  const raw = await getArticle(slug);
 
-  const articleData = await res.json();
-  const publishedDate = new Date(articleData.publishedAt).toLocaleDateString();
+  if (!raw) notFound();
+
+  const article = JSON.parse(JSON.stringify(raw)) as Article;
+  const articleUrl = getArticleUrl(article);
+  const allArticles = await getAllArticles();
+  const related = allArticles.filter(
+    (a) => a._id !== article._id && a.category === article.category
+  );
 
   return (
     <>
       <Header />
-      <section className="py-16">
-        <div className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
-          <article className="bg-white overflow-hidden p-4">
-            <div className="bg-custom-yellow mb-4 p-2 inline-block">
-              <h3 className="text-3xl text-gray-900 font-fira font-thin">
-                {articleData.title}
-              </h3>
+      <div className="container mx-auto px-4 py-4">
+        <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />
+      </div>
 
-            </div>
-            <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
-            <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
-              {articleData.category}
-            </span>
-            <p className="text-sm text-gray-500">{publishedDate}</p>
+      <article className="py-8 md:py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col lg:flex-row gap-10 lg:gap-12">
+            <div className="flex-1 min-w-0 max-w-3xl">
+              <Breadcrumbs
+                items={[
+                  { label: article.category, href: `/${article.category.toLowerCase()}` },
+                  { label: article.title },
+                ]}
+              />
 
-            <div className="clearfix mt-4">
-              {articleData.image && (
-                <div className="relative w-full float-none lg:float-right ml-0 lg:ml-4 mb-6">
+              <header className="mb-8">
+                <span className="category-badge">{article.category}</span>
+                <h1 className="mt-3 text-3xl md:text-4xl lg:text-[2.75rem] font-bold text-renew-dark leading-tight text-balance">
+                  {article.title}
+                </h1>
+                <div className="flex flex-wrap items-center justify-between gap-4 mt-5">
+                  <p className="text-sm text-gray-400">
+                    {formatDate(article.publishedAt)}
+                    {article.author && (
+                      <span className="ml-3 text-gray-500">by {article.author}</span>
+                    )}
+                  </p>
+                  <ShareButtons title={article.title} url={articleUrl} />
+                </div>
+              </header>
+
+              {article.imagexl && (
+                <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-8">
                   <Image
-                    src={articleData.image}
-                    alt={articleData.title}
-                    width={900}
-                    height={600}
-                    priority={true}
-                    style={{ maxWidth: "100%", height: "auto", objectFit: "cover" }}
+                    src={article.imagexl}
+                    alt={article.title}
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 768px"
                   />
                 </div>
               )}
 
-              <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 mb-6 mt-6">
-                {articleData.excerpt}
-              </p>
+              <MedicalDisclaimer />
 
-              {articleData.imagexl && (
-                <div className="relative w-full">
-                  <Image
-                    src={articleData.imagexl}
-                    alt={`${articleData.title} full width`}
-                    width={900}
-                    height={600}
-                    loading="lazy"
-                    style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
-                  />
-                </div>
-              )}
-
-              {articleData.text && (
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 mb-6 mt-4">
-                  {articleData.text}
+              {article.excerpt && (
+                <p className="prose-article text-xl text-gray-600 font-medium mt-8 mb-6 leading-relaxed">
+                  {article.excerpt}
                 </p>
               )}
 
-              {articleData.image2xl && (
-                <div className="relative w-full">
+              {article.text && (
+                <div className="prose-article mt-6">
+                  <p>{article.text}</p>
+                </div>
+              )}
+
+              <AdSlot id={AD_SLOTS.inContent} format="in-content" />
+
+              {article.image2xl && (
+                <div className="relative w-full rounded-xl overflow-hidden my-8">
                   <Image
-                    src={articleData.image2xl}
-                    alt={`${articleData.title} second full width`}
+                    src={article.image2xl}
+                    alt={`${article.title} illustration`}
                     width={900}
                     height={600}
                     loading="lazy"
-                    style={{ maxWidth: "100%", height: "auto", objectFit: "contain" }}
+                    className="w-full h-auto"
                   />
                 </div>
               )}
 
-              {articleData.text2 && (
-                <p className="font-tisa font-normal text-lg leading-[1.825em] text-gray-700 mt-4">
-                  {articleData.text2}
-                </p>
+              {article.text2 && (
+                <div className="prose-article">
+                  <p>{article.text2}</p>
+                </div>
               )}
+
+              <RelatedArticles
+                articles={related.length > 0 ? related : allArticles}
+                currentId={article._id}
+              />
             </div>
-          </article>
+
+            <div className="lg:w-80 flex-shrink-0">
+              <div className="lg:sticky lg:top-24">
+                <ArticleSidebar trending={allArticles} currentCategory={article.category} />
+              </div>
+            </div>
+          </div>
         </div>
-      </section>
+      </article>
+
       <Newsletter />
       <Footer />
     </>
   );
 };
 
-export default RecipePage;
+export default ArticlePage;

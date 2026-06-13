@@ -1,19 +1,10 @@
-import CategoryArticles from "../components/CategoryArticles";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+import CategoryPage from "../components/CategoryPage";
 
-function LongevityPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <CategoryArticles category="longevity" />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
-  );
+export const metadata = {
+  title: "Longevity",
+  description: "Strategies to extend healthspan and age with vitality.",
+};
+
+export default function LongevityPage() {
+  return <CategoryPage category="longevity" />;
 }
-
-export default LongevityPage;

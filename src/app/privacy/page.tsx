@@ -11,6 +11,7 @@ const PrivacyPolicy = () => {
   const sections = [
     { id: "information", title: "Information We Collect" },
     { id: "cookies", title: "Cookies & Tracking" },
+    { id: "advertising", title: "Advertising" },
     { id: "third-party", title: "Third-Party Services" },
     { id: "images", title: "Use of Images" },
     { id: "protection", title: "Data Protection" },
@@ -39,18 +40,20 @@ const PrivacyPolicy = () => {
       <main className="flex-grow py-12 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-8">
-            {/* Sidebar with Table of Contents */}
             <aside className="lg:w-1/4">
-              <div className="bg-white p-6 rounded-lg shadow-sm sticky top-24">
-                <h3 className="font-semibold text-lg mb-4">Table of Contents</h3>
+              <div className="bg-white p-6 rounded-xl border border-gray-100 shadow-card sticky top-24">
+                <h3 className="font-semibold text-lg mb-4 text-renew-dark">Table of Contents</h3>
                 <nav>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1">
                     {sections.map((section) => (
                       <li key={section.id}>
                         <button
                           onClick={() => scrollToSection(section.id)}
-                          className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${activeSection === section.id ? "bg-blue-100 text-blue-700" : "hover:bg-gray-100"
-                            }`}
+                          className={`w-full text-left px-3 py-2 rounded-md text-sm transition-colors ${
+                            activeSection === section.id
+                              ? "bg-renew-accent/20 text-renew-dark font-medium"
+                              : "hover:bg-gray-50 text-gray-600"
+                          }`}
                         >
                           {section.title}
                         </button>
@@ -61,10 +64,10 @@ const PrivacyPolicy = () => {
               </div>
             </aside>
 
-            {/* Main Content */}
             <div className="lg:w-3/4">
-              <div className="bg-white p-8 rounded-lg shadow-sm">
-                <h1 className="text-3xl mb-10 font-bold text-gray-800 mb-2">Privacy Policy</h1>
+              <div className="bg-white p-8 rounded-xl border border-gray-100 shadow-card">
+                <h1 className="text-3xl font-bold text-renew-dark mb-2">Privacy Policy</h1>
+                <p className="text-sm text-gray-400 mb-10">Last updated: June 2025</p>
                   <section id="information" className="mb-8">
                   <h2 className="text-2xl font-semibold text-gray-700 mb-4">1. Information We Collect</h2>
                   <div className="space-y-6">
@@ -121,17 +124,34 @@ const PrivacyPolicy = () => {
 
 
                 <section id="cookies" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">2. Cookies and Tracking Technologies</h2>
-                  <p className="text-gray-600">
-                    We use cookies exclusively for Google Analytics to help us understand how visitors interact with our website. These cookies collect anonymized data, such as the number of visitors, the pages they view, and how they navigate through the site. This information allows us to improve our content and enhance user experience.
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">2. Cookies and Tracking Technologies</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    We use cookies for Google Analytics to understand how visitors interact with our website, and for advertising purposes through third-party ad networks. These cookies may collect data such as pages visited, time on site, device type, and general location.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mt-3">
+                    You can manage or disable cookies through your browser settings or our cookie consent banner. Disabling cookies may affect site functionality and ad personalization.
+                  </p>
+                </section>
 
-                    By using our website, you consent to the use of these cookies unless you choose to disable them. You can manage or disable cookies at any time through your browser settings. Please note that disabling cookies may affect the accuracy of analytics data but will not impact your ability to use our website.
-
-                    For more information on how Google Analytics handles data, you can visit Google’s Privacy Policy.                  </p>
+                <section id="advertising" className="mb-8">
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">3. Advertising</h2>
+                  <p className="text-gray-600 leading-relaxed">
+                    RENEW may display advertisements from third-party ad networks such as Google AdSense. These partners may use cookies and similar technologies to serve ads based on your prior visits to this website or other websites.
+                  </p>
+                  <p className="text-gray-600 leading-relaxed mt-3">
+                    You can opt out of personalized advertising by visiting{" "}
+                    <a href="https://www.google.com/settings/ads" className="text-renew-sage underline" target="_blank" rel="noopener noreferrer">
+                      Google Ads Settings
+                    </a>{" "}
+                    or the{" "}
+                    <a href="https://optout.aboutads.info/" className="text-renew-sage underline" target="_blank" rel="noopener noreferrer">
+                      Digital Advertising Alliance opt-out page
+                    </a>.
+                  </p>
                 </section>
 
                 <section id="third-party" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">3. Third-Party Services</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">4. Third-Party Services</h2>
                   <p className="text-gray-600">
                     We use third-party service providers to manage our newsletter subscriptions and analytics. These providers help us deliver email communications, track user engagement, and analyze website traffic to improve our services. While we carefully select our partners to ensure they align with industry standards for data protection, we do not control how these third parties handle your personal data.
 
@@ -141,7 +161,7 @@ const PrivacyPolicy = () => {
                   </p>
                 </section>
                 <section id="images" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">4. Use of Images</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">5. Use of Images</h2>
                   <p className="text-gray-600">
                     We incorporate images from various sources, including <span className="font-medium">Unsplash</span> and other
                     royalty-free image providers, to enhance the visual appeal of our website. These images are used under the
@@ -167,7 +187,7 @@ const PrivacyPolicy = () => {
 
 
                 <section id="protection" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">5. Data Protection</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">6. Data Protection</h2>
                   <p className="text-gray-600">
                     We take the security of your personal data seriously and implement appropriate technical and organizational measures to protect it from unauthorized access, alteration, disclosure, or destruction. Our security protocols include encryption, access controls, and regular monitoring to prevent potential vulnerabilities.
                   </p>
@@ -181,7 +201,7 @@ const PrivacyPolicy = () => {
 
 
                 <section id="rights" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">6. Your Rights</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">7. Your Rights</h2>
                   <p className="text-gray-600">
                     We respect your rights regarding your personal data and strive to ensure transparency in how we collect, store, and use your information. Under applicable data protection laws, you have several rights that allow you to maintain control over your personal data.
                   </p>
@@ -221,7 +241,7 @@ const PrivacyPolicy = () => {
 
 
                 <section id="changes" className="mb-8">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">7. Changes to This Policy</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">8. Changes to This Policy</h2>
                   <p className="text-gray-600">
                     We may update this Privacy Policy periodically to reflect changes in our practices, legal requirements, or technological advancements. Any modifications will be posted on this page, and the "Last Updated" date at the bottom of the policy will be revised accordingly.
                   </p>
@@ -241,7 +261,7 @@ const PrivacyPolicy = () => {
 
 
                 <section id="contact" className="mb-6">
-                  <h2 className="text-2xl font-semibold text-gray-700 mb-4">8. Contact</h2>
+                  <h2 className="text-2xl font-semibold text-renew-dark mb-4">9. Contact</h2>
                   <p className="text-gray-600">
                     If you have any questions, concerns, or requests regarding this Privacy Policy or how we handle your personal data,
                     we encourage you to reach out to us. We are committed to addressing your inquiries and ensuring transparency in our
@@ -249,7 +269,7 @@ const PrivacyPolicy = () => {
                   </p>
                   <p className="mt-2 text-gray-600">
                     You can contact us through our{" "}
-                    <Link href="/contact" className="text-blue-600 hover:underline">Contact Page</Link>,
+                    <Link href="/about#contact" className="text-renew-sage hover:underline">Contact Page</Link>,
                     where you can submit your questions, report issues, or request modifications to your personal data.
                     If your request involves sensitive information, we may require identity verification to ensure
                     your privacy and security.

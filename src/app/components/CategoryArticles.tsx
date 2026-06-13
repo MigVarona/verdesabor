@@ -1,21 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import Link from "next/link";
-
-interface Article {
-  _id: string;
-  image: string;
-  title: string;
-  category: string;
-  excerpt: string;
-  imagexl: string;
-  text: string;
-  image2xl: string;
-  text2: string;
-  publishedAt: string;
-}
+import { type Article } from "@/lib/articles";
+import ArticleCard from "./ArticleCard";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 interface CategoryProps {
   category: string;
@@ -24,19 +13,21 @@ interface CategoryProps {
 const CategoryArticles = ({ category }: CategoryProps) => {
   const [articles, setArticles] = useState<Article[]>([]);
   const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const perPage = 9;
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const response = await fetch(`/api/articles/category/${category}`);
         const data = await response.json();
-
         setArticles(
-          data.sort(
-            (a: Article, b: Article) =>
-              new Date(b.publishedAt).getTime() -
-              new Date(a.publishedAt).getTime()
-          )
+          Array.isArray(data)
+            ? data.sort(
+                (a: Article, b: Article) =>
+                  new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+              )
+            : []
         );
       } catch (error) {
         console.error("Error fetching articles:", error);
@@ -44,67 +35,62 @@ const CategoryArticles = ({ category }: CategoryProps) => {
         setLoading(false);
       }
     };
-
     fetchArticles();
   }, [category]);
 
-  const generateSlug = (title: string) =>
-    title.toLowerCase().replace(/\s+/g, "-").replace(/[^\w-]+/g, "");
-
-  if (loading) return <div className="text-center py-10 text-gray-500">Loading articles...</div>;
-
-  if (articles.length === 0) {
+  if (loading) {
     return (
-      <div className="text-center py-10 text-gray-500">
-        No articles found in {category}.
+      <div className="container mx-auto px-4 py-16 text-center text-gray-400">
+        Loading articles...
       </div>
     );
   }
 
+  if (articles.length === 0) {
+    return (
+      <div className="container mx-auto px-4 py-16 text-center text-gray-400">
+        No articles found in this category yet. Check back soon!
+      </div>
+    );
+  }
+
+  const totalPages = Math.ceil(articles.length / perPage);
+  const paginated = articles.slice((currentPage - 1) * perPage, currentPage * perPage);
+
   return (
-    (<section className="py-16">
-      {articles.map((article) => (
-        <div key={article._id} className="container mx-auto px-6 lg:px-16 max-w-2xl lg:max-w-4xl">
-          <article className="bg-white overflow-hidden p-4">
-            {article.imagexl && (
-              <div className="relative w-full mb-4">
-                <Image
-                  src={article.imagexl || "/placeholder.svg"}
-                  alt={article.title}
-                  width={900}
-                  height={600}
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    objectFit: "contain"
-                  }} />
-              </div>
-            )}
-            <div>
-              <div className="bg-custom-yellow mb-2 p-2 inline-block">
-                <h3 className="text-3xl text-gray-900 font-fira font-thin">
-                  <Link
-                    href={`/articles/${generateSlug(article.title)}`}
-                    className="hover:underline"
-                  >
-                    {article.title}
-                  </Link>
-                </h3>
-              </div>
-              <div className="mb-4">
-                <span className="text-[0.75em] text-gray-400 leading-[1.25em] font-bold tracking-[0.1em] uppercase">
-                  {article.category}
-                </span>
-                <p className="text-sm text-gray-500">
-                  {new Date(article.publishedAt).toLocaleDateString()}
-                </p>
-              </div>
-              <hr className="h-px bg-gray-300 border-0 mt-6 mb-6" />
-            </div>
-          </article>
+    <section className="py-10 md:py-14">
+      <div className="container mx-auto px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {paginated.map((article) => (
+            <ArticleCard key={article._id} article={article} variant="default" />
+          ))}
         </div>
-      ))}
-    </section>)
+
+        {totalPages > 1 && (
+          <div className="flex justify-center items-center gap-4 mt-10">
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((p) => Math.max(p - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="w-4 h-4 mr-1" /> Previous
+            </Button>
+            <span className="text-sm text-gray-500">
+              Page {currentPage} of {totalPages}
+            </span>
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={() => setCurrentPage((p) => Math.min(p + 1, totalPages))}
+              disabled={currentPage === totalPages}
+            >
+              Next <ChevronRight className="w-4 h-4 ml-1" />
+            </Button>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 

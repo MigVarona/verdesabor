@@ -1,19 +1,10 @@
-import CategoryArticles from "../components/CategoryArticles";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+import CategoryPage from "../components/CategoryPage";
 
-function LifestylePage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <CategoryArticles category="lifestyle" />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
-  );
+export const metadata = {
+  title: "Lifestyle",
+  description: "Habits, routines, and choices that shape a healthier life.",
+};
+
+export default function LifestylePage() {
+  return <CategoryPage category="lifestyle" />;
 }
-
-export default LifestylePage;

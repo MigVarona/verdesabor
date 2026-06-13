@@ -1,19 +1,10 @@
-import CategoryArticles from "../components/CategoryArticles";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+import CategoryPage from "../components/CategoryPage";
 
-function NutritionPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <CategoryArticles category="nutrition" />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
-  );
+export const metadata = {
+  title: "Nutrition",
+  description: "Evidence-based guides on food, macros, and sustainable eating habits.",
+};
+
+export default function NutritionPage() {
+  return <CategoryPage category="nutrition" />;
 }
-
-export default NutritionPage;

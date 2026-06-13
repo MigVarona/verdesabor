@@ -1,19 +1,10 @@
-import CategoryArticles from "../components/CategoryArticles";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import Newsletter from "../components/Newsletter";
+import CategoryPage from "../components/CategoryPage";
 
-function WellnessPage() {
-  return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <CategoryArticles category="wellness" />
-        <Newsletter />
-      </main>
-      <Footer />
-    </div>
-  );
+export const metadata = {
+  title: "Wellness",
+  description: "Holistic practices for balance, recovery, and daily well-being.",
+};
+
+export default function WellnessPage() {
+  return <CategoryPage category="wellness" />;
 }
-
-export default WellnessPage

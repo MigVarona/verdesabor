@@ -3,7 +3,7 @@ import { CATEGORIES } from "@/lib/constants";
 
 export default function HomeTopics() {
   return (
-    <section className="bg-gray-50/80 border-y border-gray-100 sticky top-16 md:top-[72px] z-40 backdrop-blur-sm">
+    <section className="bg-gray-50/80 border-y border-gray-100 sticky top-[3.625rem] md:top-[72px] z-30">
       <div className="container mx-auto px-4">
         <div className="flex items-center gap-6 overflow-x-auto py-3.5 scrollbar-hide">
           <span className="text-xs font-semibold uppercase tracking-widest text-gray-400 flex-shrink-0">

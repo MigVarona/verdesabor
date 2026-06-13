@@ -10,8 +10,13 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { FileImage, Loader2, PenTool, LogOut } from "lucide-react";
 import { logout } from "@/app/logout/action";
+import { generateSlug } from "@/lib/articles";
 
 const categories = ["Nutrition", "Biohacking", "Neuroscience", "Wellness", "Lifestyle", "Longevity"];
+
+function slugify(title: string): string {
+  return generateSlug(title);
+}
 
 const AdminPage = () => {
   const router = useRouter();
@@ -37,38 +42,46 @@ const AdminPage = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const res = await fetch("/api/articles", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const slug = slugify(formData.title);
+      const publishedAt = formData.publishedAt
+        ? new Date(formData.publishedAt).toISOString()
+        : new Date().toISOString();
 
-      const data = await res.json();
-      if (res.ok) {
-        setStatus({ type: "success", message: `Artículo creado con ID: ${data.insertedId}` });
-        setFormData({
-          title: "",
-          category: categories[0],
-          excerpt: "",
-          publishedAt: "",
-          image: "",
-          imagexl: "",
-          text: "",
-          image2xl: "",
-          text2: "",
-        });
-      } else {
-        setStatus({ type: "error", message: `Error: ${data.error}` });
-      }
+      const article = {
+        slug,
+        title: formData.title,
+        category: formData.category,
+        author: "RENEW Editorial",
+        publishedAt,
+        excerpt: formData.excerpt,
+        ...(formData.image && { image: formData.image }),
+        ...(formData.imagexl && { imagexl: formData.imagexl }),
+        ...(formData.text && { text: formData.text }),
+        ...(formData.image2xl && { image2xl: formData.image2xl }),
+        ...(formData.text2 && { text2: formData.text2 }),
+      };
+
+      const blob = new Blob([JSON.stringify(article, null, 2) + "\n"], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${slug}.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+
+      setStatus({
+        type: "success",
+        message: `Downloaded ${slug}.json — add it to content/articles/ in the repo, then commit and deploy.`,
+      });
     } catch (error) {
-      setStatus({ type: "error", message: `Error: ${(error as any).message}` });
+      setStatus({ type: "error", message: `Error: ${(error as Error).message}` });
     } finally {
       setIsSubmitting(false);
     }
@@ -92,6 +105,10 @@ const AdminPage = () => {
           </Button>
         </CardHeader>
         <CardContent className="pt-6">
+          <p className="text-sm text-muted-foreground mb-6">
+            Articles are stored as JSON files in <code className="text-xs bg-muted px-1 py-0.5 rounded">content/articles/</code>.
+            Fill in the form and download the file, then add it to the repo and deploy.
+          </p>
           <form onSubmit={handleSubmit} className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div>
@@ -245,10 +262,10 @@ const AdminPage = () => {
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Creating Article...
+                  Generating...
                 </>
               ) : (
-                "Create Article"
+                "Download JSON"
               )}
             </Button>
           </form>

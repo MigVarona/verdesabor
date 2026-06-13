@@ -32,3 +32,12 @@ export function formatDate(date: string | Date): string {
 export function getArticleUrl(article: Pick<Article, "title" | "slug">): string {
   return `/articles/${article.slug || generateSlug(article.title)}`;
 }
+
+export function getReadingTime(text: string): number {
+  const words = text.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / 200));
+}
+
+export function splitParagraphs(text: string): string[] {
+  return text.split(/\n\n+/).filter(Boolean);
+}

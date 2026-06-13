@@ -1,40 +1,63 @@
 import "server-only";
 
-import clientPromise from "@/lib/mongodb";
+import fs from "fs";
+import path from "path";
 import type { Article } from "@/lib/articles";
+import { generateSlug } from "@/lib/articles";
 
-async function queryArticles(filter: Record<string, unknown> = {}): Promise<Article[]> {
-  try {
-    const client = await clientPromise;
-    const db = client.db("verdesabor");
-    const articles = await db
-      .collection("articles")
-      .find(filter)
-      .sort({ publishedAt: -1 })
-      .toArray();
-    return JSON.parse(JSON.stringify(articles));
-  } catch (error) {
-    console.error("Error fetching articles from database:", error);
-    return [];
-  }
+const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
+
+function normalizeArticle(raw: Omit<Article, "_id"> & { _id?: string }, filename: string): Article {
+  const slug = raw.slug || generateSlug(raw.title);
+  return {
+    ...raw,
+    _id: raw._id || slug || filename.replace(/\.json$/, ""),
+    slug,
+    publishedAt: raw.publishedAt || new Date().toISOString(),
+  };
+}
+
+function readArticlesFromDisk(): Article[] {
+  if (!fs.existsSync(ARTICLES_DIR)) return [];
+
+  const files = fs.readdirSync(ARTICLES_DIR).filter((f) => f.endsWith(".json"));
+
+  const articles = files
+    .map((file) => {
+      try {
+        const raw = JSON.parse(fs.readFileSync(path.join(ARTICLES_DIR, file), "utf-8"));
+        return normalizeArticle(raw, file);
+      } catch (error) {
+        console.error(`Error reading article file ${file}:`, error);
+        return null;
+      }
+    })
+    .filter((a): a is Article => a !== null);
+
+  return articles.sort(
+    (a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()
+  );
+}
+
+function matchesSlug(article: Article, slug: string): boolean {
+  return article.slug === slug || generateSlug(article.title) === slug;
 }
 
 export async function fetchArticles(): Promise<Article[]> {
-  return queryArticles();
+  return readArticlesFromDisk();
 }
 
 export async function fetchArticlesByCategory(category: string): Promise<Article[]> {
-  return queryArticles({ category: new RegExp(`^${category}$`, "i") });
+  const regex = new RegExp(`^${category}$`, "i");
+  return readArticlesFromDisk().filter((a) => regex.test(a.category));
 }
 
 export async function fetchArticleBySlug(slug: string): Promise<Article | null> {
-  try {
-    const client = await clientPromise;
-    const db = client.db("verdesabor");
-    const article = await db.collection("articles").findOne({ slug });
-    return article ? JSON.parse(JSON.stringify(article)) : null;
-  } catch (error) {
-    console.error("Error fetching article by slug:", error);
-    return null;
-  }
+  const articles = readArticlesFromDisk();
+  return articles.find((a) => matchesSlug(a, slug)) ?? null;
+}
+
+export async function getAllArticleSlugs(): Promise<string[]> {
+  const articles = readArticlesFromDisk();
+  return articles.map((a) => a.slug || generateSlug(a.title));
 }

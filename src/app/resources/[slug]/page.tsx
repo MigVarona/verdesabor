@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Download, ArrowLeft } from "lucide-react";
+import { Download, ArrowLeft, Check } from "lucide-react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import { getGuideBySlug, GUIDES } from "@/lib/guides";
@@ -32,7 +32,7 @@ export default async function GuidePage({ params }: { params: Promise<Params> })
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-renew-cream">
+      <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b border-gray-100">
           <div className="h-1.5 bg-renew-accent" />
           <div className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
@@ -67,24 +67,45 @@ export default async function GuidePage({ params }: { params: Promise<Params> })
         </div>
 
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-3xl">
-          <p className="font-serif text-xl text-gray-600 leading-relaxed border-l-4 border-renew-accent pl-6 mb-12">
-            {guide.description}
-          </p>
+          <div className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 mb-10 shadow-card">
+            <h2 className="text-lg font-bold text-renew-dark mb-3">How to use this guide</h2>
+            <p className="text-gray-600 leading-relaxed">{guide.intro}</p>
+          </div>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {guide.habits.map((habit) => (
               <article
                 key={habit.number}
-                className="bg-white rounded-2xl border border-gray-100 p-6 md:p-8 shadow-card"
+                className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-card"
               >
-                <div className="flex items-start gap-4">
-                  <span className="flex-shrink-0 w-10 h-10 rounded-full bg-renew-accent text-renew-dark font-bold text-sm flex items-center justify-center">
-                    {habit.number}
-                  </span>
-                  <div>
-                    <h2 className="text-xl font-bold text-renew-dark leading-snug">{habit.title}</h2>
-                    <p className="mt-2 text-sm font-medium text-renew-sage">{habit.summary}</p>
-                    <p className="mt-4 text-gray-600 leading-relaxed">{habit.detail}</p>
+                <div className="h-1 bg-renew-accent" />
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start gap-4">
+                    <span className="flex-shrink-0 w-11 h-11 rounded-full bg-renew-accent text-renew-dark font-bold text-base flex items-center justify-center">
+                      {habit.number}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h2 className="text-xl md:text-2xl font-bold text-renew-dark leading-snug">
+                        {habit.title}
+                      </h2>
+                      <p className="mt-2 text-sm font-semibold text-renew-sage">{habit.summary}</p>
+                    </div>
+                  </div>
+
+                  <p className="mt-5 text-gray-600 leading-relaxed text-base">{habit.detail}</p>
+
+                  <div className="mt-6 pt-6 border-t border-gray-100">
+                    <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">
+                      This week
+                    </p>
+                    <ul className="space-y-2.5">
+                      {habit.actions.map((action) => (
+                        <li key={action} className="flex items-start gap-3 text-sm text-gray-700">
+                          <Check className="w-4 h-4 text-renew-sage flex-shrink-0 mt-0.5" />
+                          <span>{action}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
               </article>

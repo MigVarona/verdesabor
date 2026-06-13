@@ -1,0 +1,88 @@
+{
+  "slug": "7-daily-habits-healthspan",
+  "title": "7 Daily Habits for a Longer Healthspan",
+  "subtitle": "A practical RENEW guide to habits that compound over years — not days.",
+  "description": "Science-backed daily practices covering light, movement, nutrition, sleep, recovery, and focus. No extreme protocols — just clarity you can start tomorrow.",
+  "pdfPath": "/downloads/renew-7-daily-habits-healthspan.pdf",
+  "readTime": "12 min",
+  "intro": "Healthspan is the number of years you live with energy, clarity, and physical capability. These seven habits are drawn from longevity research, circadian science, and sports medicine — simplified into daily actions. You do not need to adopt all seven at once. Pick one habit, practice it for seven days, then add the next.",
+  "habits": [
+    {
+      "number": 1,
+      "title": "Get morning sunlight within 60 minutes of waking",
+      "summary": "Anchor your circadian clock before screens take over.",
+      "detail": "Ten to fifteen minutes of outdoor light (longer on cloudy days) signals your brain to suppress melatonin and raise cortisol at the right time. This improves evening sleepiness, mood, and metabolic rhythm. A walk counts. Standing on a balcony counts. Sunglasses off, unless medically necessary.",
+      "actions": [
+        "Within 60 minutes of waking, go outside for 10–15 minutes.",
+        "On cloudy days, extend to 20–30 minutes.",
+        "Combine with a short walk or coffee on the porch."
+      ]
+    },
+    {
+      "number": 2,
+      "title": "Move at Zone 2 for at least 30 minutes most days",
+      "summary": "Build the aerobic base that supports everything else.",
+      "detail": "Zone 2 is a pace where you can hold a conversation but not sing — typically 60–70% of max heart rate. Brisk walking, easy cycling, or incline treadmill work counts. Aim for roughly 150 minutes per week. This supports mitochondrial health, insulin sensitivity, and cardiovascular longevity.",
+      "actions": [
+        "Schedule 30 minutes of brisk walking or easy cycling.",
+        "Use the talk test: you should be able to speak in full sentences.",
+        "Track toward 150 minutes per week — consistency beats intensity."
+      ]
+    },
+    {
+      "number": 3,
+      "title": "Eat a protein-forward first meal",
+      "summary": "Stabilize energy and reduce impulsive snacking later.",
+      "detail": "Target 25–40g of protein at your first substantial meal: eggs, Greek yogurt, fish, legumes, or a clean protein shake. Protein increases satiety, supports muscle maintenance, and reduces the blood-sugar rollercoaster that drives afternoon crashes.",
+      "actions": [
+        "Aim for 25–40g protein at breakfast or your first meal.",
+        "Pair protein with fiber: vegetables, berries, or whole grains.",
+        "Prepare options the night before to remove friction."
+      ]
+    },
+    {
+      "number": 4,
+      "title": "Keep a consistent sleep and wake window",
+      "summary": "Regularity beats perfection.",
+      "detail": "Going to bed and waking within the same 30-minute window — even on weekends — strengthens circadian alignment. Prioritize 7–9 hours. Cool, dark room. No work in bed. Consistency is the highest-leverage sleep intervention for most people.",
+      "actions": [
+        "Set a fixed wake time and stick to it within 30 minutes daily.",
+        "Wind down 30–60 minutes before bed (see habit 7).",
+        "Keep the bedroom cool (around 18–20°C) and as dark as possible."
+      ]
+    },
+    {
+      "number": 5,
+      "title": "Wind down with a magnesium-rich evening ritual",
+      "summary": "Support relaxation without relying on willpower alone.",
+      "detail": "Magnesium glycinate or citrate (200–400mg, if tolerated) may support sleep quality in those with low intake. Pair it with dim lights, herbal tea, light stretching, or journaling. The ritual matters as much as the supplement.",
+      "actions": [
+        "Dim lights 60–90 minutes before bed.",
+        "Try magnesium glycinate with food if your diet is low in magnesium.",
+        "Add 5–10 minutes of stretching, journaling, or herbal tea."
+      ]
+    },
+    {
+      "number": 6,
+      "title": "Use brief cold exposure 2–3 times per week",
+      "summary": "A controlled stressor that builds resilience.",
+      "detail": "End a warm shower with 30–90 seconds of cool water, or try a short cold plunge if experienced. Start small. Focus on slow nasal breathing. Cold exposure may support mood, alertness, and stress tolerance — but consistency and safety come first.",
+      "actions": [
+        "End your shower with 30 seconds of cool water, then build up.",
+        "Breathe slowly through the nose — do not force hyperventilation.",
+        "Skip if you have cardiovascular conditions unless cleared by a doctor."
+      ]
+    },
+    {
+      "number": 7,
+      "title": "Protect a digital sunset before bed",
+      "summary": "Give your brain an off-ramp from stimulation.",
+      "detail": "Set a screens-down time 60 minutes before sleep: phone in another room, amber lighting, paper book, conversation, or mobility work. Blue light is only part of the story — mental stimulation and stress notifications are often the bigger problem.",
+      "actions": [
+        "Set a screens-down alarm 60 minutes before your target bedtime.",
+        "Charge your phone outside the bedroom.",
+        "Replace scrolling with a paper book, conversation, or light mobility."
+      ]
+    }
+  ]
+}

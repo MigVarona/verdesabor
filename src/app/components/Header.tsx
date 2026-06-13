@@ -5,6 +5,7 @@ import Link from "next/link";
 import { Menu, X, Search } from "lucide-react";
 import { CATEGORIES } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import RenewLogo from "./RenewLogo";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,11 +39,9 @@ const Header = () => {
             <Menu size={22} />
           </button>
 
-          <Link href="/" className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:mr-auto">
-            <span className="text-2xl md:text-3xl font-bold tracking-[0.2em] text-renew-dark">
-              RENEW
-            </span>
-          </Link>
+          <div className="absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:mr-auto">
+            <RenewLogo size="default" />
+          </div>
 
           <nav className="hidden md:flex items-center gap-1">
             {CATEGORIES.map((item) => (
@@ -79,7 +78,7 @@ const Header = () => {
           <div className="absolute inset-0 bg-black/40" onClick={() => setIsMenuOpen(false)} />
           <div className="absolute inset-y-0 left-0 w-[min(320px,85vw)] bg-white shadow-2xl flex flex-col">
             <div className="flex items-center justify-between p-5 border-b border-gray-100">
-              <span className="text-xl font-bold tracking-[0.2em] text-renew-dark">RENEW</span>
+              <RenewLogo size="sm" />
               <button onClick={() => setIsMenuOpen(false)} aria-label="Close menu" className="p-2 text-gray-500">
                 <X size={22} />
               </button>

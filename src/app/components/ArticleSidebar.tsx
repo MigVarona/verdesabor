@@ -15,9 +15,9 @@ export default function ArticleSidebar({ trending = [], currentCategory }: Artic
       <AdSlot id={AD_SLOTS.sidebar} format="sidebar" />
 
       {trending.length > 0 && (
-        <div className="bg-white rounded-xl border border-gray-100 p-5 shadow-card">
+        <div className="bg-renew-paper border border-renew-border p-5 shadow-card">
           <h3 className="font-bold text-renew-dark mb-4 flex items-center gap-2">
-            <span className="w-1 h-5 bg-renew-accent rounded-full" />
+            <span className="w-1 h-5 bg-renew-accent" />
             Trending Now
           </h3>
           <div>
@@ -28,10 +28,12 @@ export default function ArticleSidebar({ trending = [], currentCategory }: Artic
         </div>
       )}
 
-      <div className="bg-white rounded-xl border border-gray-100 p-5 shadow-card">
+      <div className="bg-renew-ink border border-renew-ink p-5 shadow-card text-white">
         <h3 className="font-bold text-renew-dark mb-4 flex items-center gap-2">
-          <span className="w-1 h-5 bg-renew-sage rounded-full" />
+          <span className="w-1 h-5 bg-renew-accent" />
+          <span className="text-white">
           Categories
+          </span>
         </h3>
         <ul className="space-y-2">
           {CATEGORIES.map((cat) => (
@@ -40,8 +42,8 @@ export default function ArticleSidebar({ trending = [], currentCategory }: Artic
                 href={`/${cat.slug}`}
                 className={`text-sm capitalize transition-colors hover:text-renew-sage ${
                   currentCategory?.toLowerCase() === cat.slug
-                    ? "text-renew-sage font-semibold"
-                    : "text-gray-600"
+                    ? "text-renew-accent font-semibold"
+                    : "text-white/65"
                 }`}
               >
                 {cat.label}

@@ -12,13 +12,18 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
         renew: {
-          accent: "#ffdb00",
-          dark: "#111827",
-          sage: "#4a7c59",
-          cream: "#fafaf7",
-          muted: "#6b7280",
+          accent: "#d7ff4f",
+          dark: "#18211d",
+          sage: "#2f6f52",
+          cream: "#f7f5ef",
+          muted: "#68736d",
+          paper: "#fffdf6",
+          ink: "#0f1714",
+          clay: "#b86f47",
+          mist: "#e8eee6",
+          border: "#dfddd2",
         },
-        "custom-yellow": "#ffdb00",
+        "custom-yellow": "#d7ff4f",
       },
       fontFamily: {
         sans: ['"Noto Sans"', "system-ui", "sans-serif"],
@@ -30,8 +35,8 @@ export default {
         duplet: ["Duplet", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06)",
-        "card-hover": "0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04)",
+        card: "0 1px 2px 0 rgb(15 23 20 / 0.05), 0 10px 30px -24px rgb(15 23 20 / 0.25)",
+        "card-hover": "0 22px 55px -32px rgb(15 23 20 / 0.35), 0 8px 18px -14px rgb(15 23 20 / 0.2)",
       },
       typography: {
         DEFAULT: {

@@ -14,11 +14,11 @@ export default function HomeCategorySpotlight({ articles }: HomeCategorySpotligh
   }).filter((c) => c.article);
 
   return (
-    <section className="py-16 md:py-20 bg-white border-t border-gray-100">
+    <section className="py-16 md:py-20 bg-renew-mist border-t border-renew-border">
       <div className="container mx-auto px-4">
         <div className="mb-10">
-          <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-2">By topic</p>
-          <h2 className="text-3xl md:text-4xl font-bold text-renew-dark">Explore the library</h2>
+          <p className="editorial-kicker mb-2">By topic</p>
+          <h2 className="font-serif text-4xl md:text-5xl text-renew-dark leading-tight">Explore the library</h2>
         </div>
 
         {byCategory.length > 0 ? (
@@ -27,7 +27,7 @@ export default function HomeCategorySpotlight({ articles }: HomeCategorySpotligh
               <Link
                 key={slug}
                 href={article ? getArticleUrl(article) : `/${slug}`}
-                className="group p-6 bg-gray-50 border border-gray-100 rounded-2xl hover:bg-white hover:border-renew-sage/30 hover:shadow-card transition-all"
+                className="group p-6 bg-renew-paper border border-renew-border hover:bg-white hover:border-renew-sage/40 hover:shadow-card transition-all"
               >
                 <p className="text-xs font-bold uppercase tracking-widest text-renew-sage mb-3">{label}</p>
                 {article ? (
@@ -35,13 +35,13 @@ export default function HomeCategorySpotlight({ articles }: HomeCategorySpotligh
                     <h3 className="font-semibold text-lg text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-gray-500 mt-2 line-clamp-2">{article.excerpt}</p>
-                    <span className="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-gray-400 group-hover:text-renew-sage transition-colors">
+                    <p className="text-sm text-renew-muted mt-2 line-clamp-2">{article.excerpt}</p>
+                    <span className="inline-flex items-center gap-1 mt-4 text-xs font-semibold text-renew-muted group-hover:text-renew-sage transition-colors">
                       Read <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                     </span>
                   </>
                 ) : (
-                  <p className="text-sm text-gray-500">{description}</p>
+                  <p className="text-sm text-renew-muted">{description}</p>
                 )}
               </Link>
             ))}
@@ -53,9 +53,9 @@ export default function HomeCategorySpotlight({ articles }: HomeCategorySpotligh
             <Link
               key={cat.slug}
               href={`/${cat.slug}`}
-              className="group p-4 bg-white border border-gray-200 rounded-xl text-center hover:border-renew-sage/40 hover:shadow-sm transition-all"
+              className="group p-4 bg-renew-paper border border-renew-border text-center hover:bg-renew-accent hover:border-renew-dark transition-all"
             >
-              <p className="font-semibold text-sm text-gray-700 group-hover:text-renew-sage transition-colors">
+              <p className="font-semibold text-sm text-renew-dark transition-colors">
                 {cat.label}
               </p>
             </Link>

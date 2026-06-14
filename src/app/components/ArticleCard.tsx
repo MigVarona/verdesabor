@@ -20,9 +20,9 @@ export default function ArticleCard({
 
   if (variant === "horizontal") {
     return (
-      <article className={cn("group flex gap-4 py-5 border-b border-gray-100 last:border-0", className)}>
+      <article className={cn("group flex gap-4 py-5 border-b border-renew-border last:border-0", className)}>
         {image && (
-          <Link href={url} className="relative flex-shrink-0 w-28 h-20 md:w-36 md:h-24 rounded-lg overflow-hidden">
+          <Link href={url} className="relative flex-shrink-0 w-28 h-20 md:w-36 md:h-24 overflow-hidden">
             <ArticleImage
               src={thumb}
               alt={article.title}
@@ -37,7 +37,7 @@ export default function ArticleCard({
           <h3 className="mt-1 font-semibold text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
             <Link href={url}>{article.title}</Link>
           </h3>
-          <p className="text-xs text-gray-400 mt-1">{formatDate(article.publishedAt)}</p>
+          <p className="text-xs text-renew-muted mt-1">{formatDate(article.publishedAt)}</p>
         </div>
       </article>
     );
@@ -48,7 +48,7 @@ export default function ArticleCard({
       <article className={cn("group", className)}>
         <Link href={url} className="block">
           {image && (
-            <div className="relative aspect-[16/10] rounded-lg overflow-hidden mb-3">
+            <div className="relative aspect-[16/10] overflow-hidden mb-3 ring-1 ring-renew-border">
               <ArticleImage
                 src={image}
                 alt={article.title}
@@ -62,7 +62,7 @@ export default function ArticleCard({
           <h3 className="mt-1.5 font-semibold text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
             {article.title}
           </h3>
-          <p className="text-xs text-gray-400 mt-1.5">{formatDate(article.publishedAt)}</p>
+          <p className="text-xs text-renew-muted mt-1.5">{formatDate(article.publishedAt)}</p>
         </Link>
       </article>
     );
@@ -73,7 +73,7 @@ export default function ArticleCard({
       <article className={cn("group", className)}>
         <Link href={url} className="block">
           {image && (
-            <div className="relative aspect-[16/9] rounded-xl overflow-hidden mb-5">
+            <div className="relative aspect-[16/9] overflow-hidden mb-5">
               <ArticleImage
                 src={image}
                 alt={article.title}
@@ -93,17 +93,17 @@ export default function ArticleCard({
               </div>
             </div>
           )}
-          <p className="text-gray-600 leading-relaxed line-clamp-2 md:line-clamp-none">
+          <p className="text-renew-muted leading-relaxed line-clamp-2 md:line-clamp-none">
             {article.excerpt}
           </p>
-          <p className="text-sm text-gray-400 mt-3">{formatDate(article.publishedAt)}</p>
+          <p className="text-sm text-renew-muted mt-3">{formatDate(article.publishedAt)}</p>
         </Link>
       </article>
     );
   }
 
   return (
-    <article className={cn("group bg-white rounded-xl border border-gray-100 shadow-card hover:shadow-card-hover transition-shadow overflow-hidden", className)}>
+    <article className={cn("group bg-renew-paper border border-renew-border shadow-card hover:shadow-card-hover transition-shadow overflow-hidden", className)}>
       <Link href={url} className="block">
         {image && (
           <div className="relative aspect-[16/10] overflow-hidden">
@@ -121,8 +121,8 @@ export default function ArticleCard({
           <h3 className="mt-2 text-lg font-semibold text-renew-dark leading-snug group-hover:text-renew-sage transition-colors line-clamp-2">
             {article.title}
           </h3>
-          <p className="mt-2 text-sm text-gray-500 line-clamp-2">{article.excerpt}</p>
-          <p className="text-xs text-gray-400 mt-3">{formatDate(article.publishedAt)}</p>
+          <p className="mt-2 text-sm text-renew-muted line-clamp-2">{article.excerpt}</p>
+          <p className="text-xs text-renew-muted mt-3">{formatDate(article.publishedAt)}</p>
         </div>
       </Link>
     </article>

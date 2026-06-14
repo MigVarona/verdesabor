@@ -3,19 +3,28 @@
 @tailwind utilities;
 
 :root {
-  --background: #fafaf7;
-  --foreground: #1f2937;
-  --renew-accent: #ffdb00;
-  --renew-sage: #4a7c59;
-  --renew-dark: #1f2937;
-  --renew-muted: #6b7280;
-  --renew-border: #e5e7eb;
+  --background: #f7f5ef;
+  --foreground: #18211d;
+  --renew-accent: #d7ff4f;
+  --renew-sage: #2f6f52;
+  --renew-dark: #18211d;
+  --renew-muted: #68736d;
+  --renew-border: #dfddd2;
+  --renew-ink: #0f1714;
+  --renew-paper: #fffdf6;
+  --renew-clay: #b86f47;
+  --renew-mist: #e8eee6;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: "Noto Sans", system-ui, sans-serif;
+}
+
+::selection {
+  color: var(--renew-ink);
+  background: var(--renew-accent);
 }
 
 @layer components {
@@ -28,11 +37,11 @@ body {
   }
 
   .article-lead {
-    @apply font-serif text-xl md:text-2xl text-gray-600 leading-relaxed mb-8 font-medium;
+    @apply font-serif text-xl md:text-2xl text-renew-muted leading-relaxed mb-8 font-medium;
   }
 
   .article-paragraph {
-    @apply font-serif text-lg leading-[1.85] text-gray-700 mb-6;
+    @apply font-serif text-lg md:text-xl leading-[1.85] text-renew-dark/85 mb-6;
   }
 
   .article-figure {
@@ -44,11 +53,11 @@ body {
   }
 
   .section-title {
-    @apply text-2xl md:text-3xl font-bold text-renew-dark tracking-tight;
+    @apply text-2xl md:text-3xl font-bold text-renew-dark;
   }
 
   .ad-placeholder {
-    @apply flex items-center justify-center bg-gray-50 border border-dashed border-gray-200 rounded-lg text-xs text-gray-400 uppercase tracking-wider;
+    @apply flex items-center justify-center bg-renew-mist/70 border border-dashed border-renew-border text-[0.65rem] text-renew-muted uppercase tracking-[0.18em];
   }
 
   .legal-content {
@@ -95,6 +104,14 @@ body {
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .editorial-kicker {
+    @apply text-[0.68rem] font-bold uppercase tracking-[0.22em] text-renew-sage;
+  }
+
+  .hairline {
+    @apply border-renew-border;
   }
 
   .scrollbar-hide {

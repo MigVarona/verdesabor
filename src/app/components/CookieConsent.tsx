@@ -140,7 +140,7 @@ export default function CookieConsent() {
                 .
               </p>
               <div className="flex flex-col sm:flex-row gap-2.5 mt-6">
-                <Button onClick={acceptAll} className="bg-renew-dark hover:bg-gray-800 flex-1">
+                <Button onClick={acceptAll} className="bg-renew-dark text-white hover:bg-renew-ink flex-1">
                   Accept all
                 </Button>
                 <Button onClick={() => setView("preferences")} variant="outline" className="flex-1">
@@ -172,7 +172,7 @@ export default function CookieConsent() {
                 onChange={(v) => setPrefs((p) => ({ ...p, advertising: v }))}
               />
               <div className="flex flex-col sm:flex-row gap-2.5 mt-6">
-                <Button onClick={savePreferences} className="bg-renew-dark hover:bg-gray-800 flex-1">
+                <Button onClick={savePreferences} className="bg-renew-dark text-white hover:bg-renew-ink flex-1">
                   Save preferences
                 </Button>
                 <Button onClick={acceptAll} variant="outline" className="flex-1">

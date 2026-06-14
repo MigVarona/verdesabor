@@ -38,46 +38,53 @@ const Newsletter = () => {
   };
 
   return (
-    <section className="py-16 md:py-20 bg-gray-50 border-t border-gray-100">
+    <section className="py-16 md:py-20 bg-renew-paper border-t border-renew-border">
       <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto bg-white border border-gray-200 rounded-2xl p-8 md:p-12 text-center shadow-sm">
-          <div className="w-8 h-1 bg-renew-accent mx-auto mb-6" />
-          <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-3">Newsletter</p>
-          <h2 className="text-2xl sm:text-3xl font-bold text-renew-dark mb-3">
-            Stay ahead of the curve
-          </h2>
-          <p className="text-gray-500 mb-8 leading-relaxed">
-            Weekly insights on biohacking, nutrition, and longevity. No spam, ever.
-          </p>
+        <div className="mx-auto grid max-w-5xl grid-cols-1 overflow-hidden border border-renew-dark bg-renew-ink text-white shadow-card md:grid-cols-[1fr_0.9fr]">
+          <div className="p-8 md:p-10 lg:p-12">
+            <div className="w-10 h-1 bg-renew-accent mb-6" />
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-renew-accent mb-3">Newsletter</p>
+            <h2 className="font-serif text-4xl leading-[1.05] text-white sm:text-5xl">
+              The weekly health brief.
+            </h2>
+            <p className="mt-5 text-white/65 leading-relaxed">
+              One concise email on nutrition, biohacking, neuroscience, and longevity. Built for readers who want signal over noise.
+            </p>
+          </div>
 
-          {status === "success" ? (
-            <div className="flex items-center justify-center gap-2 text-renew-sage">
-              <CheckCircle className="w-5 h-5" />
-              <p className="text-sm font-medium">{message}</p>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="flex-1 border-gray-200 focus-visible:ring-renew-sage"
-              />
-              <Button
-                type="submit"
-                disabled={status === "loading"}
-                className="bg-renew-sage text-white hover:bg-renew-sage/90 font-semibold"
-              >
-                {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Subscribe"}
-              </Button>
-            </form>
-          )}
+          <div className="border-t border-white/10 bg-white p-8 text-renew-dark md:border-l md:border-t-0 md:p-10 lg:p-12">
+            {status === "success" ? (
+              <div className="flex items-center gap-2 text-renew-sage">
+                <CheckCircle className="w-5 h-5" />
+                <p className="text-sm font-medium">{message}</p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                <Input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                  className="h-12 flex-1 border-renew-border focus-visible:ring-renew-sage"
+                />
+                <Button
+                  type="submit"
+                  disabled={status === "loading"}
+                  className="h-12 bg-renew-dark text-white hover:bg-renew-ink font-semibold"
+                >
+                  {status === "loading" ? <Loader2 className="w-4 h-4 animate-spin" /> : "Subscribe"}
+                </Button>
+              </form>
+            )}
 
-          {status === "error" && (
-            <p className="text-red-500 text-sm mt-3">{message}</p>
-          )}
+            {status === "error" && (
+              <p className="text-red-500 text-sm mt-3">{message}</p>
+            )}
+            <p className="mt-5 text-xs leading-relaxed text-renew-muted">
+              No spam. Unsubscribe anytime.
+            </p>
+          </div>
         </div>
       </div>
     </section>

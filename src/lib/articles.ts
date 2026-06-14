@@ -12,8 +12,16 @@ export interface Article {
   image2xl?: string;
   text2?: string;
   publishedAt: string;
+  updatedAt?: string;
   author?: string;
+  reviewedBy?: string;
   tags?: string[];
+  keyTakeaways?: string[];
+  sources?: Array<{
+    title: string;
+    url?: string;
+    publisher?: string;
+  }>;
 }
 
 export function generateSlug(title: string): string {

@@ -7,10 +7,10 @@ interface AdSlotProps {
 }
 
 const formatStyles = {
-  leaderboard: "w-full min-h-[90px] max-w-[728px] mx-auto",
-  sidebar: "w-full min-h-[250px] max-w-[300px] mx-auto",
-  "in-content": "w-full min-h-[250px] max-w-[336px] mx-auto my-8",
-  footer: "w-full min-h-[90px] max-w-[728px] mx-auto",
+  leaderboard: "w-full min-h-[64px] md:min-h-[90px] max-w-[728px] mx-auto",
+  sidebar: "w-full min-h-[180px] md:min-h-[250px] max-w-[300px] mx-auto",
+  "in-content": "w-full min-h-[160px] md:min-h-[250px] max-w-[336px] mx-auto my-8",
+  footer: "w-full min-h-[64px] md:min-h-[90px] max-w-[728px] mx-auto",
 };
 
 export default function AdSlot({ id, format = "sidebar", className }: AdSlotProps) {

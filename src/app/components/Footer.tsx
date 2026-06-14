@@ -15,6 +15,7 @@ const EXPLORE_LINKS = [
 ];
 
 const LEGAL_LINKS = [
+  { name: "Editorial Policy", href: "/editorial-policy" },
   { name: "Privacy", href: "/privacy" },
   { name: "Cookies", href: "/cookies" },
   { name: "Disclaimer", href: "/disclaimer" },

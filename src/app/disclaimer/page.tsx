@@ -9,6 +9,7 @@ export const metadata = {
 
 const SECTIONS = [
   { id: "general", title: "General information" },
+  { id: "ai", title: "AI-assisted content" },
   { id: "professional", title: "Professional care" },
   { id: "biohacking", title: "Biohacking & supplements" },
   { id: "affiliate", title: "Affiliate content" },
@@ -33,7 +34,16 @@ export default function DisclaimerPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="professional" title="2. Not a substitute for professional care">
+        <LegalBlock id="ai" title="2. AI-assisted content">
+          <p>
+            Some RENEW content may be drafted, summarized, structured, or edited with assistance from
+            AI tools. AI-assisted content can contain mistakes or omissions and should not be treated
+            as medical review. See our <LegalLink href="/editorial-policy">Editorial Policy</LegalLink>
+            for more detail.
+          </p>
+        </LegalBlock>
+
+        <LegalBlock id="professional" title="3. Not a substitute for professional care">
           <p>
             Always consult a qualified healthcare provider before making decisions about your health,
             diet, supplements, or exercise. Never disregard professional medical advice or delay
@@ -41,7 +51,7 @@ export default function DisclaimerPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="biohacking" title="3. Biohacking & supplements">
+        <LegalBlock id="biohacking" title="4. Biohacking & supplements">
           <p>
             Content on biohacking, supplements, fasting, cold exposure, and similar topics is
             educational. Individual responses vary. Some practices may not be suitable for people
@@ -49,7 +59,7 @@ export default function DisclaimerPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="affiliate" title="4. Affiliate & sponsored content">
+        <LegalBlock id="affiliate" title="5. Affiliate & sponsored content">
           <p>
             RENEW may include affiliate links and sponsored content. Inclusion does not constitute
             a medical endorsement. Always do your own research before purchasing health-related
@@ -57,14 +67,14 @@ export default function DisclaimerPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="liability" title="5. Limitation of liability">
+        <LegalBlock id="liability" title="6. Limitation of liability">
           <p>
             RENEW, its authors, and contributors are not liable for damages arising from the use of
             information on this website. You use the content at your own risk.
           </p>
         </LegalBlock>
 
-        <LegalBlock id="contact" title="6. Contact">
+        <LegalBlock id="contact" title="7. Contact">
           <p>
             Questions about this disclaimer? Contact{" "}
             <a href="mailto:hello@renewhabits.com" className="text-renew-sage underline underline-offset-2">

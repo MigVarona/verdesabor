@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, BookOpen, CheckCircle2, FileText, ShieldCheck } from "lucide-react";
+import { ArrowRight, BookOpen, CheckCircle2, FileText, ShieldCheck, Sparkles } from "lucide-react";
 import { type Article, formatDate, splitParagraphs } from "@/lib/articles";
 import { SEVEN_HABITS_GUIDE } from "@/lib/guides";
 
@@ -65,8 +65,9 @@ export function AuthorBio({ article }: { article: Article }) {
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-renew-sage">Written by {author}</p>
           <p className="mt-2 text-sm leading-relaxed text-renew-muted">
-            RENEW Editorial turns health research into practical guidance for nutrition, performance,
-            recovery, and longevity. Articles are reviewed for clarity, balance, and practical usefulness.
+            RENEW Editorial uses AI-assisted drafting and human editing to turn health research into
+            practical guidance. Articles are checked for clarity, balance, and usefulness, but they are
+            not medical advice or a substitute for professional care.
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-xs text-renew-muted">
             <span>Published {formatDate(article.publishedAt)}</span>
@@ -76,6 +77,34 @@ export function AuthorBio({ article }: { article: Article }) {
         </div>
       </div>
     </section>
+  );
+}
+
+export function EditorialDisclosure({ article }: { article: Article }) {
+  return (
+    <aside className="my-8 border border-renew-border bg-white p-5">
+      <div className="flex gap-3">
+        <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-renew-accent text-renew-dark">
+          <Sparkles className="h-4 w-4" />
+        </span>
+        <div>
+          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-renew-dark">
+            Editorial transparency
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-renew-muted">
+            This article may be AI-assisted and is edited by RENEW before publication. We aim to cite
+            credible sources for specific health claims and clearly separate general education from
+            medical advice.
+          </p>
+          <p className="mt-2 text-xs leading-relaxed text-renew-muted">
+            {article.reviewedBy
+              ? `Reviewed by ${article.reviewedBy}.`
+              : "No medical reviewer is listed for this article."}{" "}
+            See our <a href="/editorial-policy" className="text-renew-sage underline underline-offset-2">Editorial Policy</a>.
+          </p>
+        </div>
+      </div>
+    </aside>
   );
 }
 
@@ -133,7 +162,7 @@ export function ArticleReferences({ article }: { article: Article }) {
         <div className="mt-5 grid gap-3 text-sm leading-relaxed text-renew-muted sm:grid-cols-2">
           <p className="flex gap-2">
             <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-renew-sage" />
-            Editorially reviewed for practical accuracy and readability.
+            Reviewed editorially for clarity, balance, and practical usefulness.
           </p>
           <p className="flex gap-2">
             <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-renew-sage" />

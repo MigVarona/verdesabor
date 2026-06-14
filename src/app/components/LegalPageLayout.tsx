@@ -14,6 +14,7 @@ interface LegalPageLayoutProps {
   lastUpdated: string;
   sections: LegalSection[];
   children: ReactNode;
+  eyebrow?: string;
 }
 
 export default function LegalPageLayout({
@@ -22,6 +23,7 @@ export default function LegalPageLayout({
   lastUpdated,
   sections,
   children,
+  eyebrow = "Legal",
 }: LegalPageLayoutProps) {
   const [activeSection, setActiveSection] = useState("");
 
@@ -55,7 +57,7 @@ export default function LegalPageLayout({
     <div className="min-h-screen">
       <div className="bg-white border-b border-gray-100">
         <div className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-3">Legal</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-3">{eyebrow}</p>
           <h1 className="text-3xl md:text-4xl font-bold text-renew-dark">{title}</h1>
           {subtitle && <p className="mt-4 text-gray-500 text-lg max-w-2xl leading-relaxed">{subtitle}</p>}
           <p className="mt-4 text-sm text-gray-400">Last updated: {lastUpdated}</p>

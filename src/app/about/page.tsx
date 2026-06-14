@@ -12,7 +12,7 @@ export const metadata = {
 const VALUES = [
   {
     title: "Evidence first",
-    text: "We prioritize peer-reviewed research and expert consensus over trends and hype.",
+    text: "We prioritize credible sources and expert consensus over trends and hype.",
   },
   {
     title: "Practical guidance",
@@ -20,7 +20,7 @@ const VALUES = [
   },
   {
     title: "Transparency",
-    text: "We disclose affiliations, sponsorships, and the limits of our health content clearly.",
+    text: "We disclose AI assistance, sources, sponsorships, and the limits of our health content clearly.",
   },
 ];
 
@@ -121,6 +121,7 @@ export default function AboutPage() {
                 <h2 className="text-2xl font-bold text-renew-dark mb-4">Standards & policies</h2>
                 <ul className="space-y-3 text-sm">
                   {[
+                    { label: "Editorial Policy", href: "/editorial-policy" },
                     { label: "Privacy Policy", href: "/privacy" },
                     { label: "Cookie Policy", href: "/cookies" },
                     { label: "Medical Disclaimer", href: "/disclaimer" },

@@ -14,20 +14,20 @@ interface RenewLogoProps {
 
 const sizes = {
   sm: {
-    word: "text-base tracking-[0.22em]",
-    tag: "text-[0.55rem] tracking-[0.24em]",
+    word: "text-[1.08rem] tracking-[0.26em]",
+    tag: "text-[0.5rem] tracking-[0.32em]",
     bar: "w-1",
     barH: "w-5",
   },
   default: {
-    word: "text-xl md:text-2xl tracking-[0.22em]",
-    tag: "text-[0.65rem] tracking-[0.28em]",
+    word: "text-[1.55rem] md:text-[1.95rem] tracking-[0.32em]",
+    tag: "text-[0.58rem] tracking-[0.34em]",
     bar: "w-1",
     barH: "w-6",
   },
   lg: {
-    word: "text-2xl md:text-[1.75rem] tracking-[0.2em]",
-    tag: "text-[0.7rem] tracking-[0.3em]",
+    word: "text-[1.9rem] md:text-[2.35rem] tracking-[0.3em]",
+    tag: "text-[0.65rem] tracking-[0.36em]",
     bar: "w-1.5",
     barH: "w-8",
   },
@@ -45,14 +45,14 @@ export default function RenewLogo({
 
   const mark =
     layout === "compact" ? (
-      <span className={cn("inline-flex flex-col items-center gap-1 group", className)}>
-        <span
+    <span className={cn("inline-flex flex-col items-center gap-1 group", className)}>
+      <span
           className={cn("h-0.5 rounded-full bg-renew-accent transition-all group-hover:w-7", s.barH)}
           aria-hidden
         />
         <span
           className={cn(
-            "font-bold leading-none",
+            "font-serif font-normal leading-none uppercase",
             size === "sm" ? "text-base tracking-[0.24em]" : "text-lg tracking-[0.26em]",
             isLight ? "text-white" : "text-renew-dark"
           )}
@@ -64,7 +64,7 @@ export default function RenewLogo({
       <span className={cn("inline-flex items-stretch gap-3 group", className)}>
         <span
           className={cn(
-            "rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-y-105",
+            "rounded-full flex-shrink-0 transition-all duration-300 group-hover:scale-y-105 mt-[0.18rem]",
             s.bar,
             "bg-renew-accent",
             size === "lg" ? "min-h-[2.75rem]" : size === "sm" ? "min-h-[2rem]" : "min-h-[2.25rem] md:min-h-[2.5rem]"
@@ -74,7 +74,7 @@ export default function RenewLogo({
         <span className="flex flex-col justify-center py-0.5">
           <span
             className={cn(
-              "font-bold leading-none",
+              "font-serif font-normal leading-none uppercase",
               s.word,
               isLight ? "text-white" : "text-renew-dark"
             )}
@@ -83,7 +83,7 @@ export default function RenewLogo({
           </span>
           <span
             className={cn(
-              "font-semibold uppercase mt-1 hidden sm:block",
+              "font-semibold uppercase mt-2 hidden sm:block whitespace-nowrap",
               s.tag,
               isLight ? "text-gray-400" : "text-renew-sage"
             )}

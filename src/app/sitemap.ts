@@ -3,7 +3,7 @@ import { getArticleUrl } from "@/lib/articles";
 import { fetchArticles } from "@/lib/articles.server";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://renewhabits.com";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
 
   const articles = await fetchArticles();
   const articleUrls: MetadataRoute.Sitemap = articles.map((article) => ({

@@ -16,12 +16,12 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://renewhabits.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
 
 export const metadata = {
   title: {
-    default: "Renew | Healthy Living for a Better Future",
-    template: "%s | Renew",
+    default: "RENEW | Healthy Living for a Better Future",
+    template: "%s | RENEW",
   },
   description:
     "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
@@ -30,11 +30,11 @@ export const metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Renew | Healthy Living for a Better Future",
+    title: "RENEW | Healthy Living for a Better Future",
     description:
       "Discover valuable insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
     url: siteUrl,
-    siteName: "Renew",
+    siteName: "RENEW",
     images: [
       {
         url: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop",
@@ -48,7 +48,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Renew | Healthy Living for a Better Future",
+    title: "RENEW | Healthy Living for a Better Future",
     description:
       "Explore Renew's insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
     images: [

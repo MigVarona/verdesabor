@@ -40,14 +40,18 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
   if (!article) return {};
 
   const heroImage = getArticleImage(article);
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
 
   return {
     title: article.title,
     description: article.excerpt || String(article.text || "").slice(0, 150) + "...",
+    alternates: {
+      canonical: `/articles/${slug}`,
+    },
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      url: `https://renewhabits.com/articles/${slug}`,
+      url: `${siteUrl}/articles/${slug}`,
       type: "article",
       images: [{ url: heroImage, width: 1200, height: 630, alt: article.title }],
       publishedTime: article.publishedAt,

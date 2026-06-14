@@ -9,6 +9,9 @@ import { fetchArticles } from "@/lib/articles.server";
 export const metadata = {
   title: "All Articles",
   description: "Browse all articles on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+  alternates: {
+    canonical: "/articles",
+  },
 };
 
 export const revalidate = 300;

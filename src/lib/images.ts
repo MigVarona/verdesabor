@@ -1,4 +1,4 @@
-const UNSPLASH_RE = /images\.unsplash\.com\/(photo-[^/?]+)/i;
+const UNSPLASH_RE = /images\.unsplash\.com\/((?:flagged\/)?photo-[^/?]+)/i;
 
 export type ImageVariant = "thumb" | "card" | "hero" | "inline";
 

@@ -20,7 +20,6 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Full-body red light panel with published irradiance specs — a common clinical reference point for home photobiomodulation.",
     url: "https://joovv.com/products/joovv-solo-3-0",
-    affiliateUrl: "https://sovrn.co/5cf3qum",
     badge: "editors-pick",
     note: "Higher irradiance than most consumer panels; verify distance and session length per manufacturer guidelines.",
   },

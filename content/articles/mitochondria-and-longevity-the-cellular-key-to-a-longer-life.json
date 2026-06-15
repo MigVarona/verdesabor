@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1580854256409-67d3cb710ed0?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Science is also digging into some cutting-edge options. There's a molecule called NAD+ that mitochondria need to function, but it drops as we get older. Researchers are testing supplements like NMN, which boost NAD+ levels, to see if they can recharge our cells. In mice, these treatments improve mitochondrial health, increase energy, and even extend life a bit. Human studies are still in the works, but the early results have people buzzing about what this could mean for aging.\n\nOf course, mitochondria aren't the only thing that determines how long we live—genes, lifestyle, and luck all play a part. But they're a critical piece of the puzzle. By taking steps like exercising regularly, eating smart, and keeping an eye on new discoveries, we can give our mitochondria the support they need. The payoff might be more than just extra years—it could be years filled with more vitality, strength, and resilience. The research is still growing, and we don't have all the answers yet, but one thing's for sure: these microscopic powerhouses are worth paying attention to if we want to age well.",
   "sources": [
-    { "title": "The Hallmarks of Aging", "url": "https://pubmed.ncbi.nlm.nih.gov/23746838/", "publisher": "Cell", "year": 2013, "studyType": "review" },
-    { "title": "The Role of Mitochondria in Aging", "url": "https://pubmed.ncbi.nlm.nih.gov/23863629/", "publisher": "Journal of Clinical Investigation", "year": 2013, "studyType": "review" },
-    { "title": "Extending Life Span by Increasing Oxidative Stress", "url": "https://pubmed.ncbi.nlm.nih.gov/21130163/", "publisher": "Free Radical Biology and Medicine", "year": 2011, "studyType": "review" },
-    { "title": "Mitochondrial Biogenesis and Healthy Aging", "url": "https://pubmed.ncbi.nlm.nih.gov/18070465/", "publisher": "Experimental Gerontology", "year": 2008, "studyType": "review" }
-  ]
+    {
+      "title": "The Hallmarks of Aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23746838/",
+      "publisher": "Cell",
+      "year": 2013,
+      "studyType": "review"
+    },
+    {
+      "title": "The Role of Mitochondria in Aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23863629/",
+      "publisher": "Journal of Clinical Investigation",
+      "year": 2013,
+      "studyType": "review"
+    },
+    {
+      "title": "Extending Life Span by Increasing Oxidative Stress",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21130163/",
+      "publisher": "Free Radical Biology and Medicine",
+      "year": 2011,
+      "studyType": "review"
+    },
+    {
+      "title": "Mitochondrial Biogenesis and Healthy Aging",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18070465/",
+      "publisher": "Experimental Gerontology",
+      "year": 2008,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

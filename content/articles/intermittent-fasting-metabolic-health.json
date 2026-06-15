@@ -64,5 +64,33 @@
       "q": "What can I drink during the fasting window?",
       "a": "Water, plain black coffee, and unsweetened tea are all acceptable during the fasting window and will not break your fast. Adding milk, sugar, or cream will break the fast due to their caloric content."
     }
-  ]
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to start intermittent fasting (16:8 protocol)",
+    "description": "A beginner-friendly guide to implementing the 16:8 intermittent fasting protocol for metabolic health.",
+    "totalTime": "P7D",
+    "steps": [
+      {
+        "name": "Choose your eating window",
+        "text": "Pick an 8-hour window that fits your lifestyle — for example, 12:00 pm to 8:00 pm. This window should remain consistent each day to keep circadian rhythms stable."
+      },
+      {
+        "name": "Ease in over one week",
+        "text": "Start with a 12-hour overnight fast (e.g., 8 pm to 8 am), then push your first meal 30 minutes later every 2-3 days until you reach your 16-hour target. This prevents intense hunger and adherence breakdown."
+      },
+      {
+        "name": "Stay hydrated during the fasting window",
+        "text": "Drink water, black coffee, or plain herbal tea freely during the fast. These do not raise insulin and will help manage appetite. Aim for at least 2 litres of water throughout the day."
+      },
+      {
+        "name": "Break your fast with a balanced meal",
+        "text": "Your first meal should include protein (30-40 g), healthy fat, and fibre-rich carbohydrates. Avoid breaking a fast with refined sugar, which causes a sharp glucose spike after the fasted state."
+      },
+      {
+        "name": "Monitor and adjust after 2 weeks",
+        "text": "Track energy, hunger, sleep, and training performance for the first 2 weeks. If you feel fatigued or performance drops significantly, shorten the fasting window or increase protein at your first meal."
+      }
+    ]
+  }
 }

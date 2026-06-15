@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1615485925822-77040a19d84b?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Winter can sometimes bring feelings of sadness or isolation, so it's important to nurture your mental and emotional well-being. Practicing mindfulness or meditation for just a few minutes each day can help reduce stress and improve overall mental health. Set aside time for activities that promote relaxation, such as reading, journaling, or simply enjoying a warm cup of tea. Even if the weather keeps you indoors, maintaining social connections through virtual meetups, phone calls, or socially distanced gatherings can help you feel less isolated.\n\nFinally, a good night's sleep is crucial for your health during winter. Establish a consistent sleep routine by going to bed and waking up at the same time every day, including weekends, as this helps regulate your internal clock. Optimize your sleep environment by keeping your bedroom cool, dark, and quiet—consider using blackout curtains or a white noise machine if needed. Reducing screen time before bed and developing a relaxing pre-sleep routine, such as reading or gentle stretching, can signal to your body that it's time to rest.",
   "sources": [
-    { "title": "Behaviorally Assessed Sleep and Susceptibility to the Common Cold", "url": "https://pubmed.ncbi.nlm.nih.gov/26119956/", "publisher": "Sleep", "year": 2015, "studyType": "observational" },
-    { "title": "The Compelling Link between Physical Activity and the Body's Defense System", "url": "https://pubmed.ncbi.nlm.nih.gov/30818382/", "publisher": "Journal of Sport and Health Science", "year": 2019, "studyType": "review" },
-    { "title": "Vitamin D Deficiency", "url": "https://pubmed.ncbi.nlm.nih.gov/17634462/", "publisher": "New England Journal of Medicine", "year": 2007, "studyType": "review" },
-    { "title": "An Explanation for the Seasonality of Acute Upper Respiratory Tract Viral Infections", "url": "https://pubmed.ncbi.nlm.nih.gov/12553431/", "publisher": "Acta Otolaryngologica", "year": 2002, "studyType": "review" }
-  ]
+    {
+      "title": "Behaviorally Assessed Sleep and Susceptibility to the Common Cold",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26119956/",
+      "publisher": "Sleep",
+      "year": 2015,
+      "studyType": "observational"
+    },
+    {
+      "title": "The Compelling Link between Physical Activity and the Body's Defense System",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30818382/",
+      "publisher": "Journal of Sport and Health Science",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "Vitamin D Deficiency",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17634462/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2007,
+      "studyType": "review"
+    },
+    {
+      "title": "An Explanation for the Seasonality of Acute Upper Respiratory Tract Viral Infections",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12553431/",
+      "publisher": "Acta Otolaryngologica",
+      "year": 2002,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

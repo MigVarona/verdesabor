@@ -10,11 +10,43 @@
   "text": "The average person checks their phone dozens to hundreds of times per day. Each interruption carries a \"switching cost\" — it can take over 20 minutes to return to deep focus after a distraction. Over weeks, this fragments work, erodes presence in relationships, and maintains a low-grade stress state.\n\nA digital detox does not require deleting apps or going off-grid. It means intentional rules: no phone for the first hour after waking, notification batching, grayscale mode to reduce dopamine pull, and phone-free meals or bedrooms.\n\nResearch on social media and mental health shows complex links — passive scrolling often correlates with worse mood than active messaging or creation. The platform design matters, but so does how you use it.",
   "image2xl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Start with one boundary this week: charge your phone outside the bedroom, delete the most addictive app from your home screen, or set app limits for 30 minutes on social feeds. Replace the habit loop — keep the cue (boredom) but change the response (walk, book, conversation).\n\nA weekly \"analog block\" of two to four hours — walk, cook, sport without earbuds — restores sensory richness that screens compress.\n\nAttention is a finite resource and a health asset. Guarding it is not luddite; it is a wellness practice for the 21st century.",
-  "tags": ["digital detox", "wellness", "attention", "mental health", "screen time", "focus"],
+  "tags": [
+    "digital detox",
+    "wellness",
+    "attention",
+    "mental health",
+    "screen time",
+    "focus"
+  ],
   "sources": [
-    { "title": "The 'Online Brain': How the Internet May Be Changing Our Cognition", "url": "https://pubmed.ncbi.nlm.nih.gov/31059629/", "publisher": "World Psychiatry", "year": 2019, "studyType": "review" },
-    { "title": "Associations between Screen Time and Lower Psychological Well-Being among Children and Adolescents", "url": "https://pubmed.ncbi.nlm.nih.gov/30406005/", "publisher": "Preventive Medicine Reports", "year": 2018, "studyType": "cohort" },
-    { "title": "Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity", "url": "https://pubmed.ncbi.nlm.nih.gov/28252833/", "publisher": "Journal of the Association for Consumer Research", "year": 2017, "studyType": "rct" },
-    { "title": "The Relationship between Addictive Use of Social Media and Video Games and Symptoms of Psychiatric Disorders", "url": "https://pubmed.ncbi.nlm.nih.gov/26999354/", "publisher": "Psychology of Addictive Behaviors", "year": 2016, "studyType": "cohort" }
-  ]
+    {
+      "title": "The 'Online Brain': How the Internet May Be Changing Our Cognition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31059629/",
+      "publisher": "World Psychiatry",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "Associations between Screen Time and Lower Psychological Well-Being among Children and Adolescents",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30406005/",
+      "publisher": "Preventive Medicine Reports",
+      "year": 2018,
+      "studyType": "cohort"
+    },
+    {
+      "title": "Brain Drain: The Mere Presence of One's Own Smartphone Reduces Available Cognitive Capacity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28252833/",
+      "publisher": "Journal of the Association for Consumer Research",
+      "year": 2017,
+      "studyType": "rct"
+    },
+    {
+      "title": "The Relationship between Addictive Use of Social Media and Video Games and Symptoms of Psychiatric Disorders",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26999354/",
+      "publisher": "Psychology of Addictive Behaviors",
+      "year": 2016,
+      "studyType": "cohort"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

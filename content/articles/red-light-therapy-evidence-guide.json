@@ -10,11 +10,42 @@
   "text": "Red light therapy (photobiomodulation) uses wavelengths roughly between 630–850 nm to penetrate skin and interact with mitochondria, potentially enhancing ATP production and reducing oxidative stress in targeted tissues. It sounds futuristic, but the concept has decades of research behind it — particularly in dermatology and wound healing.\n\nThe strongest evidence supports use for certain skin conditions, wound healing, and hair loss in specific protocols. Athletic recovery studies show modest benefits for muscle soreness and performance markers in some trials, but results vary by wavelength, dose (irradiance × time), and distance from the device.\n\nHome panels vary wildly in power output. Effective doses are often measured in joules per square centimeter — many consumer devices under-deliver compared to clinical units. \"More red light\" without proper dosing is not better.",
   "image2xl": "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "If you try red light therapy, prioritize devices with published irradiance specs, start with manufacturer-recommended distance and session length, and protect your eyes per device guidelines. It is not a replacement for sleep, nutrition, or exercise.\n\nSkepticism is healthy: many influencer claims (\"reverse aging,\" \"boost testosterone dramatically\") outpace the literature. Treat RLT as a potential adjunct for skin and recovery — not a longevity panacea.\n\nAs the market matures, look for third-party testing and realistic expectations. The science is promising in niches; the marketing often is not.",
-  "tags": ["red light therapy", "biohacking", "photobiomodulation", "recovery", "skin health"],
+  "tags": [
+    "red light therapy",
+    "biohacking",
+    "photobiomodulation",
+    "recovery",
+    "skin health"
+  ],
   "sources": [
-    { "title": "Mechanisms and Applications of the Anti-Inflammatory Effects of Photobiomodulation", "url": "https://pubmed.ncbi.nlm.nih.gov/28748217/", "publisher": "AIMS Biophysics", "year": 2017, "studyType": "review" },
-    { "title": "Low-Level Laser (Light) Therapy (LLLT) in Skin: Stimulating, Healing, Restoring", "url": "https://pubmed.ncbi.nlm.nih.gov/24049929/", "publisher": "Seminars in Cutaneous Medicine and Surgery", "year": 2013, "studyType": "review" },
-    { "title": "Photobiomodulation: Lasers vs. Light Emitting Diodes?", "url": "https://pubmed.ncbi.nlm.nih.gov/29424835/", "publisher": "Photochemical and Photobiological Sciences", "year": 2018, "studyType": "review" },
-    { "title": "Low-Level Laser Therapy for Muscle Fatigue and Damage: A Systematic Review", "url": "https://pubmed.ncbi.nlm.nih.gov/22577575/", "publisher": "Photomedicine and Laser Surgery", "year": 2012, "studyType": "meta-analysis" }
-  ]
+    {
+      "title": "Mechanisms and Applications of the Anti-Inflammatory Effects of Photobiomodulation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28748217/",
+      "publisher": "AIMS Biophysics",
+      "year": 2017,
+      "studyType": "review"
+    },
+    {
+      "title": "Low-Level Laser (Light) Therapy (LLLT) in Skin: Stimulating, Healing, Restoring",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24049929/",
+      "publisher": "Seminars in Cutaneous Medicine and Surgery",
+      "year": 2013,
+      "studyType": "review"
+    },
+    {
+      "title": "Photobiomodulation: Lasers vs. Light Emitting Diodes?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29424835/",
+      "publisher": "Photochemical and Photobiological Sciences",
+      "year": 2018,
+      "studyType": "review"
+    },
+    {
+      "title": "Low-Level Laser Therapy for Muscle Fatigue and Damage: A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22577575/",
+      "publisher": "Photomedicine and Laser Surgery",
+      "year": 2012,
+      "studyType": "meta-analysis"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

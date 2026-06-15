@@ -10,11 +10,70 @@
   "text": "Breathing is unique among autonomic functions: it runs automatically but can be consciously controlled. Slow, diaphragmatic breathing stimulates the vagus nerve and shifts the balance toward parasympathetic activity — lowering heart rate, reducing blood pressure modestly, and calming the stress response within minutes.\n\nBox breathing (inhale 4 counts, hold 4, exhale 4, hold 4) is popular in military and athletic settings for focus under pressure. The physiological sigh — a double inhale through the nose followed by a long exhale — has been studied at Stanford for rapid stress reduction and may be especially effective for acute anxiety spikes.\n\nCoherent breathing at roughly 5–6 breaths per minute (about 5 seconds in, 5 seconds out) aligns heart rate and respiration in a pattern associated with improved HRV in some studies.",
   "image2xl": "https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "You do not need hour-long sessions. Two to five minutes before a meeting, after waking, or at bedtime can be meaningful. Practice when calm so the skill is available when stressed.\n\nAvoid hyperventilation-style breathwork without supervision if you have panic disorder, cardiovascular conditions, or are pregnant — some intense techniques alter blood CO2 dramatically.\n\nBreathwork is free, portable, and immediate. It belongs in every wellness toolkit alongside sleep, movement, and connection — not as a replacement for professional care when anxiety or trauma is severe.",
-  "tags": ["breathwork", "wellness", "stress relief", "vagus nerve", "anxiety", "meditation"],
+  "tags": [
+    "breathwork",
+    "wellness",
+    "stress relief",
+    "vagus nerve",
+    "anxiety",
+    "meditation"
+  ],
   "sources": [
-    { "title": "How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing", "url": "https://pubmed.ncbi.nlm.nih.gov/30245619/", "publisher": "Frontiers in Human Neuroscience", "year": 2018, "studyType": "meta-analysis" },
-    { "title": "The Effect of Diaphragmatic Breathing on Attention, Negative Affect and Stress in Healthy Adults", "url": "https://pubmed.ncbi.nlm.nih.gov/28626434/", "publisher": "Frontiers in Psychology", "year": 2017, "studyType": "rct" },
-    { "title": "The Role of Deep Breathing on Stress", "url": "https://pubmed.ncbi.nlm.nih.gov/27995346/", "publisher": "Neurological Sciences", "year": 2017, "studyType": "observational" },
-    { "title": "Physiology of Long Pranayamic Breathing: Neural Respiratory Elements May Provide a Mechanism That Explains How Slow Deep Breathing Shifts the Autonomic Nervous System", "url": "https://pubmed.ncbi.nlm.nih.gov/16624497/", "publisher": "Medical Hypotheses", "year": 2006, "studyType": "review" }
-  ]
+    {
+      "title": "How Breath-Control Can Change Your Life: A Systematic Review on Psycho-Physiological Correlates of Slow Breathing",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30245619/",
+      "publisher": "Frontiers in Human Neuroscience",
+      "year": 2018,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "The Effect of Diaphragmatic Breathing on Attention, Negative Affect and Stress in Healthy Adults",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28626434/",
+      "publisher": "Frontiers in Psychology",
+      "year": 2017,
+      "studyType": "rct"
+    },
+    {
+      "title": "The Role of Deep Breathing on Stress",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27995346/",
+      "publisher": "Neurological Sciences",
+      "year": 2017,
+      "studyType": "observational"
+    },
+    {
+      "title": "Physiology of Long Pranayamic Breathing: Neural Respiratory Elements May Provide a Mechanism That Explains How Slow Deep Breathing Shifts the Autonomic Nervous System",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16624497/",
+      "publisher": "Medical Hypotheses",
+      "year": 2006,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to practice breathwork for stress relief",
+    "description": "Step-by-step instructions for three evidence-based breathing techniques to activate the parasympathetic nervous system and reduce stress.",
+    "totalTime": "PT15M",
+    "steps": [
+      {
+        "name": "Find a comfortable position",
+        "text": "Sit upright with your spine supported, or lie flat on your back. Close your eyes or soften your gaze downward. Breathwork performed slumped over is less effective — posture affects lung capacity and vagal tone."
+      },
+      {
+        "name": "Try box breathing (4-4-4-4)",
+        "text": "Inhale slowly through the nose for 4 counts, hold for 4 counts, exhale slowly for 4 counts, hold for 4 counts. Repeat 4-6 cycles. This technique is used by Navy SEALs and emergency responders to rapidly lower cortisol."
+      },
+      {
+        "name": "Try physiological sigh for acute stress",
+        "text": "Take a full inhale through the nose, then add a second sharp sniff at the top to fully inflate the lungs. Exhale slowly and completely through the mouth. One or two cycles can deactivate acute fight-or-flight response within seconds."
+      },
+      {
+        "name": "Try 4-7-8 breathing before sleep",
+        "text": "Inhale for 4 counts, hold for 7 counts, exhale audibly through the mouth for 8 counts. The extended exhale activates the vagus nerve and shifts the body into a parasympathetic (rest) state. Repeat 4 cycles."
+      },
+      {
+        "name": "Practice daily for 5-15 minutes",
+        "text": "Consistent daily practice produces lasting changes in heart rate variability (HRV) and baseline stress reactivity. Morning or pre-sleep sessions of 5-15 minutes are most studied and easiest to schedule."
+      }
+    ]
+  }
 }

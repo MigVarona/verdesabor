@@ -18,9 +18,61 @@
     "lifestyle"
   ],
   "sources": [
-    { "title": "Stability, Precision, and Near-24-Hour Period of the Human Circadian Pacemaker", "url": "https://pubmed.ncbi.nlm.nih.gov/10490031/", "publisher": "Science", "year": 1999, "studyType": "observational" },
-    { "title": "Light Suppresses Melatonin Secretion in Humans", "url": "https://pubmed.ncbi.nlm.nih.gov/7434030/", "publisher": "Science", "year": 1980, "studyType": "rct" },
-    { "title": "Effects of Light on Human Circadian Rhythms, Sleep and Mood", "url": "https://pubmed.ncbi.nlm.nih.gov/31123461/", "publisher": "Somnologie", "year": 2019, "studyType": "review" },
-    { "title": "Entrainment of the Human Circadian Clock to the Natural Light-Dark Cycle", "url": "https://pubmed.ncbi.nlm.nih.gov/23828939/", "publisher": "Current Biology", "year": 2013, "studyType": "observational" }
-  ]
+    {
+      "title": "Stability, Precision, and Near-24-Hour Period of the Human Circadian Pacemaker",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/10490031/",
+      "publisher": "Science",
+      "year": 1999,
+      "studyType": "observational"
+    },
+    {
+      "title": "Light Suppresses Melatonin Secretion in Humans",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7434030/",
+      "publisher": "Science",
+      "year": 1980,
+      "studyType": "rct"
+    },
+    {
+      "title": "Effects of Light on Human Circadian Rhythms, Sleep and Mood",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31123461/",
+      "publisher": "Somnologie",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "Entrainment of the Human Circadian Clock to the Natural Light-Dark Cycle",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23828939/",
+      "publisher": "Current Biology",
+      "year": 2013,
+      "studyType": "observational"
+    }
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to use morning sunlight to reset your circadian rhythm",
+    "description": "A protocol for using morning light exposure to anchor your circadian clock, improve sleep quality, and stabilise energy throughout the day.",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Go outside within 30-60 minutes of waking",
+        "text": "The critical window for circadian-setting light exposure is the first 30-60 minutes after waking. Bright outdoor light is 10-100x stronger than indoor lighting, even on overcast days. Glass windows filter out the UV and near-UV wavelengths that drive the circadian signal."
+      },
+      {
+        "name": "Get 5-10 minutes on clear days, 15-20 on overcast",
+        "text": "Photon exposure needed for circadian entrainment depends on light intensity. A clear morning sky delivers 50,000-100,000 lux; overcast skies deliver 10,000-20,000 lux. Adjust time outdoors accordingly."
+      },
+      {
+        "name": "Look toward the light — never directly at the sun",
+        "text": "Face the direction of the sun with eyes open (no sunglasses). You do not need to stare at the sun — ambient sky light is sufficient. Looking toward (not at) the light ensures melanopsin-containing retinal ganglion cells receive the signal."
+      },
+      {
+        "name": "Move while you get light",
+        "text": "Combine light exposure with a short walk, light exercise, or standing outside with coffee. Movement in the morning further amplifies cortisol pulse timing and dopamine release, enhancing the alertness effect."
+      },
+      {
+        "name": "Repeat daily for 2 weeks to reset rhythm",
+        "text": "Circadian resetting takes 2-3 days of consistent light exposure at the right time. Full consolidation of improved sleep onset and morning energy typically takes 1-2 weeks of daily practice."
+      }
+    ]
+  }
 }

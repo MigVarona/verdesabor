@@ -19,9 +19,34 @@
     "nervous system"
   ],
   "sources": [
-    { "title": "Mindfulness Mediates the Physiological Markers of Stress: Systematic Review and Meta-Analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/28863392/", "publisher": "Journal of Psychiatric Research", "year": 2017, "studyType": "meta-analysis" },
-    { "title": "Yoga for Depression: A Systematic Review and Meta-Analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/23922209/", "publisher": "Depression and Anxiety", "year": 2013, "studyType": "meta-analysis" },
-    { "title": "Yoga's Impact on Inflammation, Mood, and Fatigue in Breast Cancer Survivors", "url": "https://pubmed.ncbi.nlm.nih.gov/24470004/", "publisher": "Journal of Clinical Oncology", "year": 2014, "studyType": "rct" },
-    { "title": "8-Week Mindfulness Based Stress Reduction Induces Brain Changes Similar to Traditional Long-Term Meditation Practice", "url": "https://pubmed.ncbi.nlm.nih.gov/26751084/", "publisher": "Brain and Cognition", "year": 2016, "studyType": "observational" }
-  ]
+    {
+      "title": "Mindfulness Mediates the Physiological Markers of Stress: Systematic Review and Meta-Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28863392/",
+      "publisher": "Journal of Psychiatric Research",
+      "year": 2017,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Yoga for Depression: A Systematic Review and Meta-Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23922209/",
+      "publisher": "Depression and Anxiety",
+      "year": 2013,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Yoga's Impact on Inflammation, Mood, and Fatigue in Breast Cancer Survivors",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24470004/",
+      "publisher": "Journal of Clinical Oncology",
+      "year": 2014,
+      "studyType": "rct"
+    },
+    {
+      "title": "8-Week Mindfulness Based Stress Reduction Induces Brain Changes Similar to Traditional Long-Term Meditation Practice",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26751084/",
+      "publisher": "Brain and Cognition",
+      "year": 2016,
+      "studyType": "observational"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

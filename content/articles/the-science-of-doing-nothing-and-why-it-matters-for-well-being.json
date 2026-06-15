@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "single-tasking is another powerful way to slow down instead of multitasking focus on one activity at a time when drinking coffee or tea savor the warmth of the cup in your hands notice the aroma and taste rather than scrolling through notifications when watching the sunset observe the changing colors without feeling the need to capture it on a screen when listening to music let yourself get lost in the melody without distractions\n\nboredom is often seen as something to be avoided but it is actually a gateway to deeper thinking and creativity instead of immediately seeking entertainment or distraction when boredom arises sit with it and observe what thoughts emerge studies show that people who allow themselves to experience boredom without immediately trying to escape it tend to develop greater problem-solving skills and creative insights letting the mind wander freely without restrictions can lead to unexpected discoveries and moments of inspiration\n\ncreating a home environment that encourages idleness and relaxation can also have a profound impact on well-being incorporating natural elements such as plants wooden textures and soft lighting can create a calming atmosphere reducing visual clutter and keeping spaces minimalistic helps prevent mental overload setting aside a specific space for stillness whether it is a reading nook a cozy corner with a comfortable chair or simply a spot by a window can serve as a daily reminder to slow down",
   "sources": [
-    { "title": "Wandering Minds: The Default Network and Stimulus-Independent Thought", "url": "https://pubmed.ncbi.nlm.nih.gov/17431150/", "publisher": "Science", "year": 2007, "studyType": "observational" },
-    { "title": "The Restless Mind", "url": "https://pubmed.ncbi.nlm.nih.gov/16881763/", "publisher": "Psychological Bulletin", "year": 2006, "studyType": "review" },
-    { "title": "The Brain's Default Network and Its Adaptive Role in Internal Mentation", "url": "https://pubmed.ncbi.nlm.nih.gov/21677128/", "publisher": "Neuroscientist", "year": 2012, "studyType": "review" },
-    { "title": "Rest Is Not Idleness: Implications of the Brain's Default Mode for Human Development and Education", "url": "https://pubmed.ncbi.nlm.nih.gov/26168506/", "publisher": "Perspectives on Psychological Science", "year": 2012, "studyType": "review" }
-  ]
+    {
+      "title": "Wandering Minds: The Default Network and Stimulus-Independent Thought",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17431150/",
+      "publisher": "Science",
+      "year": 2007,
+      "studyType": "observational"
+    },
+    {
+      "title": "The Restless Mind",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16881763/",
+      "publisher": "Psychological Bulletin",
+      "year": 2006,
+      "studyType": "review"
+    },
+    {
+      "title": "The Brain's Default Network and Its Adaptive Role in Internal Mentation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21677128/",
+      "publisher": "Neuroscientist",
+      "year": 2012,
+      "studyType": "review"
+    },
+    {
+      "title": "Rest Is Not Idleness: Implications of the Brain's Default Mode for Human Development and Education",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26168506/",
+      "publisher": "Perspectives on Psychological Science",
+      "year": 2012,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

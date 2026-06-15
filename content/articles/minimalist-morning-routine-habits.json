@@ -47,5 +47,33 @@
       "year": 2004,
       "studyType": "observational"
     }
-  ]
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to build a minimalist morning routine",
+    "description": "A practical step-by-step guide to designing a simple, effective morning routine that supports energy, focus, and mood without taking hours.",
+    "totalTime": "PT30M",
+    "steps": [
+      {
+        "name": "Wake at a consistent time",
+        "text": "Set a fixed wake time 7 days a week — even on weekends. Consistent wake time is the single most powerful lever for circadian rhythm stability. Irregular sleep timing causes social jet lag that impairs cognition and mood."
+      },
+      {
+        "name": "Get morning light within 30 minutes of waking",
+        "text": "Step outside or sit by a bright window for 5-10 minutes. Morning sunlight (even on overcast days) sets your circadian clock, raises morning cortisol at the right time, and improves evening melatonin release for better sleep."
+      },
+      {
+        "name": "Hydrate before caffeine",
+        "text": "Drink 300-500 ml of water before your first coffee. You lose fluid overnight through respiration and mild perspiration. Rehydrating first prevents the cortisol spike from caffeine compounding a dehydrated state."
+      },
+      {
+        "name": "Delay caffeine by 90 minutes",
+        "text": "Cortisol naturally peaks in the first 30-90 minutes after waking. Consuming caffeine during this window blunts its effect and builds tolerance faster. Waiting 90 minutes maximises alertness and reduces afternoon energy crashes."
+      },
+      {
+        "name": "Do one brief intentional act",
+        "text": "A 5-10 minute walk, 3 minutes of breathwork, or a short journal entry creates a sense of agency before reactive tasks (email, news) begin. This single act is the core habit that anchors the rest of the routine."
+      }
+    ]
+  }
 }

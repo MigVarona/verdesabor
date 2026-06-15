@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1465409042654-5314e9d1754b?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Diet plays a crucial role in dopamine synthesis. Foods rich in tyrosine, an amino acid that serves as a precursor to dopamine, can help maintain healthy levels. Tyrosine is found in high-protein foods such as lean meats, eggs, dairy, nuts, and soy products. Omega-3 fatty acids, present in fish and flaxseeds, also support dopamine receptor function, improving mental clarity and focus.\n\nSleep is essential for maintaining a balanced dopamine system. Poor sleep quality disrupts dopamine production, leading to fatigue, low motivation, and difficulty concentrating. Establishing a consistent sleep routine, avoiding blue light exposure before bed, and practicing relaxation techniques can enhance dopamine regulation, improving daily performance.\n\nMeditation and mindfulness practices have been shown to support healthy dopamine levels by reducing stress and promoting a state of focus. Activities such as deep breathing, visualization, and gratitude journaling can help train the brain to find joy in the present moment, reducing dependence on external stimuli for motivation.\n\nUnderstanding how dopamine functions and making intentional lifestyle choices to optimize it can lead to sustained motivation, improved focus, and greater overall well-being. By avoiding overstimulation, setting meaningful goals, maintaining a nutritious diet, exercising regularly, and prioritizing sleep, individuals can harness the power of dopamine to enhance productivity and mental clarity.",
   "sources": [
-    { "title": "Predictive Reward Signal of Dopamine Neurons", "url": "https://pubmed.ncbi.nlm.nih.gov/9658025/", "publisher": "Journal of Neurophysiology", "year": 1998, "studyType": "observational" },
-    { "title": "The Mysterious Motivational Functions of Mesolimbic Dopamine", "url": "https://pubmed.ncbi.nlm.nih.gov/23083740/", "publisher": "Neuron", "year": 2012, "studyType": "review" },
-    { "title": "What is the Causal Contribution of Dopamine Signaling to Reward?", "url": "https://pubmed.ncbi.nlm.nih.gov/9576194/", "publisher": "Trends in Neurosciences", "year": 1998, "studyType": "review" },
-    { "title": "Dopamine in Motivational Control: Rewarding, Aversive, and Alerting", "url": "https://pubmed.ncbi.nlm.nih.gov/21109952/", "publisher": "Neuron", "year": 2010, "studyType": "review" }
-  ]
+    {
+      "title": "Predictive Reward Signal of Dopamine Neurons",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9658025/",
+      "publisher": "Journal of Neurophysiology",
+      "year": 1998,
+      "studyType": "observational"
+    },
+    {
+      "title": "The Mysterious Motivational Functions of Mesolimbic Dopamine",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23083740/",
+      "publisher": "Neuron",
+      "year": 2012,
+      "studyType": "review"
+    },
+    {
+      "title": "What is the Causal Contribution of Dopamine Signaling to Reward?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9576194/",
+      "publisher": "Trends in Neurosciences",
+      "year": 1998,
+      "studyType": "review"
+    },
+    {
+      "title": "Dopamine in Motivational Control: Rewarding, Aversive, and Alerting",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21109952/",
+      "publisher": "Neuron",
+      "year": 2010,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

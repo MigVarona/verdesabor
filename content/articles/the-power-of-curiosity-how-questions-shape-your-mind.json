@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1451470838681-d2856d3048a3?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Beyond its impact on intelligence and learning, curiosity also plays an important role in mental well-being. Studies suggest that curiosity can help reduce stress and anxiety by shifting focus from fear to exploration. Instead of viewing uncertainty as a threat, curious individuals tend to see it as a puzzle to be solved. This mindset fosters resilience and adaptability, traits that are crucial in an ever-changing world.\n\nCuriosity also enhances social interactions. People who exhibit genuine curiosity about others tend to build deeper relationships. Asking meaningful questions and expressing interest in different perspectives strengthens social bonds and fosters empathy.\n\nThe benefits of curiosity extend across all stages of life. In children, curiosity drives early cognitive development and problem-solving abilities. In adults, it supports lifelong learning and career adaptability. In older individuals, curiosity has been linked to greater cognitive resilience, helping to delay age-related cognitive decline.\n\nAs the world continues to change rapidly, curiosity remains one of the most valuable cognitive tools for personal and professional growth. It enables individuals to adapt, learn, and thrive in new environments. A curious mind is not only an intelligent mind but also a more fulfilled and resilient one.",
   "sources": [
-    { "title": "States of Curiosity Modulate Hippocampus-Dependent Learning via the Dopaminergic Circuit", "url": "https://pubmed.ncbi.nlm.nih.gov/25284006/", "publisher": "Neuron", "year": 2014, "studyType": "observational" },
-    { "title": "The Psychology and Neuroscience of Curiosity", "url": "https://pubmed.ncbi.nlm.nih.gov/26593979/", "publisher": "Neuron", "year": 2015, "studyType": "review" },
-    { "title": "The Hungry Mind: Intellectual Curiosity Is the Third Pillar of Academic Performance", "url": "https://pubmed.ncbi.nlm.nih.gov/26168468/", "publisher": "Perspectives on Psychological Science", "year": 2011, "studyType": "meta-analysis" },
-    { "title": "Information-Seeking, Curiosity, and Attention: Computational and Neural Mechanisms", "url": "https://pubmed.ncbi.nlm.nih.gov/23218677/", "publisher": "Trends in Cognitive Sciences", "year": 2012, "studyType": "review" }
-  ]
+    {
+      "title": "States of Curiosity Modulate Hippocampus-Dependent Learning via the Dopaminergic Circuit",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25284006/",
+      "publisher": "Neuron",
+      "year": 2014,
+      "studyType": "observational"
+    },
+    {
+      "title": "The Psychology and Neuroscience of Curiosity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26593979/",
+      "publisher": "Neuron",
+      "year": 2015,
+      "studyType": "review"
+    },
+    {
+      "title": "The Hungry Mind: Intellectual Curiosity Is the Third Pillar of Academic Performance",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26168468/",
+      "publisher": "Perspectives on Psychological Science",
+      "year": 2011,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Information-Seeking, Curiosity, and Attention: Computational and Neural Mechanisms",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23218677/",
+      "publisher": "Trends in Cognitive Sciences",
+      "year": 2012,
+      "studyType": "review"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

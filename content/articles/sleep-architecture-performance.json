@@ -19,9 +19,61 @@
     "circadian rhythm"
   ],
   "sources": [
-    { "title": "The Memory Function of Sleep", "url": "https://pubmed.ncbi.nlm.nih.gov/20010933/", "publisher": "Nature Reviews Neuroscience", "year": 2010, "studyType": "review" },
-    { "title": "The Sleep-Immune Crosstalk in Health and Disease", "url": "https://pubmed.ncbi.nlm.nih.gov/30920354/", "publisher": "Physiological Reviews", "year": 2019, "studyType": "review" },
-    { "title": "The Role of Sleep in Cognition and Emotion", "url": "https://pubmed.ncbi.nlm.nih.gov/19645951/", "publisher": "Annals of the New York Academy of Sciences", "year": 2009, "studyType": "review" },
-    { "title": "Short Sleep Duration and Weight Gain: A Systematic Review", "url": "https://pubmed.ncbi.nlm.nih.gov/18517032/", "publisher": "Obesity", "year": 2008, "studyType": "meta-analysis" }
-  ]
+    {
+      "title": "The Memory Function of Sleep",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20010933/",
+      "publisher": "Nature Reviews Neuroscience",
+      "year": 2010,
+      "studyType": "review"
+    },
+    {
+      "title": "The Sleep-Immune Crosstalk in Health and Disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30920354/",
+      "publisher": "Physiological Reviews",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "The Role of Sleep in Cognition and Emotion",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19645951/",
+      "publisher": "Annals of the New York Academy of Sciences",
+      "year": 2009,
+      "studyType": "review"
+    },
+    {
+      "title": "Short Sleep Duration and Weight Gain: A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18517032/",
+      "publisher": "Obesity",
+      "year": 2008,
+      "studyType": "meta-analysis"
+    }
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to optimise your sleep architecture for recovery and performance",
+    "description": "A step-by-step protocol for improving deep sleep, REM sleep, and overall sleep quality through evidence-based habits.",
+    "totalTime": "PT480M",
+    "steps": [
+      {
+        "name": "Set a consistent sleep and wake schedule",
+        "text": "Go to bed and wake at the same time every day, including weekends. Consistency anchors your circadian rhythm and maximises the proportion of restorative deep sleep (NREM Stage 3) in the early night cycles."
+      },
+      {
+        "name": "Keep your bedroom cool (16-19°C / 60-67°F)",
+        "text": "Core body temperature must drop 1-2°C to initiate and maintain deep sleep. A cool room accelerates this process. Use a fan, lower the thermostat, or use lighter bedding if you run warm."
+      },
+      {
+        "name": "Eliminate blue light 60-90 minutes before bed",
+        "text": "Blue light (from phones, TVs, bright overhead lights) suppresses melatonin production by up to 50%. Switch to warm-tone lighting, use blue-light blocking glasses, or enable Night Shift mode on devices 60-90 minutes before your target sleep time."
+      },
+      {
+        "name": "Stop caffeine by early afternoon",
+        "text": "Caffeine has a half-life of 5-7 hours — a 3 pm coffee still has half its caffeine in your system at 9 pm. Cut caffeine by 1-2 pm to ensure it has cleared before your sleep window and does not fragment deep sleep."
+      },
+      {
+        "name": "Use a wind-down routine for the final 30 minutes",
+        "text": "A consistent pre-sleep routine (reading, light stretching, journalling) signals your nervous system that sleep is approaching. This reduces sleep onset latency and increases the proportion of slow-wave sleep in the first half of the night."
+      }
+    ]
+  }
 }

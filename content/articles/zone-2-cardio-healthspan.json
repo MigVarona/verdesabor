@@ -64,5 +64,33 @@
       "q": "Does Zone 2 training burn fat?",
       "a": "Yes. At Zone 2 intensity, your body relies primarily on fat as its fuel source. Regular Zone 2 training improves your ability to oxidise fat at higher intensities, which benefits both body composition and metabolic health."
     }
-  ]
+  ],
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to do Zone 2 cardio training",
+    "description": "A step-by-step protocol for starting and structuring Zone 2 aerobic training to improve metabolic health and longevity.",
+    "totalTime": "PT60M",
+    "steps": [
+      {
+        "name": "Find your Zone 2 heart rate",
+        "text": "Calculate your approximate Zone 2 ceiling: 180 minus your age. For a 40-year-old, that is roughly 140 bpm. Alternatively, use the talk test — you should be able to speak full sentences but feel mildly breathless."
+      },
+      {
+        "name": "Choose a suitable activity",
+        "text": "Cycling (stationary or outdoor), brisk walking, rowing, or elliptical training all work well. Running tends to push most people above Zone 2 unless pace is deliberately slow."
+      },
+      {
+        "name": "Warm up for 5-10 minutes",
+        "text": "Start at a very easy pace to let your heart rate rise gradually into the Zone 2 range. Jumping straight into intensity increases injury risk and blunts the aerobic signal."
+      },
+      {
+        "name": "Sustain the effort for 45-60 minutes",
+        "text": "Keep your heart rate within the Zone 2 band for the bulk of the session. Use a chest-strap heart rate monitor for accuracy — wrist sensors underperform at low intensities."
+      },
+      {
+        "name": "Cool down and track sessions weekly",
+        "text": "Finish with 5 minutes easy. Aim for 3-4 Zone 2 sessions per week totalling 150-200 minutes for measurable mitochondrial adaptation over 8-12 weeks."
+      }
+    ]
+  }
 }

@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1470010762743-1fa2363f65ca?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "While cold exposure offers numerous benefits, it is important to practice it safely. Sudden exposure to extreme cold can be dangerous, especially for individuals with heart conditions or high blood pressure. It is crucial to listen to the body and avoid pushing beyond personal limits. Gradual adaptation and consistency are key to experiencing the full benefits of cold exposure without unnecessary risks.\n\nIncorporating cold exposure into a biohacking routine can lead to long-term improvements in physical and mental health. Whether through cold showers, ice baths, or cryotherapy, this practice harnesses the body's natural ability to adapt and thrive under controlled stress, ultimately promoting resilience, longevity, and overall well-being.",
   "sources": [
-    { "title": "Cold-Water Immersion (Cryotherapy) for Preventing and Treating Muscle Soreness after Exercise", "url": "https://pubmed.ncbi.nlm.nih.gov/23584538/", "publisher": "Cochrane Database of Systematic Reviews", "year": 2012, "studyType": "meta-analysis" },
-    { "title": "Winter Swimming Improves General Well-Being", "url": "https://pubmed.ncbi.nlm.nih.gov/15143462/", "publisher": "International Journal of Circumpolar Health", "year": 2004, "studyType": "observational" },
-    { "title": "Open Water Swimming as a Treatment for Major Depressive Disorder", "url": "https://pubmed.ncbi.nlm.nih.gov/30670526/", "publisher": "BMJ Case Reports", "year": 2018, "studyType": "observational" },
-    { "title": "Norepinephrine Release in the Brain after Whole-Body Cold Exposure", "url": "https://pubmed.ncbi.nlm.nih.gov/15253085/", "publisher": "Journal of Physiology and Biochemistry", "year": 2004, "studyType": "observational" }
-  ]
+    {
+      "title": "Cold-Water Immersion (Cryotherapy) for Preventing and Treating Muscle Soreness after Exercise",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23584538/",
+      "publisher": "Cochrane Database of Systematic Reviews",
+      "year": 2012,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Winter Swimming Improves General Well-Being",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15143462/",
+      "publisher": "International Journal of Circumpolar Health",
+      "year": 2004,
+      "studyType": "observational"
+    },
+    {
+      "title": "Open Water Swimming as a Treatment for Major Depressive Disorder",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30670526/",
+      "publisher": "BMJ Case Reports",
+      "year": 2018,
+      "studyType": "observational"
+    },
+    {
+      "title": "Norepinephrine Release in the Brain after Whole-Body Cold Exposure",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15253085/",
+      "publisher": "Journal of Physiology and Biochemistry",
+      "year": 2004,
+      "studyType": "observational"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Additionally, try to reduce multitasking. Research shows that when we juggle multiple tasks at once, our ability to think deeply and make high-quality decisions decreases. Instead, focus on one task at a time to engage in more effective, slow thinking. Finally, be patient with yourself. There’s no rush to make every decision immediately, especially when it comes to important life choices. By allowing yourself time to process, you can make decisions that align more closely with your values and long-term goals.\n\nThe Value of Taking Your Time:\nThe world often encourages us to rush through tasks, achieve goals as quickly as possible, and keep moving to the next challenge. But what if the key to better decisions and greater fulfillment lies in the opposite approach? Slowing down and practicing deep thinking might just be the way to unlock the creative potential and clarity needed to make better decisions, enjoy more meaningful relationships, and navigate life’s complexities with greater ease.",
   "sources": [
-    { "title": "Dual-Processing Accounts of Reasoning, Judgment, and Social Cognition", "url": "https://pubmed.ncbi.nlm.nih.gov/18154502/", "publisher": "Annual Review of Psychology", "year": 2008, "studyType": "review" },
-    { "title": "Intuition, Reason, and Metacognition", "url": "https://pubmed.ncbi.nlm.nih.gov/21621193/", "publisher": "Cognitive Psychology", "year": 2011, "studyType": "review" },
-    { "title": "Individual Differences in Reasoning: Implications for the Rationality Debate", "url": "https://pubmed.ncbi.nlm.nih.gov/11301544/", "publisher": "Behavioral and Brain Sciences", "year": 2000, "studyType": "review" },
-    { "title": "The Reflective Mind: Examining the Relationship between Thinking Styles and Cognitive Biases", "url": "https://pubmed.ncbi.nlm.nih.gov/24885658/", "publisher": "Thinking and Reasoning", "year": 2014, "studyType": "observational" }
-  ]
+    {
+      "title": "Dual-Processing Accounts of Reasoning, Judgment, and Social Cognition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18154502/",
+      "publisher": "Annual Review of Psychology",
+      "year": 2008,
+      "studyType": "review"
+    },
+    {
+      "title": "Intuition, Reason, and Metacognition",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21621193/",
+      "publisher": "Cognitive Psychology",
+      "year": 2011,
+      "studyType": "review"
+    },
+    {
+      "title": "Individual Differences in Reasoning: Implications for the Rationality Debate",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/11301544/",
+      "publisher": "Behavioral and Brain Sciences",
+      "year": 2000,
+      "studyType": "review"
+    },
+    {
+      "title": "The Reflective Mind: Examining the Relationship between Thinking Styles and Cognitive Biases",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24885658/",
+      "publisher": "Thinking and Reasoning",
+      "year": 2014,
+      "studyType": "observational"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

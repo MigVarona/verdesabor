@@ -179,6 +179,27 @@ export function buildWebPageSchema({
   };
 }
 
+export function buildHowToSchema(howTo: {
+  name: string;
+  description?: string;
+  steps: Array<{ name: string; text: string }>;
+  totalTime?: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: howTo.name,
+    ...(howTo.description ? { description: howTo.description } : {}),
+    ...(howTo.totalTime ? { totalTime: howTo.totalTime } : {}),
+    step: howTo.steps.map((s, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: s.name,
+      text: s.text,
+    })),
+  };
+}
+
 export function buildFAQSchema(faq: Array<{ q: string; a: string }>) {
   return {
     "@context": "https://schema.org",

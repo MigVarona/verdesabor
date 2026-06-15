@@ -11,9 +11,34 @@
   "image2xl": "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Weight management becomes easier after quitting alcohol. Alcohol contains empty calories that provide no nutritional value but contribute to weight gain. It also lowers inhibitions, leading to poor food choices and overeating. Without alcohol, cravings for unhealthy foods decrease, metabolism improves, and maintaining a healthy weight becomes more manageable.\n\nLong-term health benefits include a reduced risk of chronic diseases. Excessive alcohol consumption has been linked to an increased risk of heart disease, liver disease, and certain cancers. By quitting alcohol, the body becomes more resilient, the immune system strengthens, and the risk of these serious conditions decreases significantly.\n\nBeyond physical and mental health, quitting alcohol can also improve social relationships and productivity. Alcohol can sometimes lead to strained relationships, impaired judgment, and missed opportunities. Without it, individuals often find they have more clarity, better communication skills, and greater motivation to pursue personal and professional goals.\n\nIn recent years, there has been a growing trend toward reducing or eliminating alcohol consumption. More people, especially younger generations, are embracing a sober or \"sober curious\" lifestyle. This shift is fueled by increasing awareness of the negative effects of alcohol, a greater focus on health and wellness, and the rise of non-alcoholic beverage alternatives. Social norms around drinking are evolving, making it easier for individuals to choose sobriety without social pressure.\n\nUltimately, quitting alcohol is one of the best decisions a person can make for their overall well-being. The benefits extend far beyond just physical health, impacting mental clarity, emotional stability, and quality of life. With the growing trend of alcohol-free living, more people are discovering that a sober lifestyle leads to greater energy, focus, and fulfillment, contributing to long-term health and happiness.",
   "sources": [
-    { "title": "Alcohol Use and Burden for 195 Countries and Territories, 1990–2016: A Systematic Analysis for the Global Burden of Disease Study 2016", "url": "https://pubmed.ncbi.nlm.nih.gov/30146330/", "publisher": "The Lancet", "year": 2018, "studyType": "meta-analysis" },
-    { "title": "Association of Alcohol Consumption with Selected Cardiovascular Disease Outcomes: A Systematic Review and Meta-Analysis", "url": "https://pubmed.ncbi.nlm.nih.gov/21343207/", "publisher": "BMJ", "year": 2011, "studyType": "meta-analysis" },
-    { "title": "Alcohol and Cancer: A Statement of the American Society of Clinical Oncology", "url": "https://pubmed.ncbi.nlm.nih.gov/29232172/", "publisher": "Journal of Clinical Oncology", "year": 2018, "studyType": "institutional" },
-    { "title": "Short-Term Abstinence from Alcohol and Changes in Cardiovascular Risk Factors, Liver Function Tests and Cancer-Related Growth Factors", "url": "https://pubmed.ncbi.nlm.nih.gov/29135206/", "publisher": "BMJ Open", "year": 2018, "studyType": "observational" }
-  ]
+    {
+      "title": "Alcohol Use and Burden for 195 Countries and Territories, 1990–2016: A Systematic Analysis for the Global Burden of Disease Study 2016",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30146330/",
+      "publisher": "The Lancet",
+      "year": 2018,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Association of Alcohol Consumption with Selected Cardiovascular Disease Outcomes: A Systematic Review and Meta-Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/21343207/",
+      "publisher": "BMJ",
+      "year": 2011,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Alcohol and Cancer: A Statement of the American Society of Clinical Oncology",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29232172/",
+      "publisher": "Journal of Clinical Oncology",
+      "year": 2018,
+      "studyType": "institutional"
+    },
+    {
+      "title": "Short-Term Abstinence from Alcohol and Changes in Cardiovascular Risk Factors, Liver Function Tests and Cancer-Related Growth Factors",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29135206/",
+      "publisher": "BMJ Open",
+      "year": 2018,
+      "studyType": "observational"
+    }
+  ],
+  "updatedAt": "2026-06-15"
 }

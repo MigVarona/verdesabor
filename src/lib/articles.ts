@@ -25,6 +25,12 @@ export interface Article {
     studyType?: "meta-analysis" | "rct" | "review" | "cohort" | "observational" | "institutional";
   }>;
   faq?: Array<{ q: string; a: string }>;
+  howTo?: {
+    name: string;
+    description?: string;
+    steps: Array<{ name: string; text: string }>;
+    totalTime?: string;
+  };
 }
 
 export function generateSlug(title: string): string {

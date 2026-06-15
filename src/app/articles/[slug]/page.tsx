@@ -29,6 +29,7 @@ import {
   buildArticleSchema,
   buildBreadcrumbSchema,
   buildFAQSchema,
+  buildHowToSchema,
   buildPageMetadata,
 } from "@/lib/seo";
 
@@ -114,10 +115,16 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   });
 
   const faqSchema = article.faq?.length ? buildFAQSchema(article.faq) : null;
+  const howToSchema = article.howTo ? buildHowToSchema(article.howTo) : null;
 
   return (
     <>
-      <JsonLd data={[breadcrumbSchema, articleSchema, ...(faqSchema ? [faqSchema] : [])]} />
+      <JsonLd data={[
+        breadcrumbSchema,
+        articleSchema,
+        ...(faqSchema ? [faqSchema] : []),
+        ...(howToSchema ? [howToSchema] : []),
+      ]} />
       <Header />
       <div className="container mx-auto px-4 py-4">
         <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />

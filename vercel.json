@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/:path((?!ads\\.txt$).*)",
+      "has": [{ "type": "host", "value": "renew-habits.com" }],
+      "destination": "https://www.renew-habits.com/:path",
+      "permanent": true
+    }
+  ]
+}

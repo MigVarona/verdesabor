@@ -6,7 +6,8 @@ function isDirectCdn(src: ImageProps["src"]): boolean {
     url.includes("images.unsplash.com") ||
     url.includes("res.cloudinary.com") ||
     url.includes("joovv.com/cdn/") ||
-    url.includes("mitoredlight.com/cdn/")
+    url.includes("mitoredlight.com/cdn/") ||
+    url.includes("cdn.shopify.com")
   );
 }
 

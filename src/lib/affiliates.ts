@@ -91,6 +91,36 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     image: "/products/life-extension-neuro-mag.png",
     badge: "premium",
   },
+  "nordic-naturals-ultimate-omega": {
+    id: "nordic-naturals-ultimate-omega",
+    name: "Nordic Naturals Ultimate Omega",
+    description:
+      "High-potency fish oil with clear EPA/DHA labeling and third-party purity testing — a widely used option when fatty fish intake is inconsistent.",
+    url: "https://www.nordic.com/products/ultimate-omega/",
+    image:
+      "https://cdn.shopify.com/s/files/1/0511/3059/7560/files/ultimateomega_PLP.jpg?v=1780935742",
+    badge: "editors-pick",
+    note: "Food-first when possible: salmon, sardines, or mackerel 2–3× weekly. Supplement if intake is low.",
+  },
+  "nordic-naturals-algae-omega": {
+    id: "nordic-naturals-algae-omega",
+    name: "Nordic Naturals Algae Omega",
+    description:
+      "Plant-based DHA and EPA from algae — a practical option when oily fish is not part of your diet and ALA conversion is limited.",
+    url: "https://www.nordic.com/products/algae-omega/",
+    image:
+      "https://cdn.shopify.com/s/files/1/0511/3059/7560/files/01606RL2-AlgaeOmega_60ct_Box_Front.jpg?v=1780935839",
+    badge: "budget-pick",
+  },
+  "thorne-super-epa-pro": {
+    id: "thorne-super-epa-pro",
+    name: "Thorne Super EPA Pro",
+    description:
+      "Concentrated EPA formula with published amounts per serving — often used in cardiovascular-focused supplement stacks.",
+    url: "https://www.thorne.com/products/dp/super-epa-pro",
+    badge: "premium",
+    note: "High-dose omega-3s can interact with blood thinners — consult your doctor if you take anticoagulants.",
+  },
 };
 
 export const BADGE_LABELS: Record<ProductBadge, string> = {

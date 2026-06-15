@@ -26,6 +26,10 @@ const nextConfig: NextConfig = {
         hostname: "mitoredlight.com",
         pathname: "/cdn/**",
       },
+      {
+        protocol: "https",
+        hostname: "cdn.shopify.com",
+      },
     ],
   },
 };

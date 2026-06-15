@@ -17,5 +17,35 @@
     "cellular energy",
     "aging",
     "sirtuins"
+  ],
+  "sources": [
+    {
+      "title": "Nicotinamide Mononucleotide Increases Muscle Insulin Sensitivity in Prediabetic Women",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33888596/",
+      "publisher": "Science",
+      "year": 2021,
+      "studyType": "rct"
+    },
+    {
+      "title": "Therapeutic Potential of NAD-Boosting Molecules: The In Vivo Evidence",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29514063/",
+      "publisher": "Cell Metabolism",
+      "year": 2018,
+      "studyType": "review"
+    },
+    {
+      "title": "NAD+ Metabolism and the Control of Energy Homeostasis: A Balancing Act between Mitochondria and the Nucleus",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26073821/",
+      "publisher": "Cell Metabolism",
+      "year": 2015,
+      "studyType": "review"
+    },
+    {
+      "title": "NAD+ in Aging, Metabolism, and Neurodegeneration",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26785480/",
+      "publisher": "Science",
+      "year": 2015,
+      "studyType": "review"
+    }
   ]
 }

@@ -16,5 +16,35 @@
     "neuroscience",
     "mental health",
     "probiotics"
+  ],
+  "sources": [
+    {
+      "title": "The Microbiota-Gut-Brain Axis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31460832/",
+      "publisher": "Physiological Reviews",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "Gut–Brain Axis: How the Microbiome Influences Anxiety and Depression",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23509182/",
+      "publisher": "Trends in Neurosciences",
+      "year": 2013,
+      "studyType": "review"
+    },
+    {
+      "title": "The Neuroactive Potential of the Human Gut Microbiota in Quality of Life and Depression",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30718848/",
+      "publisher": "Nature Microbiology",
+      "year": 2019,
+      "studyType": "cohort"
+    },
+    {
+      "title": "Psychobiotics and the Gut-Brain Axis: In the Pursuit of Happiness",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23759244/",
+      "publisher": "Neuropsychiatric Disease and Treatment",
+      "year": 2013,
+      "studyType": "review"
+    }
   ]
 }

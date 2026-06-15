@@ -16,5 +16,35 @@
     "healthspan",
     "mitochondria",
     "exercise"
+  ],
+  "sources": [
+    {
+      "title": "The Science and Translation of Lactate Shuttle Theory",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29617640/",
+      "publisher": "Cell Metabolism",
+      "year": 2018,
+      "studyType": "review"
+    },
+    {
+      "title": "Assessment of Metabolic Flexibility by Means of Measuring Blood Lactate, Fat, and Carbohydrate Oxidation Responses to Exercise in Professional Endurance Athletes and Less-Fit Individuals",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29372481/",
+      "publisher": "Sports Medicine",
+      "year": 2018,
+      "studyType": "observational"
+    },
+    {
+      "title": "Cardiorespiratory Fitness and Long-Term Mortality: A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30250012/",
+      "publisher": "British Journal of Sports Medicine",
+      "year": 2018,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Exercise and the Cardiovascular System: Clinical Science and Cardiovascular Outcomes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25687661/",
+      "publisher": "Circulation Research",
+      "year": 2015,
+      "studyType": "review"
+    }
   ]
 }

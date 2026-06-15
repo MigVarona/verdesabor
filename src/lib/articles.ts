@@ -21,6 +21,8 @@ export interface Article {
     title: string;
     url?: string;
     publisher?: string;
+    year?: number;
+    studyType?: "meta-analysis" | "rct" | "review" | "cohort" | "observational" | "institutional";
   }>;
 }
 

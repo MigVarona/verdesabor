@@ -16,5 +16,35 @@
     "stress",
     "wellness",
     "supplements"
+  ],
+  "sources": [
+    {
+      "title": "The Effect of Magnesium Supplementation on Primary Insomnia in Elderly: A Double-Blind Placebo-Controlled Clinical Trial",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23853635/",
+      "publisher": "Journal of Research in Medical Sciences",
+      "year": 2012,
+      "studyType": "rct"
+    },
+    {
+      "title": "The Effects of Magnesium Supplementation on Subjective Anxiety and Stress — A Systematic Review",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28445426/",
+      "publisher": "Nutrients",
+      "year": 2017,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Magnesium Deficiency and Increased Inflammatory C-reactive Protein: Reciprocal Relationship in a Cohort Study of US Adults",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24814685/",
+      "publisher": "Nutrition Research",
+      "year": 2014,
+      "studyType": "cohort"
+    },
+    {
+      "title": "Subclinical Magnesium Deficiency: A Principal Driver of Cardiovascular Disease and a Public Health Crisis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29403302/",
+      "publisher": "Open Heart",
+      "year": 2018,
+      "studyType": "review"
+    }
   ]
 }

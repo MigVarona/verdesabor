@@ -16,5 +16,35 @@
     "heart health",
     "nutrition",
     "olive oil"
+  ],
+  "sources": [
+    {
+      "title": "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29897866/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2018,
+      "studyType": "rct"
+    },
+    {
+      "title": "Adherence to a Mediterranean Diet and Survival in a Greek Population",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/12826634/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2003,
+      "studyType": "cohort"
+    },
+    {
+      "title": "Mediterranean Diet and Life Expectancy; Beyond Olive Oil, Fruits, and Vegetables",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26731685/",
+      "publisher": "Current Opinion in Clinical Nutrition and Metabolic Care",
+      "year": 2016,
+      "studyType": "review"
+    },
+    {
+      "title": "Mediterranean Diet Score and Total Mortality in Metabolic Syndrome: The MOLI-SANI Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25919488/",
+      "publisher": "Nutrition, Metabolism and Cardiovascular Diseases",
+      "year": 2015,
+      "studyType": "cohort"
+    }
   ]
 }

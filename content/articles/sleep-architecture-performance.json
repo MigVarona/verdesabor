@@ -17,5 +17,11 @@
     "deep sleep",
     "recovery",
     "circadian rhythm"
+  ],
+  "sources": [
+    { "title": "The Memory Function of Sleep", "url": "https://pubmed.ncbi.nlm.nih.gov/20010933/", "publisher": "Nature Reviews Neuroscience", "year": 2010, "studyType": "review" },
+    { "title": "The Sleep-Immune Crosstalk in Health and Disease", "url": "https://pubmed.ncbi.nlm.nih.gov/30920354/", "publisher": "Physiological Reviews", "year": 2019, "studyType": "review" },
+    { "title": "The Role of Sleep in Cognition and Emotion", "url": "https://pubmed.ncbi.nlm.nih.gov/19645951/", "publisher": "Annals of the New York Academy of Sciences", "year": 2009, "studyType": "review" },
+    { "title": "Short Sleep Duration and Weight Gain: A Systematic Review", "url": "https://pubmed.ncbi.nlm.nih.gov/18517032/", "publisher": "Obesity", "year": 2008, "studyType": "meta-analysis" }
   ]
 }

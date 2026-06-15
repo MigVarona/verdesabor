@@ -1,9 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { ADSENSE_CLIENT, getAdSenseSlotId, type AdFormat } from "@/lib/ads";
-import { getStoredConsent, getStoredPreferences } from "@/lib/cookies";
 
 interface AdSlotProps {
   id: string;
@@ -24,35 +23,20 @@ declare global {
   }
 }
 
-function shouldShowAds(): boolean {
-  const consent = getStoredConsent();
-  if (consent !== "accepted") return false;
-  const prefs = getStoredPreferences();
-  return prefs?.advertising ?? false;
-}
-
 export default function AdSlot({ id, format = "sidebar", className }: AdSlotProps) {
-  const [showAds, setShowAds] = useState(false);
   const slotId = getAdSenseSlotId(format);
   const configured = Boolean(ADSENSE_CLIENT && slotId);
 
   useEffect(() => {
-    const sync = () => setShowAds(shouldShowAds());
-    sync();
-    window.addEventListener("cookie-consent-updated", sync);
-    return () => window.removeEventListener("cookie-consent-updated", sync);
-  }, []);
-
-  useEffect(() => {
-    if (!showAds || !configured) return;
+    if (!configured) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch {
       // AdSense not loaded yet
     }
-  }, [showAds, configured, id]);
+  }, [configured, id]);
 
-  if (showAds && configured) {
+  if (configured) {
     return (
       <div
         id={id}
@@ -77,7 +61,7 @@ export default function AdSlot({ id, format = "sidebar", className }: AdSlotProp
       data-ad-slot={id}
       data-ad-format={format}
       className={cn("ad-placeholder", formatStyles[format], className)}
-      aria-hidden={!configured}
+      aria-hidden="true"
     >
       <span>Advertisement</span>
     </div>

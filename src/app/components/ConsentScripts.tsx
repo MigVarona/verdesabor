@@ -14,22 +14,11 @@ function shouldLoadAnalytics(): boolean {
   return prefs?.analytics ?? false;
 }
 
-function shouldLoadAdvertising(): boolean {
-  const consent = getStoredConsent();
-  if (consent !== "accepted") return false;
-  const prefs = getStoredPreferences();
-  return prefs?.advertising ?? false;
-}
-
 export default function ConsentScripts() {
   const [analytics, setAnalytics] = useState(false);
-  const [advertising, setAdvertising] = useState(false);
 
   useEffect(() => {
-    const sync = () => {
-      setAnalytics(shouldLoadAnalytics());
-      setAdvertising(shouldLoadAdvertising());
-    };
+    const sync = () => setAnalytics(shouldLoadAnalytics());
     sync();
     window.addEventListener("cookie-consent-updated", sync);
     return () => window.removeEventListener("cookie-consent-updated", sync);
@@ -54,7 +43,7 @@ export default function ConsentScripts() {
         </>
       )}
 
-      {advertising && ADSENSE_CLIENT && (
+      {ADSENSE_CLIENT && (
         <Script
           id="google-adsense"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}

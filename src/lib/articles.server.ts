@@ -57,3 +57,20 @@ export async function fetchArticleBySlug(slug: string): Promise<Article | null> 
 export async function getAllArticleSlugs(): Promise<string[]> {
   return readArticlesFromDisk().map((a) => a.slug || generateSlug(a.title));
 }
+
+export async function fetchArticlesByTag(tag: string): Promise<Article[]> {
+  return readArticlesFromDisk().filter((a) =>
+    a.tags?.some((t) => t.toLowerCase() === tag.toLowerCase())
+  );
+}
+
+export async function getAllTags(): Promise<string[]> {
+  const articles = readArticlesFromDisk();
+  const tagSet = new Set<string>();
+  for (const article of articles) {
+    for (const tag of article.tags ?? []) {
+      tagSet.add(tag.toLowerCase());
+    }
+  }
+  return Array.from(tagSet).sort();
+}

@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import ArticleImage from "@/app/components/ArticleImage";
 import Header from "@/app/components/Header";
 import Newsletter from "@/app/components/Newsletter";
@@ -77,10 +78,12 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   const articleUrl = getArticleUrl(article);
   const heroImage = getArticleImage(article);
   const allArticles = await fetchArticles();
-  const related = allArticles.filter(
-    (a) => a._id !== article._id && a.category.toLowerCase() === article.category.toLowerCase()
-  );
-  const readTime = getReadingTime(`${article.text || ""} ${article.text2 || ""}`);
+  const related = allArticles
+    .filter((a) => a._id !== article._id && a.category.toLowerCase() === article.category.toLowerCase())
+    .slice(0, 6);
+  const articleText = `${article.text || ""} ${article.text2 || ""}`;
+  const readTime = getReadingTime(articleText);
+  const wordCount = articleText.trim().split(/\s+/).filter(Boolean).length;
   const takeaways = getArticleTakeaways(article);
   const description =
     article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
@@ -100,6 +103,8 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
     updatedAt: article.updatedAt,
     author: article.author,
     category: article.category,
+    wordCount: wordCount > 0 ? wordCount : undefined,
+    keywords: article.tags,
   });
 
   return (
@@ -181,12 +186,13 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-renew-border">
                   {article.tags.map((tag) => (
-                    <span
+                    <Link
                       key={tag}
-                      className="text-xs font-medium text-renew-muted bg-renew-mist px-3 py-1.5 rounded-full"
+                      href={`/tags/${tag.toLowerCase()}`}
+                      className="text-xs font-medium text-renew-muted bg-renew-mist px-3 py-1.5 rounded-full hover:bg-renew-accent hover:text-renew-dark transition-colors"
                     >
                       #{tag}
-                    </span>
+                    </Link>
                   ))}
                 </div>
               )}

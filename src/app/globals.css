@@ -2,6 +2,70 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Regular-BF642a340663b06.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Italic-BF642a34058f127.otf") format("opentype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Semibold-BF642a34066f658.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-SemiboldItalic-BF642a340662c47.otf") format("opentype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Bold-BF642a3406582e7.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-BoldItalic-BF642a34065bd61.otf") format("opentype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Light-BF642a34063c321.otf") format("opentype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Duplet";
+  src: url("/duplet-font-family-1739790357-0/Duplet-Extrabold-BF642a34066ffff.otf") format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --background: #f7f5ef;
   --foreground: #18211d;

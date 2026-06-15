@@ -83,7 +83,10 @@ export function buildOrganizationSchema() {
     logo: absoluteUrl("/icon-192.png"),
     description: SITE_DESCRIPTION,
     email: "hello@renewhabits.com",
-    sameAs: [],
+    sameAs: [
+      "https://www.instagram.com/renew.habits/",
+      "https://x.com/renew_habits",
+    ],
   };
 }
 
@@ -95,14 +98,6 @@ export function buildWebSiteSchema() {
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     publisher: { "@type": "Organization", name: SITE_NAME },
-    potentialAction: {
-      "@type": "SearchAction",
-      target: {
-        "@type": "EntryPoint",
-        urlTemplate: `${SITE_URL}/articles?q={search_term_string}`,
-      },
-      "query-input": "required name=search_term_string",
-    },
   };
 }
 
@@ -130,6 +125,8 @@ type ArticleSchemaInput = {
   updatedAt?: string;
   author?: string;
   category?: string;
+  wordCount?: number;
+  keywords?: string[];
 };
 
 export function buildArticleSchema(article: ArticleSchemaInput) {
@@ -157,9 +154,9 @@ export function buildArticleSchema(article: ArticleSchemaInput) {
       "@type": "WebPage",
       "@id": absoluteUrl(article.path),
     },
-    ...(article.category
-      ? { articleSection: article.category }
-      : {}),
+    ...(article.category ? { articleSection: article.category } : {}),
+    ...(article.wordCount ? { wordCount: article.wordCount } : {}),
+    ...(article.keywords?.length ? { keywords: article.keywords.join(", ") } : {}),
   };
 }
 

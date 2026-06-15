@@ -1,12 +1,12 @@
 import { MetadataRoute } from "next";
 import { getArticleUrl } from "@/lib/articles";
-import { fetchArticles } from "@/lib/articles.server";
+import { fetchArticles, getAllTags } from "@/lib/articles.server";
 import { getSiteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const siteUrl = getSiteUrl();
 
-  const articles = await fetchArticles();
+  const [articles, tags] = await Promise.all([fetchArticles(), getAllTags()]);
   const articleUrls: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${siteUrl}${getArticleUrl(article)}`,
     lastModified: article.updatedAt
@@ -35,20 +35,25 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }));
 
   const staticPages: MetadataRoute.Sitemap = [
-    { url: `${siteUrl}/about`, changeFrequency: "monthly" as const, priority: 0.5 },
-    { url: `${siteUrl}/editorial-policy`, changeFrequency: "yearly" as const, priority: 0.3 },
-    { url: `${siteUrl}/disclaimer`, changeFrequency: "yearly" as const, priority: 0.3 },
-    { url: `${siteUrl}/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },
-    { url: `${siteUrl}/cookies`, changeFrequency: "yearly" as const, priority: 0.3 },
-    { url: `${siteUrl}/articles`, changeFrequency: "daily" as const, priority: 0.8 },
+    { url: `${siteUrl}/about`, changeFrequency: "monthly" as const, priority: 0.5, lastModified: new Date("2024-11-01") },
+    { url: `${siteUrl}/editorial-policy`, changeFrequency: "yearly" as const, priority: 0.3, lastModified: new Date("2024-11-01") },
+    { url: `${siteUrl}/disclaimer`, changeFrequency: "yearly" as const, priority: 0.3, lastModified: new Date("2024-11-01") },
+    { url: `${siteUrl}/privacy`, changeFrequency: "yearly" as const, priority: 0.3, lastModified: new Date("2024-11-01") },
+    { url: `${siteUrl}/cookies`, changeFrequency: "yearly" as const, priority: 0.3, lastModified: new Date("2024-11-01") },
+    { url: `${siteUrl}/articles`, changeFrequency: "daily" as const, priority: 0.8, lastModified: new Date() },
     {
       url: `${siteUrl}/resources/7-daily-habits-healthspan`,
       changeFrequency: "monthly" as const,
       priority: 0.6,
+      lastModified: new Date("2024-11-01"),
     },
-  ].map((page) => ({
-    ...page,
+  ];
+
+  const tagUrls: MetadataRoute.Sitemap = tags.map((tag) => ({
+    url: `${siteUrl}/tags/${tag}`,
     lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.5,
   }));
 
   return [
@@ -61,5 +66,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticPages,
     ...articleUrls,
     ...categoryUrls,
+    ...tagUrls,
   ];
 }

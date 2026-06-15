@@ -91,6 +91,14 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-NWD2PBHB"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+          />
+        </noscript>
         <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
         {children}
         <CookieConsent />

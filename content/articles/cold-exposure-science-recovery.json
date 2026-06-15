@@ -17,5 +17,35 @@
     "biohacking",
     "brown fat",
     "longevity"
+  ],
+  "sources": [
+    {
+      "title": "Voluntary Activation of the Sympathetic Nervous System and Attenuation of the Innate Immune Response in Humans",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24889503/",
+      "publisher": "Proceedings of the National Academy of Sciences",
+      "year": 2014,
+      "studyType": "rct"
+    },
+    {
+      "title": "Cold Water Immersion: Kill or Cure?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28833689/",
+      "publisher": "Experimental Physiology",
+      "year": 2017,
+      "studyType": "review"
+    },
+    {
+      "title": "Cold-Water Immersion (Cryotherapy) for Preventing and Treating Muscle Soreness after Exercise",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23584538/",
+      "publisher": "Cochrane Database of Systematic Reviews",
+      "year": 2012,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Effects of Long-Term Whole-Body Cold Exposures on Plasma Concentrations of ACTH, Beta-Endorphin, Cortisol, Catecholamines and Cytokines in Healthy Females",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18382932/",
+      "publisher": "Scandinavian Journal of Clinical and Laboratory Investigation",
+      "year": 2008,
+      "studyType": "observational"
+    }
   ]
 }

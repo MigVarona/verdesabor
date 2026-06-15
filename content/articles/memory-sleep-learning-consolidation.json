@@ -10,5 +10,35 @@
   "text": "When you learn something new — a language phrase, a motor skill, a work presentation — the initial trace lives in the hippocampus as a fragile short-term memory. During sleep, especially slow-wave (deep) sleep, the brain replays and stabilizes these traces, transferring them to cortical networks for long-term storage.\n\nREM sleep appears especially important for procedural learning and emotional memory processing. This is why \"sleep on it\" is scientifically sound advice: problem-solving and insight often improve after a full night, not because magic happens, but because offline consolidation reorganizes information.\n\nSleep deprivation does the opposite. Even one night of poor sleep can impair hippocampal function and reduce next-day learning capacity by 20–40% in laboratory studies. Cramming all night before an exam is among the worst strategies for retention.",
   "image2xl": "https://images.unsplash.com/photo-1520206183501-b80da0e1f7a8?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
   "text2": "Practical implications: review important material before bed (not frantically — calmly), protect 7–9 hours when learning intensively, and avoid alcohol which suppresses REM. Naps of 20–90 minutes can boost consolidation for some tasks if night sleep is insufficient — but they do not fully replace it.\n\nFor athletes and musicians, sleep may be as important as practice itself. The brain strengthens motor patterns during rest that rehearsal alone cannot finish.\n\nIf you care about memory, treat sleep as a study tool — not an obstacle to productivity.",
-  "tags": ["neuroscience", "sleep", "memory", "learning", "REM", "brain"]
+  "tags": ["neuroscience", "sleep", "memory", "learning", "REM", "brain"],
+  "sources": [
+    {
+      "title": "Sleep-Dependent Memory Consolidation",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16251952/",
+      "publisher": "Nature",
+      "year": 2005,
+      "studyType": "review"
+    },
+    {
+      "title": "Sleep, Memory, and Plasticity",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16318596/",
+      "publisher": "Annual Review of Psychology",
+      "year": 2006,
+      "studyType": "review"
+    },
+    {
+      "title": "Sleep Drives Metabolite Clearance from the Adult Brain",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24136970/",
+      "publisher": "Science",
+      "year": 2013,
+      "studyType": "observational"
+    },
+    {
+      "title": "The Role of Sleep in Declarative Memory Consolidation — Passive, Permissive, Active or None?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22480755/",
+      "publisher": "Current Opinion in Neurobiology",
+      "year": 2012,
+      "studyType": "review"
+    }
+  ]
 }

@@ -16,5 +16,35 @@
     "nutrition",
     "time-restricted eating",
     "insulin"
+  ],
+  "sources": [
+    {
+      "title": "Effects of Intermittent Fasting on Health, Aging, and Disease",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31881139/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2019,
+      "studyType": "review"
+    },
+    {
+      "title": "Fasting: Molecular Mechanisms and Clinical Applications",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24440038/",
+      "publisher": "Cell Metabolism",
+      "year": 2014,
+      "studyType": "review"
+    },
+    {
+      "title": "Early Time-Restricted Feeding Improves Insulin Sensitivity, Blood Pressure, and Oxidative Stress Even without Weight Loss in Men with Prediabetes",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29702468/",
+      "publisher": "Cell Metabolism",
+      "year": 2018,
+      "studyType": "rct"
+    },
+    {
+      "title": "Intermittent Fasting: A Heart Healthy Dietary Pattern?",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30301628/",
+      "publisher": "The American Journal of Medicine",
+      "year": 2018,
+      "studyType": "review"
+    }
   ]
 }

@@ -134,30 +134,88 @@ export function ArticleGuideCTA() {
   );
 }
 
+const STUDY_TYPE_LABELS: Record<string, string> = {
+  "meta-analysis": "Meta-analysis",
+  rct: "RCT",
+  review: "Review",
+  cohort: "Cohort study",
+  observational: "Observational",
+  institutional: "Guidelines",
+};
+
+const STUDY_TYPE_TIER: Record<string, "gold" | "silver" | "standard"> = {
+  "meta-analysis": "gold",
+  rct: "gold",
+  review: "silver",
+  cohort: "silver",
+  observational: "standard",
+  institutional: "standard",
+};
+
+const TIER_CLASSES = {
+  gold: "bg-amber-50 text-amber-700 border border-amber-200",
+  silver: "bg-slate-50 text-slate-600 border border-slate-200",
+  standard: "bg-renew-mist text-renew-muted border border-renew-border",
+};
+
 export function ArticleReferences({ article }: { article: Article }) {
   const sources = article.sources || [];
 
   return (
     <section id="references" className="mt-12 border-t border-renew-border pt-8 scroll-mt-28">
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-2 mb-2">
         <ShieldCheck className="h-5 w-5 text-renew-sage" />
         <h2 className="section-title">Sources & review</h2>
       </div>
+
       {sources.length > 0 ? (
-        <ol className="mt-5 space-y-3">
-          {sources.map((source, index) => (
-            <li key={`${source.title}-${index}`} className="text-sm leading-relaxed text-renew-muted">
-              {source.url ? (
-                <a href={source.url} className="font-medium text-renew-sage underline underline-offset-2">
-                  {source.title}
-                </a>
-              ) : (
-                <span className="font-medium text-renew-dark">{source.title}</span>
-              )}
-              {source.publisher && <span> · {source.publisher}</span>}
-            </li>
-          ))}
-        </ol>
+        <>
+          <p className="text-xs text-renew-muted mb-5">
+            {sources.length} peer-reviewed {sources.length === 1 ? "source" : "sources"} cited in this article.
+          </p>
+          <ol className="space-y-3">
+            {sources.map((source, index) => {
+              const tier = source.studyType ? STUDY_TYPE_TIER[source.studyType] : undefined;
+              return (
+                <li
+                  key={`${source.title}-${index}`}
+                  className="flex gap-3 text-sm leading-relaxed"
+                >
+                  <span className="flex-shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center rounded-full bg-renew-mist text-[0.65rem] font-bold text-renew-dark">
+                    {index + 1}
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex flex-wrap items-center gap-2 mb-1">
+                      {source.studyType && tier && (
+                        <span className={`inline-flex items-center text-[0.6rem] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${TIER_CLASSES[tier]}`}>
+                          {STUDY_TYPE_LABELS[source.studyType]}
+                        </span>
+                      )}
+                      {source.year && (
+                        <span className="text-[0.65rem] font-medium text-renew-muted">{source.year}</span>
+                      )}
+                    </div>
+                    {source.url ? (
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="font-medium text-renew-sage hover:text-renew-dark underline underline-offset-2 transition-colors"
+                      >
+                        {source.title}
+                      </a>
+                    ) : (
+                      <span className="font-medium text-renew-dark">{source.title}</span>
+                    )}
+                    {source.publisher && (
+                      <span className="text-renew-muted"> · {source.publisher}</span>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ol>
+        </>
       ) : (
         <div className="mt-5 grid gap-3 text-sm leading-relaxed text-renew-muted sm:grid-cols-2">
           <p className="flex gap-2">

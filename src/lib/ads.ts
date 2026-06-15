@@ -1,6 +1,7 @@
 export type AdFormat = "leaderboard" | "sidebar" | "in-content" | "footer";
 
-export const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
+export const ADSENSE_CLIENT =
+  process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-5806881993295990";
 
 const FORMAT_SLOT_ENV: Record<AdFormat, string | undefined> = {
   leaderboard: process.env.NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD,

@@ -11,3 +11,13 @@ export function GET() {
     },
   });
 }
+
+export function HEAD() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
+      "Content-Type": "text/plain; charset=utf-8",
+      "Cache-Control": "public, max-age=3600",
+    },
+  });
+}

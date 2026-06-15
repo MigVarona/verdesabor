@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { ADSENSE_CLIENT, getAdSenseSlotId, type AdFormat } from "@/lib/ads";
+import { getStoredConsent, getStoredPreferences } from "@/lib/cookies";
 
 interface AdSlotProps {
   id: string;
@@ -24,17 +25,36 @@ declare global {
 }
 
 export default function AdSlot({ id, format = "sidebar", className }: AdSlotProps) {
+  const pushed = useRef(false);
   const slotId = getAdSenseSlotId(format);
   const configured = Boolean(ADSENSE_CLIENT && slotId);
 
   useEffect(() => {
     if (!configured) return;
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch {
-      // AdSense not loaded yet
-    }
-  }, [configured, id]);
+
+    const pushAd = () => {
+      const consent = getStoredConsent();
+      const prefs = getStoredPreferences();
+      if (pushed.current || consent !== "accepted" || !prefs?.advertising || !window.adsbygoogle) {
+        return;
+      }
+
+      try {
+        window.adsbygoogle.push({});
+        pushed.current = true;
+      } catch {
+        // AdSense may still be initializing.
+      }
+    };
+
+    pushAd();
+    window.addEventListener("adsense-loaded", pushAd);
+    window.addEventListener("cookie-consent-updated", pushAd);
+    return () => {
+      window.removeEventListener("adsense-loaded", pushAd);
+      window.removeEventListener("cookie-consent-updated", pushAd);
+    };
+  }, [configured, id, slotId]);
 
   if (configured) {
     return (

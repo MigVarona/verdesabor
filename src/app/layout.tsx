@@ -12,8 +12,7 @@ import {
   DEFAULT_OG_IMAGE,
 } from "@/lib/seo";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
-
-const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-5806881993295990";
+import { ADSENSE_CLIENT } from "@/lib/ads";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -94,11 +93,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <head>
         <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
-        />
       </head>
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
         <noscript>

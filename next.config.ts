@@ -18,7 +18,13 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.renewhabits.com",
+        hostname: "joovv.com",
+        pathname: "/cdn/**",
+      },
+      {
+        protocol: "https",
+        hostname: "mitoredlight.com",
+        pathname: "/cdn/**",
       },
     ],
   },

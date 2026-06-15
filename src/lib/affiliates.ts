@@ -24,7 +24,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Full-body red light panel with published irradiance specs — a common clinical reference point for home photobiomodulation.",
     url: "https://joovv.com/products/joovv-solo-3-0",
-    image: "https://images.unsplash.com/photo-1536972795217-00f0b4587844?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "https://joovv.com/cdn/shop/products/joovv-solo-3-0-setup-boot-001_1000x.jpg?v=1625254731",
     badge: "editors-pick",
     note: "Higher irradiance than most consumer panels; verify distance and session length per manufacturer guidelines.",
   },
@@ -34,7 +34,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Mid-range home panel with transparent power output specs — a solid alternative if you want strong value per watt.",
     url: "https://mitoredlight.com/collections/mitopro-series",
-    image: "https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "/products/mito-red-mitopro.png",
     badge: "budget-pick",
   },
   "oura-ring": {
@@ -43,7 +43,6 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Tracks HRV, sleep stages, and recovery trends from a ring form factor — widely used for morning readiness scores.",
     url: "https://ouraring.com",
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
     badge: "editors-pick",
   },
   "whoop-4": {
@@ -52,7 +51,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Strain and recovery coaching with continuous HRV monitoring — strong for athletes who want daily training guidance.",
     url: "https://www.whoop.com",
-    image: "https://images.unsplash.com/photo-1576243345690-4e4b79b63288?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "/products/whoop-4.png",
     badge: "premium",
   },
   "polar-h10": {
@@ -61,7 +60,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Chest-strap HRM with excellent accuracy for Zone 2 training — pairs with most fitness apps and bikes.",
     url: "https://www.polar.com/en/products/accessories/h10_heart_rate_sensor",
-    image: "https://images.unsplash.com/photo-1476480862128-209bfaa8edc4?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "/products/polar-h10.png",
     badge: "editors-pick",
     note: "More accurate than wrist optical sensors for steady-state cardio pacing.",
   },
@@ -71,7 +70,6 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "GPS watch with wrist-based HRV and training load metrics — good all-in-one for runners and cyclists.",
     url: "https://www.garmin.com/en-US/c/sports-fitness/running/",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
     badge: "budget-pick",
   },
   "thorne-magnesium-bisglycinate": {
@@ -80,7 +78,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Well-absorbed glycinate form, gentle on digestion — a common choice for evening sleep support protocols.",
     url: "https://www.thorne.com/products/dp/magnesium-bisglycinate",
-    image: "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "/products/thorne-magnesium.jpg",
     badge: "editors-pick",
     note: "Food-first when possible; supplement only if dietary intake is insufficient.",
   },
@@ -90,7 +88,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Magnesium L-threonate formulation studied for cognitive support — threonate crosses the blood-brain barrier.",
     url: "https://www.lifeextension.com/vitamins-supplements/item02040/neuro-mag-magnesium-l-threonate",
-    image: "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=320&h=320&q=80&fm=webp",
+    image: "/products/life-extension-neuro-mag.png",
     badge: "premium",
   },
 };

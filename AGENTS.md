@@ -18,11 +18,17 @@ MONGODB_URI=mongodb://127.0.0.1:27017
 ADMIN_USER=admin
 ADMIN_PASSWORD=changeme
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Affiliate monetization (optional — add in Vercel production env)
+SOVRN_COMMERCE_KEY=your-sovrn-publisher-key
+AMAZON_ASSOCIATE_TAG=yourname-20
 ```
 
 - `MONGODB_URI` is required or the app throws on startup (`src/lib/mongodb.ts`, `src/lib/getArticleBySlug.ts`).
 - `ADMIN_USER` / `ADMIN_PASSWORD` gate the `/login` -> `/adminpage` flow.
 - `NEXT_PUBLIC_SITE_URL` must point at a running instance of this app; the article detail page (`src/app/articles/[slug]/page.tsx`) and `src/app/sitemap.ts` fetch `${NEXT_PUBLIC_SITE_URL}/api/articles[...]` **server-side**, so it must resolve to a live server (use `http://localhost:3000` locally).
+- `SOVRN_COMMERCE_KEY` — one global key from [Sovrn Commerce](https://commerce.sovrn.com/); `/go/[slug]` wraps outbound product URLs automatically. No per-brand signup needed for merchants in their network.
+- `AMAZON_ASSOCIATE_TAG` — optional; auto-appended to any Amazon product URL (useful for supplements/books). Sign up at Amazon Associates.
 
 ### Seeding data
 

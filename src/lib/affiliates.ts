@@ -4,12 +4,15 @@ export interface AffiliateProduct {
   id: string;
   name: string;
   description: string;
+  /** Brand/product page — monetized globally via Sovrn or Amazon tag in /go redirect */
   url: string;
+  /** Optional override when a direct program pays more than the global wrapper */
+  affiliateUrl?: string;
   badge?: ProductBadge;
   note?: string;
 }
 
-/** Central registry — replace `url` values with your affiliate links when approved. */
+/** Central registry — keep normal brand URLs; monetization runs in /go via env keys */
 export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
   "joovv-solo": {
     id: "joovv-solo",
@@ -92,25 +95,16 @@ export function resolveProductPicks(ids: string[]): AffiliateProduct[] {
     .filter((p): p is AffiliateProduct => Boolean(p));
 }
 
+import { monetizeOutboundUrl } from "@/lib/affiliate-monetization";
+
 export function getAffiliateRedirectUrl(productId: string, articleSlug?: string): string | null {
   const product = AFFILIATE_REGISTRY[productId];
   if (!product) return null;
 
-  try {
-    const url = new URL(product.url);
-    if (!url.searchParams.has("utm_source")) {
-      url.searchParams.set("utm_source", "renewhabits");
-    }
-    if (!url.searchParams.has("utm_medium")) {
-      url.searchParams.set("utm_medium", "affiliate");
-    }
-    if (articleSlug && !url.searchParams.has("utm_campaign")) {
-      url.searchParams.set("utm_campaign", articleSlug);
-    }
-    return url.toString();
-  } catch {
-    return product.url;
-  }
+  return monetizeOutboundUrl(product.url, {
+    articleSlug,
+    directAffiliateUrl: product.affiliateUrl,
+  });
 }
 
 export function getAffiliateLinkPath(productId: string, articleSlug?: string): string {

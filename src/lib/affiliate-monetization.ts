@@ -43,9 +43,18 @@ export function applyAmazonAssociateTag(url: string, tag: string): string {
   }
 }
 
-export function wrapWithSovrn(url: string, key: string): string {
-  const params = new URLSearchParams({ key, u: url });
-  return `https://redirect.viglink.com?${params.toString()}`;
+export function wrapWithSovrn(destinationUrl: string, apiKey: string, articleSlug?: string): string {
+  const params = new URLSearchParams({
+    key: apiKey,
+    u: destinationUrl,
+  });
+  if (articleSlug) {
+    params.set("cuid", articleSlug);
+    params.set("utm_source", "renewhabits");
+    params.set("utm_medium", "affiliate");
+    params.set("utm_campaign", articleSlug);
+  }
+  return `https://sovrn.co?${params.toString()}`;
 }
 
 export function monetizeOutboundUrl(
@@ -56,17 +65,15 @@ export function monetizeOutboundUrl(
     return appendUtmParams(options.directAffiliateUrl, options.articleSlug);
   }
 
-  let url = appendUtmParams(destinationUrl, options?.articleSlug);
-
   const amazonTag = process.env.AMAZON_ASSOCIATE_TAG;
-  if (amazonTag && isAmazonUrl(url)) {
-    return applyAmazonAssociateTag(url, amazonTag);
+  if (amazonTag && isAmazonUrl(destinationUrl)) {
+    return applyAmazonAssociateTag(appendUtmParams(destinationUrl, options?.articleSlug), amazonTag);
   }
 
   const sovrnKey = process.env.SOVRN_COMMERCE_KEY;
   if (sovrnKey) {
-    return wrapWithSovrn(url, sovrnKey);
+    return wrapWithSovrn(destinationUrl, sovrnKey, options?.articleSlug);
   }
 
-  return url;
+  return appendUtmParams(destinationUrl, options?.articleSlug);
 }

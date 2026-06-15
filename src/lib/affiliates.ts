@@ -8,7 +8,7 @@ export interface AffiliateProduct {
   description: string;
   /** Brand/product page — monetized globally via Sovrn or Amazon tag in /go redirect */
   url: string;
-  /** Optional product image URL (Unsplash or allowed CDN) */
+  /** Product photo — use `/products/...` (from brand site) or official brand CDN URL */
   image?: string;
   /** Optional override when a direct program pays more than the global wrapper */
   affiliateUrl?: string;

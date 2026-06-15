@@ -65,9 +65,9 @@ export function AuthorBio({ article }: { article: Article }) {
         <div>
           <p className="text-xs font-bold uppercase tracking-[0.18em] text-renew-sage">Written by {author}</p>
           <p className="mt-2 text-sm leading-relaxed text-renew-muted">
-            RENEW Editorial uses AI-assisted drafting and human editing to turn health research into
-            practical guidance. Articles are checked for clarity, balance, and usefulness, but they are
-            not medical advice or a substitute for professional care.
+            The RENEW Editorial team researches and writes about nutrition, biohacking, neuroscience,
+            and longevity. Our articles draw on peer-reviewed studies and are written to be practical,
+            clear, and evidence-based — not a substitute for professional medical advice.
           </p>
           <div className="mt-3 flex flex-wrap gap-3 text-xs text-renew-muted">
             <span>Published {formatDate(article.publishedAt)}</span>

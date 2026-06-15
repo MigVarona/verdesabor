@@ -9,5 +9,35 @@
   "imagexl": "https://images.unsplash.com/photo-1522184216316-3c25379f9760?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp",
   "text": "Warm Up with Hearty, Nutritious Meals\nAs the temperature drops, our bodies crave warmth. Incorporate soups, stews, and casseroles into your menu—dishes that combine lean proteins, whole grains, and a variety of vegetables. A hearty lentil or bean soup, for instance, provides fiber and protein while keeping you warm. Spices like ginger, garlic, and turmeric not only add flavor but also have natural anti-inflammatory properties.\nBoost Your Vitamin D and Omega-3 Intake\nDuring winter, reduced sunlight can lead to lower vitamin D levels, which is important for immune function and bone health. Consider vitamin D–rich foods like fortified dairy products, fatty fish (such as salmon and mackerel), or even a supplement if needed. Omega-3 fatty acids found in fish, walnuts, and flaxseeds can also help reduce inflammation and promote overall wellness.",
   "image2xl": "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
-  "text2": "Hydration Matters Too\nIt may be cold outside, but your body still needs plenty of water. Herbal teas and warm water with a splash of lemon can keep you hydrated while also offering soothing warmth. Avoid excessive consumption of sugary beverages and alcohol, as these can lead to dehydration and energy crashes.\nWinter nutrition isn’t just about survival—it’s about embracing the season with foods that nurture your body and uplift your spirit. By choosing nutrient-rich, seasonal ingredients and warming recipes, you can boost your immune system, maintain your energy, and enjoy every cozy moment of the cold season.\n\nRemember, a healthy winter diet can set the stage for a vibrant spring. Stay warm, eat well, and enjoy the nourishing flavors of winter!"
+  "text2": "Hydration Matters Too\nIt may be cold outside, but your body still needs plenty of water. Herbal teas and warm water with a splash of lemon can keep you hydrated while also offering soothing warmth. Avoid excessive consumption of sugary beverages and alcohol, as these can lead to dehydration and energy crashes.\nWinter nutrition isn’t just about survival—it’s about embracing the season with foods that nurture your body and uplift your spirit. By choosing nutrient-rich, seasonal ingredients and warming recipes, you can boost your immune system, maintain your energy, and enjoy every cozy moment of the cold season.\n\nRemember, a healthy winter diet can set the stage for a vibrant spring. Stay warm, eat well, and enjoy the nourishing flavors of winter!",
+  "sources": [
+    {
+      "title": "Vitamin D Deficiency",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17634462/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2007,
+      "studyType": "review"
+    },
+    {
+      "title": "Vitamin D Supplementation to Prevent Acute Respiratory Tract Infections: Systematic Review and Meta-Analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28202713/",
+      "publisher": "BMJ",
+      "year": 2017,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Vitamin C for Preventing and Treating the Common Cold",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23440782/",
+      "publisher": "Cochrane Database of Systematic Reviews",
+      "year": 2013,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Zinc for the Common Cold",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23775705/",
+      "publisher": "Cochrane Database of Systematic Reviews",
+      "year": 2013,
+      "studyType": "meta-analysis"
+    }
+  ]
 }

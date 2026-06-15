@@ -16,5 +16,11 @@
     "sunlight",
     "sleep",
     "lifestyle"
+  ],
+  "sources": [
+    { "title": "Stability, Precision, and Near-24-Hour Period of the Human Circadian Pacemaker", "url": "https://pubmed.ncbi.nlm.nih.gov/10490031/", "publisher": "Science", "year": 1999, "studyType": "observational" },
+    { "title": "Light Suppresses Melatonin Secretion in Humans", "url": "https://pubmed.ncbi.nlm.nih.gov/7434030/", "publisher": "Science", "year": 1980, "studyType": "rct" },
+    { "title": "Effects of Light on Human Circadian Rhythms, Sleep and Mood", "url": "https://pubmed.ncbi.nlm.nih.gov/31123461/", "publisher": "Somnologie", "year": 2019, "studyType": "review" },
+    { "title": "Entrainment of the Human Circadian Clock to the Natural Light-Dark Cycle", "url": "https://pubmed.ncbi.nlm.nih.gov/23828939/", "publisher": "Current Biology", "year": 2013, "studyType": "observational" }
   ]
 }

@@ -17,5 +17,11 @@
     "brain",
     "ethics",
     "neuroplasticity"
+  ],
+  "sources": [
+    { "title": "Moral Emotions and Moral Behavior", "url": "https://pubmed.ncbi.nlm.nih.gov/16953797/", "publisher": "Annual Review of Psychology", "year": 2007, "studyType": "review" },
+    { "title": "An fMRI Investigation of Emotional Engagement in Moral Judgment", "url": "https://pubmed.ncbi.nlm.nih.gov/11577239/", "publisher": "Science", "year": 2001, "studyType": "observational" },
+    { "title": "Crime and Punishment: Distinguishing the Roles of Causal and Intentional Analyses in Moral Judgment", "url": "https://pubmed.ncbi.nlm.nih.gov/17888897/", "publisher": "Cognition", "year": 2008, "studyType": "observational" },
+    { "title": "The Neural Bases of Cognitive Conflict and Control in Moral Judgment", "url": "https://pubmed.ncbi.nlm.nih.gov/15556861/", "publisher": "Neuron", "year": 2004, "studyType": "observational" }
   ]
 }

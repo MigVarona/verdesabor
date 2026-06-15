@@ -18,7 +18,6 @@ import {
   ArticleReferences,
   ArticleTableOfContents,
   AuthorBio,
-  EditorialDisclosure,
   getArticleTakeaways,
 } from "@/app/components/ArticleEnhancements";
 import { AD_SLOTS } from "@/lib/constants";
@@ -165,8 +164,6 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
             <div className="flex-1 min-w-0 max-w-3xl">
               <MedicalDisclaimer />
-
-              <EditorialDisclosure article={article} />
 
               <ArticleTableOfContents hasSecondSection={Boolean(article.text2)} />
 

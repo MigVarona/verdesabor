@@ -20,12 +20,21 @@ export function getArticleTakeaways(article: Article): string[] {
   });
 }
 
-export function ArticleTableOfContents({ hasSecondSection, hasFAQ }: { hasSecondSection: boolean; hasFAQ?: boolean }) {
+export function ArticleTableOfContents({
+  hasSecondSection,
+  hasFAQ,
+  hasProductPicks,
+}: {
+  hasSecondSection: boolean;
+  hasFAQ?: boolean;
+  hasProductPicks?: boolean;
+}) {
   const items = [
     { href: "#overview", label: "Overview" },
     { href: "#practical-notes", label: "Practical notes" },
     ...(hasSecondSection ? [{ href: "#action-plan", label: "How to apply it" }] : []),
     ...(hasFAQ ? [{ href: "#faq", label: "FAQ" }] : []),
+    ...(hasProductPicks ? [{ href: "#recommended-gear", label: "Recommended gear" }] : []),
     { href: "#references", label: "Sources & review" },
   ];
 

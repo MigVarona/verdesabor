@@ -31,6 +31,8 @@ export interface Article {
     steps: Array<{ name: string; text: string }>;
     totalTime?: string;
   };
+  /** IDs from `AFFILIATE_REGISTRY` in `@/lib/affiliates` */
+  productPicks?: string[];
 }
 
 export function generateSlug(title: string): string {

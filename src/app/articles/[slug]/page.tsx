@@ -13,6 +13,7 @@ import RelatedArticles from "@/app/components/RelatedArticles";
 import ArticleContent from "@/app/components/ArticleContent";
 import KeyTakeaways, { ReadingTime } from "@/app/components/KeyTakeaways";
 import AdSlot from "@/app/components/AdSlot";
+import ProductRecommendations from "@/app/components/ProductRecommendations";
 import JsonLd from "@/app/components/JsonLd";
 import ArticleFAQ from "@/app/components/ArticleFAQ";
 import {
@@ -22,6 +23,7 @@ import {
   AuthorBio,
   getArticleTakeaways,
 } from "@/app/components/ArticleEnhancements";
+import { resolveProductPicks } from "@/lib/affiliates";
 import { AD_SLOTS } from "@/lib/constants";
 import { formatDate, getArticleUrl, getArticleImage, getReadingTime } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
@@ -88,6 +90,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   const readTime = getReadingTime(articleText);
   const wordCount = articleText.trim().split(/\s+/).filter(Boolean).length;
   const takeaways = getArticleTakeaways(article);
+  const productPicks = resolveProductPicks(article.productPicks ?? []);
   const description =
     article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
 
@@ -202,7 +205,11 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
             <div className="flex-1 min-w-0 max-w-3xl">
               <MedicalDisclaimer />
 
-              <ArticleTableOfContents hasSecondSection={Boolean(article.text2)} hasFAQ={Boolean(article.faq?.length)} />
+              <ArticleTableOfContents
+                hasSecondSection={Boolean(article.text2)}
+                hasFAQ={Boolean(article.faq?.length)}
+                hasProductPicks={productPicks.length > 0}
+              />
 
               <KeyTakeaways items={takeaways} />
 
@@ -218,6 +225,13 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
 
               {article.faq && article.faq.length > 0 && (
                 <ArticleFAQ items={article.faq} />
+              )}
+
+              {productPicks.length > 0 && (
+                <ProductRecommendations
+                  products={productPicks}
+                  articleSlug={article.slug || slug}
+                />
               )}
 
               <AdSlot id={AD_SLOTS.inContent} format="in-content" />

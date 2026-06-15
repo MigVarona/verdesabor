@@ -82,6 +82,9 @@ export const metadata: Metadata = {
   verification: {
     google: "googleb754e797cff875d0",
   },
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT,
+  },
   alternates: {
     types: {
       "application/rss+xml": "/feed.xml",

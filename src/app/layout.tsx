@@ -13,6 +13,8 @@ import {
 } from "@/lib/seo";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 
+const ADSENSE_CLIENT = process.env.NEXT_PUBLIC_ADSENSE_CLIENT ?? "ca-pub-5806881993295990";
+
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
   subsets: ["latin"],

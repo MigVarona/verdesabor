@@ -47,5 +47,23 @@
       "year": 2008,
       "studyType": "observational"
     }
+  ],
+  "faq": [
+    {
+      "q": "What temperature water is needed for cold immersion benefits?",
+      "a": "Research suggests water between 10-15°C (50-59°F) is effective for cold water immersion benefits. Below 10°C provides a stronger stimulus but increases cold shock risk. Cold showers at their coldest setting (~15°C) can produce similar hormetic stress responses with lower risk."
+    },
+    {
+      "q": "How long should a cold shower or ice bath last?",
+      "a": "Studies on cold water immersion typically use 11-15 minutes at 14-15°C for health outcomes, or shorter intervals of 2-5 minutes for post-exercise recovery. For beginners, starting with 30-60 seconds of cold at the end of a warm shower and gradually building duration is the safest approach."
+    },
+    {
+      "q": "Does cold exposure after exercise reduce muscle soreness?",
+      "a": "Yes, for short-term recovery. Cold water immersion (10-15 minutes at 10-15°C) within an hour after exercise significantly reduces delayed onset muscle soreness (DOMS) and perceived fatigue. However, regular post-exercise cold immersion may blunt long-term muscle adaptation and hypertrophy if used after strength training."
+    },
+    {
+      "q": "Can cold exposure boost brown fat activity?",
+      "a": "Yes. Repeated cold exposure activates and increases brown adipose tissue (BAT), which burns energy to generate heat. Studies by researchers like Wouter van Marken Lichtenbelt show regular cold exposure can significantly increase BAT activity and improve metabolic health markers in humans."
+    }
   ]
 }

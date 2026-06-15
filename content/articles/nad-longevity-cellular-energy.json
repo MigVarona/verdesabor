@@ -47,5 +47,23 @@
       "year": 2015,
       "studyType": "review"
     }
+  ],
+  "faq": [
+    {
+      "q": "What is NAD+ and why does it decline with age?",
+      "a": "NAD+ (nicotinamide adenine dinucleotide) is a coenzyme found in every cell that is essential for energy metabolism and DNA repair. Levels decline by roughly 50% between ages 40 and 60 due to decreased production, increased consumption by DNA-repair enzymes (PARPs), and reduced recycling efficiency."
+    },
+    {
+      "q": "What are the best ways to boost NAD+ naturally?",
+      "a": "Exercise is the most evidence-backed way to raise NAD+ — particularly endurance and high-intensity training. Caloric restriction and intermittent fasting also elevate NAD+ through AMPK activation. Dietary precursors like niacin (vitamin B3), tryptophan, and foods like milk, fish, and mushrooms support NAD+ synthesis."
+    },
+    {
+      "q": "Are NMN or NR supplements effective for raising NAD+?",
+      "a": "Human trials (including a 2021 Science study in 65+ adults) confirm that NMN supplementation raises blood NAD+ levels dose-dependently. NR (nicotinamide riboside) shows similar results. Whether elevated NAD+ translates to meaningful longevity benefits in humans is still under investigation."
+    },
+    {
+      "q": "Can you take too much NAD+ precursor supplement?",
+      "a": "High doses of nicotinamide (a form of vitamin B3) can inhibit sirtuins — the very enzymes NAD+ activates for longevity benefits. Most researchers recommend moderate NMN/NR doses (250-500 mg/day) rather than megadosing, and cycling on and off the supplement."
+    }
   ]
 }

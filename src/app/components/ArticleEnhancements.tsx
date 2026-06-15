@@ -20,11 +20,12 @@ export function getArticleTakeaways(article: Article): string[] {
   });
 }
 
-export function ArticleTableOfContents({ hasSecondSection }: { hasSecondSection: boolean }) {
+export function ArticleTableOfContents({ hasSecondSection, hasFAQ }: { hasSecondSection: boolean; hasFAQ?: boolean }) {
   const items = [
     { href: "#overview", label: "Overview" },
     { href: "#practical-notes", label: "Practical notes" },
     ...(hasSecondSection ? [{ href: "#action-plan", label: "How to apply it" }] : []),
+    ...(hasFAQ ? [{ href: "#faq", label: "FAQ" }] : []),
     { href: "#references", label: "Sources & review" },
   ];
 

@@ -46,5 +46,23 @@
       "year": 2018,
       "studyType": "review"
     }
+  ],
+  "faq": [
+    {
+      "q": "What is intermittent fasting?",
+      "a": "Intermittent fasting (IF) is an eating pattern that alternates between defined fasting windows and eating windows. Common protocols include 16:8 (16 hours fasted, 8-hour eating window), 5:2 (normal eating 5 days, reduced calories 2 days), and alternate-day fasting."
+    },
+    {
+      "q": "Is intermittent fasting safe for everyone?",
+      "a": "IF is generally safe for healthy adults. However, it is not recommended for pregnant or breastfeeding women, children, people with a history of eating disorders, those with type 1 diabetes or certain medications, or anyone underweight. Always consult your doctor before starting."
+    },
+    {
+      "q": "Does intermittent fasting slow your metabolism?",
+      "a": "Short-term fasting (under 72 hours) does not meaningfully slow metabolism — some studies show a slight increase in metabolic rate from norepinephrine release. Long-term severe caloric restriction can reduce metabolic rate, but typical IF protocols do not cause this issue."
+    },
+    {
+      "q": "What can I drink during the fasting window?",
+      "a": "Water, plain black coffee, and unsweetened tea are all acceptable during the fasting window and will not break your fast. Adding milk, sugar, or cream will break the fast due to their caloric content."
+    }
   ]
 }

@@ -46,5 +46,23 @@
       "year": 2018,
       "studyType": "review"
     }
+  ],
+  "faq": [
+    {
+      "q": "What is the best form of magnesium for sleep?",
+      "a": "Magnesium glycinate (bound to glycine) and magnesium threonate are most studied for sleep and brain function. Glycinate is well-absorbed and has the fewest digestive side effects. Threonate crosses the blood-brain barrier more effectively and may have advantages for cognitive benefits alongside sleep improvement."
+    },
+    {
+      "q": "How much magnesium should I take for sleep?",
+      "a": "Studies on sleep benefits typically use 200-400 mg of elemental magnesium, taken 1-2 hours before bed. The RDA for adults is 310-420 mg/day from all sources (food + supplements). Most people get only 50-60% of this through diet, so a 200-300 mg supplement before bed fills the gap safely."
+    },
+    {
+      "q": "What are the signs of magnesium deficiency?",
+      "a": "Common signs of magnesium deficiency include muscle cramps and twitches, poor sleep, fatigue, anxiety, headaches, and irritability. More severe deficiency can cause heart palpitations and numbness. Sub-clinical deficiency is extremely common — estimated to affect 50-80% of Western adults — and often goes undiagnosed by standard blood tests."
+    },
+    {
+      "q": "Can you get enough magnesium from food alone?",
+      "a": "In theory yes, but in practice it is difficult. Modern food processing, soil depletion, and low vegetable intake mean most adults fall short. Rich food sources include dark leafy greens (spinach, chard), pumpkin seeds, dark chocolate, legumes, avocado, and whole grains. Eating 1-2 servings of these daily meaningfully increases intake."
+    }
   ]
 }

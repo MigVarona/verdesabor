@@ -46,5 +46,23 @@
       "year": 2015,
       "studyType": "review"
     }
+  ],
+  "faq": [
+    {
+      "q": "What is Zone 2 cardio?",
+      "a": "Zone 2 cardio is low-intensity aerobic exercise performed at 60-70% of your maximum heart rate — the level where you can hold a conversation. It primarily trains your mitochondria and fat-burning systems rather than cardiovascular endurance alone."
+    },
+    {
+      "q": "How often should I do Zone 2 training?",
+      "a": "Most research suggests 3-4 sessions per week of 45-60 minutes each for meaningful health benefits. Elite endurance athletes often spend 80% of their training time in Zone 2."
+    },
+    {
+      "q": "What is the difference between Zone 2 and HIIT?",
+      "a": "Zone 2 builds the aerobic base and mitochondrial density through sustained low-intensity effort. HIIT (high-intensity interval training) develops peak power and VO2 max. Both are valuable — Zone 2 forms the foundation that makes HIIT more effective."
+    },
+    {
+      "q": "Does Zone 2 training burn fat?",
+      "a": "Yes. At Zone 2 intensity, your body relies primarily on fat as its fuel source. Regular Zone 2 training improves your ability to oxidise fat at higher intensities, which benefits both body composition and metabolic health."
+    }
   ]
 }

@@ -178,3 +178,18 @@ export function buildWebPageSchema({
     isPartOf: { "@type": "WebSite", name: SITE_NAME, url: SITE_URL },
   };
 }
+
+export function buildFAQSchema(faq: Array<{ q: string; a: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faq.map(({ q, a }) => ({
+      "@type": "Question",
+      name: q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: a,
+      },
+    })),
+  };
+}

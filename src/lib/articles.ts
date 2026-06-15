@@ -24,6 +24,7 @@ export interface Article {
     year?: number;
     studyType?: "meta-analysis" | "rct" | "review" | "cohort" | "observational" | "institutional";
   }>;
+  faq?: Array<{ q: string; a: string }>;
 }
 
 export function generateSlug(title: string): string {

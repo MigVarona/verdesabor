@@ -46,5 +46,23 @@
       "year": 2013,
       "studyType": "review"
     }
+  ],
+  "faq": [
+    {
+      "q": "How does the gut microbiome affect mood and mental health?",
+      "a": "The gut and brain communicate via the gut-brain axis — a bidirectional network involving the vagus nerve, immune signalling, and microbial metabolites. Gut bacteria produce roughly 90% of the body's serotonin, as well as GABA, dopamine precursors, and short-chain fatty acids that directly influence brain function and mood."
+    },
+    {
+      "q": "What foods best support a healthy gut microbiome?",
+      "a": "Fermented foods (yogurt, kefir, kimchi, sauerkraut, kombucha) directly introduce beneficial bacteria. High-fibre foods (vegetables, fruits, legumes, whole grains) feed existing beneficial bacteria. A 2021 Stanford trial found high-fibre and high-fermented food diets both increased microbiome diversity, with fermented foods showing faster results."
+    },
+    {
+      "q": "Can probiotics help with anxiety and depression?",
+      "a": "Emerging evidence is promising but not yet definitive. Several randomised trials show specific probiotic strains (Lactobacillus and Bifidobacterium species) reduce anxiety scores and depressive symptoms in healthy and clinical populations. Effects are modest and appear most consistent when gut dysbiosis is also present."
+    },
+    {
+      "q": "How long does it take to change your gut microbiome through diet?",
+      "a": "Diet changes can alter microbiome composition within 24-48 hours. However, stable, long-term shifts in microbial communities typically require several weeks to months of consistent dietary change. The microbiome generally returns toward its original profile within a few days of reverting to a prior diet."
+    }
   ]
 }

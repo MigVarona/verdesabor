@@ -46,5 +46,23 @@
       "year": 2015,
       "studyType": "cohort"
     }
+  ],
+  "faq": [
+    {
+      "q": "What foods are central to the Mediterranean diet?",
+      "a": "The Mediterranean diet emphasises olive oil, vegetables, fruits, legumes, whole grains, fish and seafood, nuts, and moderate amounts of dairy. Red meat is limited to a few times per month and processed foods are minimised."
+    },
+    {
+      "q": "Does the Mediterranean diet help with weight loss?",
+      "a": "The Mediterranean diet supports healthy weight management rather than rapid weight loss. Studies consistently show it reduces risk of obesity and metabolic syndrome. Its high fibre and healthy fat content promotes satiety, making it easier to maintain a healthy weight long-term."
+    },
+    {
+      "q": "How much olive oil is recommended on the Mediterranean diet?",
+      "a": "The landmark PREDIMED trial used 4+ tablespoons of extra-virgin olive oil per day as a supplemental intervention, which significantly reduced cardiovascular events. General guidance is to use olive oil as your primary cooking fat and for dressings."
+    },
+    {
+      "q": "Is red wine part of the Mediterranean diet?",
+      "a": "Moderate red wine consumption is a traditional part of the Mediterranean dietary pattern — typically one glass per day with meals. However, current health guidelines note that no level of alcohol is entirely risk-free, so this is an individual decision."
+    }
   ]
 }

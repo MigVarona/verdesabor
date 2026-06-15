@@ -23,6 +23,14 @@ NEXT_PUBLIC_SITE_URL=http://localhost:3000
 SOVRN_COMMERCE_KEY=your-sovrn-api-key
 SOVRN_SECRET_KEY=your-sovrn-secret-key
 AMAZON_ASSOCIATE_TAG=yourname-20
+
+# Google AdSense (optional — display ads in AdSlot placeholders)
+NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-XXXXXXXXXXXXXXXX
+NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD=1234567890
+NEXT_PUBLIC_ADSENSE_SLOT_SIDEBAR=1234567891
+NEXT_PUBLIC_ADSENSE_SLOT_IN_CONTENT=1234567892
+# Or one slot for all placements:
+# NEXT_PUBLIC_ADSENSE_SLOT=1234567890
 ```
 
 - `MONGODB_URI` is required or the app throws on startup (`src/lib/mongodb.ts`, `src/lib/getArticleBySlug.ts`).
@@ -31,6 +39,8 @@ AMAZON_ASSOCIATE_TAG=yourname-20
 - `SOVRN_COMMERCE_KEY` — **API Key** from Sovrn Commerce → Settings → your site → Key. Used by `/go/[slug]` to build `https://sovrn.co?key=...&u=...` links for all products automatically.
 - `SOVRN_SECRET_KEY` — optional; only needed if calling Sovrn REST APIs (campaigns, reporting). Header format: `Authorization: secret {SOVRN_SECRET_KEY}`. Not used by the public site.
 - `AMAZON_ASSOCIATE_TAG` — optional; auto-appended to any Amazon product URL (useful for supplements/books). Sign up at Amazon Associates.
+- `NEXT_PUBLIC_ADSENSE_CLIENT` — your AdSense publisher ID (`ca-pub-...`). With slot env vars below, `AdSlot` placeholders show real ads when visitors accept **Advertising** cookies.
+- `NEXT_PUBLIC_ADSENSE_SLOT_*` — ad unit IDs from AdSense dashboard (one per format, or use `NEXT_PUBLIC_ADSENSE_SLOT` as a single fallback for all slots).
 
 ### Seeding data
 

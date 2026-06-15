@@ -34,7 +34,7 @@ export const AFFILIATE_REGISTRY: Record<string, AffiliateProduct> = {
     description:
       "Mid-range home panel with transparent power output specs — a solid alternative if you want strong value per watt.",
     url: "https://mitoredlight.com/collections/mitopro-series",
-    image: "/products/mito-red-mitopro.png",
+    image: "https://mitoredlight.com/cdn/shop/files/mitopro-red-light-therapy-panel-series-v2-5211592.png?v=1775839355&width=1200",
     badge: "budget-pick",
   },
   "oura-ring": {

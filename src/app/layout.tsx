@@ -82,9 +82,6 @@ export const metadata: Metadata = {
   verification: {
     google: "googleb754e797cff875d0",
   },
-  other: {
-    "google-adsense-account": ADSENSE_CLIENT,
-  },
   alternates: {
     types: {
       "application/rss+xml": "/feed.xml",
@@ -95,6 +92,14 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
+      <head>
+        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
+        <script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+        />
+      </head>
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
         <noscript>
           <iframe

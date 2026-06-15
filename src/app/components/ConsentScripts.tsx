@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import { ADSENSE_CLIENT } from "@/lib/ads";
 import { getStoredConsent, getStoredPreferences } from "@/lib/cookies";
 
 const GA_ID = "G-0SNWZK6K22";
@@ -43,14 +42,6 @@ export default function ConsentScripts() {
         </>
       )}
 
-      {ADSENSE_CLIENT && (
-        <Script
-          id="google-adsense"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          strategy="afterInteractive"
-          crossOrigin="anonymous"
-        />
-      )}
     </>
   );
 }

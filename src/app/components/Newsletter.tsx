@@ -7,6 +7,7 @@ import { Input } from "@/components/ui/input";
 
 const Newsletter = () => {
   const [email, setEmail] = useState("");
+  const [website, setWebsite] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [message, setMessage] = useState("");
 
@@ -19,7 +20,7 @@ const Newsletter = () => {
       const res = await fetch("/api/newsletter", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, website }),
       });
       const data = await res.json();
 
@@ -27,6 +28,7 @@ const Newsletter = () => {
         setStatus("success");
         setMessage("You're subscribed. Check your inbox soon.");
         setEmail("");
+        setWebsite("");
       } else {
         setStatus("error");
         setMessage(data.error || "Something went wrong. Please try again.");
@@ -60,6 +62,16 @@ const Newsletter = () => {
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+                <input
+                  type="text"
+                  name="website"
+                  value={website}
+                  onChange={(e) => setWebsite(e.target.value)}
+                  autoComplete="off"
+                  tabIndex={-1}
+                  className="hidden"
+                  aria-hidden="true"
+                />
                 <Input
                   type="email"
                   placeholder="your@email.com"

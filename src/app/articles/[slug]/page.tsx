@@ -27,6 +27,7 @@ import { resolveProductPicks } from "@/lib/affiliates";
 import { AD_SLOTS } from "@/lib/constants";
 import { formatDate, getArticleUrl, getArticleImage, getReadingTime } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
+import { toTagSlug } from "@/lib/tags";
 import {
   buildArticleSchema,
   buildBreadcrumbSchema,
@@ -241,7 +242,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
                   {article.tags.map((tag) => (
                     <Link
                       key={tag}
-                      href={`/tags/${tag.toLowerCase()}`}
+                      href={`/tags/${toTagSlug(tag)}`}
                       className="text-xs font-medium text-renew-muted bg-renew-mist px-3 py-1.5 rounded-full hover:bg-renew-accent hover:text-renew-dark transition-colors"
                     >
                       #{tag}

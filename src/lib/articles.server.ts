@@ -4,6 +4,7 @@ import fs from "fs";
 import path from "path";
 import type { Article } from "@/lib/articles";
 import { generateSlug } from "@/lib/articles";
+import { toTagSlug } from "@/lib/tags";
 
 const ARTICLES_DIR = path.join(process.cwd(), "content", "articles");
 
@@ -59,8 +60,9 @@ export async function getAllArticleSlugs(): Promise<string[]> {
 }
 
 export async function fetchArticlesByTag(tag: string): Promise<Article[]> {
+  const normalizedTag = toTagSlug(tag);
   return readArticlesFromDisk().filter((a) =>
-    a.tags?.some((t) => t.toLowerCase() === tag.toLowerCase())
+    a.tags?.some((t) => toTagSlug(t) === normalizedTag)
   );
 }
 
@@ -69,7 +71,7 @@ export async function getAllTags(): Promise<string[]> {
   const tagSet = new Set<string>();
   for (const article of articles) {
     for (const tag of article.tags ?? []) {
-      tagSet.add(tag.toLowerCase());
+      tagSet.add(toTagSlug(tag));
     }
   }
   return Array.from(tagSet).sort();

@@ -7,6 +7,7 @@ import JsonLd from "@/app/components/JsonLd";
 import Breadcrumbs from "@/app/components/Breadcrumbs";
 import { fetchArticlesByTag, getAllTags } from "@/lib/articles.server";
 import { absoluteUrl, buildBreadcrumbSchema, buildPageMetadata } from "@/lib/seo";
+import { humanizeTagSlug } from "@/lib/tags";
 
 interface Params {
   tag: string;
@@ -21,7 +22,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const { tag } = await props.params;
-  const label = tag.replace(/-/g, " ");
+  const label = humanizeTagSlug(tag);
   return buildPageMetadata({
     title: `#${label}`,
     description: `Articles tagged with "${label}" on RENEW — science-backed health insights.`,

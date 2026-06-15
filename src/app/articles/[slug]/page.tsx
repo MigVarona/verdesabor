@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
+import { ShieldCheck } from "lucide-react";
 import ArticleImage from "@/app/components/ArticleImage";
 import Header from "@/app/components/Header";
 import Newsletter from "@/app/components/Newsletter";
@@ -151,6 +152,27 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
                 <span>by {article.author || "RENEW Editorial"}</span>
                 <ReadingTime minutes={readTime} />
               </div>
+              {article.sources && article.sources.length > 0 && (() => {
+                const topJournals = article.sources
+                  .filter((s) => s.publisher)
+                  .slice(0, 2)
+                  .map((s) => s.publisher!.split(",")[0].trim());
+                const hasHighQuality = article.sources.some(
+                  (s) => s.studyType === "meta-analysis" || s.studyType === "rct"
+                );
+                return (
+                  <div className="mt-3 inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-3 py-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-renew-accent flex-shrink-0" />
+                    <span className="text-xs text-white/80">
+                      {hasHighQuality ? "Peer-reviewed · " : ""}
+                      {article.sources.length} {article.sources.length === 1 ? "source" : "sources"}
+                      {topJournals.length > 0 && (
+                        <span className="text-white/55"> · {topJournals.join(" · ")}</span>
+                      )}
+                    </span>
+                  </div>
+                );
+              })()}
               <div className="mt-6">
                 <ShareButtons title={article.title} url={articleUrl} variant="light" />
               </div>

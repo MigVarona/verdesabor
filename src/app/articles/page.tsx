@@ -5,14 +5,14 @@ import TrendingArticles from "../components/TrendingArticles";
 import AdSlot from "../components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles.server";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "All Articles",
-  description: "Browse all articles on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
-  alternates: {
-    canonical: "/articles",
-  },
-};
+  description:
+    "Browse all articles on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+  path: "/articles",
+});
 
 export const revalidate = 300;
 

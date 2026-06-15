@@ -1,12 +1,14 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LegalPageLayout, { LegalBlock, LegalLink } from "../components/LegalPageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Editorial Policy",
   description:
     "How RENEW creates, reviews, sources, and updates AI-assisted health and wellness content.",
-};
+  path: "/editorial-policy",
+});
 
 const SECTIONS = [
   { id: "mission", title: "Mission" },

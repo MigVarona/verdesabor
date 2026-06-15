@@ -1,11 +1,13 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LegalPageLayout, { LegalBlock, LegalLink } from "../components/LegalPageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Medical Disclaimer",
   description: "Important medical disclaimer for RENEW health and wellness content.",
-};
+  path: "/disclaimer",
+});
 
 const SECTIONS = [
   { id: "general", title: "General information" },

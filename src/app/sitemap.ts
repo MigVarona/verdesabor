@@ -1,40 +1,63 @@
 import { MetadataRoute } from "next";
 import { getArticleUrl } from "@/lib/articles";
 import { fetchArticles } from "@/lib/articles.server";
+import { getSiteUrl } from "@/lib/seo";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
+  const siteUrl = getSiteUrl();
 
   const articles = await fetchArticles();
   const articleUrls: MetadataRoute.Sitemap = articles.map((article) => ({
     url: `${siteUrl}${getArticleUrl(article)}`,
-    lastModified: article.publishedAt
-      ? new Date(article.publishedAt).toISOString()
-      : new Date().toISOString(),
+    lastModified: article.updatedAt
+      ? new Date(article.updatedAt)
+      : article.publishedAt
+        ? new Date(article.publishedAt)
+        : new Date(),
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
   }));
 
-  const categories = ["nutrition", "biohacking", "neuroscience", "wellness", "lifestyle", "longevity"];
+  const categories = [
+    "nutrition",
+    "biohacking",
+    "neuroscience",
+    "wellness",
+    "lifestyle",
+    "longevity",
+  ];
 
   const categoryUrls = categories.map((category) => ({
     url: `${siteUrl}/${category}`,
-    lastModified: new Date().toISOString(),
+    lastModified: new Date(),
+    changeFrequency: "daily" as const,
+    priority: 0.7,
   }));
 
-  const staticPages = [
-    "about",
-    "editorial-policy",
-    "disclaimer",
-    "privacy",
-    "cookies",
-    "articles",
-    "resources/7-daily-habits-healthspan",
+  const staticPages: MetadataRoute.Sitemap = [
+    { url: `${siteUrl}/about`, changeFrequency: "monthly" as const, priority: 0.5 },
+    { url: `${siteUrl}/editorial-policy`, changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${siteUrl}/disclaimer`, changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${siteUrl}/privacy`, changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${siteUrl}/cookies`, changeFrequency: "yearly" as const, priority: 0.3 },
+    { url: `${siteUrl}/articles`, changeFrequency: "daily" as const, priority: 0.8 },
+    {
+      url: `${siteUrl}/resources/7-daily-habits-healthspan`,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    },
   ].map((page) => ({
-    url: `${siteUrl}/${page}`,
-    lastModified: new Date().toISOString(),
+    ...page,
+    lastModified: new Date(),
   }));
 
   return [
-    { url: `${siteUrl}/`, lastModified: new Date().toISOString() },
+    {
+      url: `${siteUrl}/`,
+      lastModified: new Date(),
+      changeFrequency: "daily" as const,
+      priority: 1,
+    },
     ...staticPages,
     ...articleUrls,
     ...categoryUrls,

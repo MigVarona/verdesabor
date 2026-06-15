@@ -1,10 +1,11 @@
 import CategoryPage from "../components/CategoryPage";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Wellness",
   description: "Holistic practices for balance, recovery, and daily well-being.",
-  alternates: { canonical: "/wellness" },
-};
+  path: "/wellness",
+});
 
 export default function WellnessPage() {
   return <CategoryPage category="wellness" />;

@@ -5,11 +5,13 @@ import LegalPageLayout, {
   LegalExternalLink,
   LegalLink,
 } from "../components/LegalPageLayout";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Privacy Policy",
   description: "How RENEW collects, uses, and protects your personal data.",
-};
+  path: "/privacy",
+});
 
 const SECTIONS = [
   { id: "information", title: "Information we collect" },

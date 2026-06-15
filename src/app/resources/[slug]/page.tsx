@@ -3,7 +3,13 @@ import { notFound } from "next/navigation";
 import { Download, ArrowLeft, Check } from "lucide-react";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
+import JsonLd from "@/app/components/JsonLd";
 import { getGuideBySlug, GUIDES } from "@/lib/guides";
+import {
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+  buildWebPageSchema,
+} from "@/lib/seo";
 
 interface Params {
   slug: string;
@@ -16,12 +22,20 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<Params> }) {
   const { slug } = await params;
   const guide = getGuideBySlug(slug);
-  if (!guide) return {};
+  if (!guide) {
+    return buildPageMetadata({
+      title: "Guide Not Found",
+      description: "The requested guide could not be found.",
+      path: `/resources/${slug}`,
+      noIndex: true,
+    });
+  }
 
-  return {
+  return buildPageMetadata({
     title: guide.title,
     description: guide.description,
-  };
+    path: `/resources/${slug}`,
+  });
 }
 
 export default async function GuidePage({ params }: { params: Promise<Params> }) {
@@ -29,8 +43,20 @@ export default async function GuidePage({ params }: { params: Promise<Params> })
   const guide = getGuideBySlug(slug);
   if (!guide) notFound();
 
+  const path = `/resources/${slug}`;
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: guide.title },
+  ]);
+  const webPageSchema = buildWebPageSchema({
+    title: guide.title,
+    description: guide.description,
+    path,
+  });
+
   return (
     <>
+      <JsonLd data={[breadcrumbSchema, webPageSchema]} />
       <Header />
       <div className="min-h-screen bg-gray-50">
         <div className="bg-white border-b border-gray-100">

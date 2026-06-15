@@ -1,8 +1,17 @@
+import type { Metadata, Viewport } from "next";
 import type React from "react";
 import { Noto_Sans, PT_Serif } from "next/font/google";
 import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
 import ConsentScripts from "./components/ConsentScripts";
+import JsonLd from "./components/JsonLd";
+import {
+  buildOrganizationSchema,
+  buildWebSiteSchema,
+  getSiteUrl,
+  DEFAULT_OG_IMAGE,
+} from "@/lib/seo";
+import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -16,31 +25,42 @@ const ptSerif = PT_Serif({
   weight: ["400", "700"],
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
+const siteUrl = getSiteUrl();
 
-export const metadata = {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#111827",
+};
+
+export const metadata: Metadata = {
   title: {
-    default: "RENEW | Healthy Living for a Better Future",
-    template: "%s | RENEW",
+    default: `${SITE_NAME} | Healthy Living for a Better Future`,
+    template: `%s | ${SITE_NAME}`,
   },
   description:
     "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
   metadataBase: new URL(siteUrl),
-  alternates: {
-    canonical: "/",
+  applicationName: SITE_NAME,
+  authors: [{ name: "RENEW Editorial" }],
+  creator: SITE_NAME,
+  publisher: SITE_NAME,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
   openGraph: {
-    title: "RENEW | Healthy Living for a Better Future",
-    description:
-      "Discover valuable insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+    title: `${SITE_NAME} | Healthy Living for a Better Future`,
+    description: SITE_DESCRIPTION,
     url: siteUrl,
-    siteName: "RENEW",
+    siteName: SITE_NAME,
     images: [
       {
-        url: "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop",
+        url: DEFAULT_OG_IMAGE,
         width: 1200,
         height: 630,
-        alt: "Renew - Healthy Living for a Better Future",
+        alt: `${SITE_NAME} - Healthy Living for a Better Future`,
       },
     ],
     locale: "en_US",
@@ -48,26 +68,30 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "RENEW | Healthy Living for a Better Future",
-    description:
-      "Explore Renew's insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
-    images: [
-      "https://images.unsplash.com/photo-1524117074681-31bd4de22ad3?q=80&w=2080&auto=format&fit=crop",
-    ],
+    site: "@renewhabits",
+    title: `${SITE_NAME} | Healthy Living for a Better Future`,
+    description: SITE_DESCRIPTION,
+    images: [DEFAULT_OG_IMAGE],
+  },
+  icons: {
+    icon: [{ url: "/favicon.ico", sizes: "any" }],
+    apple: [{ url: "/icon-192.png", sizes: "192x192", type: "image/png" }],
+  },
+  verification: {
+    google: "googleb754e797cff875d0",
+  },
+  alternates: {
+    types: {
+      "application/rss+xml": "/feed.xml",
+    },
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#111827" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="google-site-verification" content="googleb754e797cff875d0" />
-      </head>
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
+        <JsonLd data={[buildOrganizationSchema(), buildWebSiteSchema()]} />
         {children}
         <CookieConsent />
         <ConsentScripts />

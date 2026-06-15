@@ -2,12 +2,15 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 import { CATEGORIES, SITE_TAGLINE } from "@/lib/constants";
+import { buildPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "About Us",
-  description: "Learn about RENEW — our mission to deliver science-backed health, wellness, and longevity content.",
-};
+  description:
+    "Learn about RENEW — our mission to deliver science-backed health, wellness, and longevity content.",
+  path: "/about",
+});
 
 const VALUES = [
   {

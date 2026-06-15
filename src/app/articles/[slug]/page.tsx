@@ -11,6 +11,7 @@ import RelatedArticles from "@/app/components/RelatedArticles";
 import ArticleContent from "@/app/components/ArticleContent";
 import KeyTakeaways, { ReadingTime } from "@/app/components/KeyTakeaways";
 import AdSlot from "@/app/components/AdSlot";
+import JsonLd from "@/app/components/JsonLd";
 import {
   ArticleGuideCTA,
   ArticleReferences,
@@ -22,6 +23,11 @@ import {
 import { AD_SLOTS } from "@/lib/constants";
 import { formatDate, getArticleUrl, getArticleImage, getReadingTime } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
+import {
+  buildArticleSchema,
+  buildBreadcrumbSchema,
+  buildPageMetadata,
+} from "@/lib/seo";
 
 interface Params {
   slug: string;
@@ -37,27 +43,29 @@ export async function generateStaticParams() {
 export async function generateMetadata(props: { params: Promise<Params> }) {
   const { slug } = await props.params;
   const article = await fetchArticleBySlug(slug);
-  if (!article) return {};
+  if (!article) {
+    return buildPageMetadata({
+      title: "Article Not Found",
+      description: "The requested article could not be found.",
+      path: `/articles/${slug}`,
+      noIndex: true,
+    });
+  }
 
   const heroImage = getArticleImage(article);
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.renew-habits.com";
+  const description =
+    article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
 
-  return {
+  return buildPageMetadata({
     title: article.title,
-    description: article.excerpt || String(article.text || "").slice(0, 150) + "...",
-    alternates: {
-      canonical: `/articles/${slug}`,
-    },
-    openGraph: {
-      title: article.title,
-      description: article.excerpt,
-      url: `${siteUrl}/articles/${slug}`,
-      type: "article",
-      images: [{ url: heroImage, width: 1200, height: 630, alt: article.title }],
-      publishedTime: article.publishedAt,
-    },
-    ...(article.author ? { authors: [{ name: article.author }] } : {}),
-  };
+    description,
+    path: `/articles/${slug}`,
+    type: "article",
+    images: [{ url: heroImage, width: 1200, height: 630, alt: article.title }],
+    publishedTime: article.publishedAt,
+    modifiedTime: article.updatedAt || article.publishedAt,
+    authors: article.author ? [article.author] : undefined,
+  });
 }
 
 const ArticlePage = async (props: { params: Promise<Params> }) => {
@@ -74,9 +82,29 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   );
   const readTime = getReadingTime(`${article.text || ""} ${article.text2 || ""}`);
   const takeaways = getArticleTakeaways(article);
+  const description =
+    article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
+
+  const breadcrumbSchema = buildBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: article.category, url: `/${article.category.toLowerCase()}` },
+    { name: article.title },
+  ]);
+
+  const articleSchema = buildArticleSchema({
+    title: article.title,
+    description,
+    path: articleUrl,
+    image: heroImage,
+    publishedAt: article.publishedAt,
+    updatedAt: article.updatedAt,
+    author: article.author,
+    category: article.category,
+  });
 
   return (
     <>
+      <JsonLd data={[breadcrumbSchema, articleSchema]} />
       <Header />
       <div className="container mx-auto px-4 py-4">
         <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />

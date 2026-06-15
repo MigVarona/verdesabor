@@ -10,6 +10,14 @@ import Footer from "./components/Footer";
 import AdSlot from "./components/AdSlot";
 import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles.server";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Healthy Living for a Better Future",
+  description:
+    "Discover science-backed insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+  path: "/",
+});
 
 export const revalidate = 300;
 

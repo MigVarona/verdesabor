@@ -6,11 +6,13 @@ import LegalPageLayout, {
   LegalLink,
 } from "../components/LegalPageLayout";
 import ManageCookiePreferences from "../components/ManageCookiePreferences";
+import { buildPageMetadata } from "@/lib/seo";
 
-export const metadata = {
+export const metadata = buildPageMetadata({
   title: "Cookie Policy",
   description: "How RENEW uses cookies and similar technologies on renewhabits.com.",
-};
+  path: "/cookies",
+});
 
 const SECTIONS = [
   { id: "what", title: "What are cookies?" },

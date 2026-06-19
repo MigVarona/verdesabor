@@ -171,7 +171,7 @@ export default function Footer() {
           </div>
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
             <Link
-              href="https://wearecapa.com"
+              href="https://wearecapa.es"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Website developed by WeAreCapa"

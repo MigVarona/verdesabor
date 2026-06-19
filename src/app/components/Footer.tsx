@@ -1,4 +1,5 @@
 import { Instagram, Twitter, Download, ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/constants";
 import { SEVEN_HABITS_GUIDE } from "@/lib/guides";
@@ -161,14 +162,35 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="bg-renew-dark text-gray-400">
         <div className="h-1 bg-renew-accent" />
-        <div className="container mx-auto px-4 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div className="container mx-auto px-4 py-6 flex flex-col lg:flex-row items-center justify-between gap-5">
           <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6">
             <RenewLogo size="sm" variant="light" href="/" />
             <p className="text-xs text-gray-500">
               &copy; {year} RENEW. All rights reserved.
             </p>
           </div>
-          <ScrollToTopButton />
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <Link
+              href="https://wearecapa.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Website developed by WeAreCapa"
+              className="group inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-4 py-2.5 transition-colors hover:border-renew-accent/50 hover:bg-white/[0.06] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-renew-accent"
+            >
+              <span className="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-gray-500 transition-colors group-hover:text-gray-300">
+                Developed by
+              </span>
+              <span className="h-5 w-px bg-white/10" aria-hidden="true" />
+              <Image
+                src="/images/wearecapa_header_white.png"
+                alt="WeAreCapa"
+                width={160}
+                height={30}
+                className="h-[18px] w-auto opacity-90 transition-opacity group-hover:opacity-100"
+              />
+            </Link>
+            <ScrollToTopButton />
+          </div>
         </div>
       </div>
     </footer>

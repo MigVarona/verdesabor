@@ -184,9 +184,9 @@ export default function Footer() {
               <Image
                 src="/images/wearecapa_header_white.png"
                 alt="WeAreCapa"
-                width={160}
-                height={30}
-                className="h-[18px] w-auto opacity-90 transition-opacity group-hover:opacity-100"
+                width={190}
+                height={35}
+                className="h-[22px] w-auto opacity-90 transition-opacity group-hover:opacity-100"
               />
             </Link>
             <ScrollToTopButton />

@@ -120,10 +120,6 @@ body {
     @apply text-2xl md:text-3xl font-bold text-renew-dark;
   }
 
-  .ad-placeholder {
-    @apply flex items-center justify-center bg-renew-mist/70 border border-dashed border-renew-border text-[0.65rem] text-renew-muted uppercase tracking-[0.18em];
-  }
-
   .legal-content {
     @apply space-y-12;
   }

@@ -12,7 +12,6 @@ import ArticleSidebar from "@/app/components/ArticleSidebar";
 import RelatedArticles from "@/app/components/RelatedArticles";
 import ArticleContent from "@/app/components/ArticleContent";
 import KeyTakeaways, { ReadingTime } from "@/app/components/KeyTakeaways";
-import AdSlot from "@/app/components/AdSlot";
 import ProductRecommendations from "@/app/components/ProductRecommendations";
 import JsonLd from "@/app/components/JsonLd";
 import ArticleFAQ from "@/app/components/ArticleFAQ";
@@ -24,7 +23,6 @@ import {
   getArticleTakeaways,
 } from "@/app/components/ArticleEnhancements";
 import { resolveProductPicks } from "@/lib/affiliates";
-import { AD_SLOTS } from "@/lib/constants";
 import { formatDate, getArticleUrl, getArticleImage, getReadingTime, getArticleSummary } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
 import { toTagSlug } from "@/lib/tags";
@@ -128,9 +126,6 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
         ...(howToSchema ? [howToSchema] : []),
       ]} />
       <Header />
-      <div className="container mx-auto px-4 py-4">
-        <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />
-      </div>
 
       <header className="relative min-h-[520px] overflow-hidden bg-renew-ink text-white md:min-h-[620px]">
         <ArticleImage
@@ -232,8 +227,6 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
                   articleSlug={article.slug || slug}
                 />
               )}
-
-              <AdSlot id={AD_SLOTS.inContent} format="in-content" />
 
               {article.tags && article.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mt-10 pt-8 border-t border-renew-border">

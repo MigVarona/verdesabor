@@ -36,8 +36,7 @@ export default function CookiesPage() {
         <LegalBlock id="what" title="1. What are cookies?">
           <p>
             Cookies are small text files stored on your device when you visit a website. They help
-            the site remember your preferences, understand how it is used, and — with your consent —
-            deliver relevant advertising.
+            the site remember your preferences and understand how it is used.
           </p>
           <p>
             Similar technologies such as local storage and pixels may also be used for the same
@@ -56,12 +55,6 @@ export default function CookiesPage() {
             Help us understand how visitors interact with RENEW — which pages are read, how long
             visitors stay, and where traffic comes from. We use Google Analytics for this purpose.
             Data is aggregated and does not directly identify you.
-          </p>
-          <h3>Advertising cookies</h3>
-          <p>
-            Used to display ads and measure their performance. Third-party ad networks may use these
-            cookies to show relevant ads based on your browsing activity. Only activated with your
-            consent.
           </p>
         </LegalBlock>
 
@@ -95,12 +88,6 @@ export default function CookiesPage() {
                   <td>Google Analytics — visitor statistics</td>
                   <td>Up to 2 years</td>
                 </tr>
-                <tr>
-                  <td className="font-mono text-xs">Ad network cookies</td>
-                  <td>Advertising</td>
-                  <td>Ad delivery and measurement (e.g. Google AdSense)</td>
-                  <td>Varies</td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -125,22 +112,13 @@ export default function CookiesPage() {
 
         <LegalBlock id="third-party" title="5. Third-party cookies">
           <p>
-            Some cookies are set by third-party services we use, such as Google Analytics and
-            advertising partners. These providers have their own privacy policies governing how they
-            use your data.
+            Some cookies are set by third-party services we use, such as Google Analytics. These
+            providers have their own privacy policies governing how they use your data.
           </p>
           <p>
             To opt out of Google Analytics, install the{" "}
             <LegalExternalLink href="https://tools.google.com/dlpage/gaoptout">
               Google Analytics Opt-out Browser Add-on
-            </LegalExternalLink>
-            . To opt out of personalized ads, visit{" "}
-            <LegalExternalLink href="https://www.google.com/settings/ads">
-              Google Ads Settings
-            </LegalExternalLink>{" "}
-            or the{" "}
-            <LegalExternalLink href="https://optout.aboutads.info/">
-              Digital Advertising Alliance opt-out page
             </LegalExternalLink>
             .
           </p>

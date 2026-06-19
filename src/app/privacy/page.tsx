@@ -2,7 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import LegalPageLayout, {
   LegalBlock,
-  LegalExternalLink,
   LegalLink,
 } from "../components/LegalPageLayout";
 import { buildPageMetadata } from "@/lib/seo";
@@ -16,7 +15,6 @@ export const metadata = buildPageMetadata({
 const SECTIONS = [
   { id: "information", title: "Information we collect" },
   { id: "cookies", title: "Cookies & tracking" },
-  { id: "advertising", title: "Advertising" },
   { id: "third-party", title: "Third-party services" },
   { id: "protection", title: "Data protection" },
   { id: "rights", title: "Your rights" },
@@ -59,8 +57,8 @@ export default function PrivacyPage() {
 
         <LegalBlock id="cookies" title="2. Cookies & tracking">
           <p>
-            We use cookies to operate the site, analyze traffic, and — with your consent — display
-            advertising. For full details on the cookies we use and how to manage them, see our{" "}
+            We use cookies to operate the site and analyze traffic with your consent. For full
+            details on the cookies we use and how to manage them, see our{" "}
             <LegalLink href="/cookies">Cookie Policy</LegalLink>.
           </p>
           <p>
@@ -69,25 +67,11 @@ export default function PrivacyPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="advertising" title="3. Advertising">
+        <LegalBlock id="third-party" title="3. Third-party services">
           <p>
-            RENEW may display advertisements from third-party networks such as Google AdSense.
-            These partners may use cookies to serve ads based on your prior visits to this or other
-            websites. Advertising cookies are only activated with your explicit consent.
-          </p>
-          <p>
-            Opt out of personalized advertising via{" "}
-            <LegalExternalLink href="https://www.google.com/settings/ads">Google Ads Settings</LegalExternalLink>{" "}
-            or the{" "}
-            <LegalExternalLink href="https://optout.aboutads.info/">DAA opt-out page</LegalExternalLink>.
-          </p>
-        </LegalBlock>
-
-        <LegalBlock id="third-party" title="4. Third-party services">
-          <p>
-            We use trusted third-party providers for email delivery, analytics, and advertising.
-            Each operates under its own privacy policy. We select partners that meet industry
-            standards for data protection, but we do not control their practices directly.
+            We use trusted third-party providers for email delivery and analytics. Each operates
+            under its own privacy policy. We select partners that meet industry standards for data
+            protection, but we do not control their practices directly.
           </p>
           <p>
             By using our site, you acknowledge that your data may be processed by these providers
@@ -95,7 +79,7 @@ export default function PrivacyPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="protection" title="5. Data protection">
+        <LegalBlock id="protection" title="4. Data protection">
           <p>
             We implement technical and organizational measures to protect your data from unauthorized
             access, alteration, or disclosure. This includes encryption, access controls, and
@@ -107,7 +91,7 @@ export default function PrivacyPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="rights" title="6. Your rights">
+        <LegalBlock id="rights" title="5. Your rights">
           <p>Depending on your location, you may have the right to:</p>
           <ul>
             <li>Access the personal data we hold about you</li>
@@ -126,7 +110,7 @@ export default function PrivacyPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="changes" title="7. Changes to this policy">
+        <LegalBlock id="changes" title="6. Changes to this policy">
           <p>
             We may update this Privacy Policy to reflect changes in our practices or legal
             requirements. The &quot;Last updated&quot; date at the top will be revised accordingly.
@@ -138,7 +122,7 @@ export default function PrivacyPage() {
           </p>
         </LegalBlock>
 
-        <LegalBlock id="contact" title="8. Contact">
+        <LegalBlock id="contact" title="7. Contact">
           <p>
             Questions about this Privacy Policy or your personal data? Reach us at{" "}
             <a href="mailto:hello@renewhabits.com" className="text-renew-sage underline underline-offset-2">

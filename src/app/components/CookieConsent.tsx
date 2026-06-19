@@ -87,7 +87,7 @@ export default function CookieConsent() {
   const essentialOnly = () => apply("essential", DEFAULT_PREFERENCES);
 
   const savePreferences = () => {
-    const hasOptional = prefs.analytics || prefs.advertising;
+    const hasOptional = prefs.analytics;
     apply(hasOptional ? "accepted" : "essential", prefs);
   };
 
@@ -125,8 +125,8 @@ export default function CookieConsent() {
           {view === "banner" ? (
             <>
               <p className="text-sm text-gray-600 leading-relaxed">
-                We use essential cookies to run the site, and optional cookies for analytics and
-                advertising. You can accept all, use essential only, or customize your choices.
+                We use essential cookies to run the site and optional analytics cookies to understand
+                how readers use RENEW. You can accept all, use essential only, or customize your choices.
               </p>
               <p className="text-sm text-gray-500 mt-3">
                 Read our{" "}
@@ -164,12 +164,6 @@ export default function CookieConsent() {
                 description="Help us understand how visitors use the site (e.g. Google Analytics)."
                 checked={prefs.analytics}
                 onChange={(v) => setPrefs((p) => ({ ...p, analytics: v }))}
-              />
-              <PreferenceToggle
-                label="Advertising"
-                description="Used to display relevant ads and measure ad performance."
-                checked={prefs.advertising}
-                onChange={(v) => setPrefs((p) => ({ ...p, advertising: v }))}
               />
               <div className="flex flex-col sm:flex-row gap-2.5 mt-6">
                 <Button onClick={savePreferences} className="bg-renew-dark text-white hover:bg-renew-ink flex-1">

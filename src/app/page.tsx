@@ -7,8 +7,6 @@ import HomeEditorialGrid from "./components/HomeEditorialGrid";
 import HomeCategorySpotlight from "./components/HomeCategorySpotlight";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
-import AdSlot from "./components/AdSlot";
-import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles.server";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -42,9 +40,6 @@ export default async function Home() {
         <HomeManifesto />
         <HomeLeadMagnet />
         <HomeEditorialGrid articles={gridArticles} />
-        <div className="container mx-auto px-4 py-10">
-          <AdSlot id={AD_SLOTS.leaderboard} format="leaderboard" />
-        </div>
         <HomeCategorySpotlight articles={articles} />
         <Newsletter />
       </main>

@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import { ADSENSE_CLIENT } from "@/lib/ads";
 import { getStoredConsent, getStoredPreferences } from "@/lib/cookies";
 
 const GA_ID = "G-0SNWZK6K22";
@@ -14,21 +13,12 @@ function shouldLoadAnalytics(): boolean {
   return prefs?.analytics ?? false;
 }
 
-function shouldLoadAdvertising(): boolean {
-  const consent = getStoredConsent();
-  if (consent !== "accepted") return false;
-  const prefs = getStoredPreferences();
-  return prefs?.advertising ?? false;
-}
-
 export default function ConsentScripts() {
   const [analytics, setAnalytics] = useState(false);
-  const [advertising, setAdvertising] = useState(false);
 
   useEffect(() => {
     const sync = () => {
       setAnalytics(shouldLoadAnalytics());
-      setAdvertising(shouldLoadAdvertising());
     };
     sync();
     window.addEventListener("cookie-consent-updated", sync);
@@ -52,17 +42,6 @@ export default function ConsentScripts() {
             `}
           </Script>
         </>
-      )}
-
-      {advertising && ADSENSE_CLIENT && (
-        <Script
-          id="google-adsense"
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-          onLoad={() => window.dispatchEvent(new CustomEvent("adsense-loaded"))}
-        />
       )}
     </>
   );

@@ -37,10 +37,3 @@ export const CATEGORIES = [
 ] as const;
 
 export type CategorySlug = (typeof CATEGORIES)[number]["slug"];
-
-export const AD_SLOTS = {
-  leaderboard: "ad-leaderboard",
-  sidebar: "ad-sidebar",
-  inContent: "ad-in-content",
-  footer: "ad-footer",
-} as const;

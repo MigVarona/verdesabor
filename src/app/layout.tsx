@@ -12,7 +12,6 @@ import {
   DEFAULT_OG_IMAGE,
 } from "@/lib/seo";
 import { SITE_NAME, SITE_DESCRIPTION } from "@/lib/constants";
-import { ADSENSE_CLIENT } from "@/lib/ads";
 
 const notoSans = Noto_Sans({
   variable: "--font-noto-sans",
@@ -91,9 +90,6 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <head>
-        <meta name="google-adsense-account" content={ADSENSE_CLIENT} />
-      </head>
       <body className={`${notoSans.variable} ${ptSerif.variable} font-sans antialiased`}>
         <noscript>
           <iframe

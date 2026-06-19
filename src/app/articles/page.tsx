@@ -2,8 +2,6 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Newsletter from "../components/Newsletter";
 import TrendingArticles from "../components/TrendingArticles";
-import AdSlot from "../components/AdSlot";
-import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles.server";
 import { buildPageMetadata } from "@/lib/seo";
 
@@ -30,9 +28,6 @@ export default async function ArticlesPage() {
               Explore our full library of science-backed health, wellness, and longevity content.
             </p>
           </div>
-        </div>
-        <div className="container mx-auto px-4 py-4">
-          <AdSlot id={`${AD_SLOTS.leaderboard}-articles`} format="leaderboard" />
         </div>
         <TrendingArticles articles={articles} />
         <Newsletter />

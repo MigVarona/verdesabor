@@ -3,7 +3,6 @@ export type CookieConsentValue = "accepted" | "essential" | "declined";
 export interface CookiePreferences {
   essential: boolean;
   analytics: boolean;
-  advertising: boolean;
 }
 
 export const CONSENT_KEY = "renew-cookie-consent";
@@ -12,13 +11,11 @@ export const PREFERENCES_KEY = "renew-cookie-preferences";
 export const DEFAULT_PREFERENCES: CookiePreferences = {
   essential: true,
   analytics: false,
-  advertising: false,
 };
 
 export const ACCEPT_ALL_PREFERENCES: CookiePreferences = {
   essential: true,
   analytics: true,
-  advertising: true,
 };
 
 export function saveConsent(value: CookieConsentValue, preferences: CookiePreferences) {

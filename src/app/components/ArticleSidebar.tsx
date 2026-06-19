@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { type Article } from "@/lib/articles";
 import ArticleCard from "./ArticleCard";
-import AdSlot from "./AdSlot";
-import { AD_SLOTS, CATEGORIES } from "@/lib/constants";
+import { CATEGORIES } from "@/lib/constants";
 
 interface ArticleSidebarProps {
   trending?: Article[];
@@ -12,8 +11,6 @@ interface ArticleSidebarProps {
 export default function ArticleSidebar({ trending = [], currentCategory }: ArticleSidebarProps) {
   return (
     <aside className="space-y-8">
-      <AdSlot id={AD_SLOTS.sidebar} format="sidebar" />
-
       {trending.length > 0 && (
         <div className="bg-renew-paper border border-renew-border p-5 shadow-card">
           <h3 className="font-bold text-renew-dark mb-4 flex items-center gap-2">
@@ -52,8 +49,6 @@ export default function ArticleSidebar({ trending = [], currentCategory }: Artic
           ))}
         </ul>
       </div>
-
-      <AdSlot id={`${AD_SLOTS.sidebar}-2`} format="sidebar" />
     </aside>
   );
 }

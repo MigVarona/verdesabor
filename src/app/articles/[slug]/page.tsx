@@ -25,7 +25,7 @@ import {
 } from "@/app/components/ArticleEnhancements";
 import { resolveProductPicks } from "@/lib/affiliates";
 import { AD_SLOTS } from "@/lib/constants";
-import { formatDate, getArticleUrl, getArticleImage, getReadingTime } from "@/lib/articles";
+import { formatDate, getArticleUrl, getArticleImage, getReadingTime, getArticleSummary } from "@/lib/articles";
 import { fetchArticleBySlug, fetchArticles, getAllArticleSlugs } from "@/lib/articles.server";
 import { toTagSlug } from "@/lib/tags";
 import {
@@ -60,8 +60,7 @@ export async function generateMetadata(props: { params: Promise<Params> }) {
   }
 
   const heroImage = getArticleImage(article);
-  const description =
-    article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
+  const description = getArticleSummary(article, 160);
 
   return buildPageMetadata({
     title: article.title,
@@ -92,8 +91,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
   const wordCount = articleText.trim().split(/\s+/).filter(Boolean).length;
   const takeaways = getArticleTakeaways(article);
   const productPicks = resolveProductPicks(article.productPicks ?? []);
-  const description =
-    article.excerpt || `${String(article.text || "").slice(0, 150).trim()}...`;
+  const description = getArticleSummary(article, 180);
 
   const internalLinks = related
     .slice(0, 3)
@@ -163,7 +161,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
                 {article.title}
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/72 md:text-xl">
-                {article.excerpt}
+                {description}
               </p>
               <div className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-3 text-sm text-white/62">
                 <span>{formatDate(article.publishedAt)}</span>

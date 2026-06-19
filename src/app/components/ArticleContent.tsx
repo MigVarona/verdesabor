@@ -20,17 +20,22 @@ interface ArticleContentProps {
 }
 
 export default function ArticleContent({ excerpt, text, text2, image2xl, title, cta, relatedLinks }: ArticleContentProps) {
+  const excerptParagraphs = excerpt ? splitParagraphs(excerpt) : [];
   const firstParagraphs = text ? splitParagraphs(text) : [];
   const secondParagraphs = text2 ? splitParagraphs(text2) : [];
 
   return (
     <div className="article-body">
-      {excerpt && (
-        <p id="overview" className="article-lead scroll-mt-28">{excerpt}</p>
+      {excerptParagraphs.length > 0 && (
+        <div id="overview" className="scroll-mt-28">
+          {excerptParagraphs.map((paragraph, i) => (
+            <p key={`excerpt-${i}`} className="article-lead">{paragraph}</p>
+          ))}
+        </div>
       )}
 
       {firstParagraphs.length > 0 && (
-        <section id={excerpt ? "practical-notes" : "overview"} className="scroll-mt-28">
+        <section id={excerptParagraphs.length > 0 ? "practical-notes" : "overview"} className="scroll-mt-28">
           {firstParagraphs.map((paragraph, i) => (
             <p key={`t1-${i}`} className="article-paragraph">{paragraph}</p>
           ))}

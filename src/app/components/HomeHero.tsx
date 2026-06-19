@@ -1,6 +1,6 @@
 import ArticleImage from "./ArticleImage";
 import Link from "next/link";
-import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime } from "@/lib/articles";
+import { type Article, formatDate, getArticleUrl, getArticleImage, getArticleThumbnail, getReadingTime, getArticleSummary } from "@/lib/articles";
 import { ArrowRight } from "lucide-react";
 import { SITE_TAGLINE } from "@/lib/constants";
 
@@ -32,6 +32,7 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
   const featuredUrl = getArticleUrl(featured);
   const featuredImage = getArticleImage(featured);
   const readTime = getReadingTime(`${featured.text || ""} ${featured.excerpt || ""}`);
+  const featuredSummary = getArticleSummary(featured, 190);
 
   return (
     <section className="bg-renew-paper overflow-hidden border-b border-renew-border">
@@ -72,8 +73,8 @@ export default function HomeHero({ featured, secondary }: HomeHeroProps) {
                 <h1 className="font-serif text-4xl md:text-5xl lg:text-[3.45rem] text-renew-dark leading-[0.98] text-balance group-hover:text-renew-sage transition-colors duration-300">
                   {featured.title}
                 </h1>
-                <p className="mt-5 text-renew-muted text-lg leading-relaxed line-clamp-3 md:line-clamp-none max-w-2xl">
-                  {featured.excerpt}
+                <p className="mt-5 text-renew-muted text-lg leading-relaxed line-clamp-3 max-w-2xl">
+                  {featuredSummary}
                 </p>
                 <span className="inline-flex items-center gap-2 mt-6 text-sm font-semibold text-renew-dark group-hover:text-renew-sage transition-colors">
                   Read article

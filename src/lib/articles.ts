@@ -63,6 +63,29 @@ export function splitParagraphs(text: string): string[] {
   return text.split(/\n\n+/).filter(Boolean);
 }
 
+export function getArticleSummary(
+  article: Pick<Article, "excerpt" | "text">,
+  maxLength = 220
+): string {
+  const source = article.excerpt || article.text || "";
+  const normalized = source.replace(/\s+/g, " ").trim();
+
+  if (normalized.length <= maxLength) return normalized;
+
+  const sentences = normalized.match(/[^.!?]+[.!?]+/g) ?? [];
+  let summary = "";
+
+  for (const sentence of sentences) {
+    const next = `${summary}${sentence}`.trim();
+    if (next.length > maxLength) break;
+    summary = `${summary}${sentence}`.trim();
+  }
+
+  if (summary) return summary;
+
+  return `${normalized.slice(0, maxLength).trim().replace(/\s+\S*$/, "")}...`;
+}
+
 export { optimizeImageUrl, DEFAULT_HERO_IMAGE as DEFAULT_ARTICLE_IMAGE, articleImageLoader } from "@/lib/images";
 
 export function getArticleImage(article: Pick<Article, "image" | "imagexl">): string {

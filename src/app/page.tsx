@@ -12,6 +12,8 @@ import { AD_SLOTS } from "@/lib/constants";
 import { fetchArticles } from "@/lib/articles.server";
 import { buildPageMetadata } from "@/lib/seo";
 
+const FEATURED_ARTICLE_SLUG = "rewriting-the-future-the-secrets-to-a-long-vibrant-life";
+
 export const metadata = buildPageMetadata({
   title: "Healthy Living for a Better Future",
   description:
@@ -23,9 +25,13 @@ export const revalidate = 300;
 
 export default async function Home() {
   const articles = await fetchArticles();
-  const featured = articles[0] ?? null;
-  const secondary = articles.slice(1, 5);
-  const gridArticles = articles.slice(1);
+  const featured =
+    articles.find((article) => article.slug === FEATURED_ARTICLE_SLUG) ?? articles[0] ?? null;
+  const remainingArticles = featured
+    ? articles.filter((article) => article._id !== featured._id)
+    : articles;
+  const secondary = remainingArticles.slice(0, 4);
+  const gridArticles = remainingArticles;
 
   return (
     <div className="min-h-screen">

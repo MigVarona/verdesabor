@@ -18,11 +18,13 @@ function buildUnsplashUrl(photoPath: string, variant: ImageVariant): string {
 }
 
 export function optimizeImageUrl(url: string | undefined, variant: ImageVariant): string {
-  if (!url?.startsWith("http")) {
+  if (!url) {
     return variant === "thumb" || variant === "card"
       ? buildUnsplashUrl("photo-1559757175-0eb30cd8c063", variant)
       : DEFAULT_HERO_IMAGE;
   }
+
+  if (url.startsWith("/")) return url;
 
   const match = url.match(UNSPLASH_RE);
   if (match) return buildUnsplashUrl(match[1], variant);

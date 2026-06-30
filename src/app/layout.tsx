@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import type React from "react";
 import { Noto_Sans, PT_Serif } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import CookieConsent from "./components/CookieConsent";
 import ConsentScripts from "./components/ConsentScripts";
@@ -103,6 +104,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         {children}
         <CookieConsent />
         <ConsentScripts />
+        <Analytics />
       </body>
     </html>
   );

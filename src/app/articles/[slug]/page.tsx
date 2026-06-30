@@ -17,6 +17,7 @@ import JsonLd from "@/app/components/JsonLd";
 import ArticleFAQ from "@/app/components/ArticleFAQ";
 import {
   ArticleGuideCTA,
+  EditorialDisclosure,
   ArticleReferences,
   ArticleTableOfContents,
   AuthorBio,
@@ -198,6 +199,7 @@ const ArticlePage = async (props: { params: Promise<Params> }) => {
           <div className="flex flex-col lg:flex-row gap-10 lg:gap-14">
             <div className="flex-1 min-w-0 max-w-3xl">
               <MedicalDisclaimer />
+              <EditorialDisclosure article={article} />
 
               <ArticleTableOfContents
                 hasSecondSection={Boolean(article.text2)}

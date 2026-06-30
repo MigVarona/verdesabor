@@ -2,8 +2,8 @@ import CategoryPage from "../components/CategoryPage";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Biohacking",
-  description: "Optimize your biology with science-backed protocols and tools.",
+  title: "Biohacking Guides",
+  description: "Practical guides to sleep, HRV, cold exposure, red light therapy, recovery, and health tracking.",
   path: "/biohacking",
 });
 

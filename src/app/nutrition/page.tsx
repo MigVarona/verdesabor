@@ -2,8 +2,8 @@ import CategoryPage from "../components/CategoryPage";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata = buildPageMetadata({
-  title: "Nutrition",
-  description: "Evidence-based guides on food, macros, and sustainable eating habits.",
+  title: "Nutrition Guides",
+  description: "Evidence-based guides on metabolic health, gut health, fasting, omega-3s, and sustainable eating habits.",
   path: "/nutrition",
 });
 

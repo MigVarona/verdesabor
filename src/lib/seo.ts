@@ -98,6 +98,11 @@ export function buildWebSiteSchema() {
     url: SITE_URL,
     description: SITE_DESCRIPTION,
     publisher: { "@type": "Organization", name: SITE_NAME },
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${absoluteUrl("/articles")}?q={search_term_string}`,
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 

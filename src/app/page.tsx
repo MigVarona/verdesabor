@@ -5,6 +5,7 @@ import HomeLeadMagnet from "./components/HomeLeadMagnet";
 import HomeManifesto from "./components/HomeManifesto";
 import HomeEditorialGrid from "./components/HomeEditorialGrid";
 import HomeCategorySpotlight from "./components/HomeCategorySpotlight";
+import HomeGrowthPaths from "./components/HomeGrowthPaths";
 import Newsletter from "./components/Newsletter";
 import Footer from "./components/Footer";
 import { fetchArticles } from "@/lib/articles.server";
@@ -38,6 +39,7 @@ export default async function Home() {
         <HomeHero featured={featured} secondary={secondary} />
         <HomeTopics />
         <HomeManifesto />
+        <HomeGrowthPaths />
         <HomeLeadMagnet />
         <HomeEditorialGrid articles={gridArticles} />
         <HomeCategorySpotlight articles={articles} />

@@ -1,5 +1,10 @@
 const UNSPLASH_RE = /images\.unsplash\.com\/((?:flagged\/)?photo-[^/?]+)/i;
 
+const UNSPLASH_PAGE_IMAGE_IDS: Record<string, string> = {
+  P6mdg0z5tHc: "photo-1524287515726-d6bd6805ad27",
+  mNGaaLeWEp0: "photo-1477332552946-cfb384aeaf1c",
+};
+
 export type ImageVariant = "thumb" | "card" | "hero" | "inline";
 
 const VARIANTS: Record<ImageVariant, { w: number; h: number; q: number }> = {
@@ -29,6 +34,11 @@ export function optimizeImageUrl(url: string | undefined, variant: ImageVariant)
   const match = url.match(UNSPLASH_RE);
   if (match) return buildUnsplashUrl(match[1], variant);
 
+  const unsplashPageId = getUnsplashPageId(url);
+  if (unsplashPageId && UNSPLASH_PAGE_IMAGE_IDS[unsplashPageId]) {
+    return buildUnsplashUrl(UNSPLASH_PAGE_IMAGE_IDS[unsplashPageId], variant);
+  }
+
   return url;
 }
 
@@ -47,4 +57,17 @@ export function articleImageLoader({
 
   const q = quality ?? 75;
   return `https://images.unsplash.com/${match[1]}?auto=format&fit=crop&w=${width}&q=${q}&fm=webp`;
+}
+
+function getUnsplashPageId(url: string): string | undefined {
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname !== "unsplash.com" && !parsed.hostname.endsWith(".unsplash.com")) {
+      return undefined;
+    }
+
+    return parsed.pathname.split("-").pop() || undefined;
+  } catch {
+    return undefined;
+  }
 }

@@ -1,10 +1,11 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import Image from "next/image"
 import Link from "next/link"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { optimizeImageUrl } from "@/lib/articles"
+import ArticleImage from "./ArticleImage"
 
 interface Article {
   _id: string
@@ -102,8 +103,8 @@ const FeaturedArticles = () => {
                 {block.mainArticle.imagexl && (
                   <div className="relative w-full mb-4">
                     <picture>
-                    <Image
-                      src={block.mainArticle.imagexl || "/placeholder.svg"}
+                    <ArticleImage
+                      src={optimizeImageUrl(block.mainArticle.imagexl, "hero")}
                       alt={block.mainArticle.title}
                       width={900}
                       height={600}
@@ -144,8 +145,8 @@ const FeaturedArticles = () => {
                   <article key={article._id} className="flex bg-white overflow-hidden border-b border-gray-200 pb-6">
                     {article.image && (
                       <div className="relative flex-shrink-0 mr-4">
-                        <Image
-                          src={article.image || "/placeholder.svg"}
+                        <ArticleImage
+                          src={optimizeImageUrl(article.image, "card")}
                           alt={article.title}
                           width={150}
                           height={100}
@@ -182,8 +183,8 @@ const FeaturedArticles = () => {
               <article className="bg-white overflow-hidden p-4">
                 {block.penultimateArticle.imagexl && (
                   <div className="relative w-full mb-4">
-                    <Image
-                      src={block.penultimateArticle.imagexl || "/placeholder.svg"}
+                    <ArticleImage
+                      src={optimizeImageUrl(block.penultimateArticle.imagexl, "hero")}
                       alt={block.penultimateArticle.title}
                       width={900}
                       height={600}
@@ -239,4 +240,3 @@ const FeaturedArticles = () => {
 }
 
 export default FeaturedArticles
-

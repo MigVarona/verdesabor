@@ -1,0 +1,77 @@
+{
+  "slug": "healthiest-dish-what-science-says",
+  "title": "The Healthiest Dish, According to Science: Comparing the Studies",
+  "category": "Nutrition",
+  "author": "RENEW Editorial",
+  "publishedAt": "2026-07-01T09:00:00.000Z",
+  "excerpt": "Nutrient-density rankings, the PREDIMED trial, the DASH diet, and a computer-engineered 'optimal meal' experiment all point in a strikingly similar direction. Here is what each body of research actually found.",
+  "image": "https://images.unsplash.com/photo-1467003909585-2f8a29f1d0b5?auto=format&fit=crop&w=640&h=400&q=75&fm=webp",
+  "imagexl": "https://images.unsplash.com/photo-1467003909585-2f8a29f1d0b5?auto=format&fit=crop&w=1200&h=675&q=80&fm=webp",
+  "text": "There is no single peer-reviewed paper crowning one recipe as \"the healthiest dish on Earth.\" But several independent lines of research — nutrient-density scoring, large dietary trials, and even a computer-engineered meal experiment — keep arriving at the same short list of ingredients, which is more convincing than any one study alone.\n\nThe first line of evidence is nutrient density. A 2014 CDC analysis in Preventing Chronic Disease scored 47 fruits and vegetables against 17 essential nutrients per 100 calories. Watercress was the only food to hit a perfect 100; other dark leafy greens and crucifers such as kale, spinach, and Brussels sprouts followed close behind. A separate 2015 PLOS ONE study that mapped the nutritional profiles of roughly 1,000 foods reached a compatible conclusion: leafy greens and herbs deliver more vitamins and minerals per calorie than almost any other food group, processed or whole.\n\nThe second line of evidence concerns fat quality. Cohort studies and randomized trials on fatty fish consistently associate EPA and DHA omega-3s with lower triglycerides, reduced cardiovascular events, and support for cognitive function — benefits that plant-only oils do not fully replicate.",
+  "image2xl": "https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=960&h=600&q=80&fm=webp",
+  "text2": "The strongest evidence, though, comes from trials that test whole dietary patterns rather than single foods. The landmark PREDIMED trial randomized over 7,000 people at high cardiovascular risk to a Mediterranean-style diet supplemented with either extra-virgin olive oil or nuts, versus a low-fat control diet. The Mediterranean groups had roughly 30% fewer major cardiovascular events. Separately, the original DASH trial found that a diet built around vegetables, fruit, whole grains, and low-fat dairy lowered blood pressure within two weeks — one of the fastest dietary effects ever documented in a controlled trial.\n\nA lesser-known but telling data point: in an industry-funded experiment, UK food scientists screened more than 4,000 marketing health claims down to 222 backed by real evidence, then used them to engineer a single \"optimal\" meal. The result — a salmon terrine with a mixed leaf salad and extra-virgin olive oil dressing — landed on almost the exact same components that nutrient-density scoring and clinical trials had already flagged independently: oily fish, leafy greens, and olive oil.\n\nPut together, the closest thing science has to a verdict is not one recipe but a repeatable pattern: a base of dark leafy greens or crucifers, a serving of fatty fish or another omega-3 source, a fiber-rich whole grain or legume, and extra-virgin olive oil as the primary fat. Build a dish around those four elements and you are eating close to what the evidence actually supports.",
+  "tags": [
+    "healthiest dish",
+    "nutrition science",
+    "nutrient density",
+    "mediterranean diet",
+    "omega-3",
+    "DASH diet"
+  ],
+  "sources": [
+    {
+      "title": "Defining Powerhouse Fruits and Vegetables: A Nutrient Density Approach",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24901795/",
+      "publisher": "Preventing Chronic Disease (CDC)",
+      "year": 2014,
+      "studyType": "review"
+    },
+    {
+      "title": "Uncovering the Nutritional Landscape of Food",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25768022/",
+      "publisher": "PLOS ONE",
+      "year": 2015,
+      "studyType": "review"
+    },
+    {
+      "title": "Primary Prevention of Cardiovascular Disease with a Mediterranean Diet Supplemented with Extra-Virgin Olive Oil or Nuts",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29897866/",
+      "publisher": "New England Journal of Medicine",
+      "year": 2018,
+      "studyType": "rct"
+    },
+    {
+      "title": "A Clinical Trial of the Effects of Dietary Patterns on Blood Pressure (DASH)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/9099655/",
+      "publisher": "New England Journal of Medicine",
+      "year": 1997,
+      "studyType": "rct"
+    },
+    {
+      "title": "Fish Intake, Contaminants, and Human Health: Evaluating the Risks and the Benefits",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17047219/",
+      "publisher": "JAMA",
+      "year": 2006,
+      "studyType": "review"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Is there one single dish scientists agree is the healthiest?",
+      "a": "No single dish has been formally crowned in the peer-reviewed literature. What exists instead is convergent evidence: nutrient-density scoring, major dietary trials like PREDIMED and DASH, and even engineered-meal experiments all point to the same ingredient pattern — leafy greens, fatty fish, olive oil, and a fiber-rich whole grain or legume."
+    },
+    {
+      "q": "What is the single most nutrient-dense vegetable, according to research?",
+      "a": "Watercress. A 2014 CDC study scored 47 fruits and vegetables against 17 essential nutrients per 100 calories, and watercress was the only food to achieve a perfect score of 100. Other dark leafy greens and crucifers such as kale and spinach also scored highly."
+    },
+    {
+      "q": "Why does olive oil show up in almost every 'healthiest meal' study?",
+      "a": "In the PREDIMED trial, participants who added over four tablespoons of extra-virgin olive oil daily to a Mediterranean-style diet had roughly 30% fewer major cardiovascular events than a low-fat control group. Its high monounsaturated fat and polyphenol content is consistently linked to better cardiovascular and inflammatory markers across the literature."
+    },
+    {
+      "q": "What would a scientifically optimal plate actually look like?",
+      "a": "Based on the converging research, it would combine four elements: a base of dark leafy greens or crucifers, a portion of fatty fish (such as salmon, sardines, or mackerel) or another omega-3 source, a fiber-rich whole grain or legume, and extra-virgin olive oil as the primary fat — for example, a salmon and lentil bowl over sauteed kale, finished with an olive oil dressing."
+    }
+  ],
+  "updatedAt": "2026-07-01"
+}

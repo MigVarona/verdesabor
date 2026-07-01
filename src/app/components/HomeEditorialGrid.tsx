@@ -18,7 +18,7 @@ export default function HomeEditorialGrid({ articles }: HomeEditorialGridProps) 
         <div className="flex items-end justify-between mb-10 md:mb-12 border-b border-renew-border pb-6">
           <div>
             <p className="editorial-kicker mb-2">The latest</p>
-            <h2 className="font-serif text-4xl md:text-5xl text-renew-dark leading-tight">Continue reading</h2>
+            <h2 className="font-serif text-4xl md:text-5xl text-renew-dark leading-tight">Fresh from the newsroom</h2>
           </div>
           <Link
             href="/articles"

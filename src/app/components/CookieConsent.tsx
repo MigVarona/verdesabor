@@ -94,42 +94,29 @@ export default function CookieConsent() {
   if (!visible) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex items-end justify-center p-4 md:p-6">
-      <div
-        className="absolute inset-0 bg-renew-dark/40 backdrop-blur-[2px]"
-        aria-hidden="true"
-      />
-
-      <div className="relative w-full max-w-lg bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
+    <div className="fixed bottom-0 inset-x-0 z-[9999] flex justify-center p-3 md:p-5 pointer-events-none">
+      <div className="pointer-events-auto relative w-full max-w-2xl bg-white border border-gray-200 rounded-2xl shadow-2xl overflow-hidden">
         <div className="h-1 bg-renew-accent" />
 
-        <div className="p-6 md:p-7">
-          <div className="flex items-start justify-between gap-4 mb-5">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-renew-sage mb-1">
-                {view === "banner" ? "Cookie notice" : "Cookie preferences"}
-              </p>
-              <h2 className="text-lg font-bold text-renew-dark">
-                {view === "banner" ? "We respect your privacy" : "Manage your preferences"}
-              </h2>
-            </div>
+        <div className="p-4 md:p-5">
+          <div className="flex items-start justify-between gap-4 mb-3">
+            <h2 className="text-sm font-bold text-renew-dark">
+              {view === "banner" ? "We respect your privacy" : "Cookie preferences"}
+            </h2>
             <button
               onClick={essentialOnly}
-              className="text-gray-400 hover:text-gray-600 p-1"
+              className="text-gray-400 hover:text-gray-600 p-1 -m-1"
               aria-label="Close and accept essential only"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4" />
             </button>
           </div>
 
           {view === "banner" ? (
             <>
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-xs text-gray-600 leading-relaxed">
                 We use essential cookies to run the site and optional analytics cookies to understand
-                how readers use RENEW. You can accept all, use essential only, or customize your choices.
-              </p>
-              <p className="text-sm text-gray-500 mt-3">
-                Read our{" "}
+                how readers use RENEW. Read our{" "}
                 <Link href="/cookies" className="text-renew-sage underline underline-offset-2">
                   Cookie Policy
                 </Link>{" "}
@@ -139,15 +126,15 @@ export default function CookieConsent() {
                 </Link>
                 .
               </p>
-              <div className="flex flex-col sm:flex-row gap-2.5 mt-6">
-                <Button onClick={acceptAll} className="bg-renew-dark text-white hover:bg-renew-ink flex-1">
+              <div className="flex flex-wrap gap-2 mt-4">
+                <Button size="sm" onClick={acceptAll} className="bg-renew-dark text-white hover:bg-renew-ink flex-1 min-w-[120px]">
                   Accept all
                 </Button>
-                <Button onClick={() => setView("preferences")} variant="outline" className="flex-1">
-                  Customize
-                </Button>
-                <Button onClick={essentialOnly} variant="ghost" className="flex-1 text-gray-600">
+                <Button size="sm" onClick={essentialOnly} variant="outline" className="flex-1 min-w-[120px] text-gray-600">
                   Essential only
+                </Button>
+                <Button size="sm" onClick={() => setView("preferences")} variant="ghost" className="flex-1 min-w-[120px]">
+                  Customize
                 </Button>
               </div>
             </>

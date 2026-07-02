@@ -36,11 +36,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: `${SITE_NAME} | Healthy Living for a Better Future`,
+    default: `${SITE_NAME} | Science-Backed Health, Nutrition & Longevity Guides`,
     template: `%s | ${SITE_NAME}`,
   },
   description:
-    "Renew is dedicated to promoting healthy living with insights and resources on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+    "Science-backed guides on nutrition, sleep, stress, biohacking, and longevity. Practical, research-based habits to feel better today and stay healthy for decades.",
   metadataBase: new URL(siteUrl),
   applicationName: SITE_NAME,
   authors: [{ name: "RENEW Editorial" }],
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     telephone: false,
   },
   openGraph: {
-    title: `${SITE_NAME} | Healthy Living for a Better Future`,
+    title: `${SITE_NAME} | Science-Backed Health, Nutrition & Longevity Guides`,
     description: SITE_DESCRIPTION,
     url: siteUrl,
     siteName: SITE_NAME,
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "@renewhabits",
-    title: `${SITE_NAME} | Healthy Living for a Better Future`,
+    title: `${SITE_NAME} | Science-Backed Health, Nutrition & Longevity Guides`,
     description: SITE_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE],
   },

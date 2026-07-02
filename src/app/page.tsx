@@ -14,9 +14,9 @@ import { buildPageMetadata } from "@/lib/seo";
 const FEATURED_ARTICLE_SLUG = "rewriting-the-future-the-secrets-to-a-long-vibrant-life";
 
 export const metadata = buildPageMetadata({
-  title: "Healthy Living for a Better Future",
+  title: "Science-Backed Health, Nutrition & Longevity Guides",
   description:
-    "Discover science-backed insights on nutrition, biohacking, neuroscience, wellness, lifestyle, and longevity.",
+    "Practical, research-based guides on nutrition, sleep, stress, biohacking, and longevity — the daily habits that keep you healthy for decades.",
   path: "/",
 });
 

@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RenewHabits
 
-## Getting Started
+A science-backed health & longevity content site — evidence-based articles on nutrition, biohacking, neuroscience, wellness and longevity, with affiliate monetization built in.
 
-First, run the development server:
+🌐 **Live:** [renew-habits.com](https://www.renew-habits.com)
+
+Built with **Next.js 15** (App Router), **React 19**, **TypeScript** and **Tailwind CSS**, backed by **MongoDB** and deployed on **Vercel**.
+
+---
+
+## Features
+
+- **Content platform** — articles stored in MongoDB and rendered server-side via the App Router, organized into six categories: Nutrition, Biohacking, Neuroscience, Wellness, Lifestyle and Longevity.
+- **Admin dashboard** — password-gated `/login` → `/adminpage` flow to create and manage articles without redeploying.
+- **SEO-first** — dynamic `sitemap.ts`, RSS `feed.xml`, `llms.txt`, per-tag pages and IndexNow ping on every build to notify search engines of new content.
+- **Affiliate monetization** — automatic Sovrn Commerce link wrapping (`/go/[slug]`) and optional Amazon Associates tagging on product links.
+- **Analytics** — Vercel Analytics wired in out of the box.
+
+## Tech stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 15 (App Router) |
+| UI | React 19, Tailwind CSS, Radix UI, lucide-react |
+| Language | TypeScript |
+| Database | MongoDB (`verdesabor.articles`) |
+| Hosting | Vercel |
+
+## Getting started
 
 ```bash
+# 1. Install dependencies
+npm install
+
+# 2. Create .env.local (see below), then start MongoDB and the dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+> Article APIs return empty/404 until the `verdesabor.articles` collection has data. Seed it through the admin UI at `/login` → `/adminpage`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Environment variables
 
-## Learn More
+Create a `.env.local` file (gitignored):
 
-To learn more about Next.js, take a look at the following resources:
+```env
+MONGODB_URI=mongodb://127.0.0.1:27017
+ADMIN_USER=admin
+ADMIN_PASSWORD=changeme
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Affiliate monetization (optional — set in Vercel for production)
+SOVRN_COMMERCE_KEY=your-sovrn-api-key
+SOVRN_SECRET_KEY=your-sovrn-secret-key
+AMAZON_ASSOCIATE_TAG=yourname-20
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Variable | Required | Purpose |
+|---|---|---|
+| `MONGODB_URI` | ✅ | App throws on startup if unset. |
+| `ADMIN_USER` / `ADMIN_PASSWORD` | ✅ | Gate the admin dashboard. |
+| `NEXT_PUBLIC_SITE_URL` | ✅ | Must point at a live instance — article pages and the sitemap fetch it server-side. |
+| `SOVRN_COMMERCE_KEY` | optional | Builds affiliate links for all products. |
+| `AMAZON_ASSOCIATE_TAG` | optional | Auto-appended to Amazon product URLs. |
 
-## Deploy on Vercel
+## Project structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+├── app/            # App Router: category pages, articles/[slug], api/, sitemap, feed
+│   ├── api/        # Article + newsletter route handlers
+│   └── go/[slug]/  # Affiliate link redirects
+├── components/     # UI components (Radix + Tailwind)
+└── lib/            # MongoDB client, data access helpers
+content/            # Article + guide source content
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the dev server on port 3000. |
+| `npm run build` | Production build (requires `NEXT_PUBLIC_SITE_URL` to resolve to a live API). |
+| `npm run start` | Serve the production build. |
+
+---
+
+Built and maintained by [Miguel Varona](https://github.com/MigVarona).

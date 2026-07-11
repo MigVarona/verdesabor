@@ -18,6 +18,9 @@ const FEATURES = [
   },
 ];
 
+const APK_DOWNLOAD_URL =
+  "https://github.com/MigVarona/verdesabor/releases/latest/download/Renew.apk";
+
 export default function HomeAppPromo() {
   return (
     <section className="py-16 md:py-24 bg-renew-cream text-renew-dark overflow-hidden">
@@ -51,8 +54,7 @@ export default function HomeAppPromo() {
             </ul>
             <div className="mt-10 flex flex-col sm:flex-row sm:items-center gap-3">
               <a
-                href="/Renew.apk"
-                download
+                href={APK_DOWNLOAD_URL}
                 className="inline-flex w-fit items-center gap-2 rounded-full bg-renew-accent px-5 py-3 text-sm font-bold uppercase tracking-widest text-renew-dark transition hover:bg-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-renew-accent"
               >
                 <Download className="h-4 w-4" />

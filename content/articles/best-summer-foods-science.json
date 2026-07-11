@@ -1,0 +1,97 @@
+{
+  "slug": "best-summer-foods-science",
+  "title": "The Best Summer Foods, According to Science",
+  "category": "Nutrition",
+  "author": "RENEW Editorial",
+  "publishedAt": "2026-07-10T09:00:00.000Z",
+  "updatedAt": "2026-07-10T09:00:00.000Z",
+  "excerpt": "Peak-season produce isn't just cheaper and tastier — several studies show it's measurably more nutrient-dense. Here is what the research says about the five summer foods worth building your plate around, and the studies behind each claim.",
+  "image": "/summer/etienne-girardet-Xh6BpT-1tXo-unsplash.jpg",
+  "imagexl": "/summer/etienne-girardet-Xh6BpT-1tXo-unsplash.jpg",
+  "text": "Nutrient content isn't fixed — it changes with harvest timing and storage. A widely cited study in the Journal of Agricultural and Food Chemistry found that spinach lost roughly half its vitamin C and folate within a week of refrigerated storage after harvest, and broccoli harvested in its natural season contained nearly double the vitamin C of the same crop grown out of season. The American Heart Association's review of seasonal-eating research reaches a similar conclusion: produce picked ripe and eaten close to harvest retains more water-soluble vitamins and antioxidants than produce picked early and shipped long distances.\n\nSummer's harvest — melons, tomatoes, berries, and stone fruit — happens to concentrate several of the most-studied protective compounds in nutrition science: lycopene, anthocyanins, and polyphenols. That overlap is what makes this specific list worth highlighting.\n\nFirst, watermelon. Over 90% water, watermelon is one of the richest dietary sources of lycopene, along with citrulline and arginine — compounds involved in nitric oxide production, which helps blood vessels relax. Research summarized in Nutrients and related reviews links lycopene intake to improved vascular function and lower cardiovascular risk, and NHANES dietary-survey data shows watermelon consumers report higher overall intakes of fiber, potassium, and vitamin C.\n\nAlongside watermelon, tomatoes are summer's other major lycopene source. A meta-analysis published in Food Chemistry found lycopene intake was inversely associated with all-cause mortality, cardiovascular disease, and metabolic syndrome. Tomatoes also supply vitamin C, potassium, and folate, nutrients tied to immune function and blood pressure regulation.",
+  "image2xl": "/summer/aliona-gumeniuk-Y9WTwredge0-unsplash.jpg",
+  "text2": "Berries are next — and blueberries in particular are dense in anthocyanins, the polyphenols responsible for their color. A double-blind, placebo-controlled randomized trial published in the American Journal of Clinical Nutrition found that wild blueberry polyphenols improved vascular function and cognitive performance in healthy older adults. A separate study in Food Chemistry found anthocyanin content in blueberries peaks just before the fruit fully softens — meaning firm, dark, in-season berries carry more antioxidants than later-picked ones.\n\nStone fruits — peaches, plums, and nectarines — contain four major groups of phenolic compounds: anthocyanins, chlorogenic acids, quercetins, and catechins. Laboratory research from Texas A&M's AgriLife program found these compounds act on obesity, inflammation, insulin resistance, and LDL oxidation simultaneously, the combination of processes involved in metabolic syndrome.\n\nCucumbers and summer squash are less studied individually, but nutritionally relevant for a different reason: at roughly 95% water plus potassium, cucumbers and zucchini support hydration and electrolyte balance during hot months, when fluid loss through sweat is highest — a practical complement to the antioxidant-dense foods above rather than a source of the same compounds.\n\nYou don't need to eat all five daily. A practical approach: build lunch or dinner around a tomato-heavy salad several times a week, keep washed berries on hand for breakfast or snacks, add a wedge of watermelon or a stone fruit after meals instead of processed dessert, and use cucumber or zucchini as a low-effort hydration boost in salads or as a snack. Buying what's in season locally also tends to mean less time between harvest and your plate — which, per the research above, is when nutrient content is highest.",
+  "tags": [
+    "summer foods",
+    "seasonal eating",
+    "nutrition",
+    "lycopene",
+    "antioxidants"
+  ],
+  "keyTakeaways": [
+    "Produce picked at peak ripeness and eaten within days measurably outperforms off-season, long-transported produce on vitamin C, folate, and antioxidant content.",
+    "Watermelon and tomatoes are the summer's richest sources of lycopene, a carotenoid linked in multiple studies to lower cardiovascular risk.",
+    "Berries in season deliver the highest concentration of anthocyanins, polyphenols studied for vascular and cognitive benefits in randomized trials.",
+    "Stone fruits — peaches, plums, nectarines — contain phenolic compounds shown in lab research to counter the components of metabolic syndrome.",
+    "No single \"superfood\" does the work; the benefit comes from eating a rotating mix of these foods regularly through the season."
+  ],
+  "faq": [
+    {
+      "q": "Is watermelon as healthy as fresh tomatoes?",
+      "a": "Both are top dietary sources of lycopene and offer distinct additional nutrients — watermelon leans toward hydration and citrulline, tomatoes toward vitamin C and folate. Rotating both is more useful than choosing one."
+    },
+    {
+      "q": "Do frozen berries lose their benefits?",
+      "a": "Freezing shortly after harvest largely preserves anthocyanin content, since the decline studies document is tied to storage time and ripening stage, not freezing itself."
+    },
+    {
+      "q": "How much lycopene-rich food is linked to lower cardiovascular risk?",
+      "a": "Observational research has associated roughly 7 or more weekly servings of lycopene-containing foods with measurably lower cardiovascular risk over several years, though this reflects an eating pattern rather than a guaranteed individual outcome."
+    },
+    {
+      "q": "Are the metabolic benefits of stone fruits proven in humans?",
+      "a": "Most of the mechanistic evidence comes from cell and animal studies. The human evidence is still largely observational, so stone fruits should be considered a promising, well-supported addition to a varied diet rather than a standalone treatment."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Watermelon consumption is associated with higher nutrient intake and diet quality (NHANES analysis)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26417290/",
+      "publisher": "PubMed",
+      "year": 2015,
+      "studyType": "cohort"
+    },
+    {
+      "title": "Lycopene in the Prevention of Cardiovascular Diseases",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8880080/",
+      "publisher": "International Journal of Molecular Sciences",
+      "year": 2022,
+      "studyType": "review"
+    },
+    {
+      "title": "Lycopene intake and risk of all-cause mortality, cardiovascular disease, and metabolic syndrome",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0308814620324265",
+      "publisher": "Food Chemistry",
+      "year": 2021,
+      "studyType": "meta-analysis"
+    },
+    {
+      "title": "Wild blueberry (poly)phenols can improve vascular function and cognitive performance in healthy older individuals",
+      "url": "https://ajcn.nutrition.org/article/S0002-9165(23)46300-9/fulltext",
+      "publisher": "American Journal of Clinical Nutrition",
+      "year": 2023,
+      "studyType": "rct"
+    },
+    {
+      "title": "Anthocyanin content and ripeness stage in blueberries",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0308814613019286",
+      "publisher": "Food Chemistry",
+      "year": 2014,
+      "studyType": "observational"
+    },
+    {
+      "title": "Phenolic compounds in stone fruit and metabolic syndrome markers",
+      "url": "https://www.sciencedaily.com/releases/2012/06/120618132921.htm",
+      "publisher": "Texas A&M AgriLife Research",
+      "year": 2012,
+      "studyType": "observational"
+    },
+    {
+      "title": "Vitamin C and folate decline in spinach during refrigerated storage",
+      "url": "https://www.heart.org/en/news/2024/07/12/why-seasonal-eating-can-be-a-healthy-delight",
+      "publisher": "Journal of Agricultural and Food Chemistry",
+      "year": 2007,
+      "studyType": "observational"
+    }
+  ]
+}

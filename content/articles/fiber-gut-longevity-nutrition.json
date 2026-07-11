@@ -54,5 +54,32 @@
       "year": 2001,
       "studyType": "review"
     }
-  ]
+  ],
+  "howTo": {
+    "name": "How to eat more fiber every day",
+    "description": "A gentle way to work more plants into your meals — no restriction, just addition. Your gut microbiome does the rest.",
+    "totalTime": "PT10M",
+    "steps": [
+      {
+        "name": "Add, don’t restrict",
+        "text": "Instead of cutting foods out, add one plant to each meal: berries with breakfast, leafy greens at lunch, a serving of legumes or vegetables at dinner."
+      },
+      {
+        "name": "Go gradually",
+        "text": "Increase fiber slowly over a few weeks. A sudden jump can cause temporary bloating — a gentle ramp lets your gut bacteria adapt comfortably."
+      },
+      {
+        "name": "Vary your plants",
+        "text": "Different fibers feed different gut microbes. Rotate between fruits, vegetables, whole grains, legumes, nuts, and seeds rather than repeating one source."
+      },
+      {
+        "name": "Drink water alongside",
+        "text": "Fiber works best with fluid. Pair fiber-rich meals with a glass of water to keep digestion comfortable."
+      },
+      {
+        "name": "Notice how you feel",
+        "text": "Energy, digestion, and satiety usually shift within a couple of weeks. If something feels off, ease back — and speak with a health professional for personal guidance."
+      }
+    ]
+  }
 }

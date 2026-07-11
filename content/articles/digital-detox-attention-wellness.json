@@ -48,5 +48,32 @@
       "studyType": "cohort"
     }
   ],
-  "updatedAt": "2026-07-01"
+  "updatedAt": "2026-07-01",
+  "howTo": {
+    "name": "How to do a digital sunset",
+    "description": "Winding down screens in the last hour before bed protects your sleep and gives your attention a daily rest.",
+    "totalTime": "PT60M",
+    "steps": [
+      {
+        "name": "Set your cutoff time",
+        "text": "Pick a realistic time about an hour before bed. The goal is a consistent boundary, not perfection."
+      },
+      {
+        "name": "Silence what can wait",
+        "text": "Turn on do-not-disturb and let non-urgent notifications hold until morning. Most things can."
+      },
+      {
+        "name": "Park the phone out of reach",
+        "text": "Charge it outside the bedroom or across the room. Distance beats willpower."
+      },
+      {
+        "name": "Replace, don’t just remove",
+        "text": "Fill the hour with something analog you enjoy — reading, stretching, conversation, journaling. An empty hour invites the phone back."
+      },
+      {
+        "name": "Keep mornings quiet too",
+        "text": "If it feels good, extend the boundary: a few screen-free minutes after waking compound the benefit."
+      }
+    ]
+  }
 }

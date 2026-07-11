@@ -1,6 +1,6 @@
 {
   "slug": "finding-calm-how-nature-boosts-your-mental-wellness",
-  "title": "Finding Calm How Nature Boosts Your Mental Wellness",
+  "title": "Finding Calm: How Nature Boosts Your Mental Wellness",
   "category": "Wellness",
   "author": "RENEW Editorial",
   "publishedAt": "2025-02-20T22:19:00.000Z",
@@ -40,5 +40,32 @@
       "studyType": "observational"
     }
   ],
-  "updatedAt": "2026-06-15"
+  "updatedAt": "2026-06-15",
+  "howTo": {
+    "name": "How to take a daily nature walk",
+    "description": "Twenty minutes outside at an easy pace is one of the best-studied ways to lower stress — no equipment, no intensity required.",
+    "totalTime": "PT20M",
+    "steps": [
+      {
+        "name": "Pick your green spot",
+        "text": "A park, tree-lined street, riverside path, or garden all work. Research suggests the benefit comes from being around nature, not from wilderness."
+      },
+      {
+        "name": "Go at an easy pace",
+        "text": "This is not a workout. Walk at a pace where you could hold a conversation comfortably, and dress for the weather."
+      },
+      {
+        "name": "Leave the headphones off",
+        "text": "Let your attention rest on the surroundings — birdsong, wind, light through leaves. That “soft fascination” is what attention-restoration research points to."
+      },
+      {
+        "name": "Aim for about 20 minutes",
+        "text": "Studies associate roughly 20 minutes in nature with measurable drops in stress markers. Shorter still counts; consistency matters more than duration."
+      },
+      {
+        "name": "Make it a fixed point",
+        "text": "Attach the walk to a daily anchor — after lunch, after work, with your morning coffee — so it happens without negotiation."
+      }
+    ]
+  }
 }

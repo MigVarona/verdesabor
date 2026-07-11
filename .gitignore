@@ -20,6 +20,9 @@
 # production
 /build
 
+# large release assets
+/public/Renew.apk
+
 # misc
 .DS_Store
 *.pem

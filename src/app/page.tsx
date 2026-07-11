@@ -2,6 +2,7 @@ import Header from "./components/Header";
 import HomeHero from "./components/HomeHero";
 import HomeTopics from "./components/HomeTopics";
 import HomeManifesto from "./components/HomeManifesto";
+import HomeAppPromo from "./components/HomeAppPromo";
 import HomeEditorialGrid from "./components/HomeEditorialGrid";
 import HomeCategorySpotlight from "./components/HomeCategorySpotlight";
 import HomeGrowthPaths from "./components/HomeGrowthPaths";
@@ -35,6 +36,7 @@ export default async function Home() {
         <HomeHero featured={featured} secondary={secondary} />
         <HomeTopics />
         <HomeManifesto />
+        <HomeAppPromo />
         <HomeGrowthPaths />
         <HomeEditorialGrid articles={gridArticles} />
         <HomeCategorySpotlight articles={articles} />

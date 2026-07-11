@@ -1,5 +1,4 @@
 import { Instagram, Twitter, Download, ArrowRight } from "lucide-react";
-import Image from "next/image";
 import Link from "next/link";
 import { CATEGORIES } from "@/lib/constants";
 import { SEVEN_HABITS_GUIDE } from "@/lib/guides";
@@ -181,8 +180,8 @@ export default function Footer() {
                 Developed by
               </span>
               <span className="h-5 w-px bg-white/10" aria-hidden="true" />
-              <Image
-                src="/images/wearecapa_header_white.png"
+              <img
+                src="/wearecapa_header_white.png"
                 alt="WeAreCapa"
                 width={190}
                 height={35}
